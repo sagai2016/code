@@ -28,7 +28,7 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" <?php echo 'class="'.$class;."'" ?>><?php echo $content_top; ?>
+    <div id="content" <?php echo 'class="'.$class."'"; ?>><?php echo $content_top; ?>
       <div class="row">
         <div class="col-sm-6">
           <div class="well">

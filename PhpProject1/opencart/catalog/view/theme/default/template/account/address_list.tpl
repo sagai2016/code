@@ -19,7 +19,7 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" <?php echo 'class="'.$class;."'" ?>><?php echo $content_top; ?>
+    <div id="content" <?php echo 'class="'.$class."'"; ?>><?php echo $content_top; ?>
       <h2><?php echo $text_address_book; ?></h2>
       <?php if ($addresses) { ?>
       <div class="table-responsive">

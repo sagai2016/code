@@ -13,7 +13,7 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" <?php echo 'class="'.$class;."'" ?>><?php echo $content_top; ?>
+    <div id="content" <?php echo 'class="'.$class."'"; ?>><?php echo $content_top; ?>
       <h1><?php echo $heading_title; ?></h1>
       <?php if ($recurrings) { ?>
       <div class="table-responsive">
