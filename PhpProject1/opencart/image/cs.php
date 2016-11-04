@@ -1,5 +1,5 @@
 <?php
-echo phpinfo();;;
-//修改
+echo phpinfo();
+
 
 ?>
