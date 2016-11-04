@@ -115,7 +115,7 @@
 				<tbody>
 				  <?php $account_row = 0; ?>
 				  <?php foreach ($klarna_checkout_account as $key => $account) { ?>
-				  <tr id="account-row<?php echo $account_row; ?>">
+				  <tr <?php echo 'id="account-row'.$account_row;'"' ?>>
 					<td class="text-left">
 					  <input type="text" name="klarna_checkout_account[<?php echo $account_row; ?>][merchant_id]" placeholder="<?php echo $entry_merchant_id; ?>" class="form-control" value="<?php echo $account['merchant_id']; ?>" />
 					  <?php if (isset($error_account[$key]['merchant_id'])) { ?>

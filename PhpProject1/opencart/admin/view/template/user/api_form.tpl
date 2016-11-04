@@ -82,7 +82,7 @@
                   <tbody>
                     <?php $ip_row = 0; ?>
                     <?php foreach ($api_ips as $api_ip) { ?>
-                    <tr id="ip-row<?php echo $ip_row; ?>">
+                    <tr <?php echo 'id="ip-row'.$ip_row.'"'; ?>>
                       <td class="text-left"><input type="text" name="api_ip[]" value="<?php echo $api_ip['ip']; ?>" placeholder="<?php echo $entry_ip; ?>" class="form-control" /></td>
                       <td class="text-left"><button type="button" onclick="$('#ip-row<?php echo $ip_row; ?>').remove()" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>
                     </tr>
@@ -134,68 +134,68 @@
     </div>
   </div>
   <script type="text/javascript"><!--
-$('#button-generate').on('click', function() {
-	rand = '';
+$('#button-generate').on('click', function () {
+          rand = '';
 
-	string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+          string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
-	for (i = 0; i < 256; i++) {
-		rand += string[Math.floor(Math.random() * (string.length - 1))];
-	}
+          for (i = 0; i < 256; i++) {
+                      rand += string[Math.floor(Math.random() * (string.length - 1))];
+                  }
 
-	$('#input-key').val(rand);
-});
+                  $('#input-key').val(rand);
+              });
 //--></script>
   <script type="text/javascript"><!--
 var ip_row = <?php echo $ip_row; ?>;
+      
+      function addIp() {
+                      html = '<tr id="ip-row' + ip_row + '">';
+              html += '  <td class="text-right"><input type="text" name="api_ip[]" value="" placeholder="<?php echo $entry_ip; ?>" class="form-control" /></td>';
+              html += '  <td class="text-left"><button type="button" onclick="$(\'#ip-row' + ip_row + '\').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
+              html += '</tr>';
 
-function addIp() {
-	html  = '<tr id="ip-row' + ip_row + '">';
-    html += '  <td class="text-right"><input type="text" name="api_ip[]" value="" placeholder="<?php echo $entry_ip; ?>" class="form-control" /></td>';
-	html += '  <td class="text-left"><button type="button" onclick="$(\'#ip-row' + ip_row + '\').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
-	html += '</tr>';
+              $('#ip tbody').append(html);
 
-	$('#ip tbody').append(html);
+              ip_row++;
+      }
+      //--></script>
+<script type="text/javascript"><!--
+      $('#session button').on('click', function(e) {
+              e.preventDefault();
 
-	ip_row++;
-}
-//--></script>
-  <script type="text/javascript"><!--
-$('#session button').on('click', function(e) {
-	e.preventDefault();
+              if (confirm('<?php echo $text_confirm; ?>')) {
+                  var node = this;
 
-	if (confirm('<?php echo $text_confirm; ?>')) {
-		var node = this;
+                  $.ajax({
+                      url: 'index.php?route=user/api/deletesession&token=<?php echo $token; ?>&api_session_id=' + $(node).val(),
+                      type: 'post',
+                      dataType: 'json',
+                      beforeSend: function () {
+                                  $(node).button('loading');
+            },
+            complete: function() {
+                                          $(node).button('reset');
+            },
+            success: function(json) {
+                                          $('.alert').remove();
 
-		$.ajax({
-			url: 'index.php?route=user/api/deletesession&token=<?php echo $token; ?>&api_session_id=' + $(node).val(),
-			type: 'post',
-			dataType: 'json',
-			beforeSend: function() {
-				$(node).button('loading');
-			},
-			complete: function() {
-				$(node).button('reset');
-			},
-			success: function(json) {
-				$('.alert').remove();
+                                  if (json['error']) {
+                                              $('#tab-session').prepend('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+                  }
+                  
+                  if (json['success']) {
+                                              $('#tab-session').prepend('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
-				if (json['error']) {
-					$('#tab-session').prepend('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
-				}
-
-				if (json['success']) {
-					$('#tab-session').prepend('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
-
-					$(node).parent().parent().remove();
-				}
-			},
-			error: function(xhr, ajaxOptions, thrownError) {
-				alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-			}
-		});
-	}
-});
-//--></script>
+                                              $(node).parent().parent().remove();
+                  }
+                  },
+                  error: function(xhr, ajaxOptions, thrownError) {
+                                              alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                  }
+                  });
+                  }
+                  });
+                  //--></script>
 </div>
 <?php echo $footer; ?>

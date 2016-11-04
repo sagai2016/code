@@ -101,7 +101,7 @@
             </thead>
             <tbody>
               <?php foreach ($menu_modules as $menu_module) { ?>
-              <tr id="module-row<?php echo $module_row; ?>">
+              <tr <?php echo 'id="module-row'.$module_row;'"' ?>>
                 <td class="text-left"><select name="menu_module[<?php echo $module_row; ?>][code]" class="form-control input-sm">
                     <?php foreach ($extensions as $extension) { ?>
                     <optgroup label="<?php echo $extension['name']; ?>">
@@ -141,8 +141,7 @@
     </div>
   </div>
   <script type="text/javascript"><!--
-var module_row = <?php echo $module_row; ?>;
-
+var module_row =<?php echo $module_row; ?>;
 function addModule(language_id) {
 	html  = '<tr id="image-row' + image_row + '">';
     html += '  <td class="text-left"><input type="text" name="banner_image[' + language_id + '][' + image_row + '][title]" value="" placeholder="<?php echo $entry_title; ?>" class="form-control" /></td>';	
