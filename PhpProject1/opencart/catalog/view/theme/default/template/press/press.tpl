@@ -43,7 +43,7 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+    <div id="content" <?php echo 'class="'.$class;."'" ?>><?php echo $content_top; ?>
     
       <h1><?php echo $title; ?></h1>
       
@@ -67,7 +67,7 @@
         <?php } else { ?>
         <?php $class = 'col-lg-3 col-md-3 col-sm-6 col-xs-12'; ?>
         <?php } ?>
-        <div class="<?php echo $class; ?>">
+        <div <?php echo 'class="'.$class;."'" ?>>
           <div class="product-thumb transition">
             <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a></div>
             <div class="caption">

@@ -114,27 +114,27 @@
               <tr>
                 <th width="1"><input type="checkbox" onclick="$('input[name*=\'selected\']').attr('checked', this.checked);" /></th>
                 <th class="text-left"><?php if ($sort == 'o.order_id') { ?>
-                  <a href="<?php echo $sort_order; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_order_id; ?></a>
+                  <a href="<?php echo $sort_order; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_order_id; ?></a>
                   <?php } else { ?>
                   <a href="<?php echo $sort_order; ?>"><?php echo $column_order_id; ?></a>
                   <?php } ?></th>
                 <th class="text-left"><?php if ($sort == 'customer') { ?>
-                  <a href="<?php echo $sort_customer; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_customer; ?></a>
+                  <a href="<?php echo $sort_customer; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_customer; ?></a>
                   <?php } else { ?>
                   <a href="<?php echo $sort_customer; ?>"><?php echo $column_customer; ?></a>
                   <?php } ?></th>
                 <th class="text-left"><?php if ($sort == 'status') { ?>
-                  <a href="<?php echo $sort_status; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_status; ?></a>
+                  <a href="<?php echo $sort_status; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_status; ?></a>
                   <?php } else { ?>
                   <a href="<?php echo $sort_status; ?>"><?php echo $column_status; ?></a>
                   <?php } ?></th>
                 <th class="text-left"><?php if ($sort == 'channel') { ?>
-                  <a href="<?php echo $sort_channel; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_channel; ?></a>
+                  <a href="<?php echo $sort_channel; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_channel; ?></a>
                   <?php } else { ?>
                   <a href="<?php echo $sort_channel; ?>"><?php echo $column_channel; ?></a>
                   <?php } ?></th>
                 <th class="text-left"><?php if ($sort == 'o.date_added') { ?>
-                  <a href="<?php echo $sort_date_added; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_date_added; ?></a>
+                  <a href="<?php echo $sort_date_added; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_date_added; ?></a>
                   <?php } else { ?>
                   <a href="<?php echo $sort_date_added; ?>"><?php echo $column_date_added; ?></a>
                   <?php } ?></th>

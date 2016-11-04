@@ -23,7 +23,7 @@
   </div>
   <?php } ?>
   <br />
-  <div id="payment-new" style="display: <?php echo ($addresses ? 'none' : 'block'); ?>;">
+  <div id="payment-new" <?php printf('style="display:%s;"',($addresses ? 'none' : 'block'));?>>
     <div class="form-group required">
       <label class="col-sm-2 control-label" for="input-payment-fullname"><?php echo $entry_fullname; ?></label>
       <div class="col-sm-10">

@@ -36,12 +36,12 @@
                 <tr>
                   <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
                   <td class="text-left"><?php if ($sort == 'name') { ?>
-                    <a href="<?php echo $sort_name; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_name; ?></a>
+                    <a href="<?php echo $sort_name; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_name; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_name; ?>"><?php echo $column_name; ?></a>
                     <?php } ?></td>
                   <td class="text-left"><?php if ($sort == 'description') { ?>
-                    <a href="<?php echo $sort_description; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_description; ?></a>
+                    <a href="<?php echo $sort_description; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_description; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_description; ?>"><?php echo $column_description; ?></a>
                     <?php } ?></td>

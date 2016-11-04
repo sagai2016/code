@@ -2,7 +2,7 @@
   <div class="col-sm-6">
     <fieldset id="account">
       <legend><?php echo $text_your_details; ?></legend>
-      <div class="form-group" style="display: <?php echo (count($customer_groups) > 1 ? 'block' : 'none'); ?>;">
+      <div class="form-group" <?php printf('style="display:%s;"',(count($customer_groups) > 1 ? 'block' : 'none'));?>>
         <label class="control-label"><?php echo $entry_customer_group; ?></label>
         <?php foreach ($customer_groups as $customer_group) { ?>
         <?php if ($customer_group['customer_group_id'] == $customer_group_id) { ?>

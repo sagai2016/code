@@ -304,52 +304,52 @@
                     <tr>
                       <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
                       <td class="text-left"><?php if ($sort == 'lt.order_id') { ?>
-                        <a href="<?php echo $sort_order_id; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_order_id; ?></a>
+                        <a href="<?php echo $sort_order_id; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_order_id; ?></a>
                         <?php } else { ?>
                         <a href="<?php echo $sort_order_id; ?>"><?php echo $column_order_id; ?></a>
                         <?php } ?></td>
                       <td class="text-left"><?php if ($sort == 'customer') { ?>
-                        <a href="<?php echo $sort_customer; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_customer; ?></a>
+                        <a href="<?php echo $sort_customer; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_customer; ?></a>
                         <?php } else { ?>
                         <a href="<?php echo $sort_customer; ?>"><?php echo $column_customer; ?></a>
                         <?php } ?></td>
                       <td class="text-left"><?php if ($sort == 'lt.amount') { ?>
-                        <a href="<?php echo $sort_amount; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_amount; ?></a>
+                        <a href="<?php echo $sort_amount; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_amount; ?></a>
                         <?php } else { ?>
                         <a href="<?php echo $sort_amount; ?>"><?php echo $column_amount; ?></a>
                         <?php } ?></td>
                       <td class="text-left"><?php if ($sort == 'lt.downpayment') { ?>
-                        <a href="<?php echo $sort_dp_percent; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_dp_percent; ?></a>
+                        <a href="<?php echo $sort_dp_percent; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_dp_percent; ?></a>
                         <?php } else { ?>
                         <a href="<?php echo $sort_dp_percent; ?>"><?php echo $column_dp_percent; ?></a>
                         <?php } ?></td>
                       <td class="text-left"><?php if ($sort == 'lt.months') { ?>
-                        <a href="<?php echo $sort_months; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_months; ?></a>
+                        <a href="<?php echo $sort_months; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_months; ?></a>
                         <?php } else { ?>
                         <a href="<?php echo $sort_months; ?>"><?php echo $column_months; ?></a>
                         <?php } ?></td>
                       <td class="text-left"><?php if ($sort == 'lt.downpayment_amount') { ?>
-                        <a href="<?php echo $sort_dp_amount; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_dp_amount; ?></a>
+                        <a href="<?php echo $sort_dp_amount; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_dp_amount; ?></a>
                         <?php } else { ?>
                         <a href="<?php echo $sort_dp_amount; ?>"><?php echo $column_dp_amount; ?></a>
                         <?php } ?></td>
                       <td class="text-left"><?php if ($sort == 'lt.first_payment_due') { ?>
-                        <a href="<?php echo $sort_first_payment; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_first_payment; ?></a>
+                        <a href="<?php echo $sort_first_payment; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_first_payment; ?></a>
                         <?php } else { ?>
                         <a href="<?php echo $sort_first_payment; ?>"><?php echo $column_first_payment; ?></a>
                         <?php } ?></td>
                       <td class="text-left"><?php if ($sort == 'lt.last_payment_due') { ?>
-                        <a href="<?php echo $sort_last_payment; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_last_payment; ?></a>
+                        <a href="<?php echo $sort_last_payment; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_last_payment; ?></a>
                         <?php } else { ?>
                         <a href="<?php echo $sort_last_payment; ?>"><?php echo $column_last_payment; ?></a>
                         <?php } ?></td>
                       <td class="text-left"><?php if ($sort == 'lt.status') { ?>
-                        <a href="<?php echo $sort_status; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_status; ?></a>
+                        <a href="<?php echo $sort_status; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_status; ?></a>
                         <?php } else { ?>
                         <a href="<?php echo $sort_status; ?>"><?php echo $column_status; ?></a>
                         <?php } ?></td>
                       <td class="text-left"><?php if ($sort == 'lt.date_added') { ?>
-                        <a href="<?php echo $sort_date_added; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_date_added; ?></a>
+                        <a href="<?php echo $sort_date_added; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_date_added; ?></a>
                         <?php } else { ?>
                         <a href="<?php echo $sort_date_added; ?>"><?php echo $column_date_added; ?></a>
                         <?php } ?></td>
