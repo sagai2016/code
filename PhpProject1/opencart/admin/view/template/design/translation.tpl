@@ -37,11 +37,11 @@
                   <td class="text-left">
                     <div class="progress">
                         <?php if ($list['progress'] > 75) { ?>
-                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width:<?php echo $list['progress']; ?>%"><?php echo $list['progress']; ?>% Complete (success)</div>
+                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" <?php echo 'style="min-width: 2em; width:'.$list['progress'].'"'; ?>.'%'.><?php echo $list['progress']; ?>% Complete (success)</div>
                         <?php }else if ($list['progress'] >25 && $list['progress'] < 75) { ?>
-                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width:<?php echo $list['progress']; ?>%"><?php echo $list['progress']; ?>% Complete (success)</div>
+                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" <?php echo 'style="min-width: 2em; width:'.$list['progress'].'"'; ?>.'%'.><?php echo $list['progress']; ?>% Complete (success)</div>
                         <?php }else if ($list['progress'] < 25) { ?>
-                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width:<?php echo $list['progress']; ?>%"><?php echo $list['progress']; ?>% Complete (success)</div>
+                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" <?php echo 'style="min-width: 2em; width:'.$list['progress'].'"'; ?>.'%'.><?php echo $list['progress']; ?>% Complete (success)</div>
                         <?php } ?>
                     </div></td>
                   <td class="text-right">

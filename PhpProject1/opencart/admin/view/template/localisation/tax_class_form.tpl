@@ -55,7 +55,7 @@
             <tbody>
               <?php $tax_rule_row = 0; ?>
               <?php foreach ($tax_rules as $tax_rule) { ?>
-              <tr id="tax-rule-row<?php echo $tax_rule_row; ?>">
+              <tr <?php echo 'id="tax-rule-row'.$tax_rule_row.'"'; ?>>
                 <td class="text-left"><select name="tax_rule[<?php echo $tax_rule_row; ?>][tax_rate_id]" class="form-control">
                     <?php foreach ($tax_rates as $tax_rate) { ?>
                     <?php  if ($tax_rate['tax_rate_id'] == $tax_rule['tax_rate_id']) { ?>

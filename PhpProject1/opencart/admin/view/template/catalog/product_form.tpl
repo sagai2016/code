@@ -425,7 +425,7 @@
                   <tbody>
                     <?php $attribute_row = 0; ?>
                     <?php foreach ($product_attributes as $product_attribute) { ?>
-                    <tr id="attribute-row<?php echo $attribute_row; ?>">
+                    <tr <?php echo 'id="attribute-row'.$attribute_row.'"'; ?>>
                       <td class="text-left" style="width: 40%;"><input type="text" name="product_attribute[<?php echo $attribute_row; ?>][name]" value="<?php echo $product_attribute['name']; ?>" placeholder="<?php echo $entry_attribute; ?>" class="form-control" />
                         <input type="hidden" name="product_attribute[<?php echo $attribute_row; ?>][attribute_id]" value="<?php echo $product_attribute['attribute_id']; ?>" /></td>
                       <td class="text-left"><?php foreach ($languages as $language) { ?>
@@ -466,7 +466,7 @@
                     <?php $option_row = 0; ?>
                     <?php $option_value_row = 0; ?>
                     <?php foreach ($product_options as $product_option) { ?>
-                    <div class="tab-pane" id="tab-option<?php echo $option_row; ?>">
+                    <div class="tab-pane" <?php echo 'id="tab-option'.$option_row.'"'; ?>>
                       <input type="hidden" name="product_option[<?php echo $option_row; ?>][product_option_id]" value="<?php echo $product_option['product_option_id']; ?>" />
                       <input type="hidden" name="product_option[<?php echo $option_row; ?>][name]" value="<?php echo $product_option['name']; ?>" />
                       <input type="hidden" name="product_option[<?php echo $option_row; ?>][option_id]" value="<?php echo $product_option['option_id']; ?>" />
@@ -474,7 +474,7 @@
                       <div class="form-group">
                         <label class="col-sm-2 control-label" for="input-required<?php echo $option_row; ?>"><?php echo $entry_required; ?></label>
                         <div class="col-sm-10">
-                          <select name="product_option[<?php echo $option_row; ?>][required]" id="input-required<?php echo $option_row; ?>" class="form-control">
+                          <select name="product_option[<?php echo $option_row; ?>][required]" <?php echo 'id="input-required'.$option_row.'"'; ?> class="form-control">
                             <?php if ($product_option['required']) { ?>
                             <option value="1" selected="selected"><?php echo $text_yes; ?></option>
                             <option value="0"><?php echo $text_no; ?></option>
@@ -489,7 +489,7 @@
                       <div class="form-group">
                         <label class="col-sm-2 control-label" for="input-value<?php echo $option_row; ?>"><?php echo $entry_option_value; ?></label>
                         <div class="col-sm-10">
-                          <input type="text" name="product_option[<?php echo $option_row; ?>][value]" value="<?php echo $product_option['value']; ?>" placeholder="<?php echo $entry_option_value; ?>" id="input-value<?php echo $option_row; ?>" class="form-control" />
+                          <input type="text" name="product_option[<?php echo $option_row; ?>][value]" value="<?php echo $product_option['value']; ?>" placeholder="<?php echo $entry_option_value; ?>" <?php echo 'id="input-value'.$option_row.'"'; ?> class="form-control" />
                         </div>
                       </div>
                       <?php } ?>
@@ -497,7 +497,7 @@
                       <div class="form-group">
                         <label class="col-sm-2 control-label" for="input-value<?php echo $option_row; ?>"><?php echo $entry_option_value; ?></label>
                         <div class="col-sm-10">
-                          <textarea name="product_option[<?php echo $option_row; ?>][value]" rows="5" placeholder="<?php echo $entry_option_value; ?>" id="input-value<?php echo $option_row; ?>" class="form-control"><?php echo $product_option['value']; ?></textarea>
+                          <textarea name="product_option[<?php echo $option_row; ?>][value]" rows="5" placeholder="<?php echo $entry_option_value; ?>" <?php echo 'id="input-value'.$option_row.'"'; ?> class="form-control"><?php echo $product_option['value']; ?></textarea>
                         </div>
                       </div>
                       <?php } ?>
@@ -505,7 +505,7 @@
                       <div class="form-group" style="display: none;">
                         <label class="col-sm-2 control-label" for="input-value<?php echo $option_row; ?>"><?php echo $entry_option_value; ?></label>
                         <div class="col-sm-10">
-                          <input type="text" name="product_option[<?php echo $option_row; ?>][value]" value="<?php echo $product_option['value']; ?>" placeholder="<?php echo $entry_option_value; ?>" id="input-value<?php echo $option_row; ?>" class="form-control" />
+                          <input type="text" name="product_option[<?php echo $option_row; ?>][value]" value="<?php echo $product_option['value']; ?>" placeholder="<?php echo $entry_option_value; ?>" <?php echo 'id="input-value'.$option_row.'"'; ?> class="form-control" />
                         </div>
                       </div>
                       <?php } ?>
@@ -514,7 +514,7 @@
                         <label class="col-sm-2 control-label" for="input-value<?php echo $option_row; ?>"><?php echo $entry_option_value; ?></label>
                         <div class="col-sm-3">
                           <div class="input-group date">
-                            <input type="text" name="product_option[<?php echo $option_row; ?>][value]" value="<?php echo $product_option['value']; ?>" placeholder="<?php echo $entry_option_value; ?>" data-date-format="YYYY-MM-DD" id="input-value<?php echo $option_row; ?>" class="form-control" />
+                            <input type="text" name="product_option[<?php echo $option_row; ?>][value]" value="<?php echo $product_option['value']; ?>" placeholder="<?php echo $entry_option_value; ?>" data-date-format="YYYY-MM-DD" <?php echo 'id="input-value'.$option_row.'"'; ?> class="form-control" />
                             <span class="input-group-btn">
                             <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
                             </span></div>
@@ -526,7 +526,7 @@
                         <label class="col-sm-2 control-label" for="input-value<?php echo $option_row; ?>"><?php echo $entry_option_value; ?></label>
                         <div class="col-sm-10">
                           <div class="input-group time">
-                            <input type="text" name="product_option[<?php echo $option_row; ?>][value]" value="<?php echo $product_option['value']; ?>" placeholder="<?php echo $entry_option_value; ?>" data-date-format="HH:mm" id="input-value<?php echo $option_row; ?>" class="form-control" />
+                            <input type="text" name="product_option[<?php echo $option_row; ?>][value]" value="<?php echo $product_option['value']; ?>" placeholder="<?php echo $entry_option_value; ?>" data-date-format="HH:mm" <?php echo 'id="input-value'.$option_row.'"'; ?> class="form-control" />
                             <span class="input-group-btn">
                             <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
                             </span></div>
@@ -538,7 +538,7 @@
                         <label class="col-sm-2 control-label" for="input-value<?php echo $option_row; ?>"><?php echo $entry_option_value; ?></label>
                         <div class="col-sm-10">
                           <div class="input-group datetime">
-                            <input type="text" name="product_option[<?php echo $option_row; ?>][value]" value="<?php echo $product_option['value']; ?>" placeholder="<?php echo $entry_option_value; ?>" data-date-format="YYYY-MM-DD HH:mm" id="input-value<?php echo $option_row; ?>" class="form-control" />
+                            <input type="text" name="product_option[<?php echo $option_row; ?>][value]" value="<?php echo $product_option['value']; ?>" placeholder="<?php echo $entry_option_value; ?>" data-date-format="YYYY-MM-DD HH:mm" <?php echo 'id="input-value'.$option_row.'"'; ?> class="form-control" />
                             <span class="input-group-btn">
                             <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
                             </span></div>
@@ -547,7 +547,7 @@
                       <?php } ?>
                       <?php if ($product_option['type'] == 'select' || $product_option['type'] == 'radio' || $product_option['type'] == 'checkbox' || $product_option['type'] == 'image') { ?>
                       <div class="table-responsive">
-                        <table id="option-value<?php echo $option_row; ?>" class="table table-striped table-bordered table-hover">
+                        <table <?php echo 'id="option-value'.$option_row.'"'; ?> class="table table-striped table-bordered table-hover">
                           <thead>
                             <tr>
                               <td class="text-left"><?php echo $entry_option_value; ?></td>
@@ -561,7 +561,7 @@
                           </thead>
                           <tbody>
                             <?php foreach ($product_option['product_option_value'] as $product_option_value) { ?>
-                            <tr id="option-value-row<?php echo $option_value_row; ?>">
+                            <tr <?php echo 'id="option-value-row'.$option_value_row.'"'; ?>>
                               <td class="text-left"><select name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][option_value_id]" class="form-control">
                                   <?php if (isset($option_values[$product_option['option_id']])) { ?>
                                   <?php foreach ($option_values[$product_option['option_id']] as $option_value) { ?>
@@ -636,7 +636,7 @@
                           </tfoot>
                         </table>
                       </div>
-                      <select id="option-values<?php echo $option_row; ?>" style="display: none;">
+                      <select <?php echo 'id="option-values'.$option_row.'"'; ?> style="display: none;">
                         <?php if (isset($option_values[$product_option['option_id']])) { ?>
                         <?php foreach ($option_values[$product_option['option_id']] as $option_value) { ?>
                         <option value="<?php echo $option_value['option_value_id']; ?>"><?php echo $option_value['name']; ?></option>
@@ -665,7 +665,7 @@
                     <?php $recurring_row = 0; ?>
                     <?php foreach ($product_recurrings as $product_recurring) { ?>
 
-                    <tr id="recurring-row<?php echo $recurring_row; ?>">
+                    <tr <?php echo 'id="recurring-row'.$recurring_row.'"'; ?>>
                       <td class="text-left"><select name="product_recurring[<?php echo $recurring_row; ?>][recurring_id]" class="form-control">
                           <?php foreach ($recurrings as $recurring) { ?>
                           <?php if ($recurring['recurring_id'] == $product_recurring['recurring_id']) { ?>
@@ -715,7 +715,7 @@
                   <tbody>
                     <?php $discount_row = 0; ?>
                     <?php foreach ($product_discounts as $product_discount) { ?>
-                    <tr id="discount-row<?php echo $discount_row; ?>">
+                    <tr <?php echo 'id="discount-row'.$discount_row.'"'; ?>>
                       <td class="text-left"><select name="product_discount[<?php echo $discount_row; ?>][customer_group_id]" class="form-control">
                           <?php foreach ($customer_groups as $customer_group) { ?>
                           <?php if ($customer_group['customer_group_id'] == $product_discount['customer_group_id']) { ?>
@@ -768,7 +768,7 @@
                   <tbody>
                     <?php $special_row = 0; ?>
                     <?php foreach ($product_specials as $product_special) { ?>
-                    <tr id="special-row<?php echo $special_row; ?>">
+                    <tr <?php echo 'id="special-row'.$special_row.'"'; ?>>
                       <td class="text-left"><select name="product_special[<?php echo $special_row; ?>][customer_group_id]" class="form-control">
                           <?php foreach ($customer_groups as $customer_group) { ?>
                           <?php if ($customer_group['customer_group_id'] == $product_special['customer_group_id']) { ?>
@@ -832,8 +832,8 @@
                   <tbody>
                     <?php $image_row = 0; ?>
                     <?php foreach ($product_images as $product_image) { ?>
-                    <tr id="image-row<?php echo $image_row; ?>">
-                      <td class="text-left"><a href="" id="thumb-image<?php echo $image_row; ?>" data-toggle="image" class="img-thumbnail"><img src="<?php echo $product_image['thumb']; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a><input type="hidden" name="product_image[<?php echo $image_row; ?>][image]" value="<?php echo $product_image['image']; ?>" id="input-image<?php echo $image_row; ?>" /></td>
+                    <tr <?php echo 'id="image-row'.$image_row.'"'; ?>>
+                      <td class="text-left"><a href="" <?php echo 'id="thumb-image'.$image_row.'"'; ?> data-toggle="image" class="img-thumbnail"><img src="<?php echo $product_image['thumb']; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a><input type="hidden" name="product_image[<?php echo $image_row; ?>][image]" value="<?php echo $product_image['image']; ?>" <?php echo 'id="input-image'.$image_row.'"'; ?> /></td>
                       <td class="text-right"><input type="text" name="product_image[<?php echo $image_row; ?>][sort_order]" value="<?php echo $product_image['sort_order']; ?>" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>
                       <td class="text-left"><button type="button" onclick="$('#image-row<?php echo $image_row; ?>').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>
                     </tr>

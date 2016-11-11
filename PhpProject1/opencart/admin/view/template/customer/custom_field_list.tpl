@@ -36,22 +36,22 @@
                 <tr>
                   <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
                   <td class="text-left"><?php if ($sort == 'cfd.name') { ?>
-                    <a href="<?php echo $sort_name; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_name; ?></a>
+                    <a href="<?php echo $sort_name; ?>" <?php echo 'class="'.strtolower($order).'"'; ?>><?php echo $column_name; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_name; ?>"><?php echo $column_name; ?></a>
                     <?php } ?></td>
                   <td class="text-left"><?php if ($sort == 'cf.location') { ?>
-                    <a href="<?php echo $sort_location; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_location; ?></a>
+                    <a href="<?php echo $sort_location; ?>" <?php echo 'class="'.strtolower($order).'"'; ?>><?php echo $column_location; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_location; ?>"><?php echo $column_location; ?></a>
                     <?php } ?></td>
                   <td class="text-left"><?php if ($sort == 'cf.type') { ?>
-                    <a href="<?php echo $sort_type; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_type; ?></a>
+                    <a href="<?php echo $sort_type; ?>" <?php echo 'class="'.strtolower($order).'"'; ?>><?php echo $column_type; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_type; ?>"><?php echo $column_type; ?></a>
                     <?php } ?></td>
                   <td class="text-right"><?php if ($sort == 'cf.sort_order') { ?>
-                    <a href="<?php echo $sort_sort_order; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_sort_order; ?></a>
+                    <a href="<?php echo $sort_sort_order; ?>" <?php echo 'class="'.strtolower($order).'"'; ?>><?php echo $column_sort_order; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_sort_order; ?>"><?php echo $column_sort_order; ?></a>
                     <?php } ?></td>

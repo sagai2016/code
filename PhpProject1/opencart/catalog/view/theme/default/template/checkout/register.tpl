@@ -40,7 +40,7 @@
         </div>
       </div>
       
-      <div class="form-group" style="display: <?php echo (count($customer_groups) > 1 ? 'block' : 'none'); ?>;">
+      <div class="form-group" <?php echo 'style="display: '.(count($customer_groups) > 1 ? 'block' : 'none').'"'; ?>;>
         <label class="control-label"><?php echo $entry_customer_group; ?></label>
         <?php foreach ($customer_groups as $customer_group) { ?>
         <?php if ($customer_group['customer_group_id'] == $customer_group_id) { ?>

@@ -23,7 +23,7 @@
   </div>
   <?php } ?>
   <br />
-  <div id="shipping-new" style="display: <?php echo ($addresses ? 'none' : 'block'); ?>;">
+  <div id="shipping-new" <?php echo 'style="display: '.($addresses ? 'none' : 'block').'"'; ?>;>
     <div class="form-group required">
       <label class="col-sm-2 control-label" for="input-shipping-fullname"><?php echo $entry_fullname; ?></label>
       <div class="col-sm-10">

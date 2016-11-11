@@ -101,7 +101,7 @@
             </thead>
             <tbody>
               <?php foreach ($menu_modules as $menu_module) { ?>
-              <tr id="module-row<?php echo $module_row; ?>">
+              <tr <?php echo 'id="module-row'.$module_row.'"'; ?>>
                 <td class="text-left"><select name="menu_module[<?php echo $module_row; ?>][code]" class="form-control input-sm">
                     <?php foreach ($extensions as $extension) { ?>
                     <optgroup label="<?php echo $extension['name']; ?>">

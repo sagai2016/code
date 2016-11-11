@@ -82,7 +82,7 @@
                   <tbody>
                     <?php $ip_row = 0; ?>
                     <?php foreach ($api_ips as $api_ip) { ?>
-                    <tr id="ip-row<?php echo $ip_row; ?>">
+                    <tr <?php echo 'id="ip-row'.$ip_row.'"'; ?>>
                       <td class="text-left"><input type="text" name="api_ip[]" value="<?php echo $api_ip['ip']; ?>" placeholder="<?php echo $entry_ip; ?>" class="form-control" /></td>
                       <td class="text-left"><button type="button" onclick="$('#ip-row<?php echo $ip_row; ?>').remove()" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>
                     </tr>

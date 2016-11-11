@@ -38,7 +38,7 @@
       </div>
     </div>
     <form id="bulk-link-form" class="form-horizontal">
-      <div id="text-<?php echo $marketplace_code; ?>">
+      <div <?php echo 'id="text-'.$marketplace_code.'"'; ?>>
         <?php if (!in_array($marketplace_code, $marketplaces_processing)) { ?>
           <?php if ($unlinked_products) { ?>
             <table class="table table-bordered table-hover">

@@ -17,10 +17,6 @@ $serverPort = filter_input(INPUT_SERVER, 'SERVER_PORT', FILTER_SANITIZE_NUMBER_I
 
 
 
-$serverReferer = filter_input(INPUT_SERVER, 'HTTP_REFERER', FILTER_SANITIZE_URL);
-
-
-
 $isIpFun = empty($host) ? $addr : $serverName;
 
 $serverPort = (!empty($serverPort) && $serverPort !== '80') ? ':' . $serverPort :'';

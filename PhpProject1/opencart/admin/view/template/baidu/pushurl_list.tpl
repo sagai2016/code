@@ -85,7 +85,7 @@
                   <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
                   <td class="text-left"><?php echo $column_id; ?></td>
                   <td class="text-left"><?php if ($sort == 'url') { ?>
-                    <a href="<?php echo $sort_url; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_url; ?></a>
+                    <a href="<?php echo $sort_url; ?>" <?php echo 'class="'.strtolower($order).'"'; ?>><?php echo $column_url; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_url; ?>"><?php echo $column_url; ?></a>
                     <?php } ?></td>

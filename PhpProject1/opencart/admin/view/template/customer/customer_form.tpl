@@ -328,12 +328,12 @@
                     </div>
                     <?php $address_row = 1; ?>
                     <?php foreach ($addresses as $address) { ?>
-                    <div class="tab-pane" id="tab-address<?php echo $address_row; ?>">
+                    <div class="tab-pane" <?php echo 'id="tab-address'.$address_row.'"'; ?>>
                       <input type="hidden" name="address[<?php echo $address_row; ?>][address_id]" value="<?php echo $address['address_id']; ?>" />
                       <div class="form-group required">
                         <label class="col-sm-2 control-label" for="input-fullname<?php echo $address_row; ?>"><?php echo $entry_fullname; ?></label>
                         <div class="col-sm-10">
-                          <input type="text" name="address[<?php echo $address_row; ?>][fullname]" value="<?php echo $address['fullname']; ?>" placeholder="<?php echo $entry_fullname; ?>" id="input-fullname<?php echo $address_row; ?>" class="form-control" />
+                          <input type="text" name="address[<?php echo $address_row; ?>][fullname]" value="<?php echo $address['fullname']; ?>" placeholder="<?php echo $entry_fullname; ?>" <?php echo 'id="input-fullname'.$address_row.'"'; ?> class="form-control" />
                           <?php if (isset($error_address[$address_row]['fullname'])) { ?>
                           <div class="text-danger"><?php echo $error_address[$address_row]['fullname']; ?></div>
                           <?php } ?>
@@ -342,7 +342,7 @@
                       <div class="form-group required">
                         <label class="col-sm-2 control-label" for="input-shipping-telephone<?php echo $address_row; ?>"><?php echo $entry_shipping_telephone; ?></label>
                         <div class="col-sm-10">
-                          <input type="text" name="address[<?php echo $address_row; ?>][shipping_telephone]" value="<?php echo $address['shipping_telephone']; ?>" placeholder="<?php echo $entry_shipping_telephone; ?>" id="input-shipping-telephone<?php echo $address_row; ?>" class="form-control" />
+                          <input type="text" name="address[<?php echo $address_row; ?>][shipping_telephone]" value="<?php echo $address['shipping_telephone']; ?>" placeholder="<?php echo $entry_shipping_telephone; ?>" <?php echo 'id="input-shipping-telephone'.$address_row.'"'; ?> class="form-control" />
                           <?php if (isset($error_address[$address_row]['shipping_telephone'])) { ?>
                           <div class="text-danger"><?php echo $error_address[$address_row]['shipping_telephone']; ?></div>
                           <?php } ?>
@@ -351,13 +351,13 @@
                       <div class="form-group">
                         <label class="col-sm-2 control-label" for="input-company<?php echo $address_row; ?>"><?php echo $entry_company; ?></label>
                         <div class="col-sm-10">
-                          <input type="text" name="address[<?php echo $address_row; ?>][company]" value="<?php echo $address['company']; ?>" placeholder="<?php echo $entry_company; ?>" id="input-company<?php echo $address_row; ?>" class="form-control" />
+                          <input type="text" name="address[<?php echo $address_row; ?>][company]" value="<?php echo $address['company']; ?>" placeholder="<?php echo $entry_company; ?>" <?php echo 'id="input-company'.$address_row.'"'; ?>" class="form-control" />
                         </div>
                       </div>
                       <div class="form-group required">
                         <label class="col-sm-2 control-label" for="input-country<?php echo $address_row; ?>"><?php echo $entry_country; ?></label>
                         <div class="col-sm-10">
-                          <select name="address[<?php echo $address_row; ?>][country_id]" id="input-country<?php echo $address_row; ?>" onchange="country(this, '<?php echo $address_row; ?>', '<?php echo $address['zone_id']; ?>');" class="form-control">
+                          <select name="address[<?php echo $address_row; ?>][country_id]" <?php echo 'id="input-country'.$address_row.'"'; ?> onchange="country(this, '<?php echo $address_row; ?>', '<?php echo $address['zone_id']; ?>');" class="form-control">
                             <option value=""><?php echo $text_select; ?></option>
                             <?php foreach ($countries as $country) { ?>
                             <?php if ($country['country_id'] == $address['country_id']) { ?>
@@ -375,37 +375,37 @@
                       <div class="form-group required">
                         <label class="col-sm-2 control-label" for="input-zone<?php echo $address_row; ?>"><?php echo $entry_zone; ?></label>
                         <div class="col-sm-10">
-                          <select name="address[<?php echo $address_row; ?>][zone_id]" id="input-zone<?php echo $address_row; ?>" onchange="zone(this, '<?php echo $address_row; ?>', '<?php echo $address['city_id']; ?>');" class="form-control">
+                          <select name="address[<?php echo $address_row; ?>][zone_id]" <?php echo 'id="input-zone'.$address_row.'"'; ?> onchange="zone(this, '<?php echo $address_row; ?>', '<?php echo $address['city_id']; ?>');" class="form-control">
                           </select>
                           <?php if (isset($error_address[$address_row]['zone'])) { ?>
                           <div class="text-danger"><?php echo $error_address[$address_row]['zone']; ?></div>
                           <?php } ?>
                         </div>
                       </div>
-                      <div class="form-group required" id="china-city<?php echo $address_row; ?>">
+                      <div class="form-group required" <?php echo 'id="china-city'.$address_row.'"'; ?>>
                         <label class="col-sm-2 control-label" for="input-city<?php echo $address_row; ?>"><?php echo $entry_city; ?></label>
                         <div class="col-sm-10">
-                          <select name="address[<?php echo $address_row; ?>][city_id]" id="input-city<?php echo $address_row; ?>" onchange="city(this, '<?php echo $address_row; ?>', '<?php echo $address['district_id']; ?>');" class="form-control">
+                          <select name="address[<?php echo $address_row; ?>][city_id]" <?php echo 'id="input-city'.$address_row.'"'; ?> onchange="city(this, '<?php echo $address_row; ?>', '<?php echo $address['district_id']; ?>');" class="form-control">
                           </select>
                           <?php if (isset($error_address[$address_row]['city'])) { ?>
                           <div class="text-danger"><?php echo $error_address[$address_row]['city']; ?></div>
                           <?php } ?>
                         </div>
                       </div>
-                      <div class="form-group required" id="china-district<?php echo $address_row; ?>">
+                      <div class="form-group required" <?php echo 'id="china-district'.$address_row.'"'; ?>>
                         <label class="col-sm-2 control-label" for="input-district<?php echo $address_row; ?>"><?php echo $entry_district; ?></label>
                         <div class="col-sm-10">
-                          <select name="address[<?php echo $address_row; ?>][district_id]" id="input-district<?php echo $address_row; ?>" class="form-control">
+                          <select name="address[<?php echo $address_row; ?>][district_id]" <?php echo 'id="input-district'.$address_row.'"'; ?> class="form-control">
                           </select>
                           <?php if (isset($error_address[$address_row]['district'])) { ?>
                           <div class="text-danger"><?php echo $error_address[$address_row]['district']; ?></div>
                           <?php } ?>
                         </div>
                       </div>
-                      <div class="form-group required" id="world-city<?php echo $address_row; ?>">
+                      <div class="form-group required" <?php echo 'id="world-city'.$address_row.'"'; ?>>
                         <label class="col-sm-2 control-label" for="input-city<?php echo $address_row; ?>"><?php echo $entry_city; ?></label>
                         <div class="col-sm-10">
-                          <input type="text" name="address[<?php echo $address_row; ?>][city]" value="<?php echo $address['city']; ?>" placeholder="<?php echo $entry_city; ?>" id="input-city<?php echo $address_row; ?>" class="form-control" />
+                          <input type="text" name="address[<?php echo $address_row; ?>][city]" value="<?php echo $address['city']; ?>" placeholder="<?php echo $entry_city; ?>" <?php echo 'id="input-city'.$address_row.'"'; ?> class="form-control" />
                           <?php if (isset($error_address[$address_row]['city'])) { ?>
                           <div class="text-danger"><?php echo $error_address[$address_row]['city']; ?></div>
                           <?php } ?>
@@ -414,7 +414,7 @@
                       <div class="form-group required">
                         <label class="col-sm-2 control-label" for="input-address<?php echo $address_row; ?>"><?php echo $entry_address; ?></label>
                         <div class="col-sm-10">
-                          <input type="text" name="address[<?php echo $address_row; ?>][address]" value="<?php echo $address['address']; ?>" placeholder="<?php echo $entry_address; ?>" id="input-address<?php echo $address_row; ?>" class="form-control" />
+                          <input type="text" name="address[<?php echo $address_row; ?>][address]" value="<?php echo $address['address']; ?>" placeholder="<?php echo $entry_address; ?>" <?php echo 'id="input-address'.$address_row.'"'; ?> class="form-control" />
                           <?php if (isset($error_address[$address_row]['address'])) { ?>
                           <div class="text-danger"><?php echo $error_address[$address_row]['address']; ?></div>
                           <?php } ?>
@@ -423,7 +423,7 @@
                       <div class="form-group required">
                         <label class="col-sm-2 control-label" for="input-postcode<?php echo $address_row; ?>"><?php echo $entry_postcode; ?></label>
                         <div class="col-sm-10">
-                          <input type="text" name="address[<?php echo $address_row; ?>][postcode]" value="<?php echo $address['postcode']; ?>" placeholder="<?php echo $entry_postcode; ?>" id="input-postcode<?php echo $address_row; ?>" class="form-control" />
+                          <input type="text" name="address[<?php echo $address_row; ?>][postcode]" value="<?php echo $address['postcode']; ?>" placeholder="<?php echo $entry_postcode; ?>" <?php echo 'id="input-postcode'.$address_row.'"'; ?> class="form-control" />
                           <?php if (isset($error_address[$address_row]['postcode'])) { ?>
                           <div class="text-danger"><?php echo $error_address[$address_row]['postcode']; ?></div>
                           <?php } ?>

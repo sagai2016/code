@@ -376,10 +376,10 @@
                           <?php if ($i_valid === null) { $i_valid = $i; } ?>
                           <span class="label label-success" data-toggle="tooltip" data-original-title="<?php echo $text_ebay_imagesize_ok; ?>"><?php echo $img['width']; ?> x <?php echo $img['height']; ?></span>
                           <?php } ?></td>
-                        <td class="text-center"><input type="checkbox" id="imgUrl<?php echo $i; ?>" name="img_tpl[<?php echo $i; ?>]" value="<?php echo $img['image']; ?>" class="check-template-image" /></td>
+                        <td class="text-center"><input type="checkbox" <?php echo 'id="imgUrl'.$i.'"'; ?> name="img_tpl[<?php echo $i; ?>]" value="<?php echo $img['image']; ?>" class="check-template-image" /></td>
                         <td class="text-center"><input type="hidden" name="img[<?php echo $i; ?>]" value="null" />
                           <?php if ($img['width'] >= 500 || $img['height'] >= 500) { ?>
-                          <input type="checkbox" class="checkbox-ebay-image" onchange="toggleRad(<?php echo $i; ?>);" id="image-checkbox-<?php echo $i; ?>" name="img[<?php echo $i; ?>]" value="<?php echo $img['image']; ?>" <?php echo ( ($i == 0) ? 'checked="checked" ' : ''); ?> />
+                          <input type="checkbox" class="checkbox-ebay-image" onchange="toggleRad(<?php echo $i; ?>);" <?php echo 'id="image-checkbox-'.$i.'"'; ?> name="img[<?php echo $i; ?>]" value="<?php echo $img['image']; ?>" <?php echo ( ($i == 0) ? 'checked="checked" ' : ''); ?> />
                           <?php } else { ?>
                           -
                           <?php } ?></td>

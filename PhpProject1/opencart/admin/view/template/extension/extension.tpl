@@ -22,7 +22,7 @@
             <div class="btn-group ext-types">
               <?php foreach ($categories as $category) { ?>
               <?php $active = ($type == $category['code'])?' active':''; ?>
-              <button type="button" class="ext-type btn btn-default<?php echo $active; ?>" data-value="<?php echo $category['href']; ?>"><i class="fa fa-filter"></i> <?php echo $category['text']; ?></button>
+              <button type="button" <?php echo 'class="ext-type btn btn-default'.$active.'"'; ?> data-value="<?php echo $category['href']; ?>"><i class="fa fa-filter"></i> <?php echo $category['text']; ?></button>
               <?php } ?>
             </div>
           </div>

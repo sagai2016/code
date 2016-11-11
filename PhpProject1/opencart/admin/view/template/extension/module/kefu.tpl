@@ -82,7 +82,7 @@
                   <tbody>
                     <?php $qq_row = 0; ?>
                     <?php foreach ($service_qqs as $service_qq) { ?>
-                    <tr id="qq-row<?php echo $qq_row; ?>">
+                    <tr <?php echo 'id="qq-row'.$qq_row.'"'; ?>>
                       <td class="text-left"><input type="text" name="service_qq[<?php echo $qq_row; ?>][qq_number]" value="<?php echo $service_qq['qq_number']; ?>" placeholder="<?php echo $entry_qq_number; ?>" class="form-control" /></td>
                       <td class="text-left"><input type="text" name="service_qq[<?php echo $qq_row; ?>][qq_name]" value="<?php echo $service_qq['qq_name']; ?>" placeholder="<?php echo $entry_qq_name; ?>" class="form-control" /></td>
                       <td class="text-left"><input type="text" name="service_qq[<?php echo $qq_row; ?>][sort_order]" value="<?php echo $service_qq['sort_order']; ?>" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>

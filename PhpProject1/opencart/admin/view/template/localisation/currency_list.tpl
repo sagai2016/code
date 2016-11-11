@@ -36,22 +36,22 @@
                 <tr>
                   <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
                   <td class="text-left"><?php if ($sort == 'title') { ?>
-                    <a href="<?php echo $sort_title; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_title; ?></a>
+                    <a href="<?php echo $sort_title; ?>" <?php echo 'class="'.strtolower($order).'"'; ?>><?php echo $column_title; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_title; ?>"><?php echo $column_title; ?></a>
                     <?php } ?></td>
                   <td class="text-left"><?php if ($sort == 'code') { ?>
-                    <a href="<?php echo $sort_code; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_code; ?></a>
+                    <a href="<?php echo $sort_code; ?>" <?php echo 'class="'.strtolower($order).'"'; ?>><?php echo $column_code; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_code; ?>"><?php echo $column_code; ?></a>
                     <?php } ?></td>
                   <td class="text-right"><?php if ($sort == 'value') { ?>
-                    <a href="<?php echo $sort_value; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_value; ?></a>
+                    <a href="<?php echo $sort_value; ?>" <?php echo 'class="'.strtolower($order).'"'; ?>><?php echo $column_value; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_value; ?>"><?php echo $column_value; ?></a>
                     <?php } ?></td>
                   <td class="text-left"><?php if ($sort == 'date_modified') { ?>
-                    <a href="<?php echo $sort_date_modified; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_date_modified; ?></a>
+                    <a href="<?php echo $sort_date_modified; ?>" <?php echo 'class="'.strtolower($order).'"'; ?>><?php echo $column_date_modified; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_date_modified; ?>"><?php echo $column_date_modified; ?></a>
                     <?php } ?></td>

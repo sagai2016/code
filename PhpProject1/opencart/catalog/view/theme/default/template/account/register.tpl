@@ -16,7 +16,7 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+    <div id="content" <?php echo 'class="'.$class.'"'; ?>><?php echo $content_top; ?>
       <h1><?php echo $heading_title; ?></h1>
       <p><?php echo $text_account_already; ?></p>
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -78,7 +78,7 @@
           
         </div>
         
-        <div class="form-group required" style="display: <?php echo (count($customer_groups) > 1 ? 'block' : 'none'); ?>;">
+        <div class="form-group required"  <?php echo 'style="display:'.(count($customer_groups) > 1 ? 'block' : 'none').'"'; ?>;>
           <label class="col-sm-2 control-label"><?php echo $entry_customer_group; ?></label>
           <div class="col-sm-10">
             <?php foreach ($customer_groups as $customer_group) { ?>

@@ -43,7 +43,7 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+    <div id="content" <?php echo 'class="'.$class.'"'; ?>><?php echo $content_top; ?>
       <?php if ($blogs) { ?>
       
         <?php foreach($blogs as $blog) { ?>

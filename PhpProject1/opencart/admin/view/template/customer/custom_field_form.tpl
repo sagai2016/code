@@ -198,7 +198,7 @@
             <tbody>
               <?php $custom_field_value_row = 0; ?>
               <?php foreach ($custom_field_values as $custom_field_value) { ?>
-              <tr id="custom-field-value-row<?php echo $custom_field_value_row; ?>">
+              <tr <?php echo 'id="custom-field-value-row'.$custom_field_value_row.'"'; ?>>
                 <td class="text-left" style="width: 70%;"><input type="hidden" name="custom_field_value[<?php echo $custom_field_value_row; ?>][custom_field_value_id]" value="<?php echo $custom_field_value['custom_field_value_id']; ?>" />
                   <?php foreach ($languages as $language) { ?>
                   <div class="input-group"> <span class="input-group-addon"><img src="language/<?php echo $language['code']; ?>/<?php echo $language['code']; ?>.png" title="<?php echo $language['name']; ?>" /></span>

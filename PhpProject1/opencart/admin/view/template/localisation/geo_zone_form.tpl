@@ -56,7 +56,7 @@
             <tbody>
               <?php $zone_to_geo_zone_row = 0; ?>
               <?php foreach ($zone_to_geo_zones as $zone_to_geo_zone) { ?>
-              <tr id="zone-to-geo-zone-row<?php echo $zone_to_geo_zone_row; ?>">
+              <tr <?php echo 'id="zone-to-geo-zone-row'.$zone_to_geo_zone_row.'"'; ?>>
                 <td class="text-left"><select name="zone_to_geo_zone[<?php echo $zone_to_geo_zone_row; ?>][country_id]" class="form-control" onchange="country(this, '<?php echo $zone_to_geo_zone_row; ?>', '<?php echo $zone_to_geo_zone['zone_id']; ?>');">
                     <?php foreach ($countries as $country) { ?>
                     <?php  if ($country['country_id'] == $zone_to_geo_zone['country_id']) { ?>

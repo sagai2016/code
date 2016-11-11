@@ -1,4 +1,4 @@
-<div id="banner<?php echo $module; ?>" class="owl-carousel">
+<div <?php echo 'id="banner'.$module.'"'; ?> class="owl-carousel">
   <?php foreach ($banners as $banner) { ?>
   <div class="item">
     <?php if ($banner['link']) { ?>

@@ -1,7 +1,7 @@
 <input type="hidden" value="<?php echo (int)$data['national']['flat']['count']; ?>" id="flat_count_national" />
 <?php if (isset($data['national']['flat']['service_id'])) { ?>
   <?php foreach($data['national']['flat']['service_id'] as $key => $service){ ?>
-    <div class="well" id="national_flat_<?php echo $key; ?>">
+    <div class="well" <?php echo 'id="national_flat_'.$key.'"'; ?>>
       <div class="row form-group">
         <div class="col-sm-1 text-right">
           <label class="control-label"><?php echo $text_shipping_service; ?></label>
