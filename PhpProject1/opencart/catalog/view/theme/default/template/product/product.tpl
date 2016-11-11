@@ -13,14 +13,14 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" <?php echo 'class="'.$class."'"; ?>><?php echo $content_top; ?>
+    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
       <div class="row">
         <?php if ($column_left || $column_right) { ?>
         <?php $class = 'col-sm-6'; ?>
         <?php } else { ?>
         <?php $class = 'col-sm-8'; ?>
         <?php } ?>
-        <div <?php echo 'class="'.$class."'"; ?>>
+        <div class="<?php echo $class; ?>">
           <?php if ($thumb || $images) { ?>
           <ul class="thumbnails">
             <?php if ($thumb) { ?>
@@ -118,7 +118,7 @@
         <?php } else { ?>
         <?php $class = 'col-sm-4'; ?>
         <?php } ?>
-        <div <?php echo 'class="'.$class."'"; ?>>
+        <div class="<?php echo $class; ?>">
           <div class="btn-group">
             <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product_id; ?>');"><i class="fa fa-heart"></i></button>
             <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product_id; ?>');"><i class="fa fa-exchange"></i></button>
@@ -331,7 +331,7 @@
         <?php } else { ?>
         <?php $class = 'col-xs-6 col-sm-3'; ?>
         <?php } ?>
-        <div <?php echo 'class="'.$class."'"; ?>>
+        <div class="<?php echo $class; ?>">
           <div class="product-thumb transition">
             <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a></div>
             <div class="caption">

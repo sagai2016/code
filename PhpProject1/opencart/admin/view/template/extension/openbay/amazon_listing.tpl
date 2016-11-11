@@ -45,7 +45,7 @@
                 <?php if ($default_marketplace == $id) { ?>
                 <input type="radio" name="marketplace" id="marketplace_<?php echo $id; ?>" value="<?php echo $id; ?>" checked="checked" />
                 <?php } else { ?>
-                <input type="radio" name="marketplace" <?php echo 'id="marketplace_'.$id;'"' ?> value="<?php echo $id; ?>" />
+                <input type="radio" name="marketplace" id="marketplace_<?php echo $id; ?>" value="<?php echo $id; ?>" />
                 <?php } ?>
                 <?php echo $name; ?> </label>
               <?php } ?>

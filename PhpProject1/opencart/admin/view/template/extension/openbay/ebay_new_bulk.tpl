@@ -36,27 +36,27 @@
           </div>
           <?php if ($products) { ?>
             <?php foreach ($products as $product) { ?>
-              <div class="well listingBox" <?php echo 'id="p_row_'.$i;'"' ?>>
-                <input type="hidden" <?php echo 'class="product_id openbay_data_'.$i;'"' ?> name="product_id" value="<?php echo $i; ?>" />
-                <input type="hidden" <?php echo 'class="openbay_data_'.$i;'"' ?> name="product_id" value="<?php echo $product['product_id']; ?>" id="product-id-<?php echo $i; ?>" />
-                <input type="hidden" name="price_original" <?php echo 'id="price_original_'.$i;'"' ?> value="<?php echo number_format($product['price']*(($default['defaults']['tax']/100) + 1), 2, '.', ''); ?>" />
-                <input type="hidden" <?php echo 'class="openbay_data_'.$i;'"' ?> name="catalog_epid" id="catalog_epid_<?php echo $i; ?>" value="0" />
+              <div class="well listingBox" id="p_row_<?php echo $i; ?>">
+                <input type="hidden" class="product_id openbay_data_<?php echo $i; ?>" name="product_id" value="<?php echo $i; ?>" />
+                <input type="hidden" class="openbay_data_<?php echo $i; ?>" name="product_id" value="<?php echo $product['product_id']; ?>" id="product-id-<?php echo $i; ?>" />
+                <input type="hidden" name="price_original" id="price_original_<?php echo $i; ?>" value="<?php echo number_format($product['price']*(($default['defaults']['tax']/100) + 1), 2, '.', ''); ?>" />
+                <input type="hidden" class="openbay_data_<?php echo $i; ?>" name="catalog_epid" id="catalog_epid_<?php echo $i; ?>" value="0" />
                 <div class="row">
                   <div class="col-sm-7">
-                    <h4 <?php echo 'id="product_title_'.$i;'"' ?> style="display:none;"></h4>
+                    <h4 id="product_title_<?php echo $i; ?>" style="display:none;"></h4>
                   </div>
-                  <div class="col-sm-5 form-group text-right" <?php echo 'id="p_row_buttons_'.$i;'"' ?>>
-                    <a class="btn btn-primary" onclick="showCategory('<?php echo $i; ?>');" <?php echo 'id="editCategory_'.$i;'"' ?> ><i class="fa fa-pencil"></i> <?php echo $text_category; ?></a>
-                    <a class="btn btn-primary" onclick="showProfiles('<?php echo $i; ?>');" <?php echo 'id="editProfiles_'.$i;'"' ?> ><i class="fa fa-pencil"></i> <?php echo $text_profile; ?></a>
-                    <a class="btn btn-primary" style="display:none;" onclick="showCatalog('<?php echo $i; ?>');" <?php echo 'id="editCatalog_'.$i;'"' ?> ><i class="fa fa-pencil"></i> <?php echo $text_catalog; ?></a>
-                    <a class="btn btn-primary" style="display:none;" onclick="showFeatures('<?php echo $i; ?>');" <?php echo 'id="editFeature_'.$i;'"' ?>><i class="fa fa-pencil"></i> <?php echo $text_features; ?></a>
+                  <div class="col-sm-5 form-group text-right" id="p_row_buttons_<?php echo $i; ?>">
+                    <a class="btn btn-primary" onclick="showCategory('<?php echo $i; ?>');" id="editCategory_<?php echo $i; ?>" ><i class="fa fa-pencil"></i> <?php echo $text_category; ?></a>
+                    <a class="btn btn-primary" onclick="showProfiles('<?php echo $i; ?>');" id="editProfiles_<?php echo $i; ?>" ><i class="fa fa-pencil"></i> <?php echo $text_profile; ?></a>
+                    <a class="btn btn-primary" style="display:none;" onclick="showCatalog('<?php echo $i; ?>');" id="editCatalog_<?php echo $i; ?>" ><i class="fa fa-pencil"></i> <?php echo $text_catalog; ?></a>
+                    <a class="btn btn-primary" style="display:none;" onclick="showFeatures('<?php echo $i; ?>');" id="editFeature_<?php echo $i; ?>"><i class="fa fa-pencil"></i> <?php echo $text_features; ?></a>
                     <a class="btn btn-danger" onclick="removeBox('<?php echo $i; ?>')"> <i class="fa fa-minus-circle"></i> <?php echo $button_remove; ?></a>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-12">
-                    <div class="row" <?php echo 'id="product_messages_'.$i;'"' ?> style="display:none;"></div>
-                    <div <?php echo 'class="row product_content_'.$i;'"' ?>>
+                    <div class="row" id="product_messages_<?php echo $i; ?>" style="display:none;"></div>
+                    <div class="row product_content_<?php echo $i; ?>">
                       <div class="col-sm-2">
                         <div class="row">
                           <div class="col-sm-12 form-group text-center">
@@ -66,10 +66,10 @@
                         <div class="row">
                           <div class="col-sm-12 form-group">
                             <h4 class="text-center"><span class="label label-success"><?php echo $text_stock; ?>: <?php echo $product['quantity']; ?></span></h4>
-                            <input type="hidden" name="qty" value="<?php echo $product['quantity']; ?>" <?php echo 'class="openbay_data_'.$i;'"' ?> />
+                            <input type="hidden" name="qty" value="<?php echo $product['quantity']; ?>" class="openbay_data_<?php echo $i; ?>" />
                           </div>
                         </div>
-                        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" <?php echo 'id="overlay-feature-'.$i;'"' ?> data-backdrop="static" data-keyboard="false">
+                        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="overlay-feature-<?php echo $i; ?>" data-backdrop="static" data-keyboard="false">
                           <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                               <div class="modal-body">
@@ -81,39 +81,39 @@
                                     <h1 class="panel-title"><?php echo $text_features; ?></h1>
                                   </div>
                                 </div>
-                                <div class="container-fluid" style="display: none;" <?php echo 'id="product_identifier_container_'.$i;'"' ?>>
+                                <div class="container-fluid" style="display: none;" id="product_identifier_container_<?php echo $i; ?>">
                                   <div class="panel panel-default">
                                     <div class="panel-body">
                                       <div class="well">
                                         <div class="row">
-                                          <div class="form-group" <?php echo 'id="product_identifier_ean_container_'.$i;'"' ?> style="display:none;">
+                                          <div class="form-group" id="product_identifier_ean_container_<?php echo $i; ?>" style="display:none;">
                                             <label class="col-sm-2 control-label"><?php echo $text_ean; ?></label>
                                             <div class="col-sm-10">
-                                              <input type="hidden" <?php echo 'id="identifier_ean_required_'.$i;'"' ?> class="product_identifier_required_<?php echo $i; ?>" value="0" />
-                                              <input type="hidden" <?php echo 'id="identifier_ean_original_'.$i;'"' ?>" value="<?php echo $product['ean']; ?>" />
-                                              <input type="text" name="identifier_ean" value="<?php echo $product['ean']; ?>" <?php echo 'id="identifier_ean_'.$i;'"' ?> class="form-control openbay_data_<?php echo $i; ?>" />
+                                              <input type="hidden" id="identifier_ean_required_<?php echo $i; ?>" class="product_identifier_required_<?php echo $i; ?>" value="0" />
+                                              <input type="hidden" id="identifier_ean_original_<?php echo $i; ?>" value="<?php echo $product['ean']; ?>" />
+                                              <input type="text" name="identifier_ean" value="<?php echo $product['ean']; ?>" id="identifier_ean_<?php echo $i; ?>" class="form-control openbay_data_<?php echo $i; ?>" />
                                             </div>
                                           </div>
-                                          <div class="form-group" <?php echo 'id="product_identifier_isbn_container_'.$i;'"' ?> style="display:none;">
+                                          <div class="form-group" id="product_identifier_isbn_container_<?php echo $i; ?>" style="display:none;">
                                             <label class="col-sm-2 control-label"><?php echo $text_isbn; ?></label>
                                             <div class="col-sm-10">
-                                              <input type="hidden" <?php echo 'id="identifier_isbn_required_'.$i;'"' ?> class="product_identifier_required_<?php echo $i; ?>" value="0" />
-                                              <input type="hidden" <?php echo 'id="identifier_isbn_original_'.$i;'"' ?> value="<?php echo $product['isbn']; ?>" />
-                                              <input type="text" name="identifier_isbn" value="<?php echo $product['isbn']; ?>" <?php echo 'id="identifier_isbn_'.$i;'"' ?> class="form-control openbay_data_<?php echo $i; ?>" />
+                                              <input type="hidden" id="identifier_isbn_required_<?php echo $i; ?>" class="product_identifier_required_<?php echo $i; ?>" value="0" />
+                                              <input type="hidden" id="identifier_isbn_original_<?php echo $i; ?>" value="<?php echo $product['isbn']; ?>" />
+                                              <input type="text" name="identifier_isbn" value="<?php echo $product['isbn']; ?>" id="identifier_isbn_<?php echo $i; ?>" class="form-control openbay_data_<?php echo $i; ?>" />
                                             </div>
                                           </div>
-                                          <div class="form-group" <?php echo 'id="product_identifier_upc_container_'.$i;'"' ?> style="display:none;">
+                                          <div class="form-group" id="product_identifier_upc_container_<?php echo $i; ?>" style="display:none;">
                                             <label class="col-sm-2 control-label"><?php echo $text_upc; ?></label>
                                             <div class="col-sm-10">
-                                              <input type="hidden" <?php echo 'id="identifier_upc_required_'.$i;'"' ?> class="product_identifier_required" value="0" />
-                                              <input type="hidden" <?php echo 'id="identifier_upc_original_'.$i;'"' ?> value="<?php echo $product['upc']; ?>" />
-                                              <input type="text" name="identifier_upc" value="<?php echo $product['upc']; ?>" <?php echo 'id="identifier_upc_'.$i;'"' ?> class="form-control openbay_data_<?php echo $i; ?>" />
+                                              <input type="hidden" id="identifier_upc_required_<?php echo $i; ?>" class="product_identifier_required" value="0" />
+                                              <input type="hidden" id="identifier_upc_original_<?php echo $i; ?>" value="<?php echo $product['upc']; ?>" />
+                                              <input type="text" name="identifier_upc" value="<?php echo $product['upc']; ?>" id="identifier_upc_<?php echo $i; ?>" class="form-control openbay_data_<?php echo $i; ?>" />
                                             </div>
                                           </div>
                                           <div class="form-group">
                                             <label class="col-sm-2 control-label"><?php echo $text_identifier_not_required; ?></label>
                                             <div class="col-sm-10">
-                                              <input type="checkbox" name="identifier_not_required" value="1" <?php echo 'id="identifier_not_required_'.$i;'"' ?> class="form-control" onclick="identifierNotRequired(<?php echo $i; ?>);"/>
+                                              <input type="checkbox" name="identifier_not_required" value="1" id="identifier_not_required_<?php echo $i; ?>" class="form-control" onclick="identifierNotRequired(<?php echo $i; ?>);"/>
                                             </div>
                                           </div>
                                         </div>
@@ -121,12 +121,12 @@
                                     </div>
                                   </div>
                                 </div>
-                                <div <?php echo 'id="feature-data-'.$i;'"' ?>></div>
+                                <div id="feature-data-<?php echo $i; ?>"></div>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" <?php echo 'id="overlay-category-'.$i;'"' ?> data-backdrop="static" data-keyboard="false">
+                        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="overlay-category-<?php echo $i; ?>" data-backdrop="static" data-keyboard="false">
                           <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                               <div class="modal-body">
@@ -146,45 +146,45 @@
                                         <div class="form-group">
                                           <label class="col-sm-2 control-label"><?php echo $text_suggested; ?></label>
                                           <div class="col-sm-10">
-                                            <div class="alert alert-info" <?php echo 'id="loadingSuggestedCat_'.$i;'"' ?>><i class="fa fa-cog fa-lg fa-spin"></i> <?php echo $text_category; ?></div>
-                                            <div <?php echo 'id="suggestedCat_'.$i;'"' ?>></div>
-                                            <input type="hidden" name="finalCat" <?php echo 'id="finalCat_'.$i; ?>" class="openbay_data_<?php echo $i; ?>" />
+                                            <div class="alert alert-info" id="loadingSuggestedCat_<?php echo $i; ?>"><i class="fa fa-cog fa-lg fa-spin"></i> <?php echo $text_category; ?></div>
+                                            <div id="suggestedCat_<?php echo $i; ?>"></div>
+                                            <input type="hidden" name="finalCat" id="finalCat_<?php echo $i; ?>" class="openbay_data_<?php echo $i; ?>" />
                                           </div>
                                         </div>
                                       </div>
                                       <div class="row">
-                                        <div class="form-group" <?php echo 'id="cSelections_'.$i;'"' ?> style="display:none;">
+                                        <div class="form-group" id="cSelections_<?php echo $i; ?>" style="display:none;">
                                           <label class="col-sm-2 control-label"><?php echo $text_category_choose; ?></label>
                                           <div class="col-sm-10">
-                                          <div class="alert alert-info" <?php echo ' id="imageLoading_'.$i;'"' ?>><i class="fa fa-cog fa-lg fa-spin"></i> <?php echo $text_loading_categories; ?></div>
+                                          <div class="alert alert-info" id="imageLoading_<?php echo $i; ?>"><i class="fa fa-cog fa-lg fa-spin"></i> <?php echo $text_loading_categories; ?></div>
                                           <div class="row form-group">
                                             <div class="col-sm-12">
-                                              <select <?php echo 'id="catsSelect1_'.$i;'"' ?> class="form-control" onchange="loadCategories(2, false, <?php echo $i; ?>);"></select>
+                                              <select id="catsSelect1_<?php echo $i; ?>" class="form-control" onchange="loadCategories(2, false, <?php echo $i; ?>);"></select>
                                             </div>
                                           </div>
                                           <div class="row form-group">
                                             <div class="col-sm-12">
-                                              <select <?php echo 'id="catsSelect2_'.$i;'"' ?> class="form-control" onchange="loadCategories(3, false, <?php echo $i; ?>);" style="display:none;"></select>
+                                              <select id="catsSelect2_<?php echo $i; ?>" class="form-control" onchange="loadCategories(3, false, <?php echo $i; ?>);" style="display:none;"></select>
                                             </div>
                                           </div>
                                           <div class="row form-group">
                                             <div class="col-sm-12">
-                                              <select <?php echo 'id="catsSelect3_'.$i;'"' ?> class="form-control" onchange="loadCategories(4, false, <?php echo $i; ?>);" style="display:none;"></select>
+                                              <select id="catsSelect3_<?php echo $i; ?>" class="form-control" onchange="loadCategories(4, false, <?php echo $i; ?>);" style="display:none;"></select>
                                             </div>
                                           </div>
                                           <div class="row form-group">
                                             <div class="col-sm-12">
-                                              <select <?php echo 'id="catsSelect4_'.$i;'"' ?> class="form-control" onchange="loadCategories(5, false, <?php echo $i; ?>, false, <?php echo $i; ?>);" style="display:none;"></select>
+                                              <select id="catsSelect4_<?php echo $i; ?>" class="form-control" onchange="loadCategories(5, false, <?php echo $i; ?>, false, <?php echo $i; ?>);" style="display:none;"></select>
                                             </div>
                                           </div>
                                           <div class="row form-group">
                                             <div class="col-sm-12">
-                                              <select <?php echo 'id="catsSelect5_'.$i;'"' ?> class="form-control" onchange="loadCategories(6, false, <?php echo $i; ?>);" style="display:none;"></select>
+                                              <select id="catsSelect5_<?php echo $i; ?>" class="form-control" onchange="loadCategories(6, false, <?php echo $i; ?>);" style="display:none;"></select>
                                             </div>
                                           </div>
                                           <div class="row form-group">
                                             <div class="col-sm-12">
-                                              <select <?php echo 'id="catsSelect6_'.$i;'"' ?> class="form-control" onchange="loadCategories(7, false, <?php echo $i; ?>);" style="display:none;"></select>
+                                              <select id="catsSelect6_<?php echo $i; ?>" class="form-control" onchange="loadCategories(7, false, <?php echo $i; ?>);" style="display:none;"></select>
                                             </div>
                                           </div>
                                         </div>
@@ -198,7 +198,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" <?php echo 'id="overlay-catalog-'.$i;'"' ?> data-backdrop="static" data-keyboard="false">
+                        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="overlay-catalog-<?php echo $i; ?>" data-backdrop="static" data-keyboard="false">
                           <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                               <div class="modal-body">
@@ -218,17 +218,17 @@
                                           <div class="form-group">
                                             <label class="col-sm-2 control-label"><?php echo $text_search_term; ?></label>
                                             <div class="col-sm-10">
-                                              <input type="text" name="catalog_search" <?php echo 'id="catalog_search_'.$i;'"' ?> value="" class="form-control"/>
+                                              <input type="text" name="catalog_search" id="catalog_search_<?php echo $i; ?>" value="" class="form-control"/>
                                             </div>
                                           </div>
                                         </div>
                                         <div class="row">
                                           <div class="col-sm-12 text-right">
-                                            <a onclick="searchEbayCatalog('<?php echo $i; ?>');" class="btn btn-primary" <?php echo 'id="button-catalog-search-'.$i;'"' ?>><?php echo $text_search; ?></a>
+                                            <a onclick="searchEbayCatalog('<?php echo $i; ?>');" class="btn btn-primary" id="button-catalog-search-<?php echo $i; ?>"><?php echo $text_search; ?></a>
                                           </div>
                                         </div>
                                       </div>
-                                      <div <?php echo 'id="catalog-results-'.$i;'"' ?> style="display:none;"></div>
+                                      <div id="catalog-results-<?php echo $i; ?>" style="display:none;"></div>
                                     </div>
                                   </div>
                                 </div>
@@ -236,7 +236,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" <?php echo 'id="overlay-profile-'.$i;'"' ?> data-backdrop="static" data-keyboard="false">
+                        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="overlay-profile-<?php echo $i; ?>" data-backdrop="static" data-keyboard="false">
                           <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                               <div class="modal-body">
@@ -255,7 +255,7 @@
                                       <div class="form-group">
                                         <label class="col-sm-2 control-label"><?php echo $text_profile_theme; ?></label>
                                         <div class="col-sm-10">
-                                          <select name="theme_profile" <?php echo 'class="openbay_data_'.$i;'"' ?> form-control>
+                                          <select name="theme_profile" class="openbay_data_<?php echo $i; ?> form-control">
                                             <?php foreach($default['profiles_theme'] as $s) { echo '<option value="'.$s['ebay_profile_id'].'"'.($default['profiles_theme_def'] == $s['ebay_profile_id'] ? ' selected' : '').'>'.$s['name'].'</option>'; } ?>
                                           </select>
                                         </div>
@@ -263,7 +263,7 @@
                                       <div class="form-group">
                                         <label class="col-sm-2 control-label"><?php echo $text_profile_shipping; ?></label>
                                         <div class="col-sm-10">
-                                          <select name="shipping_profile" <?php echo 'class="openbay_data_'.$i;'"' ?> form-control>
+                                          <select name="shipping_profile" class="openbay_data_<?php echo $i; ?> form-control">
                                             <?php foreach($default['profiles_shipping'] as $s) { echo '<option value="'.$s['ebay_profile_id'].'"'.($default['profiles_shipping_def'] == $s['ebay_profile_id'] ? ' selected' : '').'>'.$s['name'].'</option>'; } ?>
                                           </select>
                                         </div>
@@ -271,8 +271,7 @@
                                       <div class="form-group">
                                         <label class="col-sm-2 control-label"><?php echo $text_profile_generic; ?></label>
                                         <div class="col-sm-10">
-                                          <!--<select name="generic_profile" id="generic_profile_<?php echo $i; ?>" class="openbay_data_<?php echo $i; ?> form-control" onchange="genericProfileChange(<?php echo $i; ?>);">-->
-                                          <select <?php echo name="generic_profile" id="generic_profile_$i"  class="openbay_data_$i form-control"  onchange="genericProfileChange($i);"?>>
+                                          <select name="generic_profile" id="generic_profile_<?php echo $i; ?>" class="openbay_data_<?php echo $i; ?> form-control" onchange="genericProfileChange(<?php echo $i; ?>);">
                                             <?php foreach($default['profiles_generic'] as $s) { echo '<option value="'.$s['ebay_profile_id'].'"'.($default['profiles_generic_def'] == $s['ebay_profile_id'] ? ' selected' : '').'>'.$s['name'].'</option>'; } ?>
                                           </select>
                                         </div>
@@ -280,7 +279,7 @@
                                       <div class="form-group">
                                         <label class="col-sm-2 control-label"><?php echo $text_profile_returns; ?></label>
                                         <div class="col-sm-10">
-                                          <select name="return_profile" <?php echo 'class="openbay_data_'.$i; ?> form-control.'"'>
+                                          <select name="return_profile" class="openbay_data_<?php echo $i; ?> form-control">
                                             <?php foreach($default['profiles_returns'] as $s) { echo '<option value="'.$s['ebay_profile_id'].'"'.($default['profiles_returns_def'] == $s['ebay_profile_id'] ? ' selected' : '').'>'.$s['name'].'</option>'; } ?>
                                           </select>
                                         </div>
@@ -298,29 +297,29 @@
                         <div class="form-group">
                           <label class="col-sm-2 control-label"><?php echo $text_title; ?></label>
                           <div class="col-sm-10">
-                            <input type="text" name="title" <?php echo 'class="openbay_data_'.$i; ?> form-control.'"' value="<?php echo $product['name']; ?>" id="title_<?php echo $i; ?>" />
+                            <input type="text" name="title" class="openbay_data_<?php echo $i; ?> form-control" value="<?php echo $product['name']; ?>" id="title_<?php echo $i; ?>" />
                           </div>
                         </div>
                         <div class="form-group">
                           <label class="col-sm-2 control-label"><?php echo $text_price; ?></label>
                           <div class="col-sm-10">
-                            <input <?php echo 'id="price_'.$i.'"' type="text" name="price" class="openbay_data_.$i form-control.'"' value="number_format($product['price']*(($default['defaults']['tax']/100) + 1), 2, '.', '').'"' />
+                            <input id="price_<?php echo $i; ?>" type="text" name="price" class="openbay_data_<?php echo $i; ?> form-control" value="<?php echo number_format($product['price']*(($default['defaults']['tax']/100) + 1), 2, '.', ''); ?>" />
                           </div>
                         </div>
                         <div class="alert alert-info" id="conditionLoading_<?php echo $i; ?>"><i class="fa fa-cog fa-lg fa-spin"></i> <?php echo $text_loading_condition; ?></div>
-                        <div class="form-group" <?php echo 'id="conditionContainer_'.$i; ?>" style="display:none;">
+                        <div class="form-group" id="conditionContainer_<?php echo $i; ?>" style="display:none;">
                           <label class="col-sm-2 control-label"><?php echo $entry_condition; ?></label>
                           <div class="col-sm-10">
-                            <select name="condition" <?php echo 'class="openbay_data_'.$i; ?> form-control.'"' <?php echo 'id="conditionRow_'.$i;'"' ?>>
+                            <select name="condition" class="openbay_data_<?php echo $i; ?> form-control" id="conditionRow_<?php echo $i; ?>">
                               <?php foreach($default['profiles_returns'] as $s) { echo '<option value="'.$s['ebay_profile_id'].'"'.($default['profiles_returns_def'] == $s['ebay_profile_id'] ? ' selected' : '').'>'.$s['name'].'</option>'; } ?>
                             </select>
                           </div>
                         </div>
-                        <div class="alert alert-info" <?php echo 'id="durationLoading_'.$i;'"' ?>><i class="fa fa-cog fa-lg fa-spin"></i> <?php echo $text_loading_duration; ?></div>
-                        <div class="form-group" <?php echo 'id="durationContainer_'.$i;'"' ?> style="display:none;">
+                        <div class="alert alert-info" id="durationLoading_<?php echo $i; ?>"><i class="fa fa-cog fa-lg fa-spin"></i> <?php echo $text_loading_duration; ?></div>
+                        <div class="form-group" id="durationContainer_<?php echo $i; ?>" style="display:none;">
                           <label class="col-sm-2 control-label"><?php echo $text_duration; ?></label>
                           <div class="col-sm-10">
-                            <select name="duration" <?php echo 'class="openbay_data_'.$i; ?> form-control" <?php echo 'id="durationRow_'.$i;'"' ?>>
+                            <select name="duration" class="openbay_data_<?php echo $i; ?> form-control" id="durationRow_<?php echo $i; ?>">
                               <?php foreach($default['profiles_returns'] as $s) { echo '<option value="'.$s['ebay_profile_id'].'"'.($default['profiles_returns_def'] == $s['ebay_profile_id'] ? ' selected' : '').'>'.$s['name'].'</option>'; } ?>
                             </select>
                           </div>

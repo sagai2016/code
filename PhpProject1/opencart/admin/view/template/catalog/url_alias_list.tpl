@@ -62,12 +62,12 @@
                 <tr>
                   <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
                   <td class="text-left"><?php if ($sort == 'keyword') { ?>
-                    <a href="<?php echo $sort_keyword; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_keyword; ?></a>
+                    <a href="<?php echo $sort_keyword; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_keyword; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_keyword; ?>"><?php echo $column_keyword; ?></a>
                     <?php } ?></td>
                   <td class="text-right"><?php if ($sort == 'query') { ?>
-                    <a href="<?php echo $sort_query; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_query; ?></a>
+                    <a href="<?php echo $sort_query; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_query; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_query; ?>"><?php echo $column_query; ?></a>
                     <?php } ?></td>

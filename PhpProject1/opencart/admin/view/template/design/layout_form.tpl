@@ -47,7 +47,7 @@
               <tbody>
                 <?php $route_row = 0; ?>
                 <?php foreach ($layout_routes as $layout_route) { ?>
-                <tr <?php echo 'id="route-row'.$route_row.'"'; ?>>
+                <tr id="route-row<?php echo $route_row; ?>">
                   <td class="text-left"><select name="layout_route[<?php echo $route_row; ?>][store_id]" class="form-control">
                       <option value="0"><?php echo $text_default; ?></option>
                       <?php foreach ($stores as $store) { ?>
@@ -86,7 +86,7 @@
                   <tbody>
                     <?php foreach ($layout_modules as $layout_module) { ?>
                     <?php if ($layout_module['position'] == 'column_left') { ?>
-                    <tr <?php echo 'id="module-row'.$module_row;'"' ?>>
+                    <tr id="module-row<?php echo $module_row; ?>">
                       <td class="text-left"><div class="input-group">
                           <select name="layout_module[<?php echo $module_row; ?>][code]" class="form-control input-sm">
                             <?php foreach ($extensions as $extension) { ?>
@@ -154,7 +154,7 @@
                   <tbody>
                     <?php foreach ($layout_modules as $layout_module) { ?>
                     <?php if ($layout_module['position'] == 'content_top') { ?>
-                    <tr <?php echo 'id="module-row'.$module_row;'"' ?>>
+                    <tr id="module-row<?php echo $module_row; ?>">
                       <td class="text-left"><div class="input-group">
                           <select name="layout_module[<?php echo $module_row; ?>][code]" class="form-control input-sm">
                             <?php foreach ($extensions as $extension) { ?>
@@ -220,7 +220,7 @@
                   <tbody>
                     <?php foreach ($layout_modules as $layout_module) { ?>
                     <?php if ($layout_module['position'] == 'content_bottom') { ?>
-                    <tr <?php echo 'id="module-row'.$module_row;'"' ?>">
+                    <tr id="module-row<?php echo $module_row; ?>">
                       <td class="text-left"><div class="input-group">
                           <select name="layout_module[<?php echo $module_row; ?>][code]" class="form-control input-sm">
                             <?php foreach ($extensions as $extension) { ?>
@@ -288,7 +288,7 @@
                   <tbody>
                     <?php foreach ($layout_modules as $layout_module) { ?>
                     <?php if ($layout_module['position'] == 'column_right') { ?>
-                    <tr <?php echo 'id="module-row'.$module_row;'"' ?>">
+                    <tr id="module-row<?php echo $module_row; ?>">
                       <td class="text-left"><div class="input-group">
                           <select name="layout_module[<?php echo $module_row; ?>][code]" class="form-control input-sm">
                             <?php foreach ($extensions as $extension) { ?>
@@ -354,6 +354,7 @@
   </div>
   <script type="text/javascript"><!--
 var route_row = <?php echo $route_row; ?>;
+
 function addRoute() {
 	html  = '<tr id="route-row' + route_row + '">';
 	html += '  <td class="text-left"><select name="layout_route[' + route_row + '][store_id]" class="form-control">';

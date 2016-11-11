@@ -35,7 +35,7 @@
                   <td class="text-left"><img src="<?php echo $list['image']; ?>" height="48" width="48"></img></td>
                   <td class="text-left"><?php echo $list['name']; ?></td>
                   <td class="text-left">
-                    <!--<div class="progress">
+                    <div class="progress">
                         <?php if ($list['progress'] > 75) { ?>
                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width:<?php echo $list['progress']; ?>%"><?php echo $list['progress']; ?>% Complete (success)</div>
                         <?php }else if ($list['progress'] >25 && $list['progress'] < 75) { ?>
@@ -43,15 +43,7 @@
                         <?php }else if ($list['progress'] < 25) { ?>
                         <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width:<?php echo $list['progress']; ?>%"><?php echo $list['progress']; ?>% Complete (success)</div>
                         <?php } ?>
-                    </div>-->
-                    <?php
-                        $list['progress'] > 75 ? 
-                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width:$list['progress']%">$list['progress']% Complete (success)</div>:
-                        $list['progress'] >25 && $list['progress'] < 75 ?   
-                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width:$list['progress']%">$list['progress']% Complete (success)</div> : 
-                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width:$list['progress']%">$list['progress']% Complete (success)</div>
-                    ?>
-                  </td>
+                    </div></td>
                   <td class="text-right">
                     <?php if (!$list['installed']) { ?>
                     <a href="<?php echo $list['install']; ?>" data-toggle="tooltip" title="<?php echo $button_install; ?>" class="btn btn-success"><i class="fa fa-magic"></i></a>

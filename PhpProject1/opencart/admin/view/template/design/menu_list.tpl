@@ -36,31 +36,31 @@
                 <tr>
                   <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
                   <td class="text-left"><?php if ($sort == 'md.name') { ?>
-                    <a href="<?php echo $sort_name; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_name; ?></a>
+                    <a href="<?php echo $sort_name; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_name; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_name; ?>"><?php echo $column_name; ?></a>
                     <?php } ?></td>
                     
                    <td class="text-left"><?php if ($sort == 'store') { ?>
-                    <a href="<?php echo $sort_store; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_store; ?></a>
+                    <a href="<?php echo $sort_store; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_store; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_store; ?>"><?php echo $column_store; ?></a>
                     <?php } ?></td> 
                      
                     <td class="text-left"><?php if ($sort == 'm.type') { ?>
-                    <a href="<?php echo $sort_type; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_type; ?></a>
+                    <a href="<?php echo $sort_type; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_type; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_type; ?>"><?php echo $column_type; ?></a>
                     <?php } ?></td>  
                                                      
                   <td class="text-left"><?php if ($sort == 'm.sort_order') { ?>
-                    <a href="<?php echo $sort_sort_order; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_sort_order; ?></a>
+                    <a href="<?php echo $sort_sort_order; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_sort_order; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_sort_order; ?>"><?php echo $column_sort_order; ?></a>
                     <?php } ?></td>
                                        
                   <td class="text-left"><?php if ($sort == 'm.status') { ?>
-                    <a href="<?php echo $sort_status; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_status; ?></a>
+                    <a href="<?php echo $sort_status; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_status; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_status; ?>"><?php echo $column_status; ?></a>
                     <?php } ?></td>

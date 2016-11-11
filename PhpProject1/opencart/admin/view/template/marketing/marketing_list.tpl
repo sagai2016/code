@@ -61,19 +61,19 @@
                 <tr>
                   <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
                   <td class="text-left"><?php if ($sort == 'm.name') { ?>
-                    <a href="<?php echo $sort_name; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_name; ?></a>
+                    <a href="<?php echo $sort_name; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_name; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_name; ?>"><?php echo $column_name; ?></a>
                     <?php } ?></td>
                   <td class="text-left"><?php if ($sort == 'm.code') { ?>
-                    <a href="<?php echo $sort_code; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_code; ?></a>
+                    <a href="<?php echo $sort_code; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_code; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_code; ?>"><?php echo $column_code; ?></a>
                     <?php } ?></td>
                   <td class="text-right"><?php echo $column_clicks; ?></td>
                   <td class="text-right"><?php echo $column_orders; ?></td>
                   <td class="text-left"><?php if ($sort == 'm.date_added') { ?>
-                    <a href="<?php echo $sort_date_added; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_date_added; ?></a>
+                    <a href="<?php echo $sort_date_added; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_date_added; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_date_added; ?>"><?php echo $column_date_added; ?></a>
                     <?php } ?></td>

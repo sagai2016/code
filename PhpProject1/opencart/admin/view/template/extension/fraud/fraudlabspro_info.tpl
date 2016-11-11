@@ -12,8 +12,7 @@
   </tr>
   <tr>
     <td><span data-toggle="tooltip" data-container="#tab-general" title="<?php echo $help_status; ?>"><?php echo $text_status; ?></span></td>
-    <!--<td id="flp_status"><span style="font-weight:bold; color:<?php if (strtolower($flp_status) == 'approve') echo '#5cb85c'; else if (strtolower($flp_status) == 'review') echo '#f0ad4e'; else echo '#d9534f'; ?>"><?php echo $flp_status; ?></span></td>-->
-    <td><?php echo <span PRINTF('style="font-weight:bold; color:%S"', (strtolower($flp_status) == 'approve') ? '#5cb85c' :(strtolower($flp_status) == 'review') ？'#f0ad4e'：'#d9534f' );</span> ?></td>
+    <td id="flp_status"><span style="font-weight:bold; color:<?php if (strtolower($flp_status) == 'approve') echo '#5cb85c'; else if (strtolower($flp_status) == 'review') echo '#f0ad4e'; else echo '#d9534f'; ?>"><?php echo $flp_status; ?></span></td>
   </tr>
   <tr>
     <td><span data-toggle="tooltip" data-container="#tab-general" title="<?php echo $help_ip_address; ?>"><?php echo $text_ip_address; ?></span></td>

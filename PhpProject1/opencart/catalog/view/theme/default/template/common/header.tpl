@@ -20,7 +20,7 @@
 <?php } ?>
 <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
-<script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
 <?php foreach ($styles as $style) { ?>
@@ -37,13 +37,14 @@
 <?php echo $analytic; ?>
 <?php } ?>
 </head>
-<body <?php echo 'class="'.$class."'"; ?>>
+<body class="<?php echo $class; ?>">
 <nav id="top">
   <div class="container">
     <?php echo $currency; ?>
     <?php echo $language; ?>
     <div id="top-links" class="nav pull-right">
       <ul class="list-inline">
+        <?php if ($qq_login_status) {  ?>
       	<?php if (!$logged) { ?>
         <?php if ($qq_nickname) {  ?>
         <li><?php echo $qq_nickname; ?></li>
@@ -51,6 +52,7 @@
         <li><a href="<?php echo $qq_login_url; ?>"><span class="hidden-xs hidden-sm hidden-md"><img src="catalog/view/theme/default/image/qq_login.png"></span></a> </li>
         <?php 
         	}
+            }
             } 
         ?>
         <li><a href="<?php echo $contact; ?>"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md"><?php echo $telephone; ?></span></li>

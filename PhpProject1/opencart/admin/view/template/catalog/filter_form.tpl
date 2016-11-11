@@ -55,7 +55,7 @@
             <tbody>
               <?php $filter_row = 0; ?>
               <?php foreach ($filters as $filter) { ?>
-              <tr <?php echo 'id="filter-row'. $filter_row .'"'; ?>>
+              <tr id="filter-row<?php echo $filter_row; ?>">
                 <td class="text-left" style="width: 70%;"><input type="hidden" name="filter[<?php echo $filter_row; ?>][filter_id]" value="<?php echo $filter['filter_id']; ?>" />
                   <?php foreach ($languages as $language) { ?>
                   <div class="input-group"><span class="input-group-addon"><img src="language/<?php echo $language['code']; ?>/<?php echo $language['code']; ?>.png" title="<?php echo $language['name']; ?>" /></span>

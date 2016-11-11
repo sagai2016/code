@@ -97,27 +97,27 @@
                   <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
                   <td class="text-center"><?php echo $column_image; ?></td>
                   <td class="text-left"><?php if ($sort == 'pd.name') { ?>
-                    <a href="<?php echo $sort_name; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_name; ?></a>
+                    <a href="<?php echo $sort_name; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_name; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_name; ?>"><?php echo $column_name; ?></a>
                     <?php } ?></td>
                   <td class="text-left"><?php if ($sort == 'p.model') { ?>
-                    <a href="<?php echo $sort_model; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_model; ?></a>
+                    <a href="<?php echo $sort_model; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_model; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_model; ?>"><?php echo $column_model; ?></a>
                     <?php } ?></td>
                   <td class="text-right"><?php if ($sort == 'p.price') { ?>
-                    <a href="<?php echo $sort_price; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_price; ?></a>
+                    <a href="<?php echo $sort_price; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_price; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_price; ?>"><?php echo $column_price; ?></a>
                     <?php } ?></td>
                   <td class="text-right"><?php if ($sort == 'p.quantity') { ?>
-                    <a href="<?php echo $sort_quantity; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_quantity; ?></a>
+                    <a href="<?php echo $sort_quantity; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_quantity; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_quantity; ?>"><?php echo $column_quantity; ?></a>
                     <?php } ?></td>
                   <td class="text-left"><?php if ($sort == 'p.status') { ?>
-                    <a href="<?php echo $sort_status; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_status; ?></a>
+                    <a href="<?php echo $sort_status; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_status; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_status; ?>"><?php echo $column_status; ?></a>
                     <?php } ?></td>

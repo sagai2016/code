@@ -114,32 +114,32 @@
                 <tr>
                   <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
                   <td class="text-left"><?php if ($sort == 'name') { ?>
-                    <a href="<?php echo $sort_name; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_name; ?></a>
+                    <a href="<?php echo $sort_name; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_name; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_name; ?>"><?php echo $column_name; ?></a>
                     <?php } ?></td>
                   <td class="text-left"><?php if ($sort == 'c.email') { ?>
-                    <a href="<?php echo $sort_email; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_email; ?></a>
+                    <a href="<?php echo $sort_email; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_email; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_email; ?>"><?php echo $column_email; ?></a>
                     <?php } ?></td>
                   <td class="text-left"><?php if ($sort == 'customer_group') { ?>
-                    <a href="<?php echo $sort_customer_group; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_customer_group; ?></a>
+                    <a href="<?php echo $sort_customer_group; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_customer_group; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_customer_group; ?>"><?php echo $column_customer_group; ?></a>
                     <?php } ?></td>
                   <td class="text-left"><?php if ($sort == 'c.status') { ?>
-                    <a href="<?php echo $sort_status; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_status; ?></a>
+                    <a href="<?php echo $sort_status; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_status; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_status; ?>"><?php echo $column_status; ?></a>
                     <?php } ?></td>
                   <td class="text-left"><?php if ($sort == 'c.ip') { ?>
-                    <a href="<?php echo $sort_ip; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_ip; ?></a>
+                    <a href="<?php echo $sort_ip; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_ip; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_ip; ?>"><?php echo $column_ip; ?></a>
                     <?php } ?></td>
                   <td class="text-left"><?php if ($sort == 'c.date_added') { ?>
-                    <a href="<?php echo $sort_date_added; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_date_added; ?></a>
+                    <a href="<?php echo $sort_date_added; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_date_added; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_date_added; ?>"><?php echo $column_date_added; ?></a>
                     <?php } ?></td>

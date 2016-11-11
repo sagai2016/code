@@ -376,10 +376,10 @@
                           <?php if ($i_valid === null) { $i_valid = $i; } ?>
                           <span class="label label-success" data-toggle="tooltip" data-original-title="<?php echo $text_ebay_imagesize_ok; ?>"><?php echo $img['width']; ?> x <?php echo $img['height']; ?></span>
                           <?php } ?></td>
-                        <td class="text-center"><input type="checkbox" <?php echo 'id="imgUrl'.$i;'"' ?> name="img_tpl[<?php echo $i; ?>]" value="<?php echo $img['image']; ?>" class="check-template-image" /></td>
+                        <td class="text-center"><input type="checkbox" id="imgUrl<?php echo $i; ?>" name="img_tpl[<?php echo $i; ?>]" value="<?php echo $img['image']; ?>" class="check-template-image" /></td>
                         <td class="text-center"><input type="hidden" name="img[<?php echo $i; ?>]" value="null" />
                           <?php if ($img['width'] >= 500 || $img['height'] >= 500) { ?>
-                          <input type="checkbox" class="checkbox-ebay-image" <?php echo onchange="toggleRad($i);"> <?php echo 'id="image-checkbox-'.$i;'"' ?> name="img[<?php echo $i; ?>]" value="<?php echo $img['image']; ?>" <?php echo ( ($i == 0) ? 'checked="checked" ' : ''); ?> />
+                          <input type="checkbox" class="checkbox-ebay-image" onchange="toggleRad(<?php echo $i; ?>);" id="image-checkbox-<?php echo $i; ?>" name="img[<?php echo $i; ?>]" value="<?php echo $img['image']; ?>" <?php echo ( ($i == 0) ? 'checked="checked" ' : ''); ?> />
                           <?php } else { ?>
                           -
                           <?php } ?></td>
@@ -422,14 +422,13 @@
                         <tr>
                           <td><?php echo $option_group_choice['name']; ?></td>
                           <td><input type="hidden" name="option_image[<?php echo $option_group['option_id']; ?>][<?php echo $option_group_choice['product_option_value_id']; ?>][name]" value="<?php echo $option_group_choice['name']; ?>"/>
-                          <a <?php echo onclick="addVariationImage($option_group['option_id'];?>, <?php echo $option_group_choice['product_option_value_id']; ?>);" class="btn btn-primary"><span><?php echo $text_add; ?></span></a></td>
+                            <a onclick="addVariationImage(<?php echo $option_group['option_id']; ?>, <?php echo $option_group_choice['product_option_value_id']; ?>);" class="btn btn-primary"><span><?php echo $text_add; ?></span></a></td>
                           <td><table class="table table-striped table-bordered table-hover" id="option_images_<?php echo $option_group_choice['product_option_value_id']; ?>">
                               <?php $x = 0; if (!empty($option_group_choice['image_thumb']) && ($option_group_choice['image'] != 'no_image.jpg')) { $x++; ?>
                               <tr>
                                 <td id="option_image_<?php echo $option_group['option_id']; ?>_<?php echo $option_group_choice['product_option_value_id']; ?>_<?php echo $x; ?>"><img src="<?php echo $option_group_choice['image_thumb']; ?>"/>
                                   <input type="hidden" name="option_image[<?php echo $option_group['option_id']; ?>][<?php echo $option_group_choice['product_option_value_id']; ?>][images][]" value="<?php echo $option_group_choice['image']; ?>"/></td>
-                                <!--<td><button type="button" onclick="removeVariationImage(<?php echo $option_group['option_id']; ?>, <?php echo $option_group_choice['product_option_value_id']; ?>, <?php echo $x; ?>);" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>-->
-                                    <td><?php echo <button type="button" onclick="removeVariationImage($option_group['option_id'],$option_group_choice['product_option_value_id'],$x);" data-toggle="tooltip" title="$button_remove" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button> ?></td>
+                                <td><button type="button" onclick="removeVariationImage(<?php echo $option_group['option_id']; ?>, <?php echo $option_group_choice['product_option_value_id']; ?>, <?php echo $x; ?>);" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>
                               </tr>
                               <?php } ?>
                               <input type="hidden" name="option_image_count_<?php echo $option_group['option_id']; ?>" id="option_image_count_<?php echo $option_group['option_id']; ?>" value="<?php echo $x; ?>"/>

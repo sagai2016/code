@@ -36,17 +36,17 @@
                 <tr>
                   <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
                   <td class="text-left"><?php if ($sort == 'title') { ?>
-                    <a href="<?php echo $sort_title; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_title; ?></a>
+                    <a href="<?php echo $sort_title; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_title; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_title; ?>"><?php echo $column_title; ?></a>
                     <?php } ?></td>
                   <td class="text-left"><?php if ($sort == 'unit') { ?>
-                    <a href="<?php echo $sort_unit; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_unit; ?></a>
+                    <a href="<?php echo $sort_unit; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_unit; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_unit; ?>"><?php echo $column_unit; ?></a>
                     <?php } ?></td>
                   <td class="text-right"><?php if ($sort == 'value') { ?>
-                    <a href="<?php echo $sort_value; ?>" <?php echo 'class="'. strtolower($order) .'"'; ?>><?php echo $column_value; ?></a>
+                    <a href="<?php echo $sort_value; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_value; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_value; ?>"><?php echo $column_value; ?></a>
                     <?php } ?></td>
