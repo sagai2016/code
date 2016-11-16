@@ -12,7 +12,7 @@
 
 $serverPort = '';
 $isIpFun = '';
-$isFile = 'PhpProject1/opencart1/';
+$isFile = 'PhpProject1/opencart/';
 
 $host = filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_URL);
 $serverName = filter_input(INPUT_SERVER, 'SERVER_NAME', FILTER_SANITIZE_URL);

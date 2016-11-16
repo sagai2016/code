@@ -8,13 +8,16 @@ $config->load('default');
 $config->load($application_config);
 $registry->set('config', $config);
 
+
+
 //Payment Method Callback
 if (defined('PAY_METHOD_CALLBACK') && PAY_METHOD_CALLBACK) {
 	$config->set('action_default', PAY_METHOD_CALLBACK);
 }
-
+;
 // Event
 $event = new Event($registry);
+
 $registry->set('event', $event);
 
 // Event Register

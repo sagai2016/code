@@ -2,18 +2,20 @@
 
 //HTTP_HOST,SERVER_NAME,SERVER_ADDR,REMOTE_ADDR
 // HTTP
-/* print $_SERVER["HTTP_HOST"].'<br/>';
-  print $_SERVER["SERVER_NAME"].'<br/>';
-  print $_SERVER["SERVER_ADDR"].'<br/>';
-  exit; */
+/*print $_SERVER["HTTP_HOST"].'<br/>';
+print $_SERVER["SERVER_NAME"].'<br/>';
+print $_SERVER["SERVER_ADDR"].'<br/>';
+echo '<hr>';*/
 $serverPort = '';
 $isIpFun = '';
-$isFile = 'PhpProject1/opencart1/';
+$isFile = 'PhpProject1/opencart/';
 
 $host = filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_URL);
 $serverName = filter_input(INPUT_SERVER, 'SERVER_NAME', FILTER_SANITIZE_URL);
 $addr = filter_input(INPUT_SERVER, 'SERVER_ADDR', FILTER_SANITIZE_URL);
 $serverPort = filter_input(INPUT_SERVER, 'SERVER_PORT', FILTER_SANITIZE_NUMBER_INT);
+/*echo $host.'<br/>'.$serverName.'<br/>'.$addr.'<br/>'.$serverPort;
+exit();*/
 
 
 
