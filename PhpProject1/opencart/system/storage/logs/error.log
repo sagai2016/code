@@ -122,3 +122,133 @@
 2016-11-15 8:19:30 - PHP Notice:  Undefined variable: getid in /home/qman/NetBeansProjects/code/PhpProject1/opencart/catalog/view/theme/default/template/mytest/mytest.tpl on line 12
 2016-11-15 8:20:00 - PHP Notice:  Undefined variable: getid in /home/qman/NetBeansProjects/code/PhpProject1/opencart/catalog/view/theme/default/template/mytest/mytest.tpl on line 12
 2016-11-15 8:20:03 - PHP Notice:  Undefined variable: getid in /home/qman/NetBeansProjects/code/PhpProject1/opencart/catalog/view/theme/default/template/mytest/mytest.tpl on line 12
+2016-11-16 8:05:06 - PHP Warning:  DOMDocument::loadHTML(): ID flp_status already defined in Entity, line: 17 in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/PHPExcel/Classes/PHPExcel/Reader/HTML.php on line 478
+2016-11-16 8:05:06 - PHP Warning:  DOMDocument::loadHTML(): error parsing attribute name in Entity, line: 42 in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/PHPExcel/Classes/PHPExcel/Reader/HTML.php on line 478
+2016-11-21 5:19:22 - PHP Notice:  Undefined property: Config::$get in /home/qman/NetBeansProjects/code/PhpProject1/opencart/catalog/model/catalog/product.php on line 9
+2016-11-21 5:19:32 - PHP Notice:  Undefined property: Config::$get in /home/qman/NetBeansProjects/code/PhpProject1/opencart/catalog/model/catalog/product.php on line 9
+2016-11-21 5:20:47 - PHP Notice:  Undefined property: Config::$get in /home/qman/NetBeansProjects/code/PhpProject1/opencart/catalog/model/catalog/product.php on line 9
+2016-11-21 5:21:30 - PHP Unknown:  Object of class Config could not be converted to string in /home/qman/NetBeansProjects/code/PhpProject1/opencart/catalog/model/catalog/product.php on line 9
+2016-11-21 7:51:58 - PHP Notice:  Error: Could not load template /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/template/php.php on line 23
+2016-11-21 7:53:38 - PHP Notice:  Error: Could not load template /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/template/php.php on line 23
+2016-11-21 7:53:39 - PHP Notice:  Error: Could not load template /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/template/php.php on line 23
+2016-11-21 7:53:39 - PHP Notice:  Error: Could not load template /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/template/php.php on line 23
+2016-11-21 7:54:15 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-21 7:54:15 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-21 7:54:21 - PHP Notice:  Error: Could not load template /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/error/not_found.tpl! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/template/php.php on line 23
+2016-11-21 7:54:22 - PHP Notice:  Error: Could not load template /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/error/not_found.tpl! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/template/php.php on line 23
+2016-11-21 8:09:36 - PHP Notice:  Error: Could not load template /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/extension/captcha/basic_captcha.tpl! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/template/php.php on line 23
+2016-11-21 8:11:06 - PHP Notice:  Error: Could not load template /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/extension/captcha/basic_captcha.tpl! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/template/php.php on line 23
+2016-11-21 8:11:08 - PHP Notice:  Error: Could not load template /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/extension/captcha/basic_captcha.tpl! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/template/php.php on line 23
+2016-11-21 8:11:16 - PHP Notice:  Error: Could not load template /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/extension/captcha/basic_captcha.tpl! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/template/php.php on line 23
+2016-11-21 8:11:17 - PHP Notice:  Error: Could not load template /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/extension/captcha/basic_captcha.tpl! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/template/php.php on line 23
+2016-11-21 8:12:10 - PHP Notice:  Error: Could not load template /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/extension/captcha/basic_captcha.tpl! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/template/php.php on line 23
+2016-11-21 8:23:32 - PHP Notice:  Error: Could not load template /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/extension/captcha/basic_captcha.tpl! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/template/php.php on line 23
+2016-11-21 8:25:06 - PHP Notice:  Error: Could not load template /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/product/product.tpl! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/template/php.php on line 23
+2016-11-21 9:10:48 - PHP Notice:  Error: Could not load template /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/extension/captcha/basic_captcha.tpl! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/template/php.php on line 23
+2016-11-21 9:15:31 - PHP Notice:  Error: Could not load template /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/extension/captcha/basic_captcha.tpl! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/template/php.php on line 23
+2016-11-21 9:21:04 - PHP Notice:  Error: Could not load template /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/product/product.tpl! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/template/php.php on line 23
+2016-11-21 9:21:22 - PHP Notice:  Error: Could not load template /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/product/product.tpl! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/template/php.php on line 23
+2016-11-21 10:15:56 - PHP Unknown:  Object of class Document could not be converted to string in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/controller/common/show.php on line 223
+2016-11-21 10:35:08 - PHP Notice:  Error: Could not load template /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/common/column_left.tpl! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/template/php.php on line 23
+2016-11-21 10:35:16 - PHP Notice:  Error: Could not load template /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/common/column_left.tpl! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/template/php.php on line 23
+2016-11-21 10:38:57 - PHP Notice:  Undefined variable: header in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/product/product.tpl on line 1
+2016-11-21 10:38:57 - PHP Notice:  Undefined variable: column_left in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/product/product.tpl on line 8
+2016-11-21 10:38:57 - PHP Notice:  Undefined variable: column_left in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/product/product.tpl on line 9
+2016-11-21 10:38:57 - PHP Notice:  Undefined variable: column_right in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/product/product.tpl on line 11
+2016-11-21 10:38:57 - PHP Notice:  Undefined variable: content_top in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/product/product.tpl on line 16
+2016-11-21 10:38:57 - PHP Notice:  Undefined variable: column_left in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/product/product.tpl on line 18
+2016-11-21 10:38:57 - PHP Notice:  Undefined variable: column_right in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/product/product.tpl on line 18
+2016-11-21 10:38:57 - PHP Notice:  Undefined variable: column_left in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/product/product.tpl on line 116
+2016-11-21 10:38:57 - PHP Notice:  Undefined variable: column_right in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/product/product.tpl on line 116
+2016-11-21 10:38:57 - PHP Notice:  Undefined variable: content_bottom in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/product/product.tpl on line 393
+2016-11-21 10:38:57 - PHP Notice:  Undefined variable: column_right in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/product/product.tpl on line 394
+2016-11-21 10:38:57 - PHP Notice:  Undefined variable: footer in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/product/product.tpl on line 589
+2016-11-22 5:09:44 - PHP Warning:  Missing argument 2 for utf8_substr(), called in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 12 and defined in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/helper/utf8.php on line 17
+2016-11-22 5:09:44 - PHP Notice:  Undefined variable: offset in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/helper/utf8.php on line 19
+2016-11-22 5:12:24 - PHP Warning:  Missing argument 2 for utf8_substr(), called in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 12 and defined in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/helper/utf8.php on line 17
+2016-11-22 5:12:24 - PHP Notice:  Undefined variable: offset in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/helper/utf8.php on line 19
+2016-11-22 6:00:48 - PHP Notice:  Undefined variable: data in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 12
+2016-11-22 9:28:37 - PHP Notice:  Use of undefined constant aaa - assumed 'aaa' in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/controller/common/show.php on line 279
+2016-11-22 9:30:57 - PHP Notice:  Undefined variable: image_new in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 9
+2016-11-22 9:30:57 - PHP Notice:  Undefined variable: image_old in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 10
+2016-11-22 9:30:57 - PHP Notice:  getimagesize(): Read error! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 10
+2016-11-22 9:30:57 - PHP Notice:  Undefined variable: image_old in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 13
+2016-11-22 9:30:57 - PHP Notice:  Undefined variable: image_new in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 9
+2016-11-22 9:30:57 - PHP Notice:  Undefined variable: image_old in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 10
+2016-11-22 9:30:57 - PHP Notice:  getimagesize(): Read error! in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 10
+2016-11-22 9:30:57 - PHP Notice:  Undefined variable: image_old in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 13
+2016-11-22 9:31:15 - PHP Notice:  Undefined variable: image_new in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 10
+2016-11-22 9:31:15 - PHP Notice:  Undefined variable: image_new in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 19
+2016-11-22 9:31:15 - PHP Notice:  Undefined variable: image_new in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 32
+2016-11-22 9:31:15 - PHP Notice:  Undefined index: extension in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/image.php on line 60
+2016-11-22 9:31:15 - PHP Notice:  Undefined variable: image_new in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 38
+2016-11-22 9:31:15 - PHP Notice:  Undefined variable: image_new in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 10
+2016-11-22 9:31:15 - PHP Notice:  Undefined variable: image_new in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 19
+2016-11-22 9:31:15 - PHP Notice:  Undefined variable: image_new in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 32
+2016-11-22 9:31:15 - PHP Notice:  Undefined index: extension in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/image.php on line 60
+2016-11-22 9:31:15 - PHP Notice:  Undefined variable: image_new in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 38
+2016-11-22 9:31:22 - PHP Notice:  Undefined variable: image_new in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 10
+2016-11-22 9:31:22 - PHP Notice:  Undefined variable: image_new in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 19
+2016-11-22 9:31:22 - PHP Notice:  Undefined variable: image_new in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 32
+2016-11-22 9:31:22 - PHP Notice:  Undefined index: extension in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/image.php on line 60
+2016-11-22 9:31:22 - PHP Notice:  Undefined variable: image_new in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 38
+2016-11-22 9:31:22 - PHP Notice:  Undefined variable: image_new in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 10
+2016-11-22 9:31:22 - PHP Notice:  Undefined variable: image_new in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 19
+2016-11-22 9:31:22 - PHP Notice:  Undefined variable: image_new in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 32
+2016-11-22 9:31:22 - PHP Notice:  Undefined index: extension in /home/qman/NetBeansProjects/code/PhpProject1/opencart/system/library/image.php on line 60
+2016-11-22 9:31:22 - PHP Notice:  Undefined variable: image_new in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/model/tool/image.php on line 38
+2016-11-24 1:58:11 - PHP Notice:  Undefined index: product_id in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/controller/common/show.php on line 568
+2016-11-24 1:58:11 - PHP Notice:  Undefined index: product_id in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/controller/common/show.php on line 570
+2016-11-24 1:58:11 - PHP Notice:  Undefined index: product_id in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/controller/common/show.php on line 585
+2016-11-24 1:59:42 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 1:59:42 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:01:44 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:01:44 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:04:18 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:04:18 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:05:01 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:05:01 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:06:20 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:06:20 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:08:45 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:08:45 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:18:18 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:18:18 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:19:15 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:19:15 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:20:25 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:20:25 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:21:20 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:21:20 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:22:43 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:22:43 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:24:55 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:24:55 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:25:12 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:25:12 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:25:22 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:25:22 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:25:32 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:25:32 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:25:40 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:25:40 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:25:58 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:25:58 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:26:06 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:26:06 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:26:10 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:26:10 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:26:18 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:26:18 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:26:26 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:26:26 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:26:33 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:26:33 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:32:23 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:32:23 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:38:54 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:38:54 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:39:15 - PHP Notice:  Undefined variable: product in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 2:39:15 - PHP Warning:  Invalid argument supplied for foreach() in /home/qman/NetBeansProjects/code/PhpProject1/opencart/mobile/view/template/default/template/home/index.tpl on line 202
+2016-11-24 7:25:26 - PHP Notice:  Undefined variable: results in /home/qman/NetBeansProjects/code/PhpProject1/opencart/admin/controller/sale/order.php on line 31
+2016-11-24 8:34:17 - PHP Notice:  Use of undefined constant xhr - assumed 'xhr' in /home/qman/NetBeansProjects/code/PhpProject1/opencart/admin/view/template/sale/order_form.tpl on line 1000

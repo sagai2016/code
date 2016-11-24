@@ -28,7 +28,7 @@ class ControllerSaleOrder extends Controller {
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$this->load->model('sale/order');
-
+                
 		$this->getForm();
 	}
 	
@@ -191,14 +191,14 @@ class ControllerSaleOrder extends Controller {
 		$data['orders'] = array();
 
 		$filter_data = array(
-			'filter_order_id'      => $filter_order_id,
-			'filter_customer'	   => $filter_customer,
-			'filter_order_status'  => $filter_order_status,
-			'filter_total'         => $filter_total,
-			'filter_date_added'    => $filter_date_added,
-			'filter_date_modified' => $filter_date_modified,
-			'sort'                 => $sort,
-			'order'                => $order,
+			'filter_order_id'      => $filter_order_id,//dingdanbianhao
+			'filter_customer'	   => $filter_customer,//kehu
+			'filter_order_status'  => $filter_order_status,//wuliu
+			'filter_total'         => $filter_total,//zongji
+			'filter_date_added'    => $filter_date_added,//zengjia
+			'filter_date_modified' => $filter_date_modified,//xiugai
+			'sort'                 => $sort,//paixu
+			'order'                => $order,//dingdan
 			'start'                => ($page - 1) * $this->config->get('config_limit_admin'),
 			'limit'                => $this->config->get('config_limit_admin')
 		);
@@ -206,7 +206,7 @@ class ControllerSaleOrder extends Controller {
 		$order_total = $this->model_sale_order->getTotalOrders($filter_data);
 
 		$results = $this->model_sale_order->getOrders($filter_data);
-
+                
 		foreach ($results as $result) {
 			$data['orders'][] = array(
 				'order_id'      => $result['order_id'],
@@ -584,7 +584,7 @@ class ControllerSaleOrder extends Controller {
 				);
 			}
 
-			// Vouchers
+			// Vouchers     //diyongquan
 			$data['order_vouchers'] = $this->model_sale_order->getOrderVouchers($this->request->get['order_id']);
 
 			$data['coupon'] = '';

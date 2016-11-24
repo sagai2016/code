@@ -5,7 +5,7 @@ class ControllerApiVoucher extends Controller {
 
 		// Delete past voucher in case there is an error
 		unset($this->session->data['voucher']);
-
+                //xiaohui
 		$json = array();
 
 		if (!isset($this->session->data['api_id'])) {
@@ -70,6 +70,7 @@ class ControllerApiVoucher extends Controller {
 				$this->session->data['vouchers'] = array();
 
 				foreach ($this->request->post['voucher'] as $voucher) {
+                                   
 					if (isset($voucher['code']) && isset($voucher['to_name']) && isset($voucher['to_email']) && isset($voucher['from_name']) && isset($voucher['from_email']) && isset($voucher['voucher_theme_id']) && isset($voucher['message']) && isset($voucher['amount'])) {
 						$this->session->data['vouchers'][$voucher['code']] = array(
 							'code'             => $voucher['code'],

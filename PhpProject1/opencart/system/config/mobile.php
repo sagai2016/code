@@ -15,13 +15,26 @@ $_['db_port']           = DB_PORT;
 // Session
 $_['session_autostart'] = true;
 
-// Actions
-$_['action_pre_action'] = array(
-	'home/index',
-);
+//// Actions
+//$_['action_pre_action'] = array(
+//        'home/startup',
+//	'home/index'
+//        
+//);
 
 // Actions
-$_['action_default'] = 'home/index';
+$_['action_pre_action'] = array(
+	'startup/session',
+	'startup/startup',
+	'startup/error',
+	'startup/event',
+	'startup/maintenance',
+	'startup/seo_url',
+	'startup/weixin'
+);
+
+
+
 
 // Action Events
 $_['action_event'] = array(

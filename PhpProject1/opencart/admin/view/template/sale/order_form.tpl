@@ -30,6 +30,7 @@
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-store"><?php echo $entry_store; ?></label>
                 <div class="col-sm-10">
+                    <!--商店-->
                   <select name="store_id" id="input-store" class="form-control">
                     <?php foreach ($stores as $store) { ?>
                     <?php if ($store['store_id'] == $store_id) { ?>
@@ -41,6 +42,7 @@
                   </select>
                 </div>
               </div>
+                   <!--huobi-->
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-currency"><?php echo $entry_currency; ?></label>
                 <div class="col-sm-10">
@@ -55,6 +57,7 @@
                   </select>
                 </div>
               </div>
+                   <!--huiyuan-->
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-customer"><?php echo $entry_customer; ?></label>
                 <div class="col-sm-10">
@@ -62,6 +65,7 @@
                   <input type="hidden" name="customer_id" value="<?php echo $customer_id; ?>" />
                 </div>
               </div>
+                   <!--huiyuandengji-->
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-customer-group"><?php echo $entry_customer_group; ?></label>
                 <div class="col-sm-10">
@@ -76,24 +80,29 @@
                   </select>
                 </div>
               </div>
+                   <!--xingming-->
               <div class="form-group required">
                 <label class="col-sm-2 control-label" for="input-fullname"><?php echo $entry_fullname; ?></label>
                 <div class="col-sm-10">
                   <input type="text" name="fullname" value="<?php echo $fullname; ?>" id="input-fullname" class="form-control" />
                 </div>
               </div>
+                    <!--youxiang-->
+
               <div class="form-group required">
                 <label class="col-sm-2 control-label" for="input-email"><?php echo $entry_email; ?></label>
                 <div class="col-sm-10">
                   <input type="text" name="email" value="<?php echo $email; ?>" id="input-email" class="form-control" />
                 </div>
               </div>
+                    <!--dianhua-->
               <div class="form-group required">
                 <label class="col-sm-2 control-label" for="input-telephone"><?php echo $entry_telephone; ?></label>
                 <div class="col-sm-10">
                   <input type="text" name="telephone" value="<?php echo $telephone; ?>" id="input-telephone" class="form-control" />
                 </div>
               </div>
+                    <!---->
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-fax"><?php echo $entry_fax; ?></label>
                 <div class="col-sm-10">
@@ -988,7 +997,10 @@ $(document).delegate('#button-ip-add', 'click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                        
+			alert(2);
+                        alert(thrownError);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -1022,7 +1034,8 @@ $.ajax({
 		}
 	},
 	error: function(xhr, ajaxOptions, thrownError) {
-		alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+		alert(2);
+                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 	}
 });
 
@@ -1052,7 +1065,8 @@ $('select[name=\'currency\']').on('change', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -1232,7 +1246,8 @@ $('#button-refresh').on('click', function() {
 			$('#total').html(html);
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -1338,7 +1353,9 @@ $('select[name=\'customer_group_id\']').on('change', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -1402,6 +1419,8 @@ $('#button-customer').on('click', function() {
                         }
             		},
                     error: function(xhr, ajaxOptions, thrownError) {
+                        alert(2);
+                        alert(thrownError);
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
                     }
                 });
@@ -1428,7 +1447,8 @@ $('#button-customer').on('click', function() {
                             }
                 		},
                         error: function(xhr, ajaxOptions, thrownError) {
-                            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                            alert(2);
+                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
                         }
                     });
                 });
@@ -1441,7 +1461,9 @@ $('#button-customer').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -1644,7 +1666,8 @@ $('#tab-product input[name=\'product\']').autocomplete({
 $('#button-product-add').on('click', function() {
 	$.ajax({
 		url: '<?php echo $catalog; ?>index.php?route=api/cart/add&token=' + token + '&store_id=' + $('select[name=\'store_id\'] option:selected').val(),
-		type: 'post',
+		
+                type: 'post',
 		data: $('#tab-product input[name=\'product_id\'], #tab-product input[name=\'quantity\'], #tab-product input[name^=\'option\'][type=\'text\'], #tab-product input[name^=\'option\'][type=\'hidden\'], #tab-product input[name^=\'option\'][type=\'radio\']:checked, #tab-product input[name^=\'option\'][type=\'checkbox\']:checked, #tab-product select[name^=\'option\'], #tab-product textarea[name^=\'option\']'),
 		dataType: 'json',
 		crossDomain: true,
@@ -1687,7 +1710,9 @@ $('#button-product-add').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -1740,7 +1765,9 @@ $('#button-voucher-add').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -1772,7 +1799,9 @@ $('#cart').delegate('.btn-danger', 'click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -1806,6 +1835,8 @@ $('#cart').delegate('.btn-primary', 'click', function() {
 			}
         },
         error: function(xhr, ajaxOptions, thrownError) {
+            alert(2);
+            alert(thrownError);
             alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
         }
     }).done(function() {
@@ -1864,7 +1895,9 @@ $('select[name=\'payment_address\']').on('change', function() {
 			$('#tab-payment select[name=\'country_id\']').trigger('change');
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -1911,7 +1944,9 @@ $('#tab-payment select[name=\'country_id\']').on('change', function() {
 			$('#tab-payment select[name=\'zone_id\']').trigger('change');
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -1949,7 +1984,9 @@ $('#tab-payment select[name=\'zone_id\']').on('change', function() {
 			$('#tab-payment select[name=\'city_id\']').trigger('change');
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -1985,7 +2022,9 @@ $('#tab-payment select[name=\'city_id\']').on('change', function() {
 			$('#tab-payment select[name=\'district_id\']').html(html);
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -2060,7 +2099,8 @@ $('#button-payment-address').on('click', function() {
 						}
 					},
 					error: function(xhr, ajaxOptions, thrownError) {
-						alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+						alert(2);
+                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 					}
 				}).done(function() {
                     // Refresh products, vouchers and totals
@@ -2076,7 +2116,9 @@ $('#button-payment-address').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -2128,7 +2170,9 @@ $('select[name=\'shipping_address\']').on('change', function() {
 			$('#tab-shipping select[name=\'country_id\']').trigger('change');
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -2175,7 +2219,9 @@ $('#tab-shipping select[name=\'country_id\']').on('change', function() {
 			$('#tab-shipping select[name=\'zone_id\']').trigger('change');
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -2213,7 +2259,9 @@ $('#tab-shipping select[name=\'zone_id\']').on('change', function() {
 			$('#tab-shipping select[name=\'city_id\']').trigger('change');
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -2249,7 +2297,8 @@ $('#tab-shipping select[name=\'city_id\']').on('change', function() {
 			$('#tab-shipping select[name=\'district_id\']').html(html);
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -2333,7 +2382,8 @@ $('#button-shipping-address').on('click', function() {
 						}
 					},
 					error: function(xhr, ajaxOptions, thrownError) {
-						alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+						alert(2);
+                         //alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 					}
 				}).done(function() {
 				    // Refresh products, vouchers and totals
@@ -2344,7 +2394,8 @@ $('#button-shipping-address').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -2382,7 +2433,8 @@ $('#button-shipping-method').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -2420,7 +2472,8 @@ $('#button-payment-method').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -2458,7 +2511,8 @@ $('#button-coupon').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -2496,7 +2550,8 @@ $('#button-voucher').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -2534,7 +2589,8 @@ $('#button-reward').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -2605,7 +2661,8 @@ $('#button-save').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			alert(2);
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
 });
@@ -2657,7 +2714,8 @@ $('#content').delegate('button[id^=\'button-upload\'], button[id^=\'button-custo
 					}
 				},
 				error: function(xhr, ajaxOptions, thrownError) {
-					alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+					alert(2);
+                                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 				}
 			});
 		}

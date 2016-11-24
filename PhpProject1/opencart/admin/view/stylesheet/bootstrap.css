@@ -205,7 +205,7 @@ td, th {
 @at-root {
     font-family: 'Glyphicons Halflings';
     src: url('../fonts/bootstrap/glyphicons-halflings-regular.eot');
-    src: url('../fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/bootstrap/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/bootstrap/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/bootstrap/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg'); } }
+    src: url('../fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/bootstrap/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/bootstrap/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/bootstrap/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg'); } 
 
 .glyphicon {
   position: relative;
@@ -4884,9 +4884,11 @@ button.close {
 .affix {
   position: fixed; }
 
-@at-root {
-  @-ms-viewport {
-    width: device-width; } }
+@at-root{
+  @-ms-viewport
+  {
+    width: device-width;
+  } 
 
 .visible-xs {
   display: none !important; }
