@@ -998,8 +998,6 @@ $(document).delegate('#button-ip-add', 'click', function() {
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
                         
-			alert(2);
-                        alert(thrownError);
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -1034,8 +1032,8 @@ $.ajax({
 		}
 	},
 	error: function(xhr, ajaxOptions, thrownError) {
-		alert(2);
-                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+
 	}
 });
 
@@ -1065,7 +1063,7 @@ $('select[name=\'currency\']').on('change', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -1246,7 +1244,7 @@ $('#button-refresh').on('click', function() {
 			$('#total').html(html);
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -1353,8 +1351,7 @@ $('select[name=\'customer_group_id\']').on('change', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
-                        alert(thrownError);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -1419,8 +1416,7 @@ $('#button-customer').on('click', function() {
                         }
             		},
                     error: function(xhr, ajaxOptions, thrownError) {
-                        alert(2);
-                        alert(thrownError);
+                       
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
                     }
                 });
@@ -1447,7 +1443,7 @@ $('#button-customer').on('click', function() {
                             }
                 		},
                         error: function(xhr, ajaxOptions, thrownError) {
-                            alert(2);
+                            
                          alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
                         }
                     });
@@ -1461,8 +1457,7 @@ $('#button-customer').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
-                        alert(thrownError);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -1710,8 +1705,7 @@ $('#button-product-add').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
-                        alert(thrownError);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -1765,8 +1759,7 @@ $('#button-voucher-add').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
-                        alert(thrownError);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -1799,8 +1792,7 @@ $('#cart').delegate('.btn-danger', 'click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
-                        alert(thrownError);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -1895,8 +1887,7 @@ $('select[name=\'payment_address\']').on('change', function() {
 			$('#tab-payment select[name=\'country_id\']').trigger('change');
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
-                        alert(thrownError);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -1944,8 +1935,7 @@ $('#tab-payment select[name=\'country_id\']').on('change', function() {
 			$('#tab-payment select[name=\'zone_id\']').trigger('change');
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
-                        alert(thrownError);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -1984,8 +1974,7 @@ $('#tab-payment select[name=\'zone_id\']').on('change', function() {
 			$('#tab-payment select[name=\'city_id\']').trigger('change');
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
-                        alert(thrownError);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -2022,8 +2011,7 @@ $('#tab-payment select[name=\'city_id\']').on('change', function() {
 			$('#tab-payment select[name=\'district_id\']').html(html);
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
-                        alert(thrownError);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -2116,8 +2104,7 @@ $('#button-payment-address').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
-                        alert(thrownError);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -2170,8 +2157,7 @@ $('select[name=\'shipping_address\']').on('change', function() {
 			$('#tab-shipping select[name=\'country_id\']').trigger('change');
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
-                        alert(thrownError);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -2219,8 +2205,7 @@ $('#tab-shipping select[name=\'country_id\']').on('change', function() {
 			$('#tab-shipping select[name=\'zone_id\']').trigger('change');
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
-                        alert(thrownError);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -2259,8 +2244,7 @@ $('#tab-shipping select[name=\'zone_id\']').on('change', function() {
 			$('#tab-shipping select[name=\'city_id\']').trigger('change');
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
-                        alert(thrownError);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -2297,7 +2281,7 @@ $('#tab-shipping select[name=\'city_id\']').on('change', function() {
 			$('#tab-shipping select[name=\'district_id\']').html(html);
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -2394,7 +2378,7 @@ $('#button-shipping-address').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -2433,7 +2417,7 @@ $('#button-shipping-method').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -2472,7 +2456,7 @@ $('#button-payment-method').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -2511,7 +2495,7 @@ $('#button-coupon').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -2550,7 +2534,7 @@ $('#button-voucher').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -2589,7 +2573,7 @@ $('#button-reward').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -2661,7 +2645,7 @@ $('#button-save').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(2);
+			
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});

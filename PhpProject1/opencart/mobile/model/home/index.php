@@ -29,7 +29,9 @@ class ModelHomeIndex extends Model {
     }
     
     public function getDatu() {
-        $query=$this->db->query('select * from '.DB_PREFIX.'product order by product_id desc limit 4');
+        //$sql='select * from '.DB_PREFIX.'product'.' WHERE product_id>=65 order by product_id desc';
+        //echo $sql;exit;
+        $query=$this->db->query('select * from '.DB_PREFIX.'product'.' WHERE product_id>=65 and product_id<=68 order by product_id desc');
         return $query->rows;
     }
    

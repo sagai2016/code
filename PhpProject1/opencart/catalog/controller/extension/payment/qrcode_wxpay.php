@@ -80,13 +80,13 @@ class ControllerExtensionPaymentQrcodeWxPay extends Controller {
 		$input->SetOut_trade_no($order_id);
 		$input->SetTotal_fee($total_fee);
 		$input->SetTime_start(date("YmdHis"));
-		$input->SetTime_expire(date("YmdHis", time() + 600));
+//		$input->SetTime_expire(date("YmdHis", time() + 600));
 		$input->SetGoods_tag("mycncart");
 		$input->SetNotify_url(HTTPS_SERVER . "catalog/controller/extension/payment/qrcode_wxpay_callback.php");
 		$input->SetTrade_type("NATIVE");
 		$input->SetProduct_id($order_id);
 		$result = $notify->GetPayUrl($input);
-		
+
 		$this->session->data['code_url'] = $result['code_url'];
 		
 		$data['redirect'] = $this->url->link('checkout/qrcode_wxpay_success');

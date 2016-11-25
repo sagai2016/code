@@ -23,6 +23,9 @@
 <script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
 <link href="view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="view/stylesheet/stylesheet.css" rel="stylesheet">
+<script src="view/javascript/jquery/magnific/jquery.magnific-popup.min.js"></script>
+<script src="view/javascript/jquery/datetimepicker/moment.js" type="text/javascript"></script>
+<script src="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
 <?php foreach ($styles as $style) { ?>
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
 <?php } ?>
@@ -37,8 +40,6 @@
 <?php echo $analytic; ?>
 <?php } ?>
 </head>
-
-
 <?php if ($categories) { ?>
 
 <?php } ?>

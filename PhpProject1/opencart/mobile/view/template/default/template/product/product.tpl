@@ -1,5 +1,10 @@
 <?php echo $header; ?>
 <div class="container">
+  <ul class="breadcrumb">
+    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
+    <?php } ?>
+  </ul>
   <div class="row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
@@ -19,7 +24,7 @@
           <?php if ($thumb || $images) { ?>
           <ul class="thumbnails">
             <?php if ($thumb) { ?>
-            <li><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>           
+            <li><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
             <?php } ?>
             <?php if ($images) { ?>
             <?php foreach ($images as $image) { ?>
@@ -539,11 +544,11 @@ $('#review').delegate('.pagination a', 'click', function(e) {
     $('#review').fadeIn('slow');
 });
 
-$('#review').load('index.php?route=common/show/review&product_id=<?php echo $product_id; ?>');
+$('#review').load('index.php?route=product/product/review&product_id=<?php echo $product_id; ?>');
 
 $('#button-review').on('click', function() {
 	$.ajax({
-		url: 'index.php?route=common/show/write&product_id=<?php echo $product_id; ?>',
+		url: 'index.php?route=product/product/write&product_id=<?php echo $product_id; ?>',
 		type: 'post',
 		dataType: 'json',
 		data: $("#form-review").serialize(),
@@ -581,3 +586,4 @@ $(document).ready(function() {
 	});
 });
 //--></script>
+<?php echo $footer; ?>

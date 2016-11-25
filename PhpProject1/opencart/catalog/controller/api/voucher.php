@@ -39,16 +39,20 @@ class ControllerApiVoucher extends Controller {
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
+                
 	}
+        
 
 	public function add() {
 		$this->load->language('api/voucher');
-
+                
 		$json = array();
 
 		if (!isset($this->session->data['api_id'])) {
 			$json['error']['warning'] = $this->language->get('error_permission');
-		} else {
+                        //var_dump($json['error']['warning']);exit('aaa');    
+                        
+                } else {
 			// Add keys for missing post vars
 			$keys = array(
 				'from_name',
@@ -59,6 +63,7 @@ class ControllerApiVoucher extends Controller {
 				'message',
 				'amount'
 			);
+                        
 
 			foreach ($keys as $key) {
 				if (!isset($this->request->post[$key])) {
@@ -87,7 +92,7 @@ class ControllerApiVoucher extends Controller {
 				}
 
 				$json['success'] = $this->language->get('text_cart');
-
+                                
 				unset($this->session->data['shipping_method']);
 				unset($this->session->data['shipping_methods']);
 				unset($this->session->data['payment_method']);
@@ -116,7 +121,7 @@ class ControllerApiVoucher extends Controller {
 
 				if (!$json) {
 					$code = mt_rand();
-
+                                        
 					$this->session->data['vouchers'][$code] = array(
 						'code'             => $code,
 						'description'      => sprintf($this->language->get('text_for'), $this->currency->format($this->currency->convert($this->request->post['amount'], $this->session->data['currency'], $this->config->get('config_currency')), $this->session->data['currency']), $this->request->post['to_name']),
@@ -130,7 +135,7 @@ class ControllerApiVoucher extends Controller {
 					);
 
 					$json['success'] = $this->language->get('text_cart');
-
+                                        
 					unset($this->session->data['shipping_method']);
 					unset($this->session->data['shipping_methods']);
 					unset($this->session->data['payment_method']);
@@ -145,7 +150,6 @@ class ControllerApiVoucher extends Controller {
 			$this->response->addHeader('Access-Control-Max-Age: 1000');
 			$this->response->addHeader('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
 		}
-
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
