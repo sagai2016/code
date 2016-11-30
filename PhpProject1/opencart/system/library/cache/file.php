@@ -7,12 +7,12 @@ class File {
 		$this->expire = $expire;
 
 		$files = glob(DIR_CACHE . 'cache.*');
-
+                 
 		if ($files) {
 			foreach ($files as $file) {
 				$time = substr(strrchr($file, '.'), 1);
-
-				if ($time < time()) {
+                                //var_dump($time.'bbb'.time());exit('aaa');
+				if ($time < time()){
 					if (file_exists($file)) {
 						unlink($file);
 					}

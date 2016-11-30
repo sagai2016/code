@@ -34,14 +34,14 @@
             }
             .main .header {
                 width: 100%;
-                background: url(../mobile/view/image/catalog/demo/manufacturer/t1.png) no-repeat;
+                background: url(image/catalog/demo/manufacturer/t1.png) no-repeat;
                 background-size: 100% auto;
                 height: 11%;
                 max-height: 150px;
             }
             .main .ad1 {
                 width: 100%;
-                background: url(../mobile/view/image/catalog/demo/manufacturer/t2.png) no-repeat;
+                background: url(image/catalog/demo/manufacturer/t2.png) no-repeat;
                 background-size: 100% auto;
                 height: 30%;
                 overflow: hidden;
@@ -49,7 +49,7 @@
             .main .ad2 {
                 margin: 2% 0;
                 height: 15%;
-                background: url(../mobile/view/image/catalog/demo/manufacturer/t3.png) no-repeat;
+                background: url(image/catalog/demo/manufacturer/t3.png) no-repeat;
                 background-size: 100% auto;
             }
             .main .adList {
@@ -60,7 +60,7 @@
             }
             .main .adList .title {
                 height: 13%;
-                background: url(../mobile/view/image/catalog/demo/manufacturer/t4.png) no-repeat;
+                background: url(image/catalog/demo/manufacturer/t4.png) no-repeat;
                 background-size: 100% auto;
             }
             .main .adList .goodsList {
@@ -181,10 +181,10 @@
                         <section class="slider">
                             <div class="flexslider">
                                 <ul class="slides">
-                                    <li><a href="javascript:;"><img src="../mobile/view/image/catalog/demo/manufacturer/t2.png" alt="懒人之家" /></a></li>
-                                    <li><a href="javascript:;"><img src="../mobile/view/image/catalog/demo/manufacturer/t2-2.png" alt="懒人之家" /></a></li>
-                                    <li><a href="javascript:;"><img src="../mobile/view/image/catalog/demo/manufacturer/t2.png" alt="懒人之家" /></a></li>
-                                    <li><a href="javascript:;"><img src="../mobile/view/image/catalog/demo/manufacturer/t2-2.png" alt="懒人之家" /></a></li>
+                                    <li><a href="javascript:;"><img src="image/catalog/demo/manufacturer/t2.png" alt="懒人之家" /></a></li>
+                                    <li><a href="javascript:;"><img src="image/catalog/demo/manufacturer/t2-2.png" alt="懒人之家" /></a></li>
+                                    <li><a href="javascript:;"><img src="image/catalog/demo/manufacturer/t2.png" alt="懒人之家" /></a></li>
+                                    <li><a href="javascript:;"><img src="image/catalog/demo/manufacturer/t2-2.png" alt="懒人之家" /></a></li>
                                 </ul>
                             </div>
                         </section>

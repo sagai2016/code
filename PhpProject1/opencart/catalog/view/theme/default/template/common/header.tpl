@@ -18,6 +18,9 @@
 <?php if ($keywords) { ?>
 <meta name="keywords" content= "<?php echo $keywords; ?>" />
 <?php } ?>
+ <script src="view/javascript/jquery/jquery.flexslider.js"></script> 
+    <script src="view/javascript/o-script.js"></script>
+<link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" type="text/css">
 <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
 <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -37,6 +40,59 @@
 <?php echo $analytic; ?>
 <?php } ?>
 </head>
+<style>
+    .foot {
+	width: 100%;
+	display: flex;
+	position: fixed;
+	bottom: 0;
+}
+
+.foot ul {
+	background: #fff;
+	margin: auto;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	border-top: 1px solid #bebebe;
+}
+.foot ul li {
+	width: 100%;
+	text-align: center;
+	line-height: 48px;/*
+	border-width: 0 1px 0 0;
+	border-style: solid;
+	border-color: #ccc;
+*/
+}
+.foot ul .home {
+	width: 250px;
+	line-height: normal;
+	color: #686868;
+	font-size: 0;
+}
+.foot ul .home .icon-goodscart {
+	font-size: 25px;
+	color: #686868;
+}
+.foot ul .home a{
+	display: inline-block;
+	width: 100%;
+	font-size: 12px;
+	line-height: normal;
+	padding: 0;
+}
+.foot ul .addToCart {
+	background: #ff8856;
+	color: #fff;
+}
+.foot ul .buyNow {
+	background: #ff4344;
+	color: #fff;
+}
+
+</style>
 <body <?php echo 'class="'.$class.'"'; ?>>
 <nav id="top">
   <div class="container">

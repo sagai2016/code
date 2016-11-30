@@ -13,7 +13,7 @@
 $serverPort = '';
 $isIpFun = '';
 
-$isFile = 'NetBeansProjects/code/PhpProject1/opencart/';
+$isFile = 'PhpProject1/opencart/';
 
 
 $host = filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_URL);

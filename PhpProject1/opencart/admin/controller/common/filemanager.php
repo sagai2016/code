@@ -284,14 +284,14 @@ class ControllerCommonFileManager extends Controller {
 						$json['error'] = $this->language->get('error_upload_' . $file['error']);
 					}
 					
-					if (intval($file['size']) > 1024000) {
+					if (intval($file['size']) > 2048000) {
 						$json['error'] = $this->language->get('error_filesize');
 					}
 					
 					if (!isset($json['error'])) {
 						list($width_orig, $height_orig, $image_type) = getimagesize($file['tmp_name']);
 						
-						if ((intval($width_orig) > 2000) || (intval($height_orig) > 2000)) {
+						if ((intval($width_orig) > 4000) || (intval($height_orig) > 4000)) {
 							$json['error'] = $this->language->get('error_filesize');
 						}
 					}

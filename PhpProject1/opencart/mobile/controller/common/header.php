@@ -46,6 +46,7 @@ class ControllerCommonHeader extends Controller {
 
 		if (is_file(DIR_IMAGE . $this->config->get('config_logo'))) {
 			$data['logo'] = $server . 'image/' . $this->config->get('config_logo');
+                        
 		} else {
 			$data['logo'] = '';
 		}
@@ -141,7 +142,7 @@ class ControllerCommonHeader extends Controller {
 				// Level 2
 				$children_data = array();
 
-				$children = $this->model_catalog_category->getCategories($category['category_id']);
+                    		$children = $this->model_catalog_category->getCategories($category['category_id']);
 
 				foreach ($children as $child) {
 					$filter_data = array(

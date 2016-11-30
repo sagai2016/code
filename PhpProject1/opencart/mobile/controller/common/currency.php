@@ -52,7 +52,7 @@ class ControllerCommonCurrency extends Controller {
 	public function currency() {
 		if (isset($this->request->post['code'])) {
 			$this->session->data['currency'] = $this->request->post['code'];
-		
+                        var_dump($this->session->data['currency']);exit('aaa');
 			unset($this->session->data['shipping_method']);
 			unset($this->session->data['shipping_methods']);
 		}
