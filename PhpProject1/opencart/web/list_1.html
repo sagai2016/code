@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="css/goodsStyle.css" />
+<style type="text/css">
+ul, li, h1, h2, h3, h4, h5, h6, dt, dd, dl, ol, dl, dt, dd, p {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border: 0;
+}
+body, html {
+	margin: 0;
+	padding: 0;
+	background: #f8f8f8;
+}
+* {
+	box-sizing: border-box;
+}
+.main {
+	max-width: 750px;
+	width: 100%;
+	display: block;
+	margin: auto;
+}
+	.top *{
+		color: #787878;
+		font-size: 15.5px;
+		font-weight: 300;
+	}
+.top {
+	width: 100%;
+	display: flex;
+	position: fixed;
+	top:0;
+	
+	
+}
+.top .link {
+	display: inline-flex;
+	justify-content: space-between;
+	width: 100%;
+	background: rgba(255,255,255,.98); 
+}
+.top .link li {
+	width: 100%;
+	text-align: center;
+	line-height: 48px;
+	border-bottom: 1px solid #e6e6e6;
+	
+  
+}
+.top .link .linkmain {
+	border-bottom: 1px solid #ff2e00;
+}
+.main .goodslist {
+	width: 100%;
+	font-size: 0;
+}
+.main .goodslist .list {
+	width: 100%;
+	font-size: 0;
+}
+.main .goodslist .list li {
+	display: inline-block;
+	width: 50%;
+	padding: 1.5%;
+	vertical-align: top;
+		
+}
+.main .goodslist .list li p {
+	border: 1px solid #e5e5e5;
+	font-size: 14px;
+	padding: 3%;
+	background: #fff;
+	display: inline-block;
+	box-shadow:0 0 5px rgba(150,150,150,.1);
+	border-radius: 3px;
+}
+.main .goodslist .list li p img {
+	width: 100%;
+	border-radius: 2px;
+}
+.main .goodslist .list li span {
+	display: inline-block;
+	padding: 2%;
+	width: 100%;
+	line-height: 35px;
+	height: 35px;
+	text-align: center;
+	overflow: hidden;
+}
+/*
+.main .goodslist .list li span+a {
+	float: right;
+	display: inline-block;
+	    margin: 7px;
+	background: #f36815;
+	padding: 3px;
+	width: 55px;
+	text-align: center;
+	border-radius: 3px;
+	color: #fff;
+}
+*/
+.main .bootm {
+	height: 50px;
+	font-size: 50px;
+	display: inline-block;
+}
+.foot {
+	width: 100%;
+	display: flex;
+	position: fixed;
+	bottom: 0;
+}
+	
+	
+.foot *{
+	color: #787878;
+}
+.foot ul {
+	background: #fff;
+	margin: auto;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	border: 1px solid #ccc;
+}
+.foot ul li {
+	width: 100%;
+	text-align: center;
+	line-height: 48px;
+	border-width: 0 1px 0 0;
+	border-style: solid;
+	border-color: #ccc;
+}
+.foot ul .home {
+	width: 150px;
+	font-size: 20px;
+}
+
+@media (min-width: 500px) {
+.main .goodslist .list li {
+	width: 33.3%;
+}
+}
+</style>
+</head>
+
+<body>
+  <div class="top">
+    <ul class="link">
+      <li class="linkmain">限量收藏</li>
+      <li>品鉴好酒</li>
+      <li>稀世珍品</li>
+    </ul>
+  </div>
+<div class="main">
+<p class="bootm"> </p>
+  <div class="goodslist">
+    <ul class="list">
+      <li>
+        <p> <img src="images/g3.jpg"><span>古井贡酒·正德窖藏</span> </p>
+      </li>
+      <li>
+        <p> <img src="images/g3.jpg"><span>古井贡酒·正德窖藏</span> </p>
+      </li>
+      <li>
+        <p> <img src="images/g3.jpg"><span>古井贡酒·正德窖藏</span> </p>
+      </li>
+      <li>
+        <p> <img src="images/g3.jpg"><span>古井贡酒·正德窖藏</span> </p>
+      </li>
+      <li>
+        <p> <img src="images/g3.jpg"><span>古井贡酒·正德窖藏</span> </p>
+      </li>
+      <li>
+        <p> <img src="images/g3.jpg"><span>古井贡酒·正德窖藏</span> </p>
+      </li>
+      <li>
+        <p> <img src="images/g3.jpg"><span>古井贡酒·正德窖藏</span> </p>
+      </li>
+      <li>
+        <p> <img src="images/g3.jpg"><span>古井贡酒·正德窖藏</span> </p>
+      </li>
+    </ul>
+  </div>
+  <p class="bootm"> </p>
+</div>
+<div class="foot">
+  <ul>
+    <li class="home  icon-goodshome"></li>
+    <li> <span>全部商品</span> </li>
+    <li> <span>购物车</span> </li>
+    <li> <span>个人中心</span> </li>
+  </ul>
+</div>
+</body>
+</html>
