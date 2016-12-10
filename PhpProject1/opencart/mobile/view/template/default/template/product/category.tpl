@@ -73,6 +73,9 @@ body, html {
 .top .link .linkmain {
 	border-bottom: 1px solid #ff2e00;
 }
+.top .link .linkmain a{
+    color:#ff2e00;
+}
 .main .limit{
         margin-top: 70px;
 }
@@ -193,15 +196,11 @@ a{
      <div class="top">
         <ul class="link">
             <?php
-            
-              
             foreach($categories as $categorie):
-            
             $cc='';
                 if(!empty($_GET['path'] ) && $_GET['path'] ==  $categorie['category_id']){
                     $cc = 'class="linkmain"';
                 }
-            
             ?>
             <li  <?php echo $cc;?>> <a href="<?php echo  $categorie['href']?>"><?php echo $categorie['name']?></a> </li>
             <?php endforeach?>

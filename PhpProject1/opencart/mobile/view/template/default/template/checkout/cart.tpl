@@ -315,9 +315,9 @@
     <body>
         <div class="top">
             <ul class="link">
-                <li class="linkmain">购物车</li>
-                <li>收藏列表</li>
-                <li>全部订单</li>
+                <li class="linkmain"><a>购物车</a></li>
+                <li><a>收藏列表</a></li>
+                <li><a>全部订单</a></li>
             </ul>
         </div>
 
@@ -339,13 +339,13 @@
                         </li>
                         <li class="content"> 
                             <p><?php echo $product['name']; ?></p>
-                            <p class="classify">五斤装</p>
+                            <!--<p class="classify">五斤装</p>-->
                             <p class="price"><?php echo $product['price']; ?></p>
                             <p class="button">
                                 <span class="jg"> 
-                                    <i id="add">+ </i> 
-                                    <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]" id="cartcount" value="<?php echo $product['quantity']; ?>"/>                   
                                     <i id="reduce">- </i>
+                                    <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]" id="cartcount" value="<?php echo $product['quantity']; ?>"/>                   
+                                    <i id="add">+ </i> 
                                 </span>                            
                                 <button type="button" title="<?php echo $button_remove; ?>" class="del" onclick="cart.remove('<?php echo $product['cart_id']; ?>');">删除</button>
                             </p>    

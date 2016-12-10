@@ -267,7 +267,7 @@ body, html {
 </head>
 <body>
 <div class="main">
-  <div class="top"><img src="view/theme/default/image/logo.png" alt="" /></div>
+    <div class="top"><a href="./"><img src="view/theme/default/image/logo.png" alt="" /></a><span> <a class="gzc">我的收藏</a> <a >收藏商品</a></span></div>
   <div class="content">
     <ul>
       <li class="goodsImages"> <img src="<?php echo $thumb; ?>" /> </li>
@@ -293,9 +293,11 @@ body, html {
   </div>
   
   <div class="option"> 
-    	<span class="icon icon-goodsshop"></span>
-     	<span>大隆汇藏</span> 
-     	<a class="goodhome" href="index.php?route=product/categoryy">进入店铺<i class="icon-goodslefttag"></i></a>
+        <a href="./">
+            <span class="icon icon-goodsshop"></span>
+            <span>醉藏</span> 
+            <span class="goodhome" >进入店铺<i class="icon-goodslefttag"></i></span>
+        </a>
   </div>
  
   

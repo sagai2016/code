@@ -73,7 +73,9 @@
             .top .link .linkmain {
                 border-bottom: 1px solid #ff2e00;
             }
-
+            .top .link .linkmain a{
+                color:#ff2e00;
+            }
             .main .goodslist {
                 width: 100%;
                 font-size: 0;

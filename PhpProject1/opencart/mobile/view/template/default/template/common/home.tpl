@@ -34,7 +34,7 @@
             }
             .main .header {
                 width: 100%;
-                background: url(image/catalog/demo/manufacturer/t1.png) no-repeat;
+                background: url(image/catalog/demo/manufacturer/t1.jpg) no-repeat;
                 background-size: 100% auto;
                 height: 11%;
                 max-height: 150px;
@@ -170,6 +170,8 @@
             }
             .foot ul .home {
                 width: 150px;
+                font-size: 20px;
+
             }
             .foot ul li a{
                 width: 100%;
@@ -235,7 +237,7 @@
             
             
             <ul>
-                <li class="home"><a class="icon-home" href="index.php"></a></li>
+                <li class="home"><a class="icon-goodshome" href="index.php"></a></li>
                 <?php foreach($categories as $categorie):?>
                 <li> <a href="<?php echo  $categorie['href']?>"><?php echo $categorie['name']?></a> </li>
                <?php endforeach?>
