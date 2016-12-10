@@ -51,6 +51,7 @@ class ModelCatalogProduct extends Model {
 				'date_modified'    => $query->row['date_modified'],
 				'viewed'           => $query->row['viewed']
 			);
+                        
 		} else {
 			return false;
 		}
@@ -204,6 +205,7 @@ class ModelCatalogProduct extends Model {
 		}
 
 		return $product_data;
+                 
 	}
 
 	public function getProductSpecials($data = array()) {

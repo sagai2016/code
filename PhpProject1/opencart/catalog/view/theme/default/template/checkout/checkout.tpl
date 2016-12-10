@@ -31,12 +31,15 @@
         </div>
         <?php if (!$logged && $account != 'guest') { ?>
         <div class="panel panel-default">
+            
           <div class="panel-heading">
             <h4 class="panel-title"><?php echo $text_checkout_account; ?></h4>
           </div>
+            
           <div class="panel-collapse collapse" id="collapse-payment-address">
             <div class="panel-body"></div>
           </div>
+            
         </div>
         <?php } else { ?>
         <div class="panel panel-default">

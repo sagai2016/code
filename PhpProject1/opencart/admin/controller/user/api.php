@@ -386,7 +386,6 @@ class ControllerUserApi extends Controller {
 		}
 
 		$data['api_sessions'] = array();
-                var_dump($data['api_sessions']);exit('aaa');
 		if (isset($this->request->get['api_id'])) {
 			$results = $this->model_user_api->getApiSessions($this->request->get['api_id']);
 

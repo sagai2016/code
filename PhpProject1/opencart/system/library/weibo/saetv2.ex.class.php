@@ -402,7 +402,7 @@ class SaeTOAuthV2 {
 
 		if ($this->debug) {
 			echo "=====post data======\r\n";
-			var_dump($postfields);
+			//var_dump($postfields);
 
 			echo "=====headers======\r\n";
 			print_r($headers);

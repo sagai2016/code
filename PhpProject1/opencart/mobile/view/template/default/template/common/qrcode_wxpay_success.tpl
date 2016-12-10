@@ -1,10 +1,20 @@
-<?php echo $header; ?>
+<!doctype html>
+<html lang="zh-cn">
+<header>
+<meta charset="UTF-8">
+<script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+<link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
+<script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+<link href="view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="view/stylesheet/stylesheet.css" rel="stylesheet">
+<script src="view/javascript/jquery/jquery.flexslider.js"></script> 
+<script src="view/javascript/o-script.js"></script>
+<script src="view/javascript/jquery/datetimepicker/moment.js" type="text/javascript"></script>
+<script src="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js"type="text/javascript"></script>
+<link href="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
+<link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
+</header>
 <div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?>
-  </ul>
   <div class="row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>

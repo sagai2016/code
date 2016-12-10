@@ -1,6 +1,6 @@
 <?php
 
-class ControllerCommonShow extends Controller {
+class ControllerCommonProduct extends Controller {
 	public function index() {
 		$this->load->language('product/product');
                 

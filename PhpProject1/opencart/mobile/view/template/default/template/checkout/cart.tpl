@@ -1,132 +1,393 @@
-<?php echo $header; ?>
-<div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
+<!doctype html>
+
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+<link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css"/>        
+<link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" type="text/css">
+<script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+<link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
+<script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+<link href="view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="view/javascript/jquery/magnific/magnific-popup.css" type="text/css" rel="stylesheet" media="screen" />
+<link href="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
+<script src="view/javascript/common.js" type="text/javascript"></script>
+<script src="view/javascript/jquery/magnific/jquery.magnific-popup.min.js" type="text/javascript"></script>
+<script src="view/javascript/jquery/datetimepicker/moment.js" type="text/javascript"></script>
+        <style type="text/css">
+            ul, li, h1, h2, h3, h4, h5, h6, dt, dd, dl, ol, dl, dt, dd, p {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                border: 0;
+            }
+
+            body, html {
+                margin: 0;
+                padding: 0;
+                background: #f8f8f8;
+            }
+
+            * {
+                box-sizing: border-box;
+                color: #2c2c2c;
+            }
+
+            .main {
+                max-width: 750px;
+                width: 100%;
+                display: block;
+                margin: auto;
+            }
+
+            .top * {
+                color: #787878;
+                font-size: 15.5px;
+                font-weight: 300;
+            }
+
+            .top {
+                width: 100%;
+                display: flex;
+                position: fixed;
+                top: 0;
+            }
+
+            .top .link {
+                display: inline-flex;
+                justify-content: space-between;
+                width: 100%;
+                background: rgba(255,255,255,.98);
+            }
+
+            .top .link li {
+                width: 100%;
+                text-align: center;
+                line-height: 48px;
+                border-bottom: 1px solid #e6e6e6;
+            }
+
+            .top .link .linkmain {
+                border-bottom: 1px solid #ff2e00;
+                color: #ff2e00;
+            }
+
+            .main .goodslist {
+                width: 100%;
+                font-size: 0;
+            }
+
+            .main .goodsCart {
+                font-size: 0;
+                width: 100%;
+                padding: 1.5% 2.5%;
+                background: #fff;
+                border: 1px #e5e5e5 solid;
+            }
+
+            .main .goodsCart .goodsHomeTitle {
+                font-size: 0;
+                width: 100%;
+                padding: 10px 0;
+            }
+
+            .main .goodsCart .goodsHomeTitle li {
+                font-size: 20px;
+                vertical-align: middle;
+                color: #909090;
+                display: inline-block;
+            }
+
+            .main .goodsCart .goodsHomeTitle li.title {
+                font-size: 16px;
+                padding: 0 10px;
+            }
+
+            .main .goodsCart .goodsHomeTitle li:nth-of-type(3) {
+                float: right;
+            }
+
+            .main .goodsCart .goodsCartContent {
+                font-size: 0;
+                width: 49%;
+                padding: 10px ;
+                display: inline-block;
+                vertical-align: text-top;
+                margin: 5px 2px;
+                border: 1px #e6e1e1 solid;
+
+            }
+
+            .main .goodsCart .goodsCartContent li {
+                display: inline-block;
+                vertical-align: text-top;
+            }
+
+            .main .goodsCart .goodsCartContent li.images {
+                display: inline-block;
+                margin-right: 5%;
+                width: 35%;
+            }
+
+            .main .goodsCart .goodsCartContent li.images img {
+                width: 100%;
+            }
+
+            .main .goodsCart .goodsCartContent li.content {
+                display: inline-block;
+                width: 60%;
+                font-size: 12px;
+                line-height: 20px;
+            }
+
+            .main .goodsCart .goodsCartContent li.content p {
+                padding: 1.2% 0;
+
+
+            }
+            .main .goodsCart .goodsCartContent li.content p.classify{
+                color: #6d6d6d;
+            }
+
+            .main .goodsCart .goodsCartContent li.content p.price{
+                color: #f36815;
+            }
+
+
+            .main .goodsCart .goodsCartContent li.content .jg {
+                font-size: 0;
+                display: block;
+                float: left;
+            }
+
+            .main .goodsCart .goodsCartContent li.content .del {
+                border: 1px solid #f36815;
+                padding: 0 15px;
+                margin-right: 15px;
+                display: block;
+                color: #f36815;
+                line-height: 28px;
+                float: right;
+                background-color: #fff;
+            }
+
+
+
+            .main .goodsCart .goodsCartContent li.content .jg i, .main .goodsCart .goodsCartContent li.content .jg input {
+                font-style: normal;
+                display: inline-block;
+                width: 20px;
+                text-align: center;
+                border: 1px solid #e6e1e1;
+                font-size: 12px;
+
+                font-size: 0;
+            }
+
+            .main .goodsCart .goodsCartContent li.content .jg input {
+                line-height: 18px;
+                width: 33px;
+                text-align: center;
+                border:1px solid #ccc;
+                FILTER: alpha(opacity=0); /*androd*/  
+                appearance:none;  /*下拉框去掉右侧图标*/  
+                font-size: 12px;
+                vertical-align:super;
+            }
+            .main .goodsCart .goodsCartContent li.content .jg i
+            {
+                background: #f2f2f2;
+                font-size: 12px;
+                line-height: 24px;
+            }
+
+
+            .main .bootm {
+                height: 50px;
+                font-size: 50px;
+                display: inline-block;
+            }
+
+            .foot {
+                width: 100%;
+                display: flex;
+                position: fixed;
+                bottom: 0;
+            }
+
+            .foot * {
+                color: #787878;
+            }
+
+            .foot ul {
+                background: #fff;
+                margin: auto;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                border: 1px solid #ccc;
+            }
+
+            .foot ul li {
+                width: 100%;
+                text-align: center;
+                line-height: 48px;
+                border-width: 0 1px 0 0;
+                border-style: solid;
+                border-color: #ccc;
+            }
+            .foot ul a {
+                width: 100%;
+                text-align: center;
+                line-height: 48px;
+                border-width: 0 1px 0 0;
+                border-style: solid;
+                border-color: #ccc;
+            }
+            .foot ul a.home {
+                width: 150px;
+                font-size: 20px;
+            }
+
+            .foot ul li.total{
+                width: 200%;
+                text-align: right;
+
+            }
+            .foot ul li.total span{
+                display: inline-block;
+                padding:0 10px;
+                color: #f36815;
+                font-size: 16px;
+            }
+            .foot ul a.settlement{
+                background: #ff4444;
+                color: #ffffff;
+                text-decoration:none;
+                font-size: 16px;
+            }
+            @media (max-width: 500px) {
+                .main .goodsCart .goodsCartContent {
+                    width: 100%;
+                    border:none;
+                    padding: 10px 0;
+                    border-top: 1px #e6e1e1 solid;
+
+                }
+
+            }
+
+            @media (min-width: 400px) {
+                .main .goodsCart .goodsCartContent {
+                    padding: 1.5%;
+                }
+                .main .goodsCart .goodsCartContent li.content p {
+                    line-height: 25px;
+                }
+                .main .goodsCart .goodsCartContent li.content .del{
+                    margin: auto;
+                }
+            }
+        </style>
+    </head>
+    
+
+    <!--<?php foreach ($products as $product) { ?>
+    <tr>
+      <td class="text-center"><?php if ($product['thumb']) { ?>
+        <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-thumbnail" /></a>
+        <?php } ?></td>
+      <td class="text-right"><?php echo $product['price']; ?></td>
+      <td class="text-right"><?php echo $product['total']; ?></td>
+    </tr>
     <?php } ?>
-  </ul>
-  <?php if ($attention) { ?>
-  <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $attention; ?>
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-  </div>
-  <?php } ?>
-  <?php if ($success) { ?>
-  <div class="alert alert-success"><i class="fa fa-check-circle"></i> <?php echo $success; ?>
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-  </div>
-  <?php } ?>
-  <?php if ($error_warning) { ?>
-  <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?>
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-  </div>
-  <?php } ?>
-  <div class="row"><?php echo $column_left; ?>
-    <?php if ($column_left && $column_right) { ?>
-    <?php $class = 'col-sm-6'; ?>
-    <?php } elseif ($column_left || $column_right) { ?>
-    <?php $class = 'col-sm-9'; ?>
-    <?php } else { ?>
-    <?php $class = 'col-sm-12'; ?>
-    <?php } ?>
-    <div id="content" <?php echo 'class="'.$class.'"'; ?>><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?>
-        <?php if ($weight) { ?>
-        &nbsp;(<?php echo $weight; ?>)
-        <?php } ?>
-      </h1>
-      <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
-        <div class="table-responsive">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <td class="text-center"><?php echo $column_image; ?></td>
-                <td class="text-left"><?php echo $column_name; ?></td>
-                <td class="text-left"><?php echo $column_model; ?></td>
-                <td class="text-left"><?php echo $column_quantity; ?></td>
-                <td class="text-right"><?php echo $column_price; ?></td>
-                <td class="text-right"><?php echo $column_total; ?></td>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($products as $product) { ?>
-              <tr>
-                <td class="text-center"><?php if ($product['thumb']) { ?>
-                  <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-thumbnail" /></a>
-                  <?php } ?></td>
-                <td class="text-left"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
-                  <?php if (!$product['stock']) { ?>
-                  <span class="text-danger">***</span>
-                  <?php } ?>
-                  <?php if ($product['option']) { ?>
-                  <?php foreach ($product['option'] as $option) { ?>
-                  <br />
-                  <small><?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>
-                  <?php } ?>
-                  <?php } ?>
-                  <?php if ($product['reward']) { ?>
-                  <br />
-                  <small><?php echo $product['reward']; ?></small>
-                  <?php } ?>
-                  <?php if ($product['recurring']) { ?>
-                  <br />
-                  <span class="label label-info"><?php echo $text_recurring_item; ?></span> <small><?php echo $product['recurring']; ?></small>
-                  <?php } ?></td>
-                <td class="text-left"><?php echo $product['model']; ?></td>
-                <td class="text-left"><div class="input-group btn-block" style="max-width: 200px;">
-                    <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="form-control" />
-                    <span class="input-group-btn">
-                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="btn btn-primary"><i class="fa fa-refresh"></i></button>
-                    <button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger" onclick="cart.remove('<?php echo $product['cart_id']; ?>');"><i class="fa fa-times-circle"></i></button>
-                    </span></div></td>
-                <td class="text-right"><?php echo $product['price']; ?></td>
-                <td class="text-right"><?php echo $product['total']; ?></td>
-              </tr>
-              <?php } ?>
-              <?php foreach ($vouchers as $voucher) { ?>
-              <tr>
-                <td></td>
-                <td class="text-left"><?php echo $voucher['description']; ?></td>
-                <td class="text-left"></td>
-                <td class="text-left"><div class="input-group btn-block" style="max-width: 200px;">
-                    <input type="text" name="" value="1" size="1" disabled="disabled" class="form-control" />
-                    <span class="input-group-btn">
-                    <button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger" onclick="voucher.remove('<?php echo $voucher['key']; ?>');"><i class="fa fa-times-circle"></i></button>
-                    </span></div></td>
-                <td class="text-right"><?php echo $voucher['amount']; ?></td>
-                <td class="text-right"><?php echo $voucher['amount']; ?></td>
-              </tr>
-              <?php } ?>
-            </tbody>
-          </table>
+    <?php foreach ($vouchers as $voucher) { ?>
+    <tr>
+      <td class="text-right"><?php echo $voucher['amount']; ?></td>
+      <td class="text-right"><?php echo $voucher['amount']; ?></td>
+    </tr>
+    <?php } ?>-->
+
+
+    <body>
+        <div class="top">
+            <ul class="link">
+                <li class="linkmain">购物车</li>
+                <li>收藏列表</li>
+                <li>全部订单</li>
+            </ul>
         </div>
-      </form>
-      <?php if ($modules) { ?>
-      <h2><?php echo $text_next; ?></h2>
-      <p><?php echo $text_next_choice; ?></p>
-      <div class="panel-group" id="accordion">
-        <?php foreach ($modules as $module) { ?>
-        <?php echo $module; ?>
-        <?php } ?>
-      </div>
-      <?php } ?>
-      <br />
-      <div class="row">
-        <div class="col-sm-4 col-sm-offset-8">
-          <table class="table table-bordered">
-            <?php foreach ($totals as $total) { ?>
-            <tr>
-              <td class="text-right"><strong><?php echo $total['title']; ?>:</strong></td>
-              <td class="text-right"><?php echo $total['text']; ?></td>
-            </tr>
-            <?php } ?>
-          </table>
+
+        <div class="main">
+            <p class="bootm"></p>
+            <div class="goodsCart">
+                <ul class="goodsHomeTitle">
+                    <li class="icon-goodsshop"></li>
+                    <li class="title">醉藏</li>
+                    <li class="icon-goodslefttag"></li>
+                </ul>                                                          
+                <form action="<?php echo $action; ?>" method="post" id="form1" enctype="multipart/form-data">
+                    <?php foreach ($products as $product) { ?>
+                    <ul class="goodsCartContent">
+                        <li class="images">
+                            <a href="<?php echo $product['href']; ?>">
+                                <img src="<?php echo $product['thumb']; ?>"  />
+                            </a>
+                        </li>
+                        <li class="content"> 
+                            <p><?php echo $product['name']; ?></p>
+                            <p class="classify">五斤装</p>
+                            <p class="price"><?php echo $product['price']; ?></p>
+                            <p class="button">
+                                <span class="jg"> 
+                                    <i id="add">+ </i> 
+                                    <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]" id="cartcount" value="<?php echo $product['quantity']; ?>"/>                   
+                                    <i id="reduce">- </i>
+                                </span>                            
+                                <button type="button" title="<?php echo $button_remove; ?>" class="del" onclick="cart.remove('<?php echo $product['cart_id']; ?>');">删除</button>
+                            </p>    
+                        </li>
+                    </ul>    
+                    <?php } ?>
+                </form> 
+            </div>
+            <p class="bootm"></p>
         </div>
-      </div>
-      <div class="buttons clearfix">
-        <div class="pull-left"><a href="<?php echo $continue; ?>" class="btn btn-default"><?php echo $button_shopping; ?></a></div>
-        <div class="pull-right"><a href="<?php echo $checkout; ?>" class="btn btn-primary"><?php echo $button_checkout; ?></a></div>
-      </div>
-      <?php echo $content_bottom; ?></div>
-    <?php echo $column_right; ?></div>
-</div>
-<?php echo $footer; ?>
+        <div class="foot">
+            <ul>
+                <a class="home  icon-goodshome" href="index.php?route=common/home"></a>
+                <li class="total">
+                    <span>合计：<?php echo $totals[1]['text']; ?></span>                 
+                </li>
+                <a class="settlement" href="index.php?route=checkout/checkout">
+                    结 算
+                </a>
+            </ul>
+        </div>
+        <script type="text/javascript">
+
+            $('.goodsCartContent').on('click','#add', function () { 
+                var t = $(this).parent().find("#cartcount").val();
+                $(this).parent().find("#cartcount").val(parseInt(t) + 1);
+                $("form").submit();
+                
+            });
+
+
+             $('.goodsCartContent').on('click','#reduce', function () {
+                var t = $(this).parent().find("#cartcount").val();
+                
+                var count = parseInt(t) - 1;
+               
+                if (count > 0) {
+                    $(this).parent().find("#cartcount").val(count);
+                    $("form").submit();
+                }
+            });
+        </script>
+
+    </body>
+</html>

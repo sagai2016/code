@@ -267,10 +267,10 @@ body, html {
 </head>
 <body>
 <div class="main">
-  <div class="top"><img src="view/theme/default/image/logo.png" alt="" /> <span> <a class="gzc">关注</a> <a >我的记录</a></span> </div>
+  <div class="top"><img src="view/theme/default/image/logo.png" alt="" /></div>
   <div class="content">
     <ul>
-      <li class="goodsImages"> <img src="view/theme/default/image/g1.jpg" /> </li>
+      <li class="goodsImages"> <img src="<?php echo $thumb; ?>" /> </li>
       <li class="goodsIntroduce">
           <p> <span class="title"><?php echo $heading_title; ?></span><span class="price"><?php echo $price; ?></span></p>
 
@@ -291,14 +291,11 @@ body, html {
       </li>
     </ul>
   </div>
-  <div class="option">
-    <p>已选：一套正德窖藏</p>
-    <i class="icon-goodslefttag"></i> </div>
   
   <div class="option"> 
     	<span class="icon icon-goodsshop"></span>
      	<span>大隆汇藏</span> 
-     	<a class="goodhome" href="http://127.0.0.1/PhpProject1/opencart/mobile/index.php?route=home/index">进入店铺<i class="icon-goodslefttag"></i></a>
+     	<a class="goodhome" href="index.php?route=product/categoryy">进入店铺<i class="icon-goodslefttag"></i></a>
   </div>
  
   
@@ -316,9 +313,9 @@ body, html {
 <div class="foot">
   <ul>
     
-    <li class="home"><span class="icon-goodscart"></span><a href="http://127.0.0.1/PhpProject1/opencart/mobile/index.php?route=checkout/cart"> 购物车</a></li>  
+    <li class="home"><span class="icon-goodscart"></span><a href="index.php?route=checkout/cart"> 购物车</a></li>  
     <li class="addToCart" id="button-cart"><span><?php echo $button_cart; ?></span></li>
-    <li class="buyNow"> <a href="http://127.0.0.1/PhpProject1/opencart/mobile/index.php?route=checkout/checkout">立即购买</a> </li>
+    <li class="buyNow"> <a href="index.php?route=checkout/checkout">立即购买</a> </li>
   </ul>
 </div>
     <script src="view/javascript/jquery/jquery.flexslider.js"></script> 

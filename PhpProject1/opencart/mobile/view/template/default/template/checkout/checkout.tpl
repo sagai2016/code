@@ -1,91 +1,289 @@
-<?php echo ($header); ?>
-<div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?>
-  </ul>
-  <?php if ($error_warning) { ?>
-  <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?>
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-  </div>
-  <?php } ?>
-  <div class="row"><?php echo $column_left; ?>
-    <?php if ($column_left && $column_right) { ?>
-    <?php $class = 'col-sm-6'; ?>
-    <?php } elseif ($column_left || $column_right) { ?>
-    <?php $class = 'col-sm-9'; ?>
-    <?php } else { ?>
-    <?php $class = 'col-sm-12'; ?>
-    <?php } ?>
-    <div id="content" <?php echo 'class="'.$class.'"'; ?>><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?></h1>
-      <div class="panel-group" id="accordion">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title"><?php echo $text_checkout_option; ?></h4>
-          </div>
-          <div class="panel-collapse collapse" id="collapse-checkout-option">
-            <div class="panel-body"></div>
-          </div>
-        </div>
-        <?php if (!$logged && $account != 'guest') { ?>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title"><?php echo $text_checkout_account; ?></h4>
-          </div>
-          <div class="panel-collapse collapse" id="collapse-payment-address">
-            <div class="panel-body"></div>
-          </div>
-        </div>
-        <?php } else { ?>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title"><?php echo $text_checkout_payment_address; ?></h4>
-          </div>
-          <div class="panel-collapse collapse" id="collapse-payment-address">
-            <div class="panel-body"></div>
-          </div>
-        </div>
-        <?php } ?>
-        <?php if ($shipping_required) { ?>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title"><?php echo $text_checkout_shipping_address; ?></h4>
-          </div>
-          <div class="panel-collapse collapse" id="collapse-shipping-address">
-            <div class="panel-body"></div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title"><?php echo $text_checkout_shipping_method; ?></h4>
-          </div>
-          <div class="panel-collapse collapse" id="collapse-shipping-method">
-            <div class="panel-body"></div>
-          </div>
-        </div>
-        <?php } ?>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title"><?php echo $text_checkout_payment_method; ?></h4>
-          </div>
-          <div class="panel-collapse collapse" id="collapse-payment-method">
-            <div class="panel-body"></div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title"><?php echo $text_checkout_confirm; ?></h4>
-          </div>
-          <div class="panel-collapse collapse" id="collapse-checkout-confirm">
-            <div class="panel-body"></div>
-          </div>
-        </div>
+<!doctype html>
+<html lang="zh-cn">
+<header>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+<link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
+<script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+<link href="view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="view/stylesheet/stylesheet.css" rel="stylesheet">
+<script src="view/javascript/jquery/jquery.flexslider.js"></script> 
+<script src="view/javascript/o-script.js"></script>
+<script src="view/javascript/jquery/datetimepicker/moment.js" type="text/javascript"></script>
+<script src="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js"type="text/javascript"></script>
+<link href="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
+<link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
+</header>
+<style>
+    ul,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    dt,
+    dd,
+    dl,
+    ol,
+    dl,
+    dt,
+    dd,
+    p {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border: 0;
+    }
+    
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        background: #f8f8f8;
+    }
+    
+    * {
+        box-sizing: border-box;
+        color: #2c2c2c;
+    }
+    
+    .main {
+        max-width: 750px;
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+    
+    .top * {
+        color: #787878;
+        font-size: 15.5px;
+        font-weight: 300;
+    }
+    
+    .top {
+        width: 100%;
+        display: flex;
+        position: fixed;
+        top: 0;
+    }
+    
+    .top .link {
+        display: inline-flex;
+        justify-content: space-between;
+        width: 100%;
+        background: rgba(255, 255, 255, .98);
+    }
+    
+    .top .link li {
+        width: 100%;
+        text-align: center;
+        line-height: 48px;
+        border-bottom: 1px solid #e6e6e6;
+    }
+    
+    .top .link .linkmain {
+        border-bottom: 1px solid #ff2e00;
+        color: #ff2e00;
+    }
+    
+    .container .goodslist {
+        width: 100%;
+        font-size: 0;
+    }
+    
+    .container .goodsCart {
+        font-size: 0;
+        width: 100%;
+        padding: 1.5% 2.5%;
+        /* background: #fff; */
+        /* border: 1px #e5e5e5 solid; */
+        margin-top: 10px;
+    }
+    
+    .container .goodsHomeTitle {
+        font-size: 0;
+        width: 100%;
+        padding: 2.5%;
+        border: 1px #e5e5e5 solid;
+        background: #fff;
+    }
+    
+    .container .goodsHomeTitle li {
+        font-size: 20px;
+        vertical-align: middle;
+        color: #909090;
+        display: inline-block;
+    }
+    
+    .container .goodsHomeTitle li.title {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+    
+    .container .goodsHomeTitle li:nth-of-type(3) {
+        float: right;
+    }
+    /**/
+    
+    .container .goodsCart ul,
+    .container .goodsCart ul li,
+    .container .goodsCart ul li hgroup {
+        width: 100%;
+        background: #f8f8f8;
+    }
+     .container .goodsCart ul li{
+         margin: 10px 0;
+     }
+    .container .goodsCart ul li hgroup {
+        border: 1px solid #ccc;
+        background: #fff;
+    }
+    
+    .container .goodsCart ul li hgroup h2 {
+        width: 100%;
+        line-height: 35px;
+        font-size: 14px;
+        display: inline-block;
+        padding: 0 10px;
+    }
+    
+    .container .goodsCart ul li  .content {
+        width: 100%;
+        font-size: 12px;
+
+        
+        background: #fff;
+    }
+    
+     .container .goodsCart ul li  .content  .panel-body{
+        padding: 0;
+        border-color: #ccc;
+        border-width: 0 1px 1px 1px;
+        border-style: solid;
+     }
+    .container .goodsCart ul li  .content  .form-horizontal{
+        padding: 20px;
+        display: inline-block;
+        width: 100%
+    }
+    /**/
+    
+    .container .bootm {
+        height: 50px;
+        font-size: 50px;
+        display: inline-block;
+    }
+.foot {
+	width: 100%;
+	display: flex;
+	position: fixed;
+	bottom: 0;
+}
+	
+	
+.foot *{
+	color: #787878;
+}
+.foot ul {
+	background: #fff;
+	margin: auto;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	border: 1px solid #ccc;
+}
+.foot ul li {
+	width: 100%;
+	text-align: center;
+	line-height: 48px;
+	border-width: 0 1px 0 0;
+	border-style: solid;
+	border-color: #ccc;
+}
+.foot ul .home {
+	width: 150px;
+	font-size: 20px;
+}
+
+@media (min-width: 500px) {
+.main .goodslist .list li {
+	width: 33.3%;
+}
+}
+a{
+    text-decoration: none;
+}
+
+</style>
+<body>
+    <div class="container">
+        <ul class="goodsHomeTitle">
+            <li class="icon-goodsshop"></li>
+            <li class="title">醉藏</li>
+            <li class="icon-goodslefttag"></li>
+        </ul>
+      <?php if ($error_warning) { ?>
+      <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
       </div>
-      <?php echo $content_bottom; ?></div>
-    <?php echo $column_right; ?></div>
-</div>
+      <?php } ?>
+      <div class="goodsCart">
+          <ul class="panel-group" id="accordion">
+              
+              
+            <li>
+                <hgroup class="panel-heading"><h2 class="panel-title"><?php echo $text_checkout_option; ?></h2></hgroup>
+                <div id="collapse-checkout-option" class="content"><div class="panel-body"></div></div>
+            </li>                
+          
+            <?php if (!$logged && $account != 'guest') { ?>
+            <li>
+                <hgroup class="panel-heading"><h2 class="panel-title"><?php echo $text_checkout_account; ?></h2></hgroup>
+                <div id="collapse-payment-address" class="content"><div class="panel-body"></div></div>
+            </li>
+            <?php } else { ?>
+            <li>
+                <hgroup class="panel-heading"><h2 class="panel-title"><?php echo $text_checkout_payment_address; ?></h2></hgroup>
+                <div id="collapse-payment-address" class="content"><div class="panel-body"></div></div>
+            </li>
+            <?php } ?>
+            <?php if ($shipping_required) { ?>
+            <li>
+                <hgroup class="panel-heading"><h2 class="panel-title"><?php echo $text_checkout_shipping_address; ?></h2></hgroup>
+                <div id="collapse-shipping-address" class="content"><div class="panel-body"></div></div>
+            </li>
+            <li>
+                <hgroup class="panel-heading"><h2 class="panel-title"><?php echo $text_checkout_shipping_method; ?></h2></hgroup>
+                <div id="collapse-shipping-method" class="content"><div class="panel-body"></div></div>
+            </li>
+            <?php } ?>
+            <li>
+                <hgroup class="panel-heading"><h2 class="panel-title"><?php echo $text_checkout_payment_method; ?></h2></hgroup>
+                <div id="collapse-payment-method" class="content"><div class="panel-body"></div></div>
+            </li>
+            <li>
+                <hgroup class="panel-heading"><h2 class="panel-title"><?php echo $text_checkout_confirm; ?></h2></hgroup>
+                <div id="collapse-checkout-confirm" class="content"><div class="panel-body"></div></div>
+            </li>
+          </ul>
+
+        </div>
+    </div>
+    <div class="foot">
+        <ul>
+            <a href="index.php?"><li class="home  icon-goodshome"></li></a>
+            <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>
+            <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
+            <li> <a>个人中心</a> </li>
+        </ul>
+    </div>
+</body>
 <script type="text/javascript"><!--
 $(document).on('change', 'input[name=\'account\']', function() {
 	if ($('#collapse-payment-address').parent().find('.panel-heading .panel-title > *').is('a')) {
@@ -795,4 +993,5 @@ $(document).delegate('#button-payment-method', 'click', function() {
     });
 });
 //--></script>
-<?php echo $footer; ?>
+</html>
+

@@ -1,85 +1,239 @@
-<?php echo $header; ?>
-<div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?>
-  </ul>
-  <div class="row"><?php echo $column_left; ?>
-    <?php if ($column_left && $column_right) { ?>
-    <?php $class = 'col-sm-6'; ?>
-    <?php } elseif ($column_left || $column_right) { ?>
-    <?php $class = 'col-sm-9'; ?>
-    <?php } else { ?>
-    <?php $class = 'col-sm-12'; ?>
-    <?php } ?>
-    <div id="content" <?php echo 'class="'.$class.'"'; ?>><?php echo $content_top; ?>
-      <h2><?php echo $heading_title; ?></h2>
-      <?php if ($thumb || $description) { ?>
-      <div class="row">
-        <?php if ($thumb) { ?>
-        <div class="col-sm-2"><img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>" title="<?php echo $heading_title; ?>" class="img-thumbnail" /></div>
-        <?php } ?>
-        <?php if ($description) { ?>
-        <div class="col-sm-10"><?php echo $description; ?></div>
-        <?php } ?>
-      </div>
-      <hr>
-      <?php } ?>
-      <?php if ($categories) { ?>
-      <h3><?php echo $text_refine; ?></h3>
-      <?php if (count($categories) <= 5) { ?>
-      <div class="row">
-        <div class="col-sm-3">
-          <ul>
-            <?php foreach ($categories as $category) { ?>
-            <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
-            <?php } ?>
-          </ul>
-        </div>
-      </div>
-      <?php } else { ?>
-      <div class="row">
-        <?php foreach (array_chunk($categories, ceil(count($categories) / 4)) as $categories) { ?>
-        <div class="col-sm-3">
-          <ul>
-            <?php foreach ($categories as $category) { ?>
-            <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
-            <?php } ?>
-          </ul>
-        </div>
-        <?php } ?>
-      </div>
-      <?php } ?>
-      <?php } ?>
-      <?php if ($products) { ?>
-      <div class="row">
-        <div class="col-md-2 col-sm-6 hidden-xs">
-          <div class="btn-group btn-group-sm">
-            <button type="button" id="list-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_list; ?>"><i class="fa fa-th-list"></i></button>
-            <button type="button" id="grid-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_grid; ?>"><i class="fa fa-th"></i></button>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="form-group">
-            <a href="<?php echo $compare; ?>" id="compare-total" class="btn btn-link"><?php echo $text_compare; ?></a>
-          </div>
-        </div>
-        <div class="col-md-4 col-xs-6">
-          <div class="form-group input-group input-group-sm">
-            <label class="input-group-addon" for="input-sort"><?php echo $text_sort; ?></label>
-            <select id="input-sort" class="form-control" onchange="location = this.value;">
-              <?php foreach ($sorts as $sorts) { ?>
-              <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
-              <option value="<?php echo $sorts['href']; ?>" selected="selected"><?php echo $sorts['text']; ?></option>
-              <?php } else { ?>
-              <option value="<?php echo $sorts['href']; ?>"><?php echo $sorts['text']; ?></option>
-              <?php } ?>
-              <?php } ?>
-            </select>
-          </div>
-        </div>
-        <div class="col-md-3 col-xs-6">
+<!doctype html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
+<script src="view/javascript/jquery/jquery.flexslider.js"></script> 
+<script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+<link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
+<script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+<link href="view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="view/stylesheet/stylesheet.css" rel="stylesheet">
+<script src="view/javascript/jquery/datetimepicker/moment.js" type="text/javascript"></script>
+<script src="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js"type="text/javascript"></script>
+<link href="view/javascript/jquery/magnific/magnific-popup.css" type="text/css" rel="stylesheet" media="screen" />
+<link href="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
+<script src="view/javascript/jquery/magnific/jquery.magnific-popup.min.js" type="text/javascript"></script>
+<link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
+<link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
+<script src="view/javascript/jquery/jquery.flexslider.js" type="text/javascript"></script>
+<script src="view/javascript/o-script.js" type="text/javascript"></script>
+<script src="view/javascript/common.js" type="text/javascript"></script>
+<style>
+ul, li, h1, h2, h3, h4, h5, h6, dt, dd, dl, ol, dl, dt, dd, p {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border: 0;
+}
+body, html {
+	margin: 0;
+	padding: 0;
+	background: #f8f8f8;
+}
+* {
+	box-sizing: border-box;
+}
+.main {
+	max-width: 750px;
+	width: 100%;
+	display: block;
+	margin: auto;
+}
+	.top *{
+		color: #787878;
+		font-size: 15.5px;
+		font-weight: 300;
+	}
+.top {
+	width: 100%;
+	display: flex;
+	position: fixed;
+	top:0;
+	
+	
+}
+.top .link {
+	display: inline-flex;
+	justify-content: space-between;
+	width: 100%;
+	background: rgba(255,255,255,.98); 
+}
+.top .link li {
+	width: 100%;
+	text-align: center;
+	line-height: 48px;
+	border-bottom: 1px solid #e6e6e6;  
+}
+.top .link li a{
+        font-size: 14px;
+}
+.top .link .linkmain {
+	border-bottom: 1px solid #ff2e00;
+}
+.main .limit{
+        margin-top: 70px;
+}
+.main .goodslist {
+	width: 100%;
+	font-size: 0;
+}.main .goodslist .limit{
+        text-align: center;
+}
+.main .goodslist .limit .pagination{
+        font-size: 12px;
+}
+.main .goodslist .list {
+	width: 100%;
+	font-size: 0;
+}
+.main .goodslist .list li {
+	display: inline-block;
+	width: 50%;
+	padding: 1.5%;
+	vertical-align: top;
+		
+}
+.main .goodslist .list li p {
+	border: 1px solid #e5e5e5;
+	font-size: 14px;
+	padding: 3%;
+	background: #fff;
+	display: inline-block;
+	box-shadow:0 0 5px rgba(150,150,150,.1);
+	border-radius: 3px;
+}
+.main .goodslist .list li p a img {
+	width: 100%;
+	border-radius: 2px;
+}
+.main .goodslist .list li span {
+	display: inline-block;
+	padding: 2%;
+	width: 100%;
+	line-height: 35px;
+	height: 35px;
+	text-align: center;
+	overflow: hidden;
+}
+/*
+.main .goodslist .list li span+a {
+	float: right;
+	display: inline-block;
+	    margin: 7px;
+	background: #f36815;
+	padding: 3px;
+	width: 55px;
+	text-align: center;
+	border-radius: 3px;
+	color: #fff;
+}
+*/
+
+.main .bootm {
+	height: 50px;
+	font-size: 50px;
+	display: inline-block;
+}
+.foot {
+	width: 100%;
+	display: flex;
+	position: fixed;
+	bottom: 0;
+        z-index: 99;
+}
+	
+	
+.foot *{
+	color: #787878;
+}
+.foot ul {
+	background: #fff;
+	margin: auto;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	border: 1px solid #ccc;
+}
+.foot ul li {
+	width: 100%;
+	text-align: center;
+	line-height: 48px;
+	border-width: 0 1px 0 0;
+	border-style: solid;
+	border-color: #ccc;
+}
+.foot ul li a{
+        font-size:14px;
+        }
+
+.foot ul .home {
+	width: 150px;
+	font-size: 20px;
+}
+
+@media (min-width: 500px) {
+.main .goodslist .list li {
+	width: 33.3%;
+}
+}
+a{
+    text-decoration: none;
+}
+
+</style>
+
+</head>
+
+<body>
+    
+     <div class="top">
+        <ul class="link">
+            <?php
+            
+              
+            foreach($categories as $categorie):
+            
+            $cc='';
+                if(!empty($_GET['path'] ) && $_GET['path'] ==  $categorie['category_id']){
+                    $cc = 'class="linkmain"';
+                }
+            
+            ?>
+            <li  <?php echo $cc;?>> <a href="<?php echo  $categorie['href']?>"><?php echo $categorie['name']?></a> </li>
+            <?php endforeach?>
+        </ul>
+    </div>
+   
+<div class="main">
+
+          
+    
+<p class="bootm"> </p>
+
+  <div class="goodslist">
+      
+  
+        <ul class="list">
+            <?php foreach ($products as $product) { ?>
+                <li>
+                    <p> 
+                        <a href="<?php echo $product['href']; ?>">
+                            <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>"/>
+                        </a>
+                        <span>
+                           <?php echo $product['name']; ?>
+                        </span> 
+                    </p>
+                </li>
+                 <?php } ?>
+            </ul>     
+       
+    <div class="limit">
+        <div class="col-md-3 col-xs-6" id="select">
           <div class="form-group input-group input-group-sm">
             <label class="input-group-addon" for="input-limit"><?php echo $text_limit; ?></label>
             <select id="input-limit" class="form-control" onchange="location = this.value;">
@@ -93,62 +247,20 @@
             </select>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <?php foreach ($products as $product) { ?>
-        <div class="product-layout product-list col-xs-12">
-          <div class="product-thumb">
-            <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a></div>
-            <div>
-              <div class="caption">
-                <h4><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h4>
-                <p><?php echo $product['description']; ?></p>
-                <?php if ($product['price']) { ?>
-                <p class="price">
-                  <?php if (!$product['special']) { ?>
-                  <?php echo $product['price']; ?>
-                  <?php } else { ?>
-                  <span class="price-new"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
-                  <?php } ?>
-                  <?php if ($product['tax']) { ?>
-                  <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
-                  <?php } ?>
-                </p>
-                <?php } ?>
-                <?php if ($product['rating']) { ?>
-                <div class="rating">
-                  <?php for ($i = 1; $i <= 5; $i++) { ?>
-                  <?php if ($product['rating'] < $i) { ?>
-                  <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
-                  <?php } else { ?>
-                  <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                  <?php } ?>
-                  <?php } ?>
-                </div>
-                <?php } ?>
-              </div>
-              <div class="button-group">
-                <button type="button" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></button>
-                <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i></button>
-                <button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <?php } ?>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 text-left"><?php echo $pagination; ?></div>
-        <div class="col-sm-6 text-right"><?php echo $results; ?></div>
-      </div>
-      <?php } ?>
-      <?php if (!$categories && !$products) { ?>
-      <p><?php echo $text_empty; ?></p>
-      <div class="buttons">
-        <div class="pull-right"><a href="<?php echo $continue; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
-      </div>
-      <?php } ?>
-      <?php echo $content_bottom; ?></div>
-    <?php echo $column_right; ?></div>
+        <div class="pagination"><?php echo $pagination; ?></div>
+    </div>    
+  </div>
+  
+  <p class="bootm"> </p>
 </div>
-<?php echo $footer; ?>
+<div class="foot">
+  <ul>
+    <li class="home"><a href="index.php?" class="icon-goodshome"></a></li>
+    <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>
+    <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
+    <li> <a>个人中心</a> </li>
+    
+  </ul>
+</div>
+</body>
+</html>
