@@ -45,6 +45,9 @@ body, html {
 	color: #2c2c2c;
 	background: #fff;
 }
+.top, .content, .option a{
+  color: #9b9b9b;
+}
 .top {
 	background: #262424;
 	height: 35px;
@@ -61,9 +64,10 @@ body, html {
 	color: #9c9ba0;
         font-size: 16px;
 }
-.top span a {
+.top span a{
 	display: inline-block;
 	line-height: 16px;
+        color: #9c9ba0;
 }
 .top span .gzc {
 	color: #9c9ba0;
@@ -267,7 +271,7 @@ body, html {
 </head>
 <body>
 <div class="main">
-    <div class="top"><a href="./"><img src="view/theme/default/image/logo.png" alt="" /></a><span> <a class="gzc">我的收藏</a> <a >收藏商品</a></span></div>
+    <div class="top"><a href="./"><img src="view/theme/default/image/logo.png" alt="" /></a><span> <a class="gzc">我的收藏</a> <a>收藏商品</a></span></div>
   <div class="content">
     <ul>
       <li class="goodsImages"> <img src="<?php echo $thumb; ?>" /> </li>
@@ -293,11 +297,11 @@ body, html {
   </div>
   
   <div class="option"> 
-        <a href="./">
+        
             <span class="icon icon-goodsshop"></span>
-            <span>醉藏</span> 
-            <span class="goodhome" >进入店铺<i class="icon-goodslefttag"></i></span>
-        </a>
+            <span><a href="./">醉藏</a></span> 
+            <span class="goodhome" ><a href="./">进入店铺<i class="icon-goodslefttag"></i></a></span>
+        
   </div>
  
   

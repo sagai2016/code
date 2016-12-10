@@ -91,12 +91,12 @@
         color: #ff2e00;
     }
     
-    .container .goodslist {
+    .main .goodslist {
         width: 100%;
         font-size: 0;
     }
     
-    .container .goodsCart {
+    .main .goodsCart {
         font-size: 0;
         width: 100%;
         padding: 1.5% 2.5%;
@@ -105,7 +105,7 @@
         margin-top: 10px;
     }
     
-    .container .goodsHomeTitle {
+    .main .goodsHomeTitle {
         font-size: 0;
         width: 100%;
         padding: 2.5%;
@@ -113,38 +113,37 @@
         background: #fff;
     }
     
-    .container .goodsHomeTitle li {
+    .main .goodsHomeTitle li {
         font-size: 20px;
         vertical-align: middle;
         color: #909090;
         display: inline-block;
     }
     
-    .container .goodsHomeTitle li.title {
+    .main .goodsHomeTitle li.title {
         font-size: 16px;
         padding: 0 10px;
     }
     
-    .container .goodsHomeTitle li:nth-of-type(3) {
+    .main .goodsHomeTitle li:nth-of-type(3) {
         float: right;
     }
     /**/
     
-    .container .goodsCart ul,
-    .container .goodsCart ul li,
-    .container .goodsCart ul li hgroup {
+    .main .goodsCart ul,
+    .main .goodsCart ul li,
+    .main .goodsCart ul li hgroup {
         width: 100%;
         background: #f8f8f8;
     }
-     .container .goodsCart ul li{
-         margin: 10px 0;
-     }
-    .container .goodsCart ul li hgroup {
-        border: 1px solid #ccc;
+    
+    .main .goodsCart ul li hgroup {
+        margin: 10px 0;
         background: #fff;
     }
     
-    .container .goodsCart ul li hgroup h2 {
+    .main .goodsCart ul li hgroup h2 {
+        border: 1px solid #ccc;
         width: 100%;
         line-height: 35px;
         font-size: 14px;
@@ -152,135 +151,186 @@
         padding: 0 10px;
     }
     
-    .container .goodsCart ul li  .content {
+    .main .goodsCart ul li hgroup .content {
         width: 100%;
         font-size: 12px;
-
-        
-        background: #fff;
-    }
-    
-     .container .goodsCart ul li  .content  .panel-body{
-        padding: 0;
         border-color: #ccc;
         border-width: 0 1px 1px 1px;
         border-style: solid;
-     }
-    .container .goodsCart ul li  .content  .form-horizontal{
-        padding: 20px;
-        display: inline-block;
-        width: 100%
+        padding: 10px;
+        display: none;
     }
     /**/
     
-    .container .bootm {
+    .main .bootm {
         height: 50px;
         font-size: 50px;
         display: inline-block;
     }
-.foot {
-	width: 100%;
-	display: flex;
-	position: fixed;
-	bottom: 0;
-}
-	
-	
-.foot *{
-	color: #787878;
-}
-.foot ul {
-	background: #fff;
-	margin: auto;
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-	border: 1px solid #ccc;
-}
-.foot ul li {
-	width: 100%;
-	text-align: center;
-	line-height: 48px;
-	border-width: 0 1px 0 0;
-	border-style: solid;
-	border-color: #ccc;
-}
-.foot ul .home {
-	width: 150px;
-	font-size: 20px;
-}
-
-@media (min-width: 500px) {
-.main .goodslist .list li {
-	width: 33.3%;
-}
-}
-a{
-    text-decoration: none;
-}
+    
+    .foot {
+        width: 100%;
+        display: flex;
+        position: fixed;
+        bottom: 0;
+    }
+    
+    .foot * {
+        color: #787878;
+    }
+    
+    .foot ul {
+        background: #fff;
+        margin: auto;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        border: 1px solid #ccc;
+    }
+    
+    .foot ul li {
+        width: 100%;
+        text-align: center;
+        line-height: 48px;
+        border-width: 0 1px 0 0;
+        border-style: solid;
+        border-color: #ccc;
+    }
+    
+    .foot ul li.home {
+        width: 150px;
+        font-size: 20px;
+    }
+    
+    .foot ul li.total {
+        width: 200%;
+        text-align: right;
+    }
+    
+    .foot ul li.total span {
+        display: inline-block;
+        padding: 0 10px;
+        color: #f36815;
+    }
+    
+    .foot ul li.settlement {
+        background: #ff4444;
+        color: #fff;
+    }
+    
+    .foot ul li.settlement span {
+        color: #fff;
+    }
+    
+    @media (max-width: 500px) {}
+    
+    @media (min-width: 400px) {}
 
 </style>
 <body>
-    <div class="container">
+    
+    <div class="main">
         <ul class="goodsHomeTitle">
             <li class="icon-goodsshop"></li>
             <li class="title">醉藏</li>
             <li class="icon-goodslefttag"></li>
         </ul>
-      <?php if ($error_warning) { ?>
-      <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?>
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-      </div>
-      <?php } ?>
-      <div class="goodsCart">
-          <ul class="panel-group" id="accordion">
-              
-              
-            <li>
-                <hgroup class="panel-heading"><h2 class="panel-title"><?php echo $text_checkout_option; ?></h2></hgroup>
-                <div id="collapse-checkout-option" class="content"><div class="panel-body"></div></div>
-            </li>                
-          
-            <?php if (!$logged && $account != 'guest') { ?>
-            <li>
-                <hgroup class="panel-heading"><h2 class="panel-title"><?php echo $text_checkout_account; ?></h2></hgroup>
-                <div id="collapse-payment-address" class="content"><div class="panel-body"></div></div>
-            </li>
-            <?php } else { ?>
-            <li>
-                <hgroup class="panel-heading"><h2 class="panel-title"><?php echo $text_checkout_payment_address; ?></h2></hgroup>
-                <div id="collapse-payment-address" class="content"><div class="panel-body"></div></div>
-            </li>
-            <?php } ?>
-            <?php if ($shipping_required) { ?>
-            <li>
-                <hgroup class="panel-heading"><h2 class="panel-title"><?php echo $text_checkout_shipping_address; ?></h2></hgroup>
-                <div id="collapse-shipping-address" class="content"><div class="panel-body"></div></div>
-            </li>
-            <li>
-                <hgroup class="panel-heading"><h2 class="panel-title"><?php echo $text_checkout_shipping_method; ?></h2></hgroup>
-                <div id="collapse-shipping-method" class="content"><div class="panel-body"></div></div>
-            </li>
-            <?php } ?>
-            <li>
-                <hgroup class="panel-heading"><h2 class="panel-title"><?php echo $text_checkout_payment_method; ?></h2></hgroup>
-                <div id="collapse-payment-method" class="content"><div class="panel-body"></div></div>
-            </li>
-            <li>
-                <hgroup class="panel-heading"><h2 class="panel-title"><?php echo $text_checkout_confirm; ?></h2></hgroup>
-                <div id="collapse-checkout-confirm" class="content"><div class="panel-body"></div></div>
-            </li>
-          </ul>
+        
+        <p class="bootm"></p>
+  <div class="container">
+  <?php if ($error_warning) { ?>
+  <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?>
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+  </div>
+  <?php } ?>
+  <div class="row"><?php echo $column_left; ?>
+    <?php if ($column_left && $column_right) { ?>
+    <?php $class = 'col-sm-6'; ?>
+    <?php } elseif ($column_left || $column_right) { ?>
+    <?php $class = 'col-sm-9'; ?>
+    <?php } else { ?>
+    <?php $class = 'col-sm-12'; ?>
+    <?php } ?>
+    <div id="content" <?php echo 'class="'.$class.'"'; ?>><?php echo $content_top; ?>
 
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title"><?php echo $text_checkout_option; ?></h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-checkout-option">
+            <div class="panel-body"></div>
+          </div>
         </div>
+        <?php if (!$logged && $account != 'guest') { ?>
+        <div class="panel panel-default">
+            
+          <div class="panel-heading">
+            <h4 class="panel-title"><?php echo $text_checkout_account; ?></h4>
+          </div>
+            
+          <div class="panel-collapse collapse" id="collapse-payment-address">
+            <div class="panel-body"></div>
+          </div>
+            
+        </div>
+        <?php } else { ?>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title"><?php echo $text_checkout_payment_address; ?></h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-payment-address">
+            <div class="panel-body"></div>
+          </div>
+        </div>
+        <?php } ?>
+        <?php if ($shipping_required) { ?>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title"><?php echo $text_checkout_shipping_address; ?></h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-shipping-address">
+            <div class="panel-body"></div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title"><?php echo $text_checkout_shipping_method; ?></h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-shipping-method">
+            <div class="panel-body"></div>
+          </div>
+        </div>
+        <?php } ?>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title"><?php echo $text_checkout_payment_method; ?></h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-payment-method">
+            <div class="panel-body"></div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title"><?php echo $text_checkout_confirm; ?></h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-checkout-confirm">
+            <div class="panel-body"></div>
+          </div>
+        </div>
+      </div>
+      <?php echo $content_bottom; ?></div>
+    <?php echo $column_right; ?></div>
+</div>
+      <p class="bootm"></p>      
     </div>
-    <div class="foot">
+       <div class="foot">
         <ul>
-            <a href="index.php?"><li class="home  icon-goodshome"></li></a>
-            <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>
-            <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
-            <li> <a>个人中心</a> </li>
+            <li class="home  icon-goodshome"></li>
+            <li> <span>全部商品</span> </li>
+            <li> <span>购物车</span> </li>
+            <li> <span>个人中心</span> </li>
         </ul>
     </div>
 </body>

@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="view/font-awesome/css/font-awesome.min.css" />
         <link rel="stylesheet" type="text/css" href="view/stylesheet/flexslider.css" />
+        <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
         <style type="text/css">
             ul, li, h1, h2, h3, h4, h5, h6, dt, dd, dl, ol, dl, dt, dd {
                 margin: 0;
@@ -173,10 +174,14 @@
                 font-size: 20px;
 
             }
+             .foot ul li a.icon-goodshome{
+                  font-size: 20px;
+             }
             .foot ul li a{
                 width: 100%;
                 height: 100%;
                 display: inline-block;
+                
             }
         </style>
         <script src="view/javascript/jquery/jquery.min.js"></script>

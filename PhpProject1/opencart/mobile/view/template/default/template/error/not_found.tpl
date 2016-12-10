@@ -217,10 +217,13 @@
     .foot ul li.settlement span {
         color: #fff;
     }
-    
+    .foot ul li a{
+        text-decoration:none;
+    }
     @media (max-width: 500px) {}
     
     @media (min-width: 400px) {}
+    
     </style>
 </head>
 
@@ -242,10 +245,10 @@
     </div>
     <div class="foot">
         <ul>
-            <li class="home  icon-goodshome"></li>
-            <li> <span>全部商品</span> </li>
-            <li> <span>购物车</span> </li>
-            <li> <span>个人中心</span> </li>
+            <li class="home"><a href="index.php?" class="icon-goodshome"></a></li>
+            <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>
+            <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
+            <li> <a>个人中心</a> </li>
         </ul>
     </div>
     <script type="text/javascript">
