@@ -64,7 +64,7 @@ body, html {
 .top .link li {
 	width: 100%;
 	text-align: center;
-	line-height: 48px;
+	line-height: 38px;
 	border-bottom: 1px solid #e6e6e6;  
 }
 .top .link li a{
@@ -164,13 +164,13 @@ body, html {
 .foot ul li {
 	width: 100%;
 	text-align: center;
-	line-height: 48px;
+	line-height: 38px;
 	border-width: 0 1px 0 0;
 	border-style: solid;
 	border-color: #ccc;
 }
 .foot ul li a{
-        font-size:14px;
+        font-size:12px;
         }
         .foot ul li a.icon-goodshome{
          font-size:20px;

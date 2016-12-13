@@ -45,7 +45,7 @@
             }
             .top *{
                 color: #787878;
-                font-size: 15.5px;
+                font-size: 12px;
                 font-weight: 300;
             }
             .top {
@@ -65,9 +65,9 @@
             .top .link li {
                 width: 100%;
                 text-align: center;
-                line-height: 48px;
+                line-height: 38px;
                 border-bottom: 1px solid #e6e6e6;
-
+                font-size: 12px;
 
             }
             .top .link .linkmain {
@@ -163,13 +163,13 @@
             .foot ul li {
                 width: 100%;
                 text-align: center;
-                line-height: 48px;
+                line-height: 38px;
                 border-width: 0 1px 0 0;
                 border-style: solid;
                 border-color: #ccc;
             }
             .foot ul li a{
-                font-size: 14px;
+                font-size: 12px;
             }
             
             

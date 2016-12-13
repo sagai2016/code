@@ -5,7 +5,6 @@ class ControllerProductCategoryy extends Controller {
     public function index() {
         $this->load->language('product/category');
         $this->load->model('catalog/categoryy');
-
         $this->load->model('tool/image');
         $all = $this->model_catalog_categoryy;
 

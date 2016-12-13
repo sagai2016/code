@@ -62,11 +62,11 @@ body, html {
 	display: inline-block;
 	float: right;
 	color: #9c9ba0;
-        font-size: 16px;
+        font-size: 14px;
 }
 .top span a{
 	display: inline-block;
-	line-height: 16px;
+	line-height: 14px;
         color: #9c9ba0;
 }
 .top span .gzc {
@@ -133,10 +133,17 @@ body, html {
 	display: inline-block;
         font-size: 16px;
 }
-.option span {
+.option span 
+{
 	display: inline-block;
 	color: #323232;
-        font-size: 16px;
+        font-size: 12px;
+        
+}
+.option span a
+{
+	
+        font-size: 12px;
         
 }
 .option .icon {
@@ -149,9 +156,6 @@ body, html {
 .option .goodhome {
 	float: right;
 	color: #9b9b9b;
-}
-.option .goodhome:hover{
-        color: red;
 }
 .option i {
 	display: block;
@@ -188,7 +192,7 @@ body, html {
 .foot ul li {
 	width: 100%;
 	text-align: center;
-	line-height: 48px;/*
+	line-height: 38px;/*
 	border-width: 0 1px 0 0;
 	border-style: solid;
 	border-color: #ccc;
@@ -216,7 +220,7 @@ body, html {
 	background: #ff8856;
 }
 .foot ul .addToCart span{
-        font-size: 16px;
+        font-size: 12px;
         color: #fff;
 }
 .foot ul .addToCart:hover {
@@ -226,7 +230,7 @@ body, html {
 	background: #ff4344;
 }
 .foot ul .buyNow a{
-    font-size: 16px;
+    font-size: 12px;
     color: #fff;
 }
 @media (min-width: 500px) {

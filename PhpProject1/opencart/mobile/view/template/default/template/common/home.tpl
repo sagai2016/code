@@ -69,6 +69,7 @@
                 width: 100%;
                 font-size: 0;
                 margin: 15px 0 0 0;
+                
             }
             .main .adList .goodsList span {
                 display: inline-block;
@@ -161,7 +162,7 @@
             .foot ul li {
                 width: 100%;
                 text-align: center;
-                line-height: 48px;
+                line-height: 38px;
                 border-width: 0 1px 0 0;
                 border-style: solid;
                 border-color: #ccc;
@@ -181,7 +182,7 @@
                 width: 100%;
                 height: 100%;
                 display: inline-block;
-                
+                font-size: 12px;
             }
         </style>
         <script src="view/javascript/jquery/jquery.min.js"></script>

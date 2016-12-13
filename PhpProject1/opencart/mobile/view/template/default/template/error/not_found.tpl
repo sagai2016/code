@@ -6,7 +6,7 @@
     <title>Document</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
     <meta name="format-detection" content="telephone=no" />
-    <link rel="stylesheet" type="text/css" href="css/goodsStyle.css" />
+    <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
     <style type="text/css">
     ul,
     li,
@@ -136,24 +136,18 @@
         padding: 10px
     }
     
-    .main .goodsCart ul li.content p {
+    .main .goodsCart ul li.content div {
+        margin-top:-100px;
         text-align: center;
         padding: 5px
     }
-    
-    .main .goodsCart ul li.content p:nth-of-type(1) {
-        font-size: 25px;
-        font-weight: bolder;
-    }
-    
-    .main .goodsCart ul li.content p:nth-of-type(2) {
-        text-align: left;
-        line-height: 25px;
-    }
-    
-    .main .goodsCart ul li.content p:nth-of-type(2) span {
-        text-indent: 2em;
-        display: inline-block;
+    .main .goodsCart ul li.content div a{
+        text-decoration:none;
+        color:#e17513;
+        border:1px solid #e17513;
+        width:160px;
+        height:60px;
+        line-height:60px;
     }
     /**/
     
@@ -187,16 +181,20 @@
     .foot ul li {
         width: 100%;
         text-align: center;
-        line-height: 48px;
+        line-height: 36px;
         border-width: 0 1px 0 0;
         border-style: solid;
         border-color: #ccc;
     }
-    
     .foot ul li.home {
         width: 150px;
         font-size: 20px;
     }
+    .foot ul li a{
+        font-size:12px;
+        text-decoration:none;
+    }
+    
     
     .foot ul li.total {
         width: 200%;
@@ -217,9 +215,6 @@
     .foot ul li.settlement span {
         color: #fff;
     }
-    .foot ul li a{
-        text-decoration:none;
-    }
     @media (max-width: 500px) {}
     
     @media (min-width: 400px) {}
@@ -234,10 +229,10 @@
                 <li class="submitsuccessfully">
                 </li>
                 <li class="content">
-                    <p>
-                        <span>您的购物车内没有商品，您可以点击继续购买其他商品。</span>
-                        <a href="index.php?route=product/categoryy">继续</a>
-                    </p>
+                    <div>
+                        <p><img src="../image/catalog/no_cart.jpg"/></p>
+                        <a href="index.php?route=product/categoryy">去逛逛</a>
+                    </div>
                 </li>
                 <li></li>
             </ul>
