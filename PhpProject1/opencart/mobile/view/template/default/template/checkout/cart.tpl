@@ -60,15 +60,18 @@
                 justify-content: space-between;
                 width: 100%;
                 background: rgba(255,255,255,.98);
+                
             }
 
             .top .link li {
                 width: 100%;
                 text-align: center;
-                line-height: 48px;
+                line-height: 38px;
                 border-bottom: 1px solid #e6e6e6;
             }
-
+            .top .link li a{
+                font-size: 12px; 
+            }
             .top .link .linkmain {
                 border-bottom: 1px solid #ff2e00;
                 color: #ff2e00;
@@ -234,7 +237,7 @@
             .foot ul li {
                 width: 100%;
                 text-align: center;
-                line-height: 48px;
+                line-height: 38px;
                 border-width: 0 1px 0 0;
                 border-style: solid;
                 border-color: #ccc;
@@ -242,7 +245,7 @@
             .foot ul a {
                 width: 100%;
                 text-align: center;
-                line-height: 48px;
+                line-height: 38px;
                 border-width: 0 1px 0 0;
                 border-style: solid;
                 border-color: #ccc;
@@ -261,13 +264,13 @@
                 display: inline-block;
                 padding:0 10px;
                 color: #f36815;
-                font-size: 16px;
+                font-size: 12px;
             }
             .foot ul a.settlement{
                 background: #ff4444;
                 color: #ffffff;
                 text-decoration:none;
-                font-size: 16px;
+                font-size: 12px;
             }
             @media (max-width: 500px) {
                 .main .goodsCart .goodsCartContent {
