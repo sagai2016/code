@@ -82,7 +82,7 @@
     .top .link li {
         width: 100%;
         text-align: center;
-        line-height: 48px;
+        line-height: 38px;
         border-bottom: 1px solid #e6e6e6;
     }
     
@@ -192,7 +192,7 @@
     .foot ul li {
         width: 100%;
         text-align: center;
-        line-height: 48px;
+        line-height: 38px;
         border-width: 0 1px 0 0;
         border-style: solid;
         border-color: #ccc;
@@ -328,9 +328,9 @@
        <div class="foot">
         <ul>
             <li class="home  icon-goodshome"></li>
-            <li> <span>全部商品</span> </li>
-            <li> <span>购物车</span> </li>
-            <li> <span>个人中心</span> </li>
+            <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>
+            <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
+            <li> <a>个人中心</a> </li>
         </ul>
     </div>
 </body>
