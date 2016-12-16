@@ -289,6 +289,9 @@ body, html {
     z-index: 9999;
     width: 100%;
 }
+a{
+        text-decoration: none;
+    }
 </style>
 </head>
 <body>   

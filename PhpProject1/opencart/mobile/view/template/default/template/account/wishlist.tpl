@@ -309,14 +309,17 @@
         }
 
     }
+    a{
+        text-decoration: none;
+    }
 </style>
 </head>
 <body>
     <div class="top">
         <ul class="link">
             <li><a href="index.php?route=checkout/cart">购物车</a></li>
-            <li><a href="index.php?route=account/wishlist">收藏列表</a></li>
-            <li class="linkmain"><a href="index.php?route=account/order">全部订单</a></li>
+            <li class="linkmain"><a href="index.php?route=account/wishlist">收藏列表</a></li>
+            <li><a href="index.php?route=account/order">全部订单</a></li>
         </ul>
         <!--<ul class="link">
                 <?php

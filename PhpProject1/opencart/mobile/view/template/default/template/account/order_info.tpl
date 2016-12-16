@@ -354,6 +354,9 @@ html {
 @media (max-width: 500px) {}
 
 @media (min-width: 400px) {}
+a{
+        text-decoration: none;
+    }
 </style>
 </head>
 

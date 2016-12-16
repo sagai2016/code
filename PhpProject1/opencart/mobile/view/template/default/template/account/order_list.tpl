@@ -236,7 +236,9 @@ html {
 .foot ul li.settlement span {
     color: #fff;
 }
-
+a{
+        text-decoration: none;
+    }
 @media (max-width: 500px) {}
 
 @media (min-width: 400px) {}

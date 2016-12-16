@@ -184,6 +184,9 @@
                 display: inline-block;
                 font-size: 12px;
             }
+            a{
+        text-decoration: none;
+    }
         </style>
         <script src="view/javascript/jquery/jquery.min.js"></script>
         <title>Document</title>
