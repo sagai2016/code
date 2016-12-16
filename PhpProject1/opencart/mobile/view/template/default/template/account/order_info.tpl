@@ -134,7 +134,21 @@ html {
     margin-top: 10px;
     border: #e5e5e5 solid 1px;
 }
-
+.main .goodsCart .xs{
+    font-size:12px;
+    margin-top: 20px;
+    border: #e5e5e5 solid 1px;
+    height:100px;
+    background-color:#f36815;
+}
+.main .goodsCart .xs .span1{
+    float:left;
+    background-color:yellow;
+}
+.main .goodsCart .xs .span2{
+    float:right;
+    background-color:green;
+}
 .main .goodsCart .orders li {
     display: inline-block;
     width: 100%;
@@ -211,9 +225,7 @@ html {
     margin-top: 20px;
     border: #e5e5e5 solid 1px;
 }
-.main .goodsCart .goodsinfo li.charging p{
-    font-size:12px;
-}
+
 .main .goodsCart .goodsinfo li.commitcolumn {
     width: 100%;
     text-align: right;
@@ -399,6 +411,7 @@ a{
             </ul>    
             <ul class="orders">
                 <li class="title"><?php echo $text_payment_address; ?></li> 
+                
                 <?php if ($shipping_address) { ?>
                 <li class="content">
                    <?php echo $payment_address;?>
@@ -414,18 +427,15 @@ a{
                 <?php } ?>
             </ul>           
             <ul class="orders goodsinfo">
-                <li class="title">商品信息</li>
                 <?php foreach ($products as $product) { ?>
-                <li class="content">
-                    
+                <li class="title">商品信息</li>
+                <li class="content">                   
                     <p><?php echo $column_name; ?><span><?php echo $product['name']; ?></span></p>
                     <p><?php echo $column_model; ?>:<span><?php echo $product['model']; ?></span></p>
                     <p><?php echo $column_quantity; ?>:<span>X<?php echo $product['quantity']; ?></span></p>
                     <p><?php echo $column_price; ?>:<span><?php echo $product['price']; ?></span></p>
-                    <?php foreach ($totals as $total) { ?>           
-              <p><?php echo $total['title']; ?><span><?php echo $total['text']; ?></span></p>              
-              <?php if ($products) { ?>
-              <?php } ?>
+                    <p><?php echo $column_total; ?>:<span><?php echo $product['total']; ?></span></p>
+                    <?php foreach ($totals as $total) { ?>                         
               <?php } ?>
                 </li>
                 <li class="content commitcolumn">
@@ -437,6 +447,18 @@ a{
                     </span>
                 </li>
              <?php } ?>                          
+                 
+            </ul>
+            <ul class="xs">
+                
+                <p>
+                    <?php foreach ($totals as $total) { ?>
+                    <span class="span1"><?php echo $total['title']; ?></span><br>
+                    <span class="span2"><?php echo $total['text']; ?></span><br>
+                    <?php } ?>
+                </p>
+                    
+                
                 
             </ul>
             <ul class="orders">
