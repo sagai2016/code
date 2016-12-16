@@ -167,13 +167,16 @@
 
             .main .goodsCart .goodsCartContent li.content .del {
                 border: 1px solid #f36815;
-                padding: 0 15px;
-                margin-right: 15px;
+                border-radius: 3px;
+                padding: 0 10px;
                 display: block;
-                color: #f36815;
-                line-height: 28px;
+                height: 20px;
+                line-height: 20px;
+                font-size: 12px;
+                font-weight: bold;
                 float: right;
-                background-color: #fff;
+                color:#fff;
+                background: #f00;
             }
 
 
@@ -190,7 +193,7 @@
             }
 
             .main .goodsCart .goodsCartContent li.content .jg input {
-                line-height: 18px;
+                line-height: 20px;
                 width: 33px;
                 text-align: center;
                 border:1px solid #ccc;
@@ -318,9 +321,9 @@
     <body>
         <div class="top">
             <ul class="link">
-                <li class="linkmain"><a>购物车</a></li>
-                <li><a>收藏列表</a></li>
-                <li><a>全部订单</a></li>
+                <li class="linkmain" href="index.php?route=checkout/cart"><a>购物车</a></li>
+                <li><a href="index.php?route=account/wishlist">收藏列表</a></li>
+                <li><a href="index.php?route=account/order">全部订单</a></li>
             </ul>
         </div>
 
@@ -347,7 +350,7 @@
                             <p class="button">
                                 <span class="jg"> 
                                     <i id="reduce">- </i>
-                                    <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]" id="cartcount" value="<?php echo $product['quantity']; ?>"/>                   
+                                    <input readonly="readonly" type="text" name="quantity[<?php echo $product['cart_id']; ?>]" id="cartcount" value="<?php echo $product['quantity']; ?>"/>                   
                                     <i id="add">+ </i> 
                                 </span>                            
                                 <button type="button" title="<?php echo $button_remove; ?>" class="del" onclick="cart.remove('<?php echo $product['cart_id']; ?>');">删除</button>

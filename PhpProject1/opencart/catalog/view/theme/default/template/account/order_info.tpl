@@ -98,6 +98,7 @@
             </tr>
             <?php } ?>
             <?php foreach ($vouchers as $voucher) { ?>
+           
             <tr>
               <td class="text-left"><?php echo $voucher['description']; ?></td>
               <td class="text-left"></td>

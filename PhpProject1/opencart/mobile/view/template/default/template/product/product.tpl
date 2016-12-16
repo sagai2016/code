@@ -17,8 +17,11 @@
 <script src="view/javascript/jquery/magnific/jquery.magnific-popup.min.js" type="text/javascript"></script>
 <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
-
+<script src="view/javascript/common.js" type="text/javascript"></script>
+<script src="view/javascript/o-script.js"></script>
+<script src="view/javascript/jquery/jquery.flexslider.js"></script> 
 <style type="text/css">
+    
 ul, li, h1, h2, h3, h4, h5, h6, dt, dd, dl, ol, dl, dt, dd, p {
 	margin: 0;
 	padding: 0;
@@ -271,11 +274,33 @@ body, html {
 #tab-description a{
         font-size: 14px;
 }
+.breadcrumb,#content{
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    font-size: 16px;
+}
+.alert-success
+{
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+}
 </style>
 </head>
-<body>
+<body>   
+ <div class="breadcrumb" id="content"></div>
 <div class="main">
-    <div class="top"><a href="./"><img src="view/theme/default/image/logo.png" alt="" /></a><span> <a class="gzc">我的收藏</a> <a>收藏商品</a></span></div>
+    <div class="top">
+        <a href="./"><img src="view/theme/default/image/logo.png" alt="" /></a>
+        <span class=""> 
+            <a class="gzc" href="index.php?route=account/wishlist">我的收藏</a>
+            <a type="button" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product_id; ?>');">收藏美酒</a>
+        </span>
+    </div>
   <div class="content">
     <ul>
       <li class="goodsImages"> <img src="<?php echo $thumb; ?>" /> </li>
@@ -367,7 +392,7 @@ $('#button-cart').on('click', function() {
 		success: function(json) {
 			$('.alert, .text-danger').remove();
 			$('.form-group').removeClass('has-error');
-                        alert('您已将产品加入购物车');
+                        //alert('您已将产品加入购物车');
 			if (json['error']) {
 				if (json['error']['option']) {
 					for (i in json['error']['option']) {
@@ -390,8 +415,9 @@ $('#button-cart').on('click', function() {
 			}
 
 			if (json['success']) {
+                                
 				$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
-
+                                
 				$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
 
 				$('html, body').animate({ scrollTop: 0 }, 'slow');

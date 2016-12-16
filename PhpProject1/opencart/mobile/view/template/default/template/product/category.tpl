@@ -68,7 +68,7 @@ body, html {
 	border-bottom: 1px solid #e6e6e6;  
 }
 .top .link li a{
-        font-size: 14px;
+        font-size: 12px;
 }
 .top .link .linkmain {
 	border-bottom: 1px solid #ff2e00;
@@ -229,6 +229,7 @@ a{
                         <span>
                            <?php echo $product['name']; ?>
                         </span> 
+                        
                     </p>
                 </li>
                  <?php } ?>

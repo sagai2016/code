@@ -10,7 +10,7 @@ class ControllerAccountWishList extends Controller {
 		$this->load->language('account/wishlist');
 
 		$this->load->model('account/wishlist');
-
+                $this->load->model('catalog/categoryy');
 		$this->load->model('catalog/product');
 
 		$this->load->model('tool/image');
@@ -124,7 +124,25 @@ class ControllerAccountWishList extends Controller {
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
+                
+                
+                
+                $data['categories'] = [];
+                $results = $this->model_catalog_categoryy->getCategory();
 
+                $categories = [];
+                foreach ($results as $k => $v) {
+
+
+                    $v['name'] = $v['name'];
+                    $v['href'] = $this->url->link('product/category', 'path=' . $v['category_id']);
+                    $categories[] = $v;
+                }
+
+                $data['categories'] = $categories;
+
+
+                
 		$this->response->setOutput($this->load->view('account/wishlist', $data));
 	}
 

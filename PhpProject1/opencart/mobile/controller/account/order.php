@@ -330,14 +330,13 @@ class ControllerAccountOrder extends Controller {
 			$data['vouchers'] = array();
 
 			$vouchers = $this->model_account_order->getOrderVouchers($this->request->get['order_id']);
-
+                        
 			foreach ($vouchers as $voucher) {
 				$data['vouchers'][] = array(
 					'description' => $voucher['description'],
 					'amount'      => $this->currency->format($voucher['amount'], $order_info['currency_code'], $order_info['currency_value'])
 				);
 			}
-
 			// Totals
 			$data['totals'] = array();
 
@@ -349,7 +348,6 @@ class ControllerAccountOrder extends Controller {
 					'text'  => $this->currency->format($total['value'], $order_info['currency_code'], $order_info['currency_value']),
 				);
 			}
-
 			$data['comment'] = nl2br($order_info['comment']);
 
 			// History

@@ -157,7 +157,7 @@ class ControllerProductCategory extends Controller {
                       
 			
                         //个人添加，可能会出错
-                        foreach ($categories as $category) {
+                        /*foreach ($categories as $category) {
 
                             if ($category['top']) {
                                 // Level 1
@@ -168,7 +168,7 @@ class ControllerProductCategory extends Controller {
                                 );
                                 
                             }
-                        }
+                        }*/
                         
 			$data['products'] = array();
                         
