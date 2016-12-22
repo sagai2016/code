@@ -136,18 +136,35 @@ html {
 }
 .main .goodsCart .xs{
     font-size:12px;
-    margin-top: 20px;
+    margin-top: 10px;
     border: #e5e5e5 solid 1px;
     height:100px;
-    background-color:#f36815;
 }
-.main .goodsCart .xs .span1{
+.main .goodsCart .xs li:first-child{
     float:left;
-    background-color:yellow;
+    display:inline-block;
+    margin-left:10px;
 }
-.main .goodsCart .xs .span2{
+.main .goodsCart .xs li:last-child{
     float:right;
-    background-color:green;
+    display:inline-block;
+    margin-left:10px;
+}
+.main .goodsCart .xs .span1 p{
+    margin-top:15px;
+    margin-bottom:15px;
+    color: #999;
+    font-size: 12px;
+    line-height: 12px;
+}
+.main .goodsCart .xs .span2 p{
+    margin-top:15px;
+    margin-bottom:15px;
+    font-size: 12px;
+    line-height: 12px;
+}
+.main .goodsCart .xs .span2 p:last-child{
+    color: #f36815;
 }
 .main .goodsCart .orders li {
     display: inline-block;
@@ -168,7 +185,7 @@ html {
     display: inline-block;
     color: #999;
     width: 50%;
-    font-size: 13.3px;
+    font-size: 12px;
     line-height: 35px;
 }
 
@@ -450,13 +467,20 @@ a{
                  
             </ul>
             <ul class="xs">
-                
-                <p>
-                    <?php foreach ($totals as $total) { ?>
-                    <span class="span1"><?php echo $total['title']; ?></span><br>
-                    <span class="span2"><?php echo $total['text']; ?></span><br>
-                    <?php } ?>
-                </p>
+                <li>
+                    <span class="span1">
+                        <?php foreach ($totals as $total) { ?>
+                            <p><?php echo $total['title']; ?></p>
+                        <?php } ?>
+                    </span>
+                </li>
+                <li>
+                    <span class="span2">
+                        <?php foreach ($totals as $total) { ?>
+                            <p><?php echo $total['text']; ?></p>
+                        <?php } ?>
+                    </span>
+                </li>  
                     
                 
                 
