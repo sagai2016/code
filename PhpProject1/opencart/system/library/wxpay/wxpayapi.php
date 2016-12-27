@@ -523,8 +523,8 @@ class WxPayApi
 	{		
 		$ch = curl_init();
 		//设置超时
-		curl_setopt($ch, CURLOPT_TIMEOUT, $second);
-		
+		//curl_setopt($ch, CURLOPT_TIMEOUT, $second);
+		//会引起超时，所以使用curl的系统超时时间
 		//如果有配置代理这里就设置代理
 		if(WxPayConfig::CURL_PROXY_HOST != "0.0.0.0" 
 			&& WxPayConfig::CURL_PROXY_PORT != 0){
@@ -532,8 +532,8 @@ class WxPayApi
 			curl_setopt($ch,CURLOPT_PROXYPORT, WxPayConfig::CURL_PROXY_PORT);
 		}
 		curl_setopt($ch,CURLOPT_URL, $url);
-		curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,TRUE);
-		curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,2);//严格校验
+		curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,FALSE);
+		curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,FALSE);//严格校验
 		//设置header
 		curl_setopt($ch, CURLOPT_HEADER, FALSE);
 		//要求结果为字符串且输出到屏幕上
