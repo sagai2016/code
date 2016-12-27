@@ -247,9 +247,11 @@
             
             <ul>
                 <li class="home"><a class="icon-goodshome" href="index.php"></a></li>
+                
                 <?php foreach($categories as $categorie):?>
+               
                 <li> <a href="<?php echo  $categorie['href']?>"><?php echo $categorie['name']?></a> </li>
-               <?php endforeach?>
+                <?php endforeach?>
             </ul>
         </div>
         <script src="view/javascript/jquery/jquery.flexslider.js"></script> 

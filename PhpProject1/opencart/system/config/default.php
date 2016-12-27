@@ -38,14 +38,14 @@ $_['cache_expire']         = 3600;
 
 // Session
 $_['session_autostart']    = true;
-$_['session_name']         = 'PHPSESSID';
+$_['session_name']         = 'zuicang';
 
 // Template
 $_['template_type']        = 'php';
 
 // Error
-$_['config_error_display'] = true;
-$_['config_error_log']     = true;
+$_['config_error_display'] = FALSE;
+$_['config_error_log']     = FALSE;
 $_['config_error_filename'] = 'error.log';
 
 // Reponse

@@ -14,9 +14,7 @@
 <link href="view/stylesheet/stylesheet.css" rel="stylesheet">
 <script src="view/javascript/jquery/datetimepicker/moment.js" type="text/javascript"></script>
 <script src="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js"type="text/javascript"></script>
-<link href="view/javascript/jquery/magnific/magnific-popup.css" type="text/css" rel="stylesheet" media="screen" />
 <link href="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
-<script src="view/javascript/jquery/magnific/jquery.magnific-popup.min.js" type="text/javascript"></script>
 <script src="view/javascript/common.js" type="text/javascript"></script>
 <script src="view/javascript/o-script.js"></script>
 <script src="view/javascript/jquery/jquery.flexslider.js"></script> 
@@ -388,9 +386,7 @@ a{
     }
 </style>
 </head>
-
-<body>
-    
+<body>  
     <div class="top">
         <ul class="link">
             <li><a href="index.php?route=checkout/cart">购物车</a></li>
@@ -480,10 +476,7 @@ a{
                             <p><?php echo $total['text']; ?></p>
                         <?php } ?>
                     </span>
-                </li>  
-                    
-                
-                
+                </li>                 
             </ul>
             <ul class="orders">
                 <li class="title">订单状态记录</li>
@@ -507,7 +500,7 @@ a{
         <ul>
             <li class="home"><a href="index.php?" class="icon-goodshome"></a></li>
             <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>
-            <li> <a href="index.php?route=">购物车</a> </li>
+            <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
             <li> <a href="index.php?route=">个人中心</a> </li>
         </ul>
     </div>

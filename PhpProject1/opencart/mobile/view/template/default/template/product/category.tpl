@@ -172,9 +172,9 @@ body, html {
 .foot ul li a{
         font-size:12px;
         }
-        .foot ul li a.icon-goodshome{
-         font-size:20px;
-        }
+.foot ul li a.icon-goodshome{
+ font-size:20px;
+}
 
 .foot ul .home {
 	width: 150px;

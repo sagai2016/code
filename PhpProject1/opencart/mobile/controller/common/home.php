@@ -15,7 +15,7 @@ class ControllerCommonHome extends Controller {
 
 
         $categories = $this->model_catalog_category->getCategories(0);
-       
+        
         foreach ($categories as $category) {
 
             if ($category['top']) {
@@ -28,7 +28,7 @@ class ControllerCommonHome extends Controller {
             }
         }
         
-        
+       
         $this->response->setOutput($this->load->view('common/home', $data));
     }
 

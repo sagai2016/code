@@ -18,8 +18,7 @@
 <?php if ($keywords) { ?>
 <meta name="keywords" content= "<?php echo $keywords; ?>" />
 <?php } ?>
- <script src="view/javascript/jquery/jquery.flexslider.js"></script> 
-    <script src="view/javascript/o-script.js"></script>
+<script src="catalog/view/javascript/o-script.js"></script>
 <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" type="text/css">
 <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />

@@ -37,9 +37,8 @@ class ControllerProductCategoryy extends Controller {
             $v['href'] = $this->url->link('product/category', 'path=' . $v['category_id']);
             $categories[] = $v;
         }
-
+        
         $data['categories'] = $categories;
-
 
 
 

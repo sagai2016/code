@@ -208,13 +208,13 @@ body, html {
 	font-size: 0;
 }
 .foot ul .home .icon-goodscart {
-	font-size: 25px;
+	font-size: 40px;
 	color: #686868;
 }
 .foot ul .home a{
 	display: inline-block;
 	width: 100%;
-	font-size: 12px;
+	font-size: 16px;
 	line-height: normal;
 	padding: 0;
         color: #686868;
@@ -351,7 +351,7 @@ a{
 <div class="foot">
   <ul>
     
-    <li class="home"><span class="icon-goodscart"></span><a href="index.php?route=checkout/cart"> 购物车</a></li>  
+    <li class="home"><a href="index.php?route=checkout/cart" class="icon-goodscart"></a></li>  
     <li class="addToCart" id="button-cart"><span><?php echo $button_cart; ?></span></li>
     <li class="buyNow"> <a href="index.php?route=checkout/checkout">立即购买</a> </li>
   </ul>
