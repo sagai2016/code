@@ -2,6 +2,7 @@
 <html lang="zh-cn">
 <header>
 <meta charset="UTF-8">
+<title>酔藏商城</title>
 <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 <link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
 <script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>

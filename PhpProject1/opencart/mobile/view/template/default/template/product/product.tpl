@@ -2,6 +2,7 @@
 <html lang="zh-cn">
 <head>
 <meta charset="UTF-8">
+<title>酔藏商城</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
@@ -53,7 +54,7 @@ body, html {
 }
 .top {
 	background: #262424;
-	height: 35px;
+	height: 38px;
 	padding: 6px;
 	width: 100%;
 }
@@ -66,6 +67,7 @@ body, html {
 	float: right;
 	color: #9c9ba0;
         font-size: 14px;
+            
 }
 .top span a{
 	display: inline-block;
@@ -128,7 +130,7 @@ body, html {
 }
 .option {
 	margin: 12px 0;
-	line-height: 35px;
+	line-height: 38px;
 	padding: 1% 3% .5% 5%;
 	border: 1PX solid #e6e6e6;
 }
@@ -195,11 +197,11 @@ body, html {
 .foot ul li {
 	width: 100%;
 	text-align: center;
-	line-height: 38px;/*
+	line-height: 38px;
 	border-width: 0 1px 0 0;
 	border-style: solid;
 	border-color: #ccc;
-*/
+
 }
 .foot ul .home {
 	width: 250px;
@@ -208,8 +210,11 @@ body, html {
 	font-size: 0;
 }
 .foot ul .home .icon-goodscart {
-	font-size: 40px;
+        margin-top: 3px;
+	font-size: 25px;
 	color: #686868;
+        text-shadow: 1px 1px 1px #ddd;
+        margin-top: 5px;
 }
 .foot ul .home a{
 	display: inline-block;
@@ -218,6 +223,7 @@ body, html {
 	line-height: normal;
 	padding: 0;
         color: #686868;
+        text-shadow: 1px 1px 1px #ddd;
 }
 .foot ul .addToCart {
 	background: #ff8856;
@@ -225,16 +231,16 @@ body, html {
 .foot ul .addToCart span{
         font-size: 12px;
         color: #fff;
+        text-shadow: 0.5px 0.5px 0.5px #ddd;
 }
-.foot ul .addToCart:hover {
-        cursor: pointer;
-}
+
 .foot ul .buyNow {
 	background: #ff4344;
 }
 .foot ul .buyNow a{
     font-size: 12px;
     color: #fff;
+    text-shadow: 0.5px 0.5px 0.5px #ddd;
 }
 @media (min-width: 500px) {
 .content .goodsImages {
@@ -242,7 +248,7 @@ body, html {
 }
 }
 .main .bootm {
-	height: 35px;
+	height: 38px;
 	font-size: 50px;
 	display: inline-block;
 }
@@ -332,7 +338,7 @@ a{
         
             <span class="icon icon-goodsshop"></span>
             <span><a href="./">醉藏</a></span> 
-            <span class="goodhome" ><a href="./">进入店铺<i class="icon-goodslefttag"></i></a></span>
+            <span class="goodhome" ><a href="index.php?route=product/categoryy">进入店铺<i class="icon-goodslefttag"></i></a></span>
         
   </div>
  

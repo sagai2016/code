@@ -3,6 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
+<title>酔藏商城</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
 <meta name="format-detection" content="telephone=no" />
@@ -90,6 +91,7 @@ html {
 }
 .top .link li a{
     font-size:12px;
+    text-shadow: 1px 1px 1px #ddd;
 }
 .top .link .linkmain {
     border-bottom: 1px solid #ff2e00;
@@ -184,7 +186,7 @@ html {
     color: #999;
     width: 50%;
     font-size: 12px;
-    line-height: 35px;
+    line-height: 38px;
 }
 
 .main .goodsCart .orders li p span {
@@ -355,9 +357,17 @@ html {
 
 .foot ul li.home {
     width: 150px;
-    font-size: 20px;
+    
 }
-
+.foot ul .home .icon-goodshome{
+    font-size:18px;
+    text-shadow: 1px 1px 1px #ddd;
+    vertical-align:middle;
+}
+.foot ul li a{
+    font-size: 12px;
+    text-shadow: 1px 1px 1px #ddd;
+}
 .foot ul li.total {
     width: 200%;
     text-align: right;

@@ -1,3 +1,9 @@
+<html lang="zh-cn">
+<header>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>酔藏商城</title>
 <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
 <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 <link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
@@ -11,7 +17,245 @@
 <script src="view/javascript/jquery/magnific/jquery.magnific-popup.min.js" type="text/javascript"></script>
 <script src="view/javascript/common.js" type="text/javascript"></script>
 <script src="view/javascript/o-script.js"></script>
-<script src="view/javascript/jquery/jquery.flexslider.js"></script> 
+<script src="view/javascript/jquery/jquery.flexslider.js"></script>
+</header>
+<style>
+    ul,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    dt,
+    dd,
+    dl,
+    ol,
+    dl,
+    dt,
+    dd,
+    p {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border: 0;
+    }
+   h1{
+       margin-top:20px;
+   } 
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        background: #f8f8f8;
+    }
+    
+    * {
+        box-sizing: border-box;
+        color: #2c2c2c;
+    }
+    
+    .main {
+        max-width: 750px;
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+    
+    .top * {
+        color: #787878;
+        font-size: 15.5px;
+        font-weight: 300;
+    }
+    
+    .top {
+        width: 100%;
+        display: flex;
+        position: fixed;
+        top: 0;
+    }
+    
+    .top .link {
+        display: inline-flex;
+        justify-content: space-between;
+        width: 100%;
+        background: rgba(255, 255, 255, .98);
+    }
+    
+    .top .link li {
+        width: 100%;
+        text-align: center;
+        line-height: 38px;
+        border-bottom: 1px solid #e6e6e6;
+    }
+    
+    .top .link .linkmain {
+        border-bottom: 1px solid #ff2e00;
+        color: #ff2e00;
+    }
+    
+    .main .goodslist {
+        width: 100%;
+        font-size: 0;
+    }
+    
+    .main .goodsCart {
+        font-size: 0;
+        width: 100%;
+        padding: 1.5% 2.5%;
+        /* background: #fff; */
+        /* border: 1px #e5e5e5 solid; */
+        margin-top: 10px;
+    }
+    
+    .main .goodsHomeTitle {
+        font-size: 0;
+        width: 100%;
+        padding: 2.5%;
+        border: 1px #e5e5e5 solid;
+        background: #fff;
+        background-color:#fff;
+        position: fixed;
+        z-index:999;
+    }
+    
+    .main .goodsHomeTitle li {
+        font-size: 20px;
+        vertical-align: middle;
+        color: #909090;
+        display: inline-block;
+    }
+    
+    .main .goodsHomeTitle li.title {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+    
+    .main .goodsHomeTitle li:nth-of-type(3) {
+        float: right;
+    }
+    /**/
+    
+    .main .goodsCart ul,
+    .main .goodsCart ul li,
+    .main .goodsCart ul li hgroup {
+        width: 100%;
+        background: #f8f8f8;
+    }
+    
+    .main .goodsCart ul li hgroup {
+        margin: 10px 0;
+        background: #fff;
+    }
+    
+    .main .goodsCart ul li hgroup h2 {
+        border: 1px solid #ccc;
+        width: 100%;
+        line-height: 38px;
+        font-size: 14px;
+        display: inline-block;
+        padding: 0 10px;
+    }
+    
+    .main .goodsCart ul li hgroup .content {
+        width: 100%;
+        font-size: 12px;
+        border-color: #ccc;
+        border-width: 0 1px 1px 1px;
+        border-style: solid;
+        padding: 10px;
+        display: none;
+    }
+    /**/
+    
+    .main .bootm {
+        height: 50px;
+        font-size: 50px;
+        display: inline-block;
+    }
+    
+    .foot {
+        width: 100%;
+        display: flex;
+        position: fixed;
+        bottom: 0;
+    }
+    
+    .foot * {
+        color: #787878;
+    }
+    
+    .foot ul {
+        background: #fff;
+        margin: auto;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        border: 1px solid #ccc;
+    }
+    
+    .foot ul li {
+        width: 100%;
+        text-align: center;
+        line-height: 38px;
+        border-width: 0 1px 0 0;
+        border-style: solid;
+        border-color: #ccc;
+    }
+    .foot ul li a{
+        font-size:12px;
+        text-shadow: 1px 1px 1px #ddd;
+    }
+    
+    .foot ul li.home {
+        width: 150px;
+        font-size: 20px;
+        text-shadow: 1px 1px 1px #ddd;
+    }
+     .foot ul .home .icon-goodshome{
+        vertical-align: middle;
+        font-size: 18px;
+        text-shadow: 1px 1px 1px #ddd;
+    }
+    .foot ul li.total {
+        width: 200%;
+        text-align: right;
+    }
+    
+    .foot ul li.total span {
+        display: inline-block;
+        padding: 0 10px;
+        color: #f36815;
+    }
+    
+    .foot ul li.settlement {
+        background: #ff4444;
+        color: #fff;
+    }
+    
+    .foot ul li.settlement span {
+        color: #fff;
+    }
+    a{
+        text-decoration: none;
+    }
+    
+    @media (max-width: 500px) {}
+    
+    @media (min-width: 400px) {}
+
+</style>
+<body>
+ <div class="main">
+        <ul class="goodsHomeTitle">
+            <li class="icon-goodsshop"></li>
+            <li class="title">醉藏</li>
+            <li class="icon-goodslefttag"></li>
+        </ul>
+        
+        <p class="bootm"></p>
 <div class="container">
   <?php if ($error_warning) { ?>
   <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?></div>
@@ -68,10 +312,8 @@
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label" for="input-date-ordered"><?php echo $entry_date_ordered; ?></label>
-            <div class="col-sm-3">
-              <div class="input-group date"><input type="text" name="date_ordered" value="<?php echo $date_ordered; ?>" placeholder="<?php echo $entry_date_ordered; ?>" data-date-format="YYYY-MM-DD" id="input-date-ordered" class="form-control" /><span class="input-group-btn">
-                <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
-                </span></div>
+             <div class="col-sm-10">
+             <input type="date" name="date_ordered" value="<?php echo $date_ordered; ?>" placeholder="<?php echo $entry_date_ordered; ?>" data-date-format="YYYY-MM-DD" id="input-date-ordered" class="form-control" />
             </div>
           </div>
         </fieldset>
@@ -165,8 +407,7 @@
         </div>
         <?php } else { ?>
         <div class="buttons clearfix">
-          <div class="pull-left"><a href="<?php echo $back; ?>" class="btn btn-default"><?php echo $button_back; ?></a></div>
-          <div class="pull-right">
+          <div class="pull-left">
             <input type="submit" value="<?php echo $button_submit; ?>" class="btn btn-primary" />
           </div>
         </div>
@@ -176,6 +417,17 @@
     </div>
   </div>
 </div>
+    <p class="bootm"></p>      
+    </div>
+       <div class="foot">
+        <ul>
+            <li class="home"><a class="icon-goodshome" href="index.php"></a></li>
+            <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>
+            <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
+            <li> <a>个人中心</a> </li>
+        </ul>
+    </div>
+</body>
 <script type="text/javascript"><!--
 $('.date').datetimepicker({
 	pickTime: false

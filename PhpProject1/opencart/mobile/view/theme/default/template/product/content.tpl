@@ -105,7 +105,7 @@ body, html {
 }
 .option {
 	margin: 12px 0;
-	line-height: 35px;
+	line-height: 38px;
 	padding: 1% 3% .5% 5%;
 	border: 1PX solid #e6e6e6;
 }

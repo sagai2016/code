@@ -2,6 +2,7 @@
 <html lang="zh-cn">
 <head>
 <meta charset="UTF-8">
+<title>酔藏商城</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
@@ -69,6 +70,7 @@ body, html {
 }
 .top .link li a{
         font-size: 12px;
+        text-shadow: 1px 1px 1px #ddd;
 }
 .top .link .linkmain {
 	border-bottom: 1px solid #ff2e00;
@@ -116,7 +118,7 @@ body, html {
 	display: inline-block;
 	padding: 2%;
 	width: 100%;
-	line-height: 35px;
+	line-height: 38px;
 	height: 35px;
 	text-align: center;
 	overflow: hidden;
@@ -171,14 +173,18 @@ body, html {
 }
 .foot ul li a{
         font-size:12px;
+        text-shadow: 1px 1px 1px #ddd;
         }
 .foot ul li a.icon-goodshome{
- font-size:20px;
+ font-size:18px;
+ text-shadow: 1px 1px 1px #ddd;
+ vertical-align: middle;
 }
 
 .foot ul .home {
 	width: 150px;
-	font-size: 20px;
+	font-size: 18px;
+        text-shadow: 1px 1px 1px #ddd;
 }
 
 @media (min-width: 500px) {

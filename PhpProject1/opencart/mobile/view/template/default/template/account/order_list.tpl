@@ -3,11 +3,11 @@
 
 <head>
 <meta charset="UTF-8">
+<title>酔藏商城</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
 <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" type="text/css">
 <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-<link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
 <script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
 <link href="view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="view/javascript/jquery/magnific/magnific-popup.css" type="text/css" rel="stylesheet" media="screen" />
@@ -86,6 +86,7 @@ html {
 }
 .top .link li a{
     font-size:12px;
+    text-shadow: 1px 1px 1px #ddd;
 }
 .top .link .linkmain {
     border-bottom: 1px solid #ff2e00;
@@ -142,7 +143,9 @@ html {
 .main .goodsCart .allorders li {
     padding: 1.5% 2.5%;
 }
-
+.main .goodsCart .allorders .see p a{
+    color:#ffcc66;
+}
 .main .goodsCart .allorders li p {
     display: inline-block;
     width: 50%;
@@ -211,12 +214,18 @@ html {
 }
 .foot ul li a{
     font-size:12px;
+    text-shadow: 1px 1px 1px #ddd;
 }
 .foot ul li.home {
     width: 150px;
-    font-size: 20px;
+    font-size: 18px;
+    text-shadow: 1px 1px 1px #ddd;
 }
-
+.foot ul .home .icon-goodshome{
+    font-size:18px;
+    text-shadow: 1px 1px 1px #ddd;
+    vertical-align:middle;
+}
 .foot ul li.total {
     width: 200%;
     text-align: right;
@@ -236,6 +245,7 @@ html {
 .foot ul li.settlement span {
     color: #fff;
 }
+
 a{
         text-decoration: none;
     }
@@ -275,7 +285,7 @@ a{
                 <li>
                     <p>添加日期：<span><?php echo $order['date_added']; ?></span></p>
                 </li>
-                <li class="">
+                <li class="see">
                     <p><a href="<?php echo $order['view']; ?>">查看订单详情</a></p>
                 </li>
             </ul>

@@ -2,9 +2,9 @@
 <html lang="zh-cn">
 <header>
 <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
+<title>酔藏商城</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 <link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
 <script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
@@ -145,7 +145,7 @@
     .main .goodsCart ul li hgroup h2 {
         border: 1px solid #ccc;
         width: 100%;
-        line-height: 35px;
+        line-height: 38px;
         font-size: 14px;
         display: inline-block;
         padding: 0 10px;
@@ -197,10 +197,15 @@
         border-style: solid;
         border-color: #ccc;
     }
+    .foot ul li a{
+        font-size:12px;
+        text-shadow: 1px 1px 1px #ddd;
+    }
     
     .foot ul li.home {
         width: 150px;
         font-size: 20px;
+        text-shadow: 1px 1px 1px #ddd;
     }
     
     .foot ul li.total {

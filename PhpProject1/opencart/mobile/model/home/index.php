@@ -4,7 +4,7 @@ class ModelHomeIndex extends Model {
     
     
     public function getProduct() {
-        $query=$this->db->query('select * from '.DB_PREFIX.'product order by product_id limit 2');
+        $query=$this->db->query('select * from '.DB_PREFIX.'product order by product_id limit 4');
         return $query->rows;
     }
     
