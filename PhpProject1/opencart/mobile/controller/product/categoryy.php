@@ -2,61 +2,59 @@
 
 class ControllerProductCategoryy extends Controller {
 
+    private $maxSum = 15; //每夜最多显示多少条数量
+    private $count = 0;
+    private $pages = 1;
+    private $all = [];
+
     public function index() {
-        $this->load->language('product/category');
-        $this->load->model('catalog/categoryy');
-        $this->load->model('tool/image');
-        $all = $this->model_catalog_categoryy;
 
-        $pages = 1;
-
-        empty($this->request->get['page']) || $pages = $this->request->get['page'];
-
-        //$page = empty($page) ? 0 : $page;
-
-        $maxSum = 15;
-
-
-        $Rs = $all->getcount();
-        $count = (int) $Rs['count'];
-
-        $pageSum = ceil($count / $maxSum);
-        $pageCount = ($pages - 1) * $maxSum;
-
-        $Rs = $all->getAll($pageCount, $maxSum);
-        $data['page'] = $pageSum;
-
+        $data = $this->content();
         $data['categories'] = [];
-        $results = $this->model_catalog_categoryy->getCategory();
-
+        $results = $this->all->getCategory();
         $categories = [];
-        foreach ($results as $k => $v) {
-
-
+        foreach ($results as $v) {
             $v['name'] = $v['name'];
             $v['href'] = $this->url->link('product/category', 'path=' . $v['category_id']);
             $categories[] = $v;
         }
-        
+
         $data['categories'] = $categories;
 
+        $this->response->setOutput($this->load->view('product/categoryy', $data));
+    }
+
+    public function back() {
+        if (!empty($this->content())) {
+            echo json_encode($this->content());
+        }
+        else
+        {
+            echo json_encode('stop');
+        }
+    }
+
+    private function content() {
+
+        $this->load->language('product/category');
+        $this->load->model('catalog/categoryy');
+        $this->load->model('tool/image');
+        $this->all = $this->model_catalog_categoryy;
+
+        empty($this->request->get['page']) || $this->pages = $this->request->get['page'];
 
 
+        $data = [];
 
+        $rsCount = $this->all->getcount(); //得到的是产品的总数量
 
+        $this->count = (int) $rsCount['count'];
 
+        $pageSum = ceil($this->count / $this->maxSum); //得到最大页数
 
-        $pagination = new Pagination();
-        $pagination->total = $count;
-        $pagination->page = $pages;
-        $pagination->limit = $maxSum;
-        $pagination->url = $this->url->link('product/categoryy' . '&page={page}');
+        $pageCount = ( $this->pages - 1) * $this->maxSum; //显示产品的起始数量，最少显示0条，依次每页增加15条
 
-        $data['pagination'] = $pagination->render();
-        $data['results'] = sprintf($this->language->get('text_pagination'), ($count) ? (($pages - 1) * $maxSum) + 1 : 0, ((($pages - 1) * $maxSum) > ($count - $maxSum)) ? $count : ((($pages - 1) * $maxSum) + $maxSum), $maxSum, ceil($maxSum / $maxSum));
-
-        //var_dump($data['pagination']);
-
+        $Rs = $this->all->getAll($pageCount, $this->maxSum);
         $i = 0;
         foreach ($Rs as $t) {
             $data['all'][$i]['product_id'] = $t['product_id'];
@@ -71,8 +69,7 @@ class ControllerProductCategoryy extends Controller {
             }
             ++$i;
         }
-
-        $this->response->setOutput($this->load->view('product/categoryy', $data));
+        return $data;
     }
 
 }

@@ -180,7 +180,7 @@ class ControllerProductCategory extends Controller {
 				'start'              => ($page - 1) * $limit,
 				'limit'              => $limit
 			);
-                        //产品数量
+                        //每个分类的产品数量
 			$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
                         
 			$results = $this->model_catalog_product->getProducts($filter_data);
@@ -379,8 +379,9 @@ class ControllerProductCategory extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
-
+                       
 			$this->response->setOutput($this->load->view('product/category', $data));
+                       
 		} else {
 			$url = '';
 

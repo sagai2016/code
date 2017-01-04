@@ -6,6 +6,7 @@ class ModelCatalogCategoryy extends Model {
         $table = 'p.product_id,p.image,pd.name';
         $query = $this->categoryySql($table, [$start, $limit]);
         return $query->rows;
+        
     }
 
     public function getcount() {

@@ -7,18 +7,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
-        <script src="view/javascript/jquery/jquery.flexslider.js"></script> 
         <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-        <link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
         <script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
-        <link href="view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <link href="view/stylesheet/stylesheet.css" rel="stylesheet">
         <script src="view/javascript/jquery/datetimepicker/moment.js" type="text/javascript"></script>
         <script src="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js"type="text/javascript"></script>
-        <link href="view/javascript/jquery/magnific/magnific-popup.css" type="text/css" rel="stylesheet" media="screen" />
-        <link href="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
         <script src="view/javascript/jquery/magnific/jquery.magnific-popup.min.js" type="text/javascript"></script>
-        <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
         <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
         <script src="view/javascript/jquery/jquery.flexslider.js" type="text/javascript"></script>
         <script src="view/javascript/o-script.js" type="text/javascript"></script>
@@ -146,7 +140,7 @@
                 display: flex;
                 position: fixed;
                 bottom: 0;
-                        z-index: 99;
+                z-index: 99;
             }
 
 
@@ -174,18 +168,25 @@
                 font-size: 12px;
                 text-shadow: 1px 1px 1px #ddd;
             }
-            
-            
+
+
             .foot ul li a.icon-goodshome{
-                 font-size: 18px;
-                 text-shadow: 1px 1px 1px #ddd;
-                 vertical-align: middle;
+                font-size: 18px;
+                text-shadow: 1px 1px 1px #ddd;
+                vertical-align: middle;
             }
             .foot ul .home {
                 width: 150px;
                 font-size: 20px;
             }
-
+            .message{
+                font-size: 14px;
+                text-align: center;
+                border: 1px solid #ccc;
+                line-height: 35px;
+                width: 85%;
+                margin:10px auto;
+            }
             @media (min-width: 500px) {
                 .main .goodslist .list li {
                     width: 33.3%;
@@ -204,7 +205,7 @@
                 foreach($categories as $categorie):
                 $cc='';
                 if(!empty($_GET['path'] ) && $_GET['path'] ==  $categorie['category_id']){
-                    $cc = 'class="linkmain"';
+                $cc = 'class="linkmain"';
                 }
                 ?>
                 <li <?php echo $cc;?>>
@@ -232,12 +233,12 @@
 
 
 
-                <div class="page">
+                <!--<div class="page">
                     <div class="pagination"><?php echo $pagination; ?></div>
-                </div>
+                </div>-->
 
             </div>
-            <p class="bootm"> </p>
+            <p class="bootm"></p>
         </div>
 
         <div class="foot">
@@ -249,5 +250,56 @@
 
             </ul>
         </div>
+
+
+
+        <script>
+
+            var ispage = 1;
+
+            $(window).scroll(function () {
+                var scrollTop = $(this).scrollTop() + 150;//可卷上去的高度
+                var scrollHeight = $(document).height();//定位整块区域的高度
+                var windowHeight = $(this).height();//整个滚动条可滚动的高度
+
+                var z1 = scrollHeight - windowHeight;
+                if (z1 < scrollTop) {
+                    var stop = $('.goodslist').find('.message').data('stop');
+                    if (!stop) {
+                        ++ispage;
+                        $.ajax({
+                            url: 'index.php?route=product/categoryy/back',
+                            type: 'get',
+                            dataType: 'json',
+                            data: 'page=' + ispage,
+                            success: function (a) { //成功 
+                                var html = '';
+                                if (a !== 'stop') {
+                                    for (var h in a.all) {
+
+                                        html += '<li>' +
+                                                '<p>' +
+                                                '<a href=index.php?route=common/product&product_id=' + a.all[h].product_id + '><img src=' + a.all[h].image + '></a><span>' +
+                                                a.all[h].name + '</span>' +
+                                                '</p>' +
+                                                '</li>'
+
+                                    }
+                                    $(".list").append(html);
+                                } else {
+                                    var stop = $('.goodslist').find('.message').data('stop');
+                                    if (!stop) {
+                                        $(".goodslist").append('<div data-stop="true" class="message">没有更多的数据了</div>');
+                                    }
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+
+
+
+        </script>
     </body>
 </html>

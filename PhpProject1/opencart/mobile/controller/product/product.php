@@ -281,6 +281,7 @@ class ControllerProductProduct extends Controller {
 			$this->load->model('tool/image');
 
 			if ($product_info['image']) {
+                            //展示圖片大小可以根據自己需求改變
 				$data['popup'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height'));
 			} else {
 				$data['popup'] = '';
@@ -406,7 +407,6 @@ class ControllerProductProduct extends Controller {
 			$data['products'] = array();
                         
 			$results = $this->model_catalog_product->getProductRelated($this->request->get['product_id']);
-
 			foreach ($results as $result) {
 				if ($result['image']) {
 					$image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_related_width'), $this->config->get($this->config->get('config_theme') . '_image_related_height'));
@@ -450,6 +450,7 @@ class ControllerProductProduct extends Controller {
 					'rating'      => $rating,
 					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
 				);
+                                
 			}
 
 			$data['tags'] = array();
