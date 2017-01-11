@@ -173,6 +173,7 @@
         display: flex;
         position: fixed;
         bottom: 0;
+        z-index: 999;
     }
     
     .foot * {
@@ -196,36 +197,28 @@
         border-width: 0 1px 0 0;
         border-style: solid;
         border-color: #ccc;
+        font-size: 12px;
     }
     .foot ul li a{
-        font-size:12px;
+        letter-spacing:1.5px;
+        font-size: 12px;
         text-shadow: 1px 1px 1px #ddd;
     }
-    
-    .foot ul li.home {
+    .foot ul .home {
+        letter-spacing:1.5px;
         width: 150px;
-        font-size: 20px;
         text-shadow: 1px 1px 1px #ddd;
     }
-    
-    .foot ul li.total {
-        width: 200%;
-        text-align: right;
+    .foot ul .home .icon-goodshome{
+        vertical-align: middle;
+        font-size: 18px;
+        text-shadow: 1px 1px 1px #ddd;
     }
-    
-    .foot ul li.total span {
-        display: inline-block;
-        padding: 0 10px;
-        color: #f36815;
-    }
-    
-    .foot ul li.settlement {
-        background: #ff4444;
-        color: #fff;
-    }
-    
-    .foot ul li.settlement span {
-        color: #fff;
+    .foot ul li a{
+        letter-spacing:1.5px;
+        font-size: 12px;
+        text-decoration: none;
+        text-shadow: 1px 1px 1px #ddd;
     }
     a{
         text-decoration: none;
@@ -334,10 +327,10 @@
     </div>
        <div class="foot">
         <ul>
-            <li class="home  icon-goodshome"></li>
+            <li class="home"><a href="index.php?" class="icon-goodshome"></a></li>
             <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>
             <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
-            <li> <a>个人中心</a> </li>
+            <li> <a href="index.php?route=account/login">个人中心</a> </li>
         </ul>
     </div>
 </body>

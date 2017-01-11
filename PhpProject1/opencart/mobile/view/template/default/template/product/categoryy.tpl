@@ -38,39 +38,25 @@
                 display: block;
                 margin: auto;
             }
-            .top *{
-                color: #787878;
-                font-size: 12px;
-                font-weight: 300;
+            .top, .content, .option {
+                color: #2c2c2c;
+                background: #fff;
+            }
+            .top, .content, .option a{
+                color: #9b9b9b;
             }
             .top {
-                width: 100%;
-                display: flex;
                 position: fixed;
-                top:0;
-
-
+                background: #262424;
+                height: 38px;
+                padding: 6px;
+                width: 750px;
+                line-height: 26px;
+                z-index: 999;
             }
-            .top .link {
-                display: inline-flex;
-                justify-content: space-between;
-                width: 100%;
-                background: rgba(255,255,255,.98); 
-            }
-            .top .link li {
-                width: 100%;
-                text-align: center;
-                line-height: 38px;
-                border-bottom: 1px solid #e6e6e6;
-                font-size: 12px;
-
-            }
-            .top .link .linkmain {
-                border-bottom: 1px solid #ff2e00;
-            }
-            .top .link .linkmain a{
-                color:#ff2e00;
-                text-shadow: 1px 1px 1px #ddd;
+            .top img {
+                display: inline-block;
+                height: 100%;
             }
             .main .goodslist {
                 width: 100%;
@@ -82,7 +68,7 @@
             }
             .main .goodslist .list li {
                 display: inline-block;
-                width: 50%;
+                width: 100%;
                 padding: 1.5%;
                 vertical-align: top;
 
@@ -90,11 +76,12 @@
             .main .goodslist .list li p {
                 border: 1px solid #e5e5e5;
                 font-size: 14px;
-                padding: 3%;
+               /* padding: 3%;*/
                 background: #fff;
                 display: inline-block;
                 box-shadow:0 0 5px rgba(150,150,150,.1);
                 border-radius: 3px;
+                width: 100%;
             }
             .main .goodslist .list li p a img {
                 width: 100%;
@@ -189,7 +176,7 @@
             }
             @media (min-width: 500px) {
                 .main .goodslist .list li {
-                    width: 33.3%;
+                    width: 50%;
                 }
             }
             a{
@@ -199,6 +186,7 @@
     </head>
 
     <body>
+        <!--
         <div class="top">
             <ul class="link">
                 <?php
@@ -213,8 +201,12 @@
                         <?php echo $categorie['name']?></a> </li>
                 <?php endforeach?>
             </ul>
-        </div>
+        </div>-->
+        
         <div class="main">
+            <div class="top">
+                <a><img src="view/theme/default/image/logo.png" alt="" /></a>
+             </div>
             <p class="bootm"> </p>
             <div class="goodslist">      
                 <ul class="list">           
@@ -223,8 +215,8 @@
                     <li>
                         <p> 
                             <a href="index.php?route=common/product&product_id=<?php echo $allp['product_id'] ;?>"><img src="../image/<?php echo $allp['image'];?>"/></a>                    
-                            <span>
-                                <?php echo $allp['name']; ?>
+                           <!-- <span>
+                                <?php echo $allp['name']; ?>-->
                             </span> 
                         </p>
                     </li>                
@@ -246,7 +238,7 @@
                 <li class="home"><a href="index.php?" class="icon-goodshome"></a></li>
                 <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>
                 <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
-                <li> <a>个人中心</a> </li>
+                <li> <a href="index.php?route=account/login">个人中心</a> </li>
 
             </ul>
         </div>
@@ -279,8 +271,8 @@
 
                                         html += '<li>' +
                                                 '<p>' +
-                                                '<a href=index.php?route=common/product&product_id=' + a.all[h].product_id + '><img src=' + a.all[h].image + '></a><span>' +
-                                                a.all[h].name + '</span>' +
+                                                '<a href=index.php?route=common/product&product_id=' + a.all[h].product_id + '><img src=' + a.all[h].image + '></a>' +
+                                              
                                                 '</p>' +
                                                 '</li>'
 

@@ -109,6 +109,7 @@ html {
     padding: 2.5%;
     border: 1px #e5e5e5 solid;
     background: #fff;
+    margin-top:20px;
 }
 
 .main .goodsHomeTitle li {
@@ -131,34 +132,45 @@ html {
 .main .goodsCart .orders {
     width: 100%;
     background: #fff;
-    margin-top: 10px;
     border: #e5e5e5 solid 1px;
+    border-top: none;
+    border-bottom: none;
 }
 .main .goodsCart .xs{
-    font-size:12px;
     margin-top: 10px;
-    border: #e5e5e5 solid 1px;
-    height:100px;
+    border:none;
+    background-color: linen;
+    text-align: center;
+    font-size: 16px;
+    line-height:40px;
+    margin:0 auto;
 }
-.main .goodsCart .xs li:first-child{
+.main .goodsCart .xs .title{
+    color:#999;
+    border: #e5e5e5 solid 1px;
+    border-top:none;
+    border-bottom:none;
+}
+.main .goodsCart .xs li:nth-child(2){
     float:left;
     display:inline-block;
     margin-left:10px;
 }
-.main .goodsCart .xs li:last-child{
+.main .goodsCart .xs li:nth-child(3){
     float:right;
     display:inline-block;
     margin-left:10px;
+    padding-right:10px;
 }
 .main .goodsCart .xs .span1 p{
-    margin-top:15px;
+    margin-top:25px;
     margin-bottom:15px;
     color: #999;
     font-size: 12px;
     line-height: 12px;
 }
 .main .goodsCart .xs .span2 p{
-    margin-top:15px;
+    margin-top:25px;
     margin-bottom:15px;
     font-size: 12px;
     line-height: 12px;
@@ -178,7 +190,10 @@ html {
 .main .goodsCart .orders li.title {
     text-align: center;
     font-size: 16px;
-    border-bottom: #e5e5e5 solid 1px;
+    border: #e5e5e5 solid 1px;
+    border-left:none;
+    border-right:none;
+    background-color: linen;
 }
 
 .main .goodsCart .orders li p {
@@ -248,7 +263,7 @@ html {
     text-align: right;
     background: #f9f9f9;
     border: none;
-    padding-top: 5px;
+    padding-top: 10px;
     padding-bottom: 5px;
 }
 
@@ -399,7 +414,6 @@ a{
 <body>  
     <div class="top">
         <ul class="link">
-            <li><a href="index.php?route=checkout/cart">购物车</a></li>
             <li><a href="index.php?route=account/wishlist">收藏列表</a></li>
             <li class="linkmain"><a href="index.php?route=account/order">全部订单</a></li>
         </ul>
@@ -473,6 +487,7 @@ a{
                  
             </ul>
             <ul class="xs">
+                <li class="title">支付统计</li>
                 <li>
                     <span class="span1">
                         <?php foreach ($totals as $total) { ?>
@@ -511,7 +526,7 @@ a{
             <li class="home"><a href="index.php?" class="icon-goodshome"></a></li>
             <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>
             <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
-            <li> <a href="index.php?route=">个人中心</a> </li>
+            <li> <a href="index.php?route=account/login">个人中心</a> </li>
         </ul>
     </div>
 </body>

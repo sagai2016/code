@@ -57,6 +57,7 @@ body, html {
 	height: 38px;
 	padding: 6px;
 	width: 100%;
+        line-height: 27px;
 }
 .top img {
 	display: inline-block;
@@ -66,7 +67,7 @@ body, html {
 	display: inline-block;
 	float: right;
 	color: #9c9ba0;
-        font-size: 14px;
+        font-size: 13px;
             
 }
 .top span a{

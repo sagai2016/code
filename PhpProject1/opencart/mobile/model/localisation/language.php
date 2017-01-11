@@ -8,7 +8,6 @@ class ModelLocalisationLanguage extends Model {
 
 	public function getLanguages() {
 		$language_data = $this->cache->get('language');
-
 		if (!$language_data) {
 			$language_data = array();
 

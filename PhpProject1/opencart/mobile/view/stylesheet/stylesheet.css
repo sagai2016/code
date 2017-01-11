@@ -14,8 +14,12 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 14px;
 }
 /* Override the bootstrap defaults */
-h1 {
+h2{
+        width: 82%;
 	font-size: 33px;
+        margin-bottom: 30px;
+        text-align: center;
+        margin-left: 20px;
 }
 h2 {
 	font-size: 27px;
@@ -40,7 +44,9 @@ a:hover {
 }
 legend {
 	font-size: 18px;
-	padding: 7px 0px
+	padding: 7px 0px;
+        border:none;
+        display: none;
 }
 label {
 	font-size: 12px;
@@ -63,6 +69,7 @@ span.hidden-xs, span.hidden-sm, span.hidden-md, span.hidden-lg {
 
 .nav-tabs {
 	margin-bottom: 15px;
+        border: none;
 }
 div.required .control-label:before {
 	content: '* ';
@@ -307,7 +314,7 @@ div.required .control-label:before {
 }
 /* content */
 #content {
-	min-height: 600px;
+	max-height: 800px;
 }
 /* footer */
 footer {
@@ -422,6 +429,7 @@ footer h5 {
 	background-image: linear-gradient(to bottom, #23a1d1, #1f90bb);
 	background-repeat: repeat-x;
 	border-color: #1f90bb #1f90bb #145e7a;
+        margin-top: 20px;
 }
 .btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
 	background-color: #1f90bb;

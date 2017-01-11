@@ -4,7 +4,6 @@ class ControllerCommonLanguage extends Controller {
 		$this->load->language('common/language');
 
 		$data['text_language'] = $this->language->get('text_language');
-
 		$data['action'] = $this->url->link('common/language/language', '', $this->request->server['HTTPS']);
 
 		$data['code'] = $this->session->data['language'];
@@ -12,9 +11,7 @@ class ControllerCommonLanguage extends Controller {
 		$this->load->model('localisation/language');
 
 		$data['languages'] = array();
-
 		$results = $this->model_localisation_language->getLanguages();
-
 		foreach ($results as $result) {
 			if ($result['status']) {
 				$data['languages'][] = array(
@@ -41,7 +38,6 @@ class ControllerCommonLanguage extends Controller {
 
 			$data['redirect'] = $this->url->link($route, $url, $this->request->server['HTTPS']);
 		}
-
 		return $this->load->view('common/language', $data);
 	}
 

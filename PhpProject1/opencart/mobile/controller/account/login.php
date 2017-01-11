@@ -24,7 +24,6 @@ class ControllerAccountLogin extends Controller {
 			unset($this->session->data['vouchers']);
 
 			$customer_info = $this->model_account_customer->getCustomerByToken($this->request->get['token']);
-
 			if ($customer_info && $this->customer->login($customer_info['email'], '', true)) {
 				// Default Addresses
 				$this->load->model('account/address');
@@ -40,7 +39,7 @@ class ControllerAccountLogin extends Controller {
 				$this->response->redirect($this->url->link('account/account', '', true));
 			}
 		}
-
+                //如果登录了就去到这里
 		if ($this->customer->isLogged()) {
 			$this->response->redirect($this->url->link('account/account', '', true));
 		}

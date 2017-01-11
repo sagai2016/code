@@ -164,7 +164,7 @@ class ControllerCommonHeader extends Controller {
 				);
 			}
 		}
-
+                
 		$data['language'] = $this->load->controller('common/language');
 		$data['currency'] = $this->load->controller('common/currency');
 		$data['search'] = $this->load->controller('common/search');
@@ -188,7 +188,6 @@ class ControllerCommonHeader extends Controller {
 		} else {
 			$data['class'] = 'common-home';
 		}
-
 		return $this->load->view('common/header', $data);
 	}
 }

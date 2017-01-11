@@ -325,16 +325,7 @@
 
 
     <body>
-        <div class="top">
-            <ul class="link">
-                <li class="linkmain" href="index.php?route=checkout/cart"><a>购物车</a></li>
-                <li><a href="index.php?route=account/wishlist">收藏列表</a></li>
-                <li><a href="index.php?route=account/order">全部订单</a></li>
-            </ul>
-        </div>
-
         <div class="main">
-            <p class="bootm"></p>
             <div class="goodsCart">
                 <ul class="goodsHomeTitle">
                     <li class="icon-goodsshop"></li>
@@ -351,7 +342,6 @@
                         </li>
                         <li class="content"> 
                             <p><?php echo $product['name']; ?></p>
-                            <!--<p class="classify">五斤装</p>-->
                             <p class="price"><?php echo $product['price']; ?></p>
                             <p class="button">
                                 <span class="jg"> 

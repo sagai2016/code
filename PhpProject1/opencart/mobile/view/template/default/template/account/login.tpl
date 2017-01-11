@@ -1,68 +1,131 @@
-<script src="view/javascript/jquery/jquery.flexslider.js"></script> 
-<script src="view/javascript/o-script.js"></script>
-<link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" type="text/css">
-<script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-<link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
-<script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
-<link href="view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-<link href="view/stylesheet/stylesheet.css" rel="stylesheet">
+<!doctype html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+        <title>酔藏商城</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+        <link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
+        <script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+        <style>
+            .foot div a{
+                text-decoration: none;
+            }
+            .content{
+                max-width: 700px;
+                width:100%;
+                margin:auto;
+                background:#FFFFFF;
+            }
+            .login{
+                text-align: center;
+            }
+            .image{
+                margin-bottom: 30px;
+                margin-top: 30px;
+            }
+            .image img{
+                margin: auto;
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+            }
+            .name,.pwd{
+                display: inline-block;
+                width: 100%;
+                margin-bottom: 20px;
+                height: 25px;
+                line-height: 25px;
+                text-align: center;
+            }
+            .foot{
+                width: 100%;
+                margin-bottom: 20px;
+                height: 25px;
+                line-height: 25px;
+                text-align: center;
+                margin-top: 100px;
+                text-align: center;
+            }
+            .foot div{
+            }
+            .name input,.pwd input{
+                outline: none;
+                padding:15px;
+                border:#ccc 1px solid;
+                width: 70%;
+                border-radius: 3px;
+                height: 25px;
+                line-height: 25px;
+            }
+            .sub input{
+                border: none;
+                font-size: 16px;
+                padding:7px;
+                background-color: #0080FF;
+                width: 70%;
+                border-radius: 5px;
+                margin-top: 30px;
+                color:white;
+            }
+            label{  
+                display:inline-block; 
+            }  
+            input:-webkit-autofill { 
+                -webkit-box-shadow: 0 0 0px 1000px white inset; 
+            } 
 
-
-
-<div class="container" style="margin: 200px 170px;">
-  <?php if ($success) { ?>
-  <div class="alert alert-success"><i class="fa fa-check-circle"></i> <?php echo $success; ?></div>
-  <?php } ?>
-  <?php if ($error_warning) { ?>
-  <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?></div>
-  <?php } ?>
-  <?php if ($error_weibo_login_warning) { ?>
-  <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_weibo_login_warning; ?></div>
-  <?php } ?>
-  <?php if ($error_weixin_login_warning) { ?>
-  <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_weixin_login_warning; ?></div>
-  <?php } ?>
-  <?php if ($error_qq_login_warning) { ?>
-  <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_qq_login_warning; ?></div>
-  <?php } ?>
-  <div class="row"><?php echo $column_left; ?>
-    <?php if ($column_left && $column_right) { ?>
-    <?php $class = 'col-sm-6'; ?>
-    <?php } elseif ($column_left || $column_right) { ?>
-    <?php $class = 'col-sm-9'; ?>
-    <?php } else { ?>
-    <?php $class = 'col-sm-12'; ?>
-    <?php } ?>
-    <div id="content" <?php echo 'class="'.$class.'"'; ?>><?php echo $content_top; ?>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="well">
-            <h2><?php echo $text_new_customer; ?></h2>
-            <p><strong><?php echo $text_register; ?></strong></p>
-            <p><?php echo $text_register_account; ?></p>
-            <a href="<?php echo $register; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
+        </style>
+    </head>
+    <body>
+        <div class='content'>
+            <?php if ($success) { ?>
+            <div class="alert alert-success"><i class="fa fa-check-circle"></i> <?php echo $success; ?></div>
+            <?php } ?>
+            <?php if ($error_warning) { ?>
+            <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?></div>
+            <?php } ?>
+            <?php if ($error_weibo_login_warning) { ?>
+            <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_weibo_login_warning; ?></div>
+            <?php } ?>
+            <?php if ($error_weixin_login_warning) { ?>
+            <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_weixin_login_warning; ?></div>
+            <?php } ?>
+            <?php if ($error_qq_login_warning) { ?>
+            <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_qq_login_warning; ?></div>
+            <?php } ?>
+            <div class="login">
+                <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+                    <div class='image'>
+                        <img src="image/catalog/demo/manufacturer/1b33aabbca61e72c51a131587d6f33bc.jpg">
+                    </div>
+                    <div class='name'>
+                        <input onfocus="change(this)" type="text" name="email" value="<?php echo $email; ?>" placeholder='请输入手机号或邮箱' id="input-email"  />
+                    </div>
+                    <div class='pwd'>
+                        <input onfocus="change(this)" type="password" name="password" value="<?php echo $password; ?>" placeholder='请输入密码' id="input-password" />
+                    </div>
+                    <div class='sub'>
+                        <input type="submit" value="<?php echo $button_login; ?>"/>
+                    </div>
+                </form>
+            </div>
+            <div class='foot'>
+                <div>
+                    <a href="<?php echo $register; ?>">用户注册</a>
+                    <span>|</span>
+                    <a href="<?php echo $forgotten; ?>">忘记密码？</a>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-6">
-          <div class="well">
-            <h2><?php echo $text_returning_customer; ?></h2>
-            <p><strong><?php echo $text_i_am_returning_customer; ?></strong></p>
-            <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
-              <div class="form-group">
-                <label class="control-label" for="input-email"><?php echo $entry_email; ?></label>
-                <input type="text" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-email" class="form-control" />
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="input-password"><?php echo $entry_password; ?></label>
-                <input type="password" name="password" value="<?php echo $password; ?>" placeholder="<?php echo $entry_password; ?>" id="input-password" class="form-control" />
-                <a href="<?php echo $forgotten; ?>"><?php echo $text_forgotten; ?></a></div>
-              <input type="submit" value="<?php echo $button_login; ?>" class="btn btn-primary" />
-              <?php if ($redirect) { ?>
-              <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
-              <?php } ?>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-</div>
+        <script>
+            function change(a) {
+                $(a).css("border-color","#0080ff").blur(function () {
+                    $(a).css("border-color", "");
+                })
+            }
+        </script>
+    </body>
+</html>
+

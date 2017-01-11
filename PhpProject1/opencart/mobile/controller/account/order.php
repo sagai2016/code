@@ -159,10 +159,9 @@ class ControllerAccountOrder extends Controller {
 			$data['text_shipping_address'] = $this->language->get('text_shipping_address');
 			$data['text_payment_method'] = $this->language->get('text_payment_method');
 			$data['text_payment_address'] = $this->language->get('text_payment_address');
-			$data['text_history'] = $this->language->get('text_history');
+                        $data['text_history'] = $this->language->get('text_history');
 			$data['text_comment'] = $this->language->get('text_comment');
 			$data['text_no_results'] = $this->language->get('text_no_results');
-
 			$data['column_name'] = $this->language->get('column_name');
 			$data['column_model'] = $this->language->get('column_model');
 			$data['column_quantity'] = $this->language->get('column_quantity');
@@ -172,7 +171,6 @@ class ControllerAccountOrder extends Controller {
 			$data['column_date_added'] = $this->language->get('column_date_added');
 			$data['column_status'] = $this->language->get('column_status');
 			$data['column_comment'] = $this->language->get('column_comment');
-
 			$data['button_reorder'] = $this->language->get('button_reorder');
 			$data['button_return'] = $this->language->get('button_return');
 			$data['button_continue'] = $this->language->get('button_continue');
@@ -235,7 +233,7 @@ class ControllerAccountOrder extends Controller {
 			);
 
 			$data['payment_address'] = str_replace(array("\r\n", "\r", "\n"), '<br />', preg_replace(array("/\s\s+/", "/\r\r+/", "/\n\n+/"), '<br />', trim(str_replace($find, $replace, $format))));
-
+                        
 			$data['payment_method'] = $order_info['payment_method'];
 
 			if ($order_info['shipping_address_format']) {
@@ -341,7 +339,7 @@ class ControllerAccountOrder extends Controller {
 			$data['totals'] = array();
 
 			$totals = $this->model_account_order->getOrderTotals($this->request->get['order_id']);
-
+                        
 			foreach ($totals as $total) {
 				$data['totals'][] = array(
 					'title' => $total['title'],

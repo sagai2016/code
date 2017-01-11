@@ -86,9 +86,14 @@
         height: inherit;
         background-size: 100% auto;
         padding: 0 10px;
+        
     }
-    
-    .main .ad2 img {
+    .main .ad2 p{
+        text-align: center;
+        color: #aa7d46;
+        font-size: 16px;
+    }
+    .main .ad2 a img {
         width: 100%;
     }
     
@@ -195,7 +200,9 @@
 </head>
 
 <body>
+    
     <div class="main">
+        
         <div class="header">
             <a href="index.html"></a>
         </div>
@@ -204,14 +211,13 @@
                 <ul class="swiper-wrapper">
                     <li class="swiper-slide"><img src="image/catalog/demo/manufacturer/t2-2.png"></li>
                     <li class="swiper-slide"><img src="image/catalog/demo/manufacturer/t2.png"></li>
-                    <li class="swiper-slide"><img src="image/catalog/demo/manufacturer/t2-2.png"></li>
-                    <li class="swiper-slide"><img src="image/catalog/demo/manufacturer/t2.png"></li>
                 </ul>
                 <span class="swiper-pagination"></span>
             </div>
         </div>
         <div class="ad2">
-            <img src="image/catalog/demo/manufacturer/t3.png">
+            <p>名酒名厂</p>
+            <a href="index.php?route=common/eight"><img src="image/catalog/demo/manufacturer/t3.png"></a>
         </div>
         <div class="adList">
             <dl>
@@ -219,20 +225,6 @@
                     <img src="image/catalog/demo/manufacturer/t4.png">
                 </dt>
                 <dd class="swiper-container2">
-                    <ul class="swiper-wrapper">
-                        <li class="swiper-slide">
-                            <img src="image/catalog/demo/manufacturer/g3.jpg">
-                        </li>
-                        <li class="swiper-slide">
-                            <img src="image/catalog/demo/manufacturer/g3.jpg">
-                        </li>
-                        <li class="swiper-slide">
-                            <img src="image/catalog/demo/manufacturer/g3.jpg">
-                        </li>
-                        <li class="swiper-slide">
-                            <img src="image/catalog/demo/manufacturer/g3.jpg">
-                        </li>
-                    </ul>
                     <!--<ul class="swiper-wrapper">
                         <?php 
                         foreach($product as $v):
@@ -259,7 +251,7 @@
             
         </div>
     </div>
-    <div class="foot">
+    <!--<div class="foot">
         <ul>
             <li class="home"><a class="icon-goodshome" href="index.php"></a></li>
 
@@ -267,6 +259,15 @@
 
             <li> <a href="<?php echo  $categorie['href']?>"><?php echo $categorie['name']?></a> </li>
             <?php endforeach?>
+        </ul>
+    </div>-->
+    <div class="foot">
+        <ul>
+            <li class="home"><a href="index.php?" class="icon-goodshome"></a></li>
+            <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>
+            <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
+            <li> <a href="index.php?route=account/login">个人中心</a> </li>
+
         </ul>
     </div>
     <script type="text/javascript" src="view/javascript/jquery/jquery.min.js"></script>

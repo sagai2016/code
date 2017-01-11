@@ -39,9 +39,9 @@ class ControllerAccountRegister extends Controller {
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
-		$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/moment.js');
-		$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js');
-		$this->document->addStyle('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css');
+		$this->document->addScript('view/javascript/jquery/datetimepicker/moment.js');
+		$this->document->addScript('view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js');
+		$this->document->addStyle('view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css');
 
 		$this->load->model('account/customer');
 
@@ -58,8 +58,8 @@ class ControllerAccountRegister extends Controller {
 
 			// Clear any previous login attempts for unregistered accounts.
 			$this->model_account_customer->deleteLoginAttempts($this->request->post['email']);
-
-			$this->customer->login($this->request->post['email'], $this->request->post['password']);
+                        //这句话会把注册好的用户信息自动登录
+			//$this->customer->login($this->request->post['email'], $this->request->post['password']);
 			
 			//Unset Third party login session
 			unset($this->session->data['qq_login_warning']);
@@ -80,7 +80,7 @@ class ControllerAccountRegister extends Controller {
 
 				$this->model_account_activity->addActivity('register', $activity_data);
 			}
-
+                        
 			$this->response->redirect($this->url->link('account/success'));
 		}
 

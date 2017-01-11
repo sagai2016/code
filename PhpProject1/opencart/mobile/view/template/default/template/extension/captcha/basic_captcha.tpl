@@ -1,3 +1,18 @@
+<style>
+    #input-captcha{
+        display: inline-block;
+        width: 48%;
+        float: left;
+       
+    }
+    #yzm img{
+        float: right;
+    }
+    #yzm{
+        clear: both;
+         vertical-align: middle;
+    }
+</style>
 <fieldset>
   <legend><?php echo $text_captcha; ?></legend>
   <div class="form-group required">
@@ -7,9 +22,10 @@
     <img src="index.php?route=extension/captcha/basic_captcha/captcha" alt="" />
     <?php } else { ?>
     <label class="col-sm-2 control-label" for="input-captcha"><?php echo $entry_captcha; ?></label>
-    <div class="col-sm-10">
-      <input type="text" name="captcha" id="input-captcha" class="form-control" />
-      <img src="index.php?route=extension/captcha/basic_captcha/captcha" alt="" />
+    <div class="col-sm-10" id="yzm">
+        
+        <input type="text" name="captcha"  placeholder="请输入验证码" id="input-captcha" class="form-control" />
+        <img src="index.php?route=extension/captcha/basic_captcha/captcha" alt="" />
       <?php if ($error_captcha) { ?>
       <div class="text-danger"><?php echo $error_captcha; ?></div>
       <?php } ?>
