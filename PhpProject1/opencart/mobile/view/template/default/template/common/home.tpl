@@ -200,9 +200,7 @@
 </head>
 
 <body>
-    
     <div class="main">
-        
         <div class="header">
             <a href="index.html"></a>
         </div>
