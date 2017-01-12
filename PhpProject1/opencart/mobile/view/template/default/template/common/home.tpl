@@ -216,7 +216,6 @@
             </div>
         </div>
         <div class="ad2">
-            <p>名酒名厂</p>
             <a href="index.php?route=common/eight"><img src="image/catalog/demo/manufacturer/t3.png"></a>
         </div>
         <div class="adList">
