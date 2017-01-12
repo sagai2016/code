@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <title>酔藏商城</title>
@@ -33,15 +32,14 @@
             * {
                 color: #676767;
                 font-size: 14px;
-                font-family: "微软雅黑";
+                box-sizing: border-box;
             }
 
             body,
             html {
                 margin: 0;
                 padding: 0;
-                height: 100%;
-                width: 100%;
+                background: #f8f8f8;
             }
 
             .main * {
@@ -148,7 +146,6 @@
                 display: flex;
                 position: fixed;
                 bottom: 0;
-                z-index: 999;
             }
 
             .foot * {
@@ -172,22 +169,6 @@
                 border-width: 0 1px 0 0;
                 border-style: solid;
                 border-color: #ccc;
-                font-size: 12px;
-            }
-            .foot ul li a{
-                letter-spacing:1.5px;
-                font-size: 12px;
-                text-shadow: 1px 1px 1px #ddd;
-            }
-            .foot ul .home {
-                letter-spacing:1.5px;
-                width: 150px;
-                text-shadow: 1px 1px 1px #ddd;
-            }
-            .foot ul .home .icon-goodshome{
-                vertical-align: middle;
-                font-size: 18px;
-                text-shadow: 1px 1px 1px #ddd;
             }
             .foot ul li a{
                 letter-spacing:1.5px;
@@ -195,7 +176,38 @@
                 text-decoration: none;
                 text-shadow: 1px 1px 1px #ddd;
             }
+            .foot ul .home .icon-goodshome{
+                vertical-align: middle;
+                font-size: 18px;
+                text-shadow: 1px 1px 1px #ddd;
+            }
+            .foot ul li.home {
+                width: 150px;
+                font-size: 20px;
+            }
 
+            .foot ul li.total {
+                width: 200%;
+                text-align: right;
+            }
+
+            .foot ul li.total span {
+                display: inline-block;
+                padding: 0 10px;
+                color: #f36815;
+            }
+
+            .foot ul li.settlement {
+                background: #ff4444;
+                color: #fff;
+            }
+
+            .foot ul li.settlement span {
+                color: #fff;
+            }
+            a{
+                text-decoration: none;
+            }
         </style>
     </head>
 
@@ -232,7 +244,7 @@
                                     </a>
                                 </li>
                             <?php endforeach?>
-                           
+        
                         </ul>-->
                     </dd>
                 </dl>

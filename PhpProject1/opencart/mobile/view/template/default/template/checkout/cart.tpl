@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-cn">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>酔藏商城</title>
@@ -214,7 +214,9 @@
                 display: flex;
                 position: fixed;
                 bottom: 0;
+                z-index: 999;
             }
+
             .foot * {
                 color: #787878;
             }
@@ -228,6 +230,7 @@
                 width: 100%;
                 border: 1px solid #ccc;
             }
+
             .foot ul li {
                 width: 100%;
                 text-align: center;
@@ -235,39 +238,24 @@
                 border-width: 0 1px 0 0;
                 border-style: solid;
                 border-color: #ccc;
+                font-size: 12px;
             }
-            .foot ul a {
-                width: 100%;
-                text-align: center;
-                line-height: 38px;
-                border-width: 0 1px 0 0;
-                border-style: solid;
-                border-color: #ccc;
+       
+            .foot ul .home {
+                letter-spacing:1.5px;
+                width: 150px;
                 text-shadow: 1px 1px 1px #ddd;
             }
-            .foot ul a.home {
-                width: 150px;
+            .foot ul .home .icon-goodshome{
+                vertical-align: middle;
                 font-size: 18px;
                 text-shadow: 1px 1px 1px #ddd;
-                vertical-align: middle;
             }
-
-            .foot ul li.total{
-                width: 200%;
-                text-align: right;
-
-            }
-            .foot ul li.total span{
-                display: inline-block;
-                padding:0 10px;
-                color: #f36815;
+            .foot ul li a{
+                letter-spacing:1.5px;
                 font-size: 14px;
-            }
-            .foot ul a.settlement{
-                background: #ff4444;
-                color: #ffffff;
-                text-decoration:none;
-                font-size: 12px;
+                text-decoration: none;
+                text-shadow: 1px 1px 1px #ddd;
             }
             @media (max-width: 500px) {
                 .main .goodsCart .goodsCartContent {

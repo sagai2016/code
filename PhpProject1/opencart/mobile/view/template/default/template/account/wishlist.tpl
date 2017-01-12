@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="zh-cn">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>酔藏商城</title>

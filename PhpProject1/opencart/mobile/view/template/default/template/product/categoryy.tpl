@@ -1,22 +1,10 @@
-
-<!doctype html>
-<html lang="zh-cn">
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>酔藏商城</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
-        <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-        <script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
-        <link href="view/stylesheet/stylesheet.css" rel="stylesheet">
-        <script src="view/javascript/jquery/datetimepicker/moment.js" type="text/javascript"></script>
-        <script src="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js"type="text/javascript"></script>
-        <script src="view/javascript/jquery/magnific/jquery.magnific-popup.min.js" type="text/javascript"></script>
-        <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
-        <script src="view/javascript/jquery/jquery.flexslider.js" type="text/javascript"></script>
-        <script src="view/javascript/o-script.js" type="text/javascript"></script>
-        <script src="view/javascript/common.js" type="text/javascript"></script>
         <style type="text/css">
             ul, li, h1, h2, h3, h4, h5, h6, dt, dd, dl, ol, dl, dt, dd, p {
                 margin: 0;
@@ -30,6 +18,8 @@
                 background: #f8f8f8;
             }
             * {
+                color: #676767;
+                font-size: 14px;
                 box-sizing: border-box;
             }
             .main {
@@ -127,7 +117,6 @@
                 display: flex;
                 position: fixed;
                 bottom: 0;
-                z-index: 999;
             }
 
             .foot * {
@@ -151,28 +140,41 @@
                 border-width: 0 1px 0 0;
                 border-style: solid;
                 border-color: #ccc;
-                font-size: 12px;
-            }
-            .foot ul li a{
-                letter-spacing:1.5px;
-                font-size: 12px;
-                text-shadow: 1px 1px 1px #ddd;
-            }
-            .foot ul .home {
-                letter-spacing:1.5px;
-                width: 150px;
-                text-shadow: 1px 1px 1px #ddd;
-            }
-            .foot ul .home .icon-goodshome{
-                vertical-align: middle;
-                font-size: 18px;
-                text-shadow: 1px 1px 1px #ddd;
             }
             .foot ul li a{
                 letter-spacing:1.5px;
                 font-size: 14px;
                 text-decoration: none;
                 text-shadow: 1px 1px 1px #ddd;
+            }
+              .foot ul .home .icon-goodshome{
+                vertical-align: middle;
+                font-size: 18px;
+                text-shadow: 1px 1px 1px #ddd;
+            }
+            .foot ul li.home {
+                width: 150px;
+                font-size: 20px;
+            }
+
+            .foot ul li.total {
+                width: 200%;
+                text-align: right;
+            }
+
+            .foot ul li.total span {
+                display: inline-block;
+                padding: 0 10px;
+                color: #f36815;
+            }
+
+            .foot ul li.settlement {
+                background: #ff4444;
+                color: #fff;
+            }
+
+            .foot ul li.settlement span {
+                color: #fff;
             }
             .message{
                 font-size: 14px;
@@ -219,7 +221,9 @@
             <div class="goodslist">      
                 <ul class="list">           
 
-                    <?php foreach($all as $allp):?>           
+                    <?php
+                    if(!empty($all)):
+                    foreach($all as $allp):?>           
                     <li>
                         <p> 
                             <a href="index.php?route=common/product&product_id=<?php echo $allp['product_id'] ;?>"><img src="../image/<?php echo $allp['image'];?>"/></a>                    
@@ -228,7 +232,9 @@
                             </span> 
                         </p>
                     </li>                
-                    <?php endforeach ?>
+                    <?php
+                    endforeach;
+                    endif;?>
                 </ul>          
 
 
@@ -238,7 +244,6 @@
                 </div>-->
 
             </div>
-            <p class="bootm"></p>
         </div>
 
         <div class="foot">
@@ -300,4 +305,5 @@
 
         </script>
     </body>
+
 </html>

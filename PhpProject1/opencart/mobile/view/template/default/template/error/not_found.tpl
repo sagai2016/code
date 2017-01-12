@@ -8,52 +8,40 @@
         <meta name="format-detection" content="telephone=no" />
         <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
         <style type="text/css">
-            ul,
-            li,
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6,
-            dt,
-            dd,
-            dl,
-            ol,
-            dl,
-            dt,
-            dd,
-            p {
+            ul, li, h1, h2, h3, h4, h5, h6, dt, dd, dl, ol, dl, dt, dd, p {
                 margin: 0;
                 padding: 0;
                 list-style: none;
                 border: 0;
             }
-
-            body,
-            html {
+            body, html {
                 margin: 0;
                 padding: 0;
                 background: #f8f8f8;
             }
-
             * {
+                color: #676767;
+                font-size: 14px;
                 box-sizing: border-box;
-                color: #2c2c2c;
             }
-
             .main {
                 max-width: 750px;
                 width: 100%;
                 display: block;
                 margin: auto;
             }
-
+            .top, .content, .option {
+                color: #2c2c2c;
+            }
+            .top, .content, .option a{
+                color: #9b9b9b;
+            }
             .top {
+                position: fixed;
                 background: #262424;
                 height: 38px;
                 padding: 6px;
-                width: 100%;
+                width: 750px;
                 line-height: 26px;
                 z-index: 999;
             }
@@ -61,36 +49,11 @@
                 display: inline-block;
                 height: 100%;
             }
-
-            .main .goodsCart {
-                font-size: 0;
-                width: 100%;
-            }
-
-            .main .goodsHomeTitle {
-                font-size: 0;
-                width: 100%;
-                padding: 2.5%;
-                border: 1px #e5e5e5 solid;
-                background: #fff;
-            }
-
-            .main .goodsHomeTitle li {
-                font-size: 20px;
-                vertical-align: middle;
-                color: #909090;
-                display: inline-block;
-            }
-
-            .main .goodsHomeTitle li.title {
-                font-size: 16px;
-                padding: 0 10px;
-            }
-
-            .main .goodsHomeTitle li:nth-of-type(3) {
-                float: right;
-            }
-            /**/
+            
+            
+            
+            
+            
 
             .main .goodsCart ul {
                 width: 85%;
@@ -104,17 +67,13 @@
 
             .main .goodsCart ul li.submitsuccessfully {
                 font-size: 14px;
-                background: url('./images/submitsuccessfully.png') no-repeat 50%;
                 background-size: contain;
                 width: 50%;
                 margin: auto;
                 line-height: 150px;
             }
 
-            .main .goodsCart ul li.content {
-                font-size: 15px;
-                padding: 10px
-            }
+    
 
             .main .goodsCart ul li.content div {
                 margin-top:-100px;
@@ -157,12 +116,11 @@
                 display: inline-block;
             }
 
-            .foot {
+           .foot {
                 width: 100%;
                 display: flex;
                 position: fixed;
                 bottom: 0;
-                z-index: 999;
             }
 
             .foot * {
@@ -186,16 +144,11 @@
                 border-width: 0 1px 0 0;
                 border-style: solid;
                 border-color: #ccc;
-                font-size: 12px;
             }
             .foot ul li a{
                 letter-spacing:1.5px;
                 font-size: 14px;
-                text-shadow: 1px 1px 1px #ddd;
-            }
-            .foot ul .home {
-                letter-spacing:1.5px;
-                width: 150px;
+                text-decoration: none;
                 text-shadow: 1px 1px 1px #ddd;
             }
             .foot ul .home .icon-goodshome{
@@ -203,11 +156,32 @@
                 font-size: 18px;
                 text-shadow: 1px 1px 1px #ddd;
             }
-            .foot ul li a{
-                letter-spacing:1.5px;
-                font-size: 12px;
+            .foot ul li.home {
+                width: 150px;
+                font-size: 20px;
+            }
+
+            .foot ul li.total {
+                width: 200%;
+                text-align: right;
+            }
+
+            .foot ul li.total span {
+                display: inline-block;
+                padding: 0 10px;
+                color: #f36815;
+            }
+
+            .foot ul li.settlement {
+                background: #ff4444;
+                color: #fff;
+            }
+
+            .foot ul li.settlement span {
+                color: #fff;
+            }
+            a{
                 text-decoration: none;
-                text-shadow: 1px 1px 1px #ddd;
             }
             @media (max-width: 500px) {}
 
@@ -217,10 +191,12 @@
     </head>
 
     <body>
-        <div class="top">
-            <img src="view/theme/default/image/logo.png" alt="" />
-        </div>
+       
         <div class="main">
+                        <div class="top">
+                <a><img src="view/theme/default/image/logo.png" alt="" /></a>
+            </div>
+            <p class="bootm"> </p>
             <div class="goodsCart">
                 <ul>
                     <li class="submitsuccessfully">

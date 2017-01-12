@@ -1,4 +1,4 @@
-<html lang="zh-cn">
+<html lang="en">
     <header>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
