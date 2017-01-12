@@ -105,7 +105,7 @@
         }
         .foot ul li a {
             letter-spacing: 1.5px;
-            font-size: 12px;
+            font-size: 14px;
             text-shadow: 1px 1px 1px #ddd;
         }
         .foot ul .home {

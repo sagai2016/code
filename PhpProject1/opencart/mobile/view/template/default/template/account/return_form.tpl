@@ -179,6 +179,7 @@
             display: flex;
             position: fixed;
             bottom: 0;
+            z-index: 999;
         }
 
         .foot * {
@@ -202,15 +203,16 @@
             border-width: 0 1px 0 0;
             border-style: solid;
             border-color: #ccc;
+            font-size: 12px;
         }
         .foot ul li a{
-            font-size:12px;
+            letter-spacing:1.5px;
+            font-size: 12px;
             text-shadow: 1px 1px 1px #ddd;
         }
-
-        .foot ul li.home {
+        .foot ul .home {
+            letter-spacing:1.5px;
             width: 150px;
-            font-size: 20px;
             text-shadow: 1px 1px 1px #ddd;
         }
         .foot ul .home .icon-goodshome{
@@ -218,24 +220,11 @@
             font-size: 18px;
             text-shadow: 1px 1px 1px #ddd;
         }
-        .foot ul li.total {
-            width: 200%;
-            text-align: right;
-        }
-
-        .foot ul li.total span {
-            display: inline-block;
-            padding: 0 10px;
-            color: #f36815;
-        }
-
-        .foot ul li.settlement {
-            background: #ff4444;
-            color: #fff;
-        }
-
-        .foot ul li.settlement span {
-            color: #fff;
+        .foot ul li a{
+            letter-spacing:1.5px;
+            font-size: 14px;
+            text-decoration: none;
+            text-shadow: 1px 1px 1px #ddd;
         }
         a{
             text-decoration: none;
@@ -433,7 +422,7 @@
         </div>
     </body>
     <script type="text/javascrip    t"><!--
-$('.date').datetimep            icker({
+        $('.date').datetimep            icker({
         pickTime        : false
-    });
-//--></script>
+        });
+        //--></script>

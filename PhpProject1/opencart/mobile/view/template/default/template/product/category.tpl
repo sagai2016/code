@@ -143,13 +143,13 @@
                 display: flex;
                 position: fixed;
                 bottom: 0;
-                z-index: 99;
+                z-index: 999;
             }
 
-
-            .foot *{
+            .foot * {
                 color: #787878;
             }
+
             .foot ul {
                 background: #fff;
                 margin: auto;
@@ -159,6 +159,7 @@
                 width: 100%;
                 border: 1px solid #ccc;
             }
+
             .foot ul li {
                 width: 100%;
                 text-align: center;
@@ -166,20 +167,27 @@
                 border-width: 0 1px 0 0;
                 border-style: solid;
                 border-color: #ccc;
+                font-size: 12px;
             }
             .foot ul li a{
-                font-size:12px;
+                letter-spacing:1.5px;
+                font-size: 12px;
                 text-shadow: 1px 1px 1px #ddd;
             }
-            .foot ul li a.icon-goodshome{
-                font-size:18px;
-                text-shadow: 1px 1px 1px #ddd;
-                vertical-align: middle;
-            }
-
             .foot ul .home {
+                letter-spacing:1.5px;
                 width: 150px;
+                text-shadow: 1px 1px 1px #ddd;
+            }
+            .foot ul .home .icon-goodshome{
+                vertical-align: middle;
                 font-size: 18px;
+                text-shadow: 1px 1px 1px #ddd;
+            }
+            .foot ul li a{
+                letter-spacing:1.5px;
+                font-size: 12px;
+                text-decoration: none;
                 text-shadow: 1px 1px 1px #ddd;
             }
             .message{

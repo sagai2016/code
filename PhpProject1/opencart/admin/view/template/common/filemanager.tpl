@@ -191,11 +191,11 @@ $('#button-folder').on('shown.bs.popover', function() {
 			},
 			success: function(json) {
 				if (json['error']) {
-					alert(json['error']);
+					alert(0);
 				}
 
 				if (json['success']) {
-					alert(json['success']);
+					alert(1);
 
 					$('#button-refresh').trigger('click');
 				}

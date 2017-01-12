@@ -61,7 +61,6 @@
             margin-bottom: 15px;
             display: inline-block;
             background: #fff;
-            border: #c9c9c9 solid 1px;
         }
 
         .wine ul li div {
@@ -99,8 +98,10 @@
             color: #fff;
             font-size: 12px;
             line-height: 16px;
+            overflow: hidden;
+            height: 34px;
+        
         }
-
         .wine ul li div p a {
             display: inline-block;
             float: right;
@@ -109,12 +110,10 @@
             text-align: right;
             height: 20px;
             line-height: 20px;
-
         }
-
         .wine ul li img {
             width: 100%;
-            box-shadow: 0 0 5px #777676;
+            box-shadow: 0px 0px 25px #000;
         }
         .bootm{
             height: 50px;
@@ -155,7 +154,7 @@
 
         .foot ul li a {
             letter-spacing: 1.5px;
-            font-size: 12px;
+            font-size: 14px;
             text-shadow: 1px 1px 1px #ddd;
         }
         .last{

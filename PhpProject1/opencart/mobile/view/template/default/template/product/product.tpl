@@ -220,7 +220,7 @@ body, html {
 .foot ul .home a{
 	display: inline-block;
 	width: 100%;
-	font-size: 16px;
+	font-size: 14px;
 	line-height: normal;
 	padding: 0;
         color: #686868;

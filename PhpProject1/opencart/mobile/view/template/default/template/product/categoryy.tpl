@@ -76,7 +76,7 @@
             .main .goodslist .list li p {
                 border: 1px solid #e5e5e5;
                 font-size: 14px;
-               /* padding: 3%;*/
+                /* padding: 3%;*/
                 background: #fff;
                 display: inline-block;
                 box-shadow:0 0 5px rgba(150,150,150,.1);
@@ -127,13 +127,13 @@
                 display: flex;
                 position: fixed;
                 bottom: 0;
-                z-index: 99;
+                z-index: 999;
             }
 
-
-            .foot *{
+            .foot * {
                 color: #787878;
             }
+
             .foot ul {
                 background: #fff;
                 margin: auto;
@@ -143,6 +143,7 @@
                 width: 100%;
                 border: 1px solid #ccc;
             }
+
             .foot ul li {
                 width: 100%;
                 text-align: center;
@@ -150,21 +151,28 @@
                 border-width: 0 1px 0 0;
                 border-style: solid;
                 border-color: #ccc;
+                font-size: 12px;
             }
             .foot ul li a{
+                letter-spacing:1.5px;
                 font-size: 12px;
                 text-shadow: 1px 1px 1px #ddd;
             }
-
-
-            .foot ul li a.icon-goodshome{
+            .foot ul .home {
+                letter-spacing:1.5px;
+                width: 150px;
+                text-shadow: 1px 1px 1px #ddd;
+            }
+            .foot ul .home .icon-goodshome{
+                vertical-align: middle;
                 font-size: 18px;
                 text-shadow: 1px 1px 1px #ddd;
-                vertical-align: middle;
             }
-            .foot ul .home {
-                width: 150px;
-                font-size: 20px;
+            .foot ul li a{
+                letter-spacing:1.5px;
+                font-size: 14px;
+                text-decoration: none;
+                text-shadow: 1px 1px 1px #ddd;
             }
             .message{
                 font-size: 14px;
@@ -202,11 +210,11 @@
                 <?php endforeach?>
             </ul>
         </div>-->
-        
+
         <div class="main">
             <div class="top">
                 <a><img src="view/theme/default/image/logo.png" alt="" /></a>
-             </div>
+            </div>
             <p class="bootm"> </p>
             <div class="goodslist">      
                 <ul class="list">           
@@ -215,8 +223,8 @@
                     <li>
                         <p> 
                             <a href="index.php?route=common/product&product_id=<?php echo $allp['product_id'] ;?>"><img src="../image/<?php echo $allp['image'];?>"/></a>                    
-                           <!-- <span>
-                                <?php echo $allp['name']; ?>-->
+                            <!-- <span>
+                                 <?php echo $allp['name']; ?>-->
                             </span> 
                         </p>
                     </li>                
@@ -239,7 +247,6 @@
                 <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>
                 <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
                 <li> <a href="index.php?route=account/login">个人中心</a> </li>
-
             </ul>
         </div>
 
@@ -272,7 +279,6 @@
                                         html += '<li>' +
                                                 '<p>' +
                                                 '<a href=index.php?route=common/product&product_id=' + a.all[h].product_id + '><img src=' + a.all[h].image + '></a>' +
-                                              
                                                 '</p>' +
                                                 '</li>'
 
