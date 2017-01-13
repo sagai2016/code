@@ -329,10 +329,6 @@ a{
           
           <!--产品 end-->
           
-          
-          
-          <span class="freight"> 运费：免运费 </span>
-        
       </li>
     </ul>
   </div>
@@ -361,7 +357,7 @@ a{
   <ul>
     
     <li class="home"><a href="index.php?route=checkout/cart" class="icon-goodscart"></a></li>  
-    <li class="addToCart" id="button-cart"><span><?php echo $button_cart; ?></span></li>
+    <li class="addToCart" id="button-cart"><span>加入购物车</span></li>
     <li class="buyNow"> <a href="index.php?route=checkout/checkout">立即购买</a> </li>
   </ul>
 </div>
