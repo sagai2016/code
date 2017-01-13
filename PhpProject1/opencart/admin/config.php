@@ -44,7 +44,7 @@ define('HTTPS_SERVER', 'http://' . $isIpFun . $serverPort.'/'.$isFile.'admin/');
 
 
 
-$dir__ = str_replace('admin', '', __DIR__);
+$dir__ = str_replace ('\\','/',str_replace('admin', '', __DIR__));
 
 // DIR
 define('DIR_APPLICATION', $dir__.'admin/');

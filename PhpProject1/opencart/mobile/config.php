@@ -45,9 +45,7 @@ define('HTTP_SERVER', 'http://' . $isIpFun . $serverPort.'/'.$isFile.'mobile/');
 define('HTTPS_SERVER', 'http://' . $isIpFun . $serverPort.'/'.$isFile.'mobile/');
 
 
-
-$dir__ = str_replace('mobile', '', __DIR__);
-
+$dir__ = str_replace ('\\','/',str_replace('mobile', '', __DIR__));
 // DIR
 define('DIR_APPLICATION', $dir__.'mobile/');
 define('DIR_SYSTEM', $dir__.'system/');
