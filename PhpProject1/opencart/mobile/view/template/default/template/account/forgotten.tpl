@@ -14,50 +14,7 @@
         <script src="view/javascript/o-script.js" type="text/javascript"></script>
     </head>
     <style>
-        {*        h3{
-        text-align: center;
-        margin-bottom: 30px;
-        }
-        .em input{
-        padding:15px;
-        border:#DDDDDD 1px solid;
-        width: 70%;
-        border-radius: 3px;
-        height: 25px;
-        line-height: 25px;
-        letter-spacing:1px;
-        }
-        p,form{
-        text-align: center;
-        margin-bottom: 30px;
-        }
-        p{
-        padding: 5px 20px ;
-        }
 
-        .sub input{
-        font-size: 16px;
-        padding:7px;
-        background-color: #0080FF;
-        width: 50%;
-        border-radius: 5px;
-        margin-top: 30px;
-        color:white;
-        border: none;
-        }
-        .back{
-        text-align: center;
-        margin-top: 30px;
-        }
-        .back a{
-        width: 50%;
-        font-size: 16px;
-        padding:9px 60px;
-        background-color: #0080FF;
-        border-radius: 5px;
-        margin-top: 30px;
-        color:white;
-        }*}
 
         *{
             outline: none;
@@ -86,6 +43,7 @@
             margin: 20px auto;
             width: 95%;
             text-align: center;
+            font-size: 0;
 
         }
         .main form p input{
@@ -93,6 +51,7 @@
             width: 100%;
             line-height: 33px;
             padding:0 15px;
+            font-size: 14px;
         }
         .main form p a,
         .main form p button
@@ -102,9 +61,12 @@
             border: none;
             line-height: 33px;
             display: inline-block;
-            width:150px;
-            border-radius:3px;
-            color:#fff;
+            width: 45%;
+            border-radius: 3px;
+            color: #fff;
+            vertical-align: middle;
+            height: 33px;
+            margin: 0 2%;
         }
     </style>
     <body>
