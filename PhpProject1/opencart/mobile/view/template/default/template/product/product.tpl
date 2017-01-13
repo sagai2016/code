@@ -58,6 +58,8 @@ body, html {
 	padding: 6px;
 	width: 100%;
         line-height: 27px;
+        position: fixed;
+        z-index: 999;
 }
 .top img {
 	display: inline-block;
@@ -430,7 +432,9 @@ $('#button-cart').on('click', function() {
                                 
 				$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
 
-				$('html, body').animate({ scrollTop: 0 }, 'slow');
+				$('html, body').animate({ scroll
+                                    
+                            : 0 }, 'slow');
 
 				$('#cart > ul').load('index.php?route=common/cart/info ul li');
 			}

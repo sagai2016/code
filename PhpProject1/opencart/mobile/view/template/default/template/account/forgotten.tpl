@@ -79,7 +79,7 @@
             <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
                 <p><input type="text" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-email"/></p>
                 <p>
-                    <a href="<?php echo $back; ?>"><?php echo $button_back; ?></a>
+                    <a href="<?php echo $back; ?>"><?php echo $button_back; ?>登录</a>
                     <button><?php echo $button_continue; ?></button>
                 </p>
             </form>

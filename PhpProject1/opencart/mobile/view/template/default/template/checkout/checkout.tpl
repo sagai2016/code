@@ -350,7 +350,7 @@ $(document).on('change', 'input[name=\'account\']', function() {
     }
     }
     });
-    <?php if (!$logged) { ? >
+    <?php if (!$logged) { ?>
             $(document).ready(function() {
     $.ajax({
     url: 'index.php?route=checkout/login',
@@ -365,7 +365,7 @@ $(document).on('change', 'input[name=\'account\']', function() {
                     }
                     });
         });
-        <?php } else { ? >
+        <?php } else { ?>
                     $(document).ready(function() {
             $.ajax({
             url: 'index.php?route=checkout/payment_address',
@@ -474,7 +474,7 @@ $(document).on('change', 'input[name=\'account\']', function() {
     // Highlight any found errors
     $('.text-danger').parent().addClass('has-error');
                 } else {
-    <?php if ($shipping_required) { ? >
+    <?php if ($shipping_required) { ?>
                                                                             var shipping_address = $('#payment-address input[name=\'shipping_address\']:checked').prop('value');
                                                                     if (shipping_address) {
                                                                     $.ajax({
@@ -525,7 +525,7 @@ $(document).on('change', 'input[name=\'account\']', function() {
                                                                 }
                                                                 });
                                                                 }
-                    <?php } else { ? >
+                    <?php } else { ?>
                                                                                                             $.ajax({
                                                                                                             url: 'index.php?route=checkout/payment_method',
                                                                                                                     dataType: 'html',
@@ -597,7 +597,7 @@ $(document).on('change', 'input[name=\'account\']', function() {
                                                                                                                     // Highlight any found errors
                                                                                                                     $('.text-danger').parent().parent().addClass('has-error');
                                                                                                                                 } else {
-                                                                                        <?php if ($shipping_required) { ? >
+                                                                                        <?php if ($shipping_required) { ?>
                                                                                                                                                     $.ajax({
                                                                                                                                                     url: 'index.php?route=checkout/shipping_address',
                                                                                                                                                             dataType: 'html',
@@ -613,7 +613,7 @@ $(document).on('change', 'input[name=\'account\']', function() {
                                                                                                                                                                     alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
                                                                                                                                                 }
                                                                                                                                                 });
-                                                                                                <?php } else { ? >
+                                                                                                <?php } else { ?>
                                                                                                                                                                     $.ajax({
                                                                                                                                                                     url: 'index.php?route=checkout/payment_method',
                                                                                                                                                                             dataType: 'html',
@@ -757,7 +757,7 @@ $(document).on('change', 'input[name=\'account\']', function() {
                                                                                                                                                                                                                                             // Highlight any found errors
                                                                                                                                                                                                                                             $('.text-danger').parent().addClass('has-error');
                                                                                                                                                                                                         } else {
-                                                                                                                                <?php if ($shipping_required) { ? >
+                                                                                                                                <?php if ($shipping_required) { ?>
                                                                                                                                                                                                                                                             var shipping_address = $('#collapse-payment-address input[name=\'shipping_address\']:checked').prop('value');
                                                                                                                                                                                                                                                     if (shipping_address) {
                                                                                                                                                                                                                                                     $.ajax({
@@ -813,7 +813,7 @@ $(document).on('change', 'input[name=\'account\']', function() {
                                                                                                                                                                                                         }
                                                                                                                                                                                                         });
                                                                                                                                                                                                         }
-                                                                                                                                                                                                        <?php } else { ? >
+                                                                                                                                                                                                        <?php } else { ?>
                                                                                                                                                                                                                                                                                                     $.ajax({
                                                                                                                                                                                                                                                                                                     url: 'index.php?route=checkout/payment_method',
                                                                                                                                                                                                                                                                                                             dataType: 'html',
