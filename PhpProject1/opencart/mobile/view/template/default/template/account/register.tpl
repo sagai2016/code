@@ -1,6 +1,6 @@
 <html>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>酔藏商城</title>
+    <title>八窖酒库</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
     <link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
@@ -34,35 +34,10 @@
             color: #ffffff;
             background-color: #0080FF;;
             margin-top: 20px;
-            width: 48%;
-            font-size: 16px;
         }
         .buttons{
             margin-top: 50px;
         }
-        .home{
-            width: 48%;
-            color: #ffffff;
-            background-color: #0080FF;
-            margin-top: 20px;
-            box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
-            display: inline-block;
-            padding: 8px 12px;
-            font-size: 16px;
-            text-align: center;
-            vertical-align: middle;
-            border: 1px solid transparent;
-            border-radius: 4px;
-        }
-        a{
-            text-decoration: none;
-        }
-        a:link { 
-            text-decoration: none; 
-        } 
-        a:visited { 
-            text-decoration: none; 
-        } 
     </style>
     <body>
         <div class="container">
@@ -330,8 +305,7 @@
 
                             <?php if ($text_agree) { ?>
                             <div class="buttons">
-                                <div>
-                                    <?php echo $text_agree; ?>
+                                <div><?php echo $text_agree; ?>
                                     <?php if ($agree) { ?>
                                     <input type="checkbox" name="agree" value="1" checked="checked" />
                                     <?php } else { ?>
@@ -339,10 +313,8 @@
                                     <?php } ?>
                                     &nbsp;
                                     <div>
-                                        <input type="submit" value="<?php echo $button_continue; ?>" class="btn" />
-                                        <a class="home" href="index.php?route=account/login">返回登录</a>
+                                        <input style="width:150px; font-size: 16px;" type="submit" value="<?php echo $button_continue; ?>" class="btn" />
                                     </div>
-
                                 </div>
                                 <?php } else { ?>
                                 <div>
@@ -356,8 +328,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
+
 
         <script type="text/javascript"><!--
 
@@ -369,7 +341,7 @@
                 $('input:radio[name=registertype][value=mobile]').click();
             }
 
-            //--></script>
+        //--></script>
 
         <script type="text/javascript"><!--
         // Sort the custom fields
@@ -436,7 +408,7 @@
             });
 
             $('input[name=\'customer_group_id\']:checked').trigger('change');
-            //--></script>
+        //--></script>
         <script type="text/javascript"><!--
         $('button[id^=\'button-custom-field\']').on('click', function () {
                 var node = this;
@@ -489,7 +461,7 @@
                     }
                 }, 500);
             });
-            //--></script>
+        //--></script>
         <script type="text/javascript"><!--
         $('.date').datetimepicker({
                 pickTime: false
@@ -503,7 +475,7 @@
                 pickDate: true,
                 pickTime: true
             });
-            //--></script>
+        //--></script>
 
         <?php if($sms_gateway) { ?>
         <script type="text/javascript"><!--
@@ -540,7 +512,7 @@
                 });
             });
 
-            //--></script> 
+        //--></script> 
         <?php } ?>
     </body>
 </html>

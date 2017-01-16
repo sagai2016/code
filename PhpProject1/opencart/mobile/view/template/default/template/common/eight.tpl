@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>酔藏商城</title>
+        <title>八窖酒库</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css"/>
         <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
@@ -100,7 +100,7 @@
             line-height: 16px;
             overflow: hidden;
             height: 34px;
-
+        
         }
         .wine ul li div p a {
             display: inline-block;
@@ -149,41 +149,34 @@
             border-width: 0 1px 0 0;
             border-style: solid;
             border-color: #ccc;
+            font-size: 12px;
         }
-        .foot ul li a{
-            letter-spacing:1.5px;
+
+        .foot ul li a {
+            letter-spacing: 1.5px;
             font-size: 14px;
-            text-decoration: none;
             text-shadow: 1px 1px 1px #ddd;
         }
-        .foot ul .home .icon-goodshome{
+        .last{
+            margin-bottom: 200px;
+        }
+        .foot ul .home {
+            letter-spacing: 1.5px;
+            width: 150px;
+            text-shadow: 1px 1px 1px #ddd;
+        }
+
+        .foot ul .home .icon-goodshome {
             vertical-align: middle;
             font-size: 18px;
             text-shadow: 1px 1px 1px #ddd;
         }
-        .foot ul li.home {
-            width: 150px;
-            font-size: 20px;
-        }
 
-        .foot ul li.total {
-            width: 200%;
-            text-align: right;
-        }
-
-        .foot ul li.total span {
-            display: inline-block;
-            padding: 0 10px;
-            color: #f36815;
-        }
-
-        .foot ul li.settlement {
-            background: #ff4444;
-            color: #fff;
-        }
-
-        .foot ul li.settlement span {
-            color: #fff;
+        .foot ul li a {
+            letter-spacing: 1.5px;
+            font-size: 12px;
+            text-decoration: none;
+            text-shadow: 1px 1px 1px #ddd;
         }
     </style>
     <body>
@@ -285,12 +278,20 @@
             </div>
             <div class="foot">
                 <ul>
-                    <li class="home"><a href="index.php?" class="icon-goodshome"></a></li>
-                    <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>
-                    <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
-                    <li> <a href="index.php?route=account/login">个人中心</a> </li>
+                    <li class="home">
+                        <a href="index.php?" class="icon-goodshome"></a>
+                    </li>
+                    <li>
+                        <a href="index.php?route=product/categoryy">全部商品</a>
+                    </li>
+                    <li>
+                        <a href="index.php?route=checkout/cart">购物车</a>
+                    </li>
+                    <li>
+                        <a href="index.php?route=account/login">个人中心</a>
+                    </li>
                 </ul>
-            </div>
+            </div>'
         </div>
 
         <script>

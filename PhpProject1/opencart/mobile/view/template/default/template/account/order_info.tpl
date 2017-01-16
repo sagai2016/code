@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>酔藏商城</title>
+        <title>八窖酒库</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
         <meta name="format-detection" content="telephone=no" />

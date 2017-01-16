@@ -26,7 +26,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>酔藏商城</title>
+        <title>八窖酒库</title>
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
         <meta name="format-detection" content="telephone=no" />
         <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />

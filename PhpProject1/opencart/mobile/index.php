@@ -1,4 +1,5 @@
 <?php
+
 // Version
 define('VERSION', '1.6.0.0');
 
@@ -19,3 +20,5 @@ define('PAY_METHOD_CALLBACK', '');
 require_once(DIR_SYSTEM . 'startup.php');
 
 start('mobile');
+
+

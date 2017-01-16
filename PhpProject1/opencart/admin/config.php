@@ -12,7 +12,7 @@
 
 $serverPort = '';
 $isIpFun = '';
-$isFile = 'PhpProject1/opencart/';
+$isFile = '';
 
 $host = filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_URL);
 $serverName = filter_input(INPUT_SERVER, 'SERVER_NAME', FILTER_SANITIZE_URL);
@@ -41,7 +41,6 @@ define('HTTP_SERVER', 'http://' . $isIpFun . $serverPort.'/'.$isFile.'admin/');
 
 // HTTPS
 define('HTTPS_SERVER', 'http://' . $isIpFun . $serverPort.'/'.$isFile.'admin/');
-
 
 
 $dir__ = str_replace ('\\','/',str_replace('admin', '', __DIR__));

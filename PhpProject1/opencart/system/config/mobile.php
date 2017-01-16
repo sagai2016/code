@@ -30,7 +30,8 @@ $_['action_pre_action'] = array(
 	'startup/event',
 	'startup/maintenance',
 	'startup/seo_url',
-	'startup/weixin'
+	'startup/weixin',
+	'common/weixin',
 );
 
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>酔藏商城</title>
+<title>八窖酒库</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
@@ -53,13 +53,12 @@ body, html {
   color: #9b9b9b;
 }
 .top {
+	position: fixed;
 	background: #262424;
 	height: 38px;
 	padding: 6px;
 	width: 100%;
-        line-height: 27px;
-        position: fixed;
-        z-index: 999;
+    line-height: 27px;
 }
 .top img {
 	display: inline-block;
@@ -179,7 +178,7 @@ body, html {
 	width: 100%;
 }
 .goodsinfo img{
-	width: 100%;
+	width: 100% !important;
 }
 .foot {
 	width: 100%;
@@ -291,6 +290,7 @@ body, html {
     z-index: 9999;
     width: 100%;
     font-size: 16px;
+    border: none;
 }
 .alert-success
 {
@@ -329,6 +329,9 @@ a{
           
           <!--产品 end-->
           
+          
+          <!-- <span class="freight"> 运费：免运费 </span> -->
+        
       </li>
     </ul>
   </div>
@@ -357,7 +360,7 @@ a{
   <ul>
     
     <li class="home"><a href="index.php?route=checkout/cart" class="icon-goodscart"></a></li>  
-    <li class="addToCart" id="button-cart"><span>加入购物车</span></li>
+    <li class="addToCart" id="button-cart"><span><?php echo $button_cart; ?></span></li>
     <li class="buyNow"> <a href="index.php?route=checkout/checkout">立即购买</a> </li>
   </ul>
 </div>
@@ -428,9 +431,7 @@ $('#button-cart').on('click', function() {
                                 
 				$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
 
-				$('html, body').animate({ scroll
-                                    
-                            : 0 }, 'slow');
+				$('html, body').animate({ scrollTop: 0 }, 'slow');
 
 				$('#cart > ul').load('index.php?route=common/cart/info ul li');
 			}

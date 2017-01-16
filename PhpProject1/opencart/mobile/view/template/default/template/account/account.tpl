@@ -8,7 +8,7 @@
 
 </head> 
 <body> 
-    <a href="index.php?route=common/home">去酔藏商城逛逛</a>
+    <a href="index.php?route=common/home">去八窖酒库逛逛</a>
 <script type="text/javascript">
 </script> 
 

@@ -4,18 +4,18 @@ class ControllerExtensionPaymentWxPay extends Controller {
 		
 		require_once(DIR_SYSTEM.'library/wxpay/wxpayexception.php');
 		
-		define('WXPAY_APPID', trim($this->config->get('wxpay_appid')));
-		define('WXPAY_MCHID', trim($this->config->get('wxpay_mchid')));
-		define('WXPAY_KEY', trim($this->config->get('wxpay_key')));
-		define('WXPAY_APPSECRET', trim($this->config->get('wxpay_appsecret')));
+		// define('WXPAY_APPID', trim($this->config->get('wxpay_appid')));
+		// define('WXPAY_MCHID', trim($this->config->get('wxpay_mchid')));
+		// define('WXPAY_KEY', trim($this->config->get('wxpay_key')));
+		// define('WXPAY_APPSECRET', trim($this->config->get('wxpay_appsecret')));
 		
-		define('WXPAY_SSLCERT_PATH', DIR_SYSTEM.'helper/wxpay_key/apiclient_cert.pem');
-		define('WXPAY_SSLKEY_PATH', DIR_SYSTEM.'helper/wxpay_key/apiclient_key.pem');
+		// define('WXPAY_SSLCERT_PATH', DIR_SYSTEM.'helper/wxpay_key/apiclient_cert.pem');
+		// define('WXPAY_SSLKEY_PATH', DIR_SYSTEM.'helper/wxpay_key/apiclient_key.pem');
 		
-		define('WXPAY_CURL_PROXY_HOST', "0.0.0.0");
-		define('WXPAY_CURL_PROXY_PORT', 0);
+		// define('WXPAY_CURL_PROXY_HOST', "0.0.0.0");
+		// define('WXPAY_CURL_PROXY_PORT', 0);
 		
-		define('REPORT_LEVENL', 1);
+		// define('REPORT_LEVENL', 1);
 		
 		
 		require_once(DIR_SYSTEM.'library/wxpay/wxpayconfig.php');
@@ -67,7 +67,7 @@ class ControllerExtensionPaymentWxPay extends Controller {
 			
 		}
 		
-		$notify_url = HTTPS_SERVER.'catalog/controller/extension/payment/wxpay_callback.php';
+		$notify_url = HTTPS_SERVER.'/controller/extension/payment/wxpay_callback.php';
 
         
 

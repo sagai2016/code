@@ -2,7 +2,7 @@
 <html lang="en">
 <header>
 <meta charset="UTF-8">
-<title>酔藏商城</title>
+<title>八窖酒库</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
@@ -940,7 +940,7 @@ $(document).on('change', 'input[name=\'account\']', function() {
                                                                                                                                                                                                                                                                                                                             });
                                                                                                                                                                                                                                                             
                                                                                                                                                                                                                                                                                                                                                                     $(document).delegate('#button-payment-method', 'click', function() {
-                                                                                                                                                                                                                                                                                                                                                                                    $.ajax({
+                                                                                                                                                                                                                                                                                                  $.ajax({
                                                                                                                                                                                                                                                                                                                                                                                     url: 'index.php?route=checkout/payment_method/save',
                                                                                                                                                                                                                                                                                                                                                                                             type: 'post',
                                                                                                                                                                                                                                                                                                                                                                                             data: $('#collapse-payment-method input[type=\'radio\']:checked, #collapse-payment-method input[type=\'checkbox\']:checked, #collapse-payment-method textarea'),

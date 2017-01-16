@@ -8,7 +8,7 @@ print $_SERVER["SERVER_ADDR"].'<br/>';
 echo '<hr>';*/
 $serverPort = '';
 $isIpFun = '';
-$isFile = 'PhpProject1/opencart/';
+$isFile = '';
 
 $host = filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_URL);
 $serverName = filter_input(INPUT_SERVER, 'SERVER_NAME', FILTER_SANITIZE_URL);
@@ -31,7 +31,6 @@ define('HTTP_SERVER', 'http://' . $isIpFun . $serverPort.'/'.$isFile);
 define('HTTPS_SERVER', 'http://' . $isIpFun . $serverPort.'/'.$isFile);
 
 // DIR
-//
 
 $dir__ = str_replace ('\\','/',__DIR__);
 

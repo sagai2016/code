@@ -344,18 +344,22 @@ class ControllerCommonFileManager extends Controller {
 			if ((utf8_strlen($folder) < 3) || (utf8_strlen($folder) > 128)) {
 				$json['error'] = $this->language->get('error_folder');
 			}
+
 			// Check if directory already exists or not
 			if (is_dir($directory . '/' . $folder)) {
 				$json['error'] = $this->language->get('error_exists');
 			}
 		}
-                
+
 		if (!isset($json['error'])) {
 			mkdir($directory . '/' . $folder, 0777);
 			chmod($directory . '/' . $folder, 0777);
+
 			@touch($directory . '/' . $folder . '/' . 'index.html');
+
 			$json['success'] = $this->language->get('text_directory');
 		}
+
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
