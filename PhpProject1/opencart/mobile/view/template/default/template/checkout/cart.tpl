@@ -3,7 +3,7 @@
 <html lang="zh-cn">
     <head>
         <meta charset="UTF-8">
-        <title>酔藏商城</title>
+        <title>八窑酒库</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
         <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" type="text/css">
@@ -332,7 +332,7 @@
             <div class="goodsCart">
                 <ul class="goodsHomeTitle">
                     <li class="icon-goodsshop"></li>
-                    <li class="title">醉藏</li>
+                    <li class="title">八窑酒库</li>
                     <li class="icon-goodslefttag"></li>
                 </ul>                                                          
                 <form action="<?php echo $action; ?>" method="post" id="form1" enctype="multipart/form-data">

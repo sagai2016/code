@@ -8,7 +8,7 @@ print $_SERVER["SERVER_ADDR"].'<br/>';
 echo '<hr>';*/
 $serverPort = '';
 $isIpFun = '';
-$isFile = '';
+$isFile = 'PhpProject1/opencart/';
 
 $host = filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_URL);
 $serverName = filter_input(INPUT_SERVER, 'SERVER_NAME', FILTER_SANITIZE_URL);
@@ -34,17 +34,17 @@ define('HTTPS_SERVER', 'http://' . $isIpFun . $serverPort.'/'.$isFile);
 
 $dir__ = str_replace ('\\','/',__DIR__);
 
-define('DIR_APPLICATION', dir__. '/catalog/');
-define('DIR_SYSTEM', dir__. '/system/');
-define('DIR_IMAGE', dir__. '/image/');
-define('DIR_LANGUAGE', dir__. '/catalog/language/');
-define('DIR_TEMPLATE', dir__. '/catalog/view/theme/');
-define('DIR_CONFIG', dir__. '/system/config/');
-define('DIR_CACHE', dir__. '/system/storage/cache/');
-define('DIR_DOWNLOAD', dir__. '/system/storage/download/');
-define('DIR_LOGS', dir__. '/system/storage/logs/');
-define('DIR_MODIFICATION', dir__. '/system/storage/modification/');
-define('DIR_UPLOAD', dir__. '/system/storage/upload/');
+define('DIR_APPLICATION', $dir__. '/catalog/');
+define('DIR_SYSTEM', $dir__. '/system/');
+define('DIR_IMAGE', $dir__. '/image/');
+define('DIR_LANGUAGE', $dir__. '/catalog/language/');
+define('DIR_TEMPLATE', $dir__. '/catalog/view/theme/');
+define('DIR_CONFIG', $dir__. '/system/config/');
+define('DIR_CACHE', $dir__. '/system/storage/cache/');
+define('DIR_DOWNLOAD', $dir__. '/system/storage/download/');
+define('DIR_LOGS', $dir__. '/system/storage/logs/');
+define('DIR_MODIFICATION', $dir__. '/system/storage/modification/');
+define('DIR_UPLOAD', $dir__. '/system/storage/upload/');
 
 // DB
 define('DB_DRIVER', 'mysqli');

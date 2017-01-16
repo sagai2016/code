@@ -238,7 +238,7 @@
     <div class="main">
         <ul class="goodsHomeTitle">
             <li class="icon-goodsshop"></li>
-            <li class="title">醉藏</li>
+            <li class="title">八窑酒库</li>
             <li class="icon-goodslefttag"></li>
         </ul>
         

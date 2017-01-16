@@ -352,7 +352,7 @@ a{
   <div class="option"> 
         
             <span class="icon icon-goodsshop"></span>
-            <span><a href="./">醉藏</a></span> 
+            <span><a href="./">八窑酒库</a></span> 
             <span class="goodhome" ><a href="index.php?route=product/categoryy">进入店铺<i class="icon-goodslefttag"></i></a></span>
         
   </div>

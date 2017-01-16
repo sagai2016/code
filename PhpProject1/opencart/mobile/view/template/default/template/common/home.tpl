@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>酔藏商城</title>
+        <title>八窑酒库</title>
         <script src="view/javascript/jquery/jquery.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />

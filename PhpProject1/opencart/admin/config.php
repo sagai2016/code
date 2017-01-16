@@ -60,6 +60,7 @@ define('DIR_UPLOAD', $dir__.'system/storage/upload/');
 define('DIR_CATALOG', $dir__.'catalog/');
 
 // DB
+
 define('DB_DRIVER', 'mysqli');
 define('DB_HOSTNAME', '192.168.1.13');
 define('DB_USERNAME', 'root');

@@ -76,7 +76,7 @@
             background: rgba(50, 50, 50, 0.75);
             height: 93px;
             width: 100%;
-            bottom: -20px;
+            bottom: -15px;
             color: #fff;
             text-align: left;
             padding: 9px;
@@ -182,7 +182,7 @@
     <body>
         <div class="container">
             <div class="top">
-                <img src="view/theme/default/image/logo.png" alt=""/>
+                <img src="image/catalog/demo/manufacturer/22.png" alt=""/>
             </div>
             <div class="wine">
                 <ul>
