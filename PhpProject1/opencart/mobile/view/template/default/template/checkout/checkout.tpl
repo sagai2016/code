@@ -26,6 +26,7 @@
     h4,
     h5,
     h6,
+    
     dt,
     dd,
     dl,
@@ -214,15 +215,19 @@
         font-size: 18px;
         text-shadow: 1px 1px 1px #ddd;
     }
-    .foot ul li a{
-        letter-spacing:1.5px;
-        font-size: 12px;
-        text-decoration: none;
-        text-shadow: 1px 1px 1px #ddd;
-    }
+    
     a{
         text-decoration: none;
     }
+   
+   /*collapse-checkout-confirm .panel-body .table-responsive .table tbody tr .text-left{
+        background-color:red;
+        max-width: 41px;
+    }
+    #collapse-checkout-confirm .panel-body .table-responsive .table tbody tr .text-left:first-child{
+        background-color:yellow;
+        max-width: 41px;
+    }*/
     @media (max-width: 500px) {}
     
     @media (min-width: 400px) {}

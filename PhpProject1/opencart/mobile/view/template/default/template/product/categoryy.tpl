@@ -5,6 +5,7 @@
         <title>八窖酒库</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
+        <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
         <style type="text/css">
             ul, li, h1, h2, h3, h4, h5, h6, dt, dd, dl, ol, dl, dt, dd, p {
                 margin: 0;
@@ -215,7 +216,7 @@
 
         <div class="main">
             <div class="top">
-                <a><img src="view/theme/default/image/logo.png" alt="" /></a>
+                <a><img src="image/catalog/demo/manufacturer/22.png" alt="" /></a>
             </div>
             <p class="bootm"> </p>
             <div class="goodslist">      

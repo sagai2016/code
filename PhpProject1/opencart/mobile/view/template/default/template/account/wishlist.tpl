@@ -71,7 +71,7 @@
                 border-bottom: 1px solid #e6e6e6;
             }
             .top .link li a{
-                font-size: 12px;
+                font-size: 14px;
                 text-shadow: 1px 1px 1px #ddd;
             }
             .top .link .linkmain {
@@ -99,14 +99,14 @@
             }
 
             .main .goodsCart .goodsHomeTitle li {
-                font-size: 20px;
+                font-size: 24px;
                 vertical-align: middle;
                 color: #909090;
                 display: inline-block;
             }
 
             .main .goodsCart .goodsHomeTitle li.title {
-                font-size: 12px;
+                font-size: 14px;
                 padding: 0 10px;
             }
 
@@ -154,7 +154,7 @@
 
             }
             .main .goodsCart .goodsCartContent li.content a.del i{
-
+                margin-top: 30%;
                 position:absolute;
                 float: right;
                 right: 10px;
@@ -231,13 +231,11 @@
                 font-size: 50px;
                 display: inline-block;
             }
-
-            .foot {
+.foot {
                 width: 100%;
                 display: flex;
                 position: fixed;
                 bottom: 0;
-                z-index: 999;
             }
 
             .foot * {
@@ -261,16 +259,11 @@
                 border-width: 0 1px 0 0;
                 border-style: solid;
                 border-color: #ccc;
-                font-size: 12px;
             }
             .foot ul li a{
                 letter-spacing:1.5px;
                 font-size: 14px;
-                text-shadow: 1px 1px 1px #ddd;
-            }
-            .foot ul .home {
-                letter-spacing:1.5px;
-                width: 150px;
+                text-decoration: none;
                 text-shadow: 1px 1px 1px #ddd;
             }
             .foot ul .home .icon-goodshome{
@@ -278,11 +271,32 @@
                 font-size: 18px;
                 text-shadow: 1px 1px 1px #ddd;
             }
-            .foot ul li a{
-                letter-spacing:1.5px;
-                font-size: 12px;
+            .foot ul li.home {
+                width: 150px;
+                font-size: 20px;
+            }
+
+            .foot ul li.total {
+                width: 200%;
+                text-align: right;
+            }
+
+            .foot ul li.total span {
+                display: inline-block;
+                padding: 0 10px;
+                color: #f36815;
+            }
+
+            .foot ul li.settlement {
+                background: #ff4444;
+                color: #fff;
+            }
+
+            .foot ul li.settlement span {
+                color: #fff;
+            }
+            a{
                 text-decoration: none;
-                text-shadow: 1px 1px 1px #ddd;
             }
             @media (max-width: 500px) {
                 .main .goodsCart .goodsCartContent {

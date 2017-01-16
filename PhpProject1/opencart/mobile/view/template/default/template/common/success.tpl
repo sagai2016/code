@@ -73,11 +73,13 @@
             }
 
             .top {
+                margin:auto;
                 background: #262424;
                 height: 38px;
                 padding: 6px;
                 width: 100%;
                 line-height: 26px;
+                max-width:750px;
             }
             .top img {
                 display: inline-block;
@@ -193,7 +195,6 @@
                 border-width: 0 1px 0 0;
                 border-style: solid;
                 border-color: #ccc;
-                font-size: 12px;
             }
             .foot ul li a{
                 letter-spacing:1.5px;
@@ -212,7 +213,7 @@
             }
             .foot ul li a{
                 letter-spacing:1.5px;
-                font-size: 12px;
+                font-size: 14px;
                 text-decoration: none;
                 text-shadow: 1px 1px 1px #ddd;
             }
@@ -227,7 +228,7 @@
 
     <body>
         <div class="top">
-            <img src="view/theme/default/image/logo.png" alt="" />
+            <img src="image/catalog/demo/manufacturer/22.png" alt="" />
         </div>
         <div class="main">
             <div class="goodsCart">

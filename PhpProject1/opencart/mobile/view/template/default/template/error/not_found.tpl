@@ -194,7 +194,7 @@
        
         <div class="main">
                         <div class="top">
-                <a><img src="view/theme/default/image/logo.png" alt="" /></a>
+                <a><img src="image/catalog/demo/manufacturer/22.png" alt="" /></a>
             </div>
             <p class="bootm"> </p>
             <div class="goodsCart">

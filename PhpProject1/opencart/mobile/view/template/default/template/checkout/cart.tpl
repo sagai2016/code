@@ -1,20 +1,20 @@
 <!doctype html>
 
 <html lang="zh-cn">
-<head>
-<meta charset="UTF-8">
-<title>酔藏商城</title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
-<link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" type="text/css">
-<script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-<script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
-<link href="view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-<link href="view/javascript/jquery/magnific/magnific-popup.css" type="text/css" rel="stylesheet" media="screen" />
-<link href="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
-<script src="view/javascript/common.js" type="text/javascript"></script>
-<script src="view/javascript/jquery/magnific/jquery.magnific-popup.min.js" type="text/javascript"></script>
-<script src="view/javascript/jquery/datetimepicker/moment.js" type="text/javascript"></script>
+    <head>
+        <meta charset="UTF-8">
+        <title>酔藏商城</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+        <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" type="text/css">
+        <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+        <script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+        <link href="view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="view/javascript/jquery/magnific/magnific-popup.css" type="text/css" rel="stylesheet" media="screen" />
+        <link href="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
+        <script src="view/javascript/common.js" type="text/javascript"></script>
+        <script src="view/javascript/jquery/magnific/jquery.magnific-popup.min.js" type="text/javascript"></script>
+        <script src="view/javascript/jquery/datetimepicker/moment.js" type="text/javascript"></script>
         <style type="text/css">
             ul, li, h1, h2, h3, h4, h5, h6, dt, dd, dl, ol, dl, dt, dd, p {
                 margin: 0;
@@ -59,7 +59,7 @@
                 justify-content: space-between;
                 width: 100%;
                 background: rgba(255,255,255,.98);
-                
+
             }
 
             .top .link li {
@@ -164,7 +164,9 @@
                 display: block;
                 float: left;
             }
-
+            .main .goodsCart .goodsCartContent li.content .jg i{
+                font-size: 15px;
+            }
             .main .goodsCart .goodsCartContent li.content .del {
                 border: 1px solid #f36815;
                 border-radius: 3px;
@@ -252,7 +254,7 @@
                 border-width: 0 1px 0 0;
                 border-style: solid;
                 border-color: #ccc;
-                text-shadow: 1px 1px 1px #ddd;
+                text-shadow: 0.3px 0.3px 0.3px #ddd;
             }
             .foot ul a.home {
                 width: 150px;
@@ -270,13 +272,14 @@
                 display: inline-block;
                 padding:0 10px;
                 color: #f36815;
-                font-size: 12px;
+                font-size: 14px;
+                text-shadow: 0.3px 0.3px 0.3px #ddd;
             }
             .foot ul a.settlement{
                 background: #ff4444;
                 color: #ffffff;
                 text-decoration:none;
-                font-size: 12px;
+                font-size: 14px;
             }
             @media (max-width: 500px) {
                 .main .goodsCart .goodsCartContent {
@@ -301,11 +304,11 @@
                 }
             }
             a{
-        text-decoration: none;
-    }
+                text-decoration: none;
+            }
         </style>
     </head>
-    
+
 
     <!--<?php foreach ($products as $product) { ?>
     <tr>
@@ -362,7 +365,12 @@
             <ul>
                 <a class="home  icon-goodshome" href="index.php?route=common/home"></a>
                 <li class="total">
-                    <span>合计：<?php echo $totals[1]['text']; ?></span>                 
+                    <span>合计：<?php if(count($totals)>4): ?> 
+                        <?php echo '￥'.( trim($totals[4]['text'],'￥') -  (trim($totals[1]['text'],'￥') + trim($totals[3]['text'],'￥') + trim($totals[2]['text'],'￥'))); ?>
+                        <?php else:?>
+                        <?php echo $totals[1]['text']; ?>
+                        <?php endif; ?>
+                    </span>                 
                 </li>
                 <a class="settlement" href="index.php?route=checkout/checkout">
                     结 算
@@ -371,19 +379,19 @@
         </div>
         <script type="text/javascript">
 
-            $('.goodsCartContent').on('click','#add', function () { 
+            $('.goodsCartContent').on('click', '#add', function () {
                 var t = $(this).parent().find("#cartcount").val();
                 $(this).parent().find("#cartcount").val(parseInt(t) + 1);
                 $("form").submit();
-                
+
             });
 
 
-             $('.goodsCartContent').on('click','#reduce', function () {
+            $('.goodsCartContent').on('click', '#reduce', function () {
                 var t = $(this).parent().find("#cartcount").val();
-                
+
                 var count = parseInt(t) - 1;
-               
+
                 if (count > 0) {
                     $(this).parent().find("#cartcount").val(count);
                     $("form").submit();

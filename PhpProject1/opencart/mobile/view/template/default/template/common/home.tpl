@@ -2,11 +2,12 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>八窖酒库</title>
+        <title>酔藏商城</title>
         <script src="view/javascript/jquery/jquery.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
         <link rel="stylesheet" type="text/css" href="view/stylesheet/swiper.min.css" />
+        <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
         <style type="text/css">
             ul,
             li,
@@ -52,12 +53,19 @@
                 display: block;
                 margin: auto;
             }
+            .main .header{
+                font-size:0;
+                text-align: center;
+            }
+            .main .header a{
+                font-size:0;
 
-            .main .header {
-                width: 100%;
-                background: url(image/catalog/demo/manufacturer/t1.jpg) no-repeat center;
-                background-size: auto 100%;
-                height: 70px;
+            }
+            .main .header  img{
+                max-height: 355px;     
+                width: 97.6%;
+                margin: auto;
+                font-size:0;
             }
 
             .main .banner {
@@ -139,6 +147,7 @@
 
             .main .adList .product {
                 margin: 5px;
+                margin-bottom: 40px;
             }
 
             .foot {
@@ -214,7 +223,7 @@
     <body>
         <div class="main">
             <div class="header">
-                <a href="index.html"></a>
+                <img src="image/catalog/demo/manufacturer/logo.png"/>
             </div>
             <div class="banner">
                 <div class="swiper-container">

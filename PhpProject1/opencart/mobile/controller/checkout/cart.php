@@ -197,7 +197,6 @@ class ControllerCheckoutCart extends Controller {
 				$sort_order = array();
 
 				$results = $this->model_extension_extension->getExtensions('total');
-
 				foreach ($results as $key => $value) {
 					$sort_order[$key] = $this->config->get($value['code'] . '_sort_order');
 				}
@@ -230,7 +229,6 @@ class ControllerCheckoutCart extends Controller {
 					'text'  => $this->currency->format($total['value'], $this->session->data['currency'])
 				);
 			}
-
 			$data['continue'] = $this->url->link('common/home');
 
 			$data['checkout'] = $this->url->link('checkout/checkout', '', true);
@@ -259,6 +257,7 @@ class ControllerCheckoutCart extends Controller {
 			$data['header'] = $this->load->controller('common/header');
 
 			$this->response->setOutput($this->load->view('checkout/cart', $data));
+                        
 		} else {
 			$data['heading_title'] = $this->language->get('heading_title');
 
