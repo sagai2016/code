@@ -28,6 +28,7 @@
             padding: 0;
             height: 100%;
             width: 100%;
+            background: #f8f8f8;
         }
 
         .top {
@@ -60,7 +61,6 @@
             width: 100%;
             margin-bottom: 15px;
             display: inline-block;
-            background: #fff;
         }
 
         .wine ul li div {
