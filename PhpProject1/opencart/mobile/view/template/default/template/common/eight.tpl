@@ -184,10 +184,10 @@
                         <img src="image/catalog/demo/manufacturer/t2-2.png">
                         <div>
                             <p>
-                                <strong>position相对定位</strong>
-                                <span>绝对定位是以父元素为基准点,进行定位(如果他没有父元素,或者它的父元素没有设置position:relative属性)它就会以为基</span>
-                                <!--<a href="index.php?route=common/more">move</a>-->
-                                <a data-id='1'>move</a>
+                                <strong>内容正在建设中......</strong>
+                                <!--<span>绝对定位是以父元素为基准点,进行定位(如果他没有父元素,或者它的父元素没有设置position:relative属性)它就会以为基</span>
+                                <a href="index.php?route=common/more">move</a>
+                                <a data-id='1'>move</a>-->
                             </p>
                         </div>
                     </li>
@@ -195,10 +195,10 @@
                         <img src="image/catalog/demo/manufacturer/t2-2.png">
                         <div>
                             <p>
-                                <strong>position相对定位</strong>
-                                <span>绝对定位是以父元素为基准点,进行定位(如果他没有父元素,或者它的父元素没有设置position:relative属性)它就会以为基</span>
-                                <!--<a href="index.php?route=common/more">move</a>-->
-                                <a data-id='2'>move</a>
+                                <strong>内容正在建设中......</strong>
+                                <!--<span>绝对定位是以父元素为基准点,进行定位(如果他没有父元素,或者它的父元素没有设置position:relative属性)它就会以为基</span>
+                                <a href="index.php?route=common/more">move</a>
+                                <a data-id='2'>move</a>-->
                             </p>
                         </div>
                     </li>
@@ -206,10 +206,10 @@
                         <img src="image/catalog/demo/manufacturer/t2-2.png">
                         <div>
                             <p>
-                                <strong>position相对定位</strong>
-                                <span>绝对定位是以父元素为基准点,进行定位(如果他没有父元素,或者它的父元素没有设置position:relative属性)它就会以为基</span>
-                                <!--<a href="index.php?route=common/more">move</a>-->
-                                <a data-id='3'>move</a>
+                                <strong>内容正在建设中......</strong>
+                                <!--<span>绝对定位是以父元素为基准点,进行定位(如果他没有父元素,或者它的父元素没有设置position:relative属性)它就会以为基</span>
+                                <a href="index.php?route=common/more">move</a>
+                                <a data-id='3'>move</a>-->
                             </p>
                         </div>
                     </li>
@@ -217,10 +217,10 @@
                         <img src="image/catalog/demo/manufacturer/t2-2.png">
                         <div>
                             <p>
-                                <strong>position相对定位</strong>
-                                <span>绝对定位是以父元素为基准点,进行定位(如果他没有父元素,或者它的父元素没有设置position:relative属性)它就会以为基</span>
-                                <!--<a href="index.php?route=common/more">move</a>-->
-                                <a data-id='4'>move</a>
+                                <strong>内容正在建设中......</strong>
+                                <!--<span>绝对定位是以父元素为基准点,进行定位(如果他没有父元素,或者它的父元素没有设置position:relative属性)它就会以为基</span>
+                                <a href="index.php?route=common/more">move</a>
+                                <a data-id='4'>move</a>-->
                             </p>
                         </div>
                     </li>
@@ -228,10 +228,10 @@
                         <img src="image/catalog/demo/manufacturer/t2-2.png">
                         <div>
                             <p>
-                                <strong>position相对定位</strong>
-                                <span>绝对定位是以父元素为基准点,进行定位(如果他没有父元素,或者它的父元素没有设置position:relative属性)它就会以为基</span>
-                                <!--<a href="index.php?route=common/more">move</a>-->
-                                <a data-id='5'>move</a>
+                                <strong>内容正在建设中......</strong>
+                                <!--<span>绝对定位是以父元素为基准点,进行定位(如果他没有父元素,或者它的父元素没有设置position:relative属性)它就会以为基</span>
+                                <a href="index.php?route=common/more">move</a>
+                                <a data-id='5'>move</a>-->
                             </p>
                         </div>
                     </li>
@@ -239,10 +239,10 @@
                         <img src="image/catalog/demo/manufacturer/t2-2.png">
                         <div>
                             <p>
-                                <strong>position相对定位</strong>
-                                <span>绝对定位是以父元素为基准点,进行定位(如果他没有父元素,或者它的父元素没有设置position:relative属性)它就会以为基</span>
-                                <!--<a href="index.php?route=common/more">move</a>-->
-                                <a data-id='6'>move</a>
+                                <strong>内容正在建设中......</strong>
+                                <!--<span>绝对定位是以父元素为基准点,进行定位(如果他没有父元素,或者它的父元素没有设置position:relative属性)它就会以为基</span>
+                                <a href="index.php?route=common/more">move</a>
+                                <a data-id='6'>move</a>-->
                             </p>
                         </div>
                     </li>
@@ -250,10 +250,10 @@
                         <img src="image/catalog/demo/manufacturer/t2-2.png">
                         <div>
                             <p>
-                                <strong>position相对定位</strong>
-                                <span>绝对定位是以父元素为基准点,进行定位(如果他没有父元素,或者它的父元素没有设置position:relative属性)它就会以为基</span>
-                                <!--<a href="index.php?route=common/more">move</a>-->
-                                <a data-id='7'>move</a>
+                                <strong>内容正在建设中......</strong>
+                                <!--<span>绝对定位是以父元素为基准点,进行定位(如果他没有父元素,或者它的父元素没有设置position:relative属性)它就会以为基</span>
+                                <a href="index.php?route=common/more">move</a>
+                                <a data-id='7'>move</a>-->
                             </p>
                         </div>
                     </li>
@@ -261,10 +261,10 @@
                         <img src="image/catalog/demo/manufacturer/t2-2.png">
                         <div>
                             <p>
-                                <strong>position相对定位</strong>
-                                <span>绝对定位是以父元素为基准点,进行定位(如果他没有父元素,或者它的父元素没有设置position:relative属性)它就会以为基</span>
-                                <!--<a href="index.php?route=common/more">move</a>-->
-                                <a data-id='8'>move</a>
+                                <strong>内容正在建设中......</strong>
+                                <!--<span>绝对定位是以父元素为基准点,进行定位(如果他没有父元素,或者它的父元素没有设置position:relative属性)它就会以为基</span>
+                                <a href="index.php?route=common/more">move</a>
+                                <a data-id='8'>move</a>-->
                             </p>
                         </div>
                     </li>

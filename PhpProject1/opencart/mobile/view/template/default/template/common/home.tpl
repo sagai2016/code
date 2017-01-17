@@ -229,8 +229,8 @@
             <div class="banner">
                 <div class="swiper-container">
                     <ul class="swiper-wrapper">
-                        <li class="swiper-slide"><img src="image/catalog/demo/manufacturer/t2-2.png"></li>
-                        <li class="swiper-slide"><img src="image/catalog/demo/manufacturer/t2.png"></li>
+                        <li class="swiper-slide"><a href="index.php?route=common/product&product_id=139"><img src="image/catalog/demo/manufacturer/t2-2.png"></a></li>
+                        <li class="swiper-slide"><a href="index.php?route=common/product&product_id="><img src="image/catalog/demo/manufacturer/t2.png"></a></li>
                     </ul>
                     <span class="swiper-pagination"></span>
                 </div>
@@ -258,7 +258,6 @@
                         </ul>-->
                     </dd>
                 </dl>
-                
                 <?php 
                 foreach($datu as $v):
                 ?>
