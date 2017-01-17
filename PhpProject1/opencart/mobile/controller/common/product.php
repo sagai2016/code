@@ -274,13 +274,13 @@ class ControllerCommonProduct extends Controller {
 			$this->load->model('tool/image');
 
 			if ($product_info['image']) {
-				$data['popup'] = $this->model_tool_image->resize($product_info['image'],350 ,300);
+				$data['popup'] = $this->model_tool_image->resize($product_info['image'],700 ,600);
                         } else {
 				$data['popup'] = '';
 			}
 
 			if ($product_info['image']) {
-				$data['thumb'] = $this->model_tool_image->resize($product_info['image'],350 ,300);
+				$data['thumb'] = $this->model_tool_image->resize($product_info['image'],700 ,600);
 			} else {
 				$data['thumb'] = '';
 			}
@@ -293,9 +293,9 @@ class ControllerCommonProduct extends Controller {
 
 			foreach ($results as $result) {
 				$data['images'][] = array(
-					'popup' => $this->model_tool_image->resize($result['image'],350 ,300),
+					'popup' => $this->model_tool_image->resize($result['image'],700 ,600),
 
-					'thumb' => $this->model_tool_image->resize($result['image'], 350,300)
+					'thumb' => $this->model_tool_image->resize($result['image'], 700,600)
 				);
 			}
 

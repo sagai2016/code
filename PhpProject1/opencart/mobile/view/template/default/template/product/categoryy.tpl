@@ -113,6 +113,11 @@
                 font-size: 50px;
                 display: inline-block;
             }
+            .bootm {
+                height: 38px;
+                font-size: 50px;
+                display: inline-block;
+            }
             .foot {
                 width: 100%;
                 display: flex;
@@ -246,7 +251,7 @@
 
             </div>
         </div>
-
+        <div class="bootm"></div>
         <div class="foot">
             <ul>
                 <li class="home"><a href="index.php?" class="icon-goodshome"></a></li>

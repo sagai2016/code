@@ -112,7 +112,7 @@
         }
         .wine ul li img {
             width: 100%;
-            box-shadow: 0px 0px 25px #000;
+            box-shadow: 0px 0px 3px #000;
         }
         .bootm{
             height: 50px;

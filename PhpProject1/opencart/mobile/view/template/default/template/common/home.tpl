@@ -149,7 +149,6 @@
 
             .main .adList .product {
                 margin: 5px;
-                margin-bottom: 40px;
             }
 
             .foot {
@@ -259,6 +258,7 @@
                         </ul>-->
                     </dd>
                 </dl>
+                
                 <?php 
                 foreach($datu as $v):
                 ?>
