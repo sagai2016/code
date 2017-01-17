@@ -30,7 +30,6 @@
             width: 100%;
             background: #f8f8f8;
         }
-
         .top {
             position: fixed;
             background: #262424;
@@ -152,11 +151,6 @@
             font-size: 12px;
         }
 
-        .foot ul li a {
-            letter-spacing: 1.5px;
-            font-size: 14px;
-            text-shadow: 1px 1px 1px #ddd;
-        }
         .last{
             margin-bottom: 200px;
         }
@@ -174,7 +168,7 @@
 
         .foot ul li a {
             letter-spacing: 1.5px;
-            font-size: 12px;
+            font-size: 14px;
             text-decoration: none;
             text-shadow: 1px 1px 1px #ddd;
         }

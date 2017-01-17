@@ -79,7 +79,6 @@ class ModelAccountOrder extends Model {
 			} else {
 				$shipping_district = '';
 			}
-
 			return array(
 				'order_id'                => $order_query->row['order_id'],
 				'invoice_no'              => $order_query->row['invoice_no'],

@@ -1,6 +1,7 @@
 <script type="text/javascript">
 	function callpay()
 	{
+                
 		location.href = "<?php echo $redirect; ?>";
 	}
 </script>

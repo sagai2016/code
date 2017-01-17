@@ -59,6 +59,9 @@ class ControllerAccountOrder extends Controller {
 		$this->load->model('account/order');
 
 		$order_total = $this->model_account_order->getTotalOrders();
+                
+                
+                
 
 		$results = $this->model_account_order->getOrders(($page - 1) * 10, 10);
 
@@ -76,7 +79,6 @@ class ControllerAccountOrder extends Controller {
 				'view'       => $this->url->link('account/order/info', 'order_id=' . $result['order_id'], true),
 			);
 		}
-
 		$pagination = new Pagination();
 		$pagination->total = $order_total;
 		$pagination->page = $page;
@@ -95,7 +97,6 @@ class ControllerAccountOrder extends Controller {
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
-
 		$this->response->setOutput($this->load->view('account/order_list', $data));
 	}
 
@@ -117,7 +118,6 @@ class ControllerAccountOrder extends Controller {
 		$this->load->model('account/order');
 
 		$order_info = $this->model_account_order->getOrder($order_id);
-
 		if ($order_info) {
 			$this->document->setTitle($this->language->get('text_order'));
 

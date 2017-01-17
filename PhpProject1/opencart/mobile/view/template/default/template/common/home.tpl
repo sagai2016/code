@@ -116,6 +116,8 @@
                 height: inherit;
                 background: #fff;
                 text-align: center;
+                width: 100%;
+                margin: auto;
             }
 
             .main .adList dd {

@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>八窖酒库</title>
+        <title>酔藏商城</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
@@ -17,6 +17,21 @@
                 width:100%;
                 margin:auto;
                 background:#FFFFFF;
+                text-align: center;
+            }
+            .home{
+                margin-left: 15%;
+                text-align: center;
+                border: none;
+                font-size: 15px;
+                padding: 7px;
+                background-color: #0080FF;
+                width: 70%;
+                border-radius: 5px;
+                margin-top: 30px;
+            }
+            .content .home a{
+                color: white;
             }
             .login{
                 text-align: center;
@@ -48,8 +63,6 @@
                 margin-top: 100px;
                 text-align: center;
             }
-            .foot div{
-            }
             .name input,.pwd input{
                 outline: none;
                 padding:15px;
@@ -74,6 +87,15 @@
             }  
             input:-webkit-autofill { 
                 -webkit-box-shadow: 0 0 0px 1000px white inset; 
+            } 
+            a{
+                text-decoration: none;
+            }
+            a:link { 
+                text-decoration: none; 
+            } 
+            a:visited { 
+                text-decoration: none; 
             } 
 
         </style>
@@ -113,15 +135,18 @@
             </div>
             <div class='foot'>
                 <div>
+                    <a href="index.php?">返回首页</a>
+                    <span>|</span>
                     <a href="<?php echo $register; ?>">用户注册</a>
                     <span>|</span>
-                    <a href="<?php echo $forgotten; ?>">忘记密码？</a>
+                    <a href="<?php echo $forgotten; ?>">忘记密码</a>
+
                 </div>
             </div>
         </div>
         <script>
             function change(a) {
-                $(a).css("border-color","#0080ff").blur(function () {
+                $(a).css("border-color", "#0080ff").blur(function () {
                     $(a).css("border-color", "");
                 })
             }

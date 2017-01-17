@@ -251,7 +251,7 @@ body, html {
 .foot ul .buyNow {
 	background: #ff4344;
 }
-.foot ul .buyNow span{
+.foot ul .buyNow a{
     font-size: 14px;
     color: #fff;
     text-shadow: 0.5px 0.5px 0.5px #ddd;
@@ -373,8 +373,8 @@ a{
   <ul>
     
     <li class="home"><a href="index.php?route=checkout/cart" class="icon-goodscart"></a></li>  
-    <li class="addToCart" id="button-cart"><span><?php echo $button_cart; ?></span></li>
-    <li class="buyNow"> <span>立即购买</a> </span>
+    <li class="addToCart" id="button-cart"><span>加入购物车</span></li>
+    <li class="buyNow"> <a href="index.php?route=checkout/checkout">立即购买</a> </li>
   </ul>
 </div>
     <script src="view/javascript/jquery/jquery.flexslider.js"></script> 
@@ -401,62 +401,7 @@ $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 });
 //--></script>
     
-    
-<script type="text/javascript"><!--
-$('.buyNow').on('click', function() {
-	$.ajax({
-		url: 'index.php?route=checkout/cart/add',
-		type: 'post',
-		data: $('#product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
-		dataType: 'json',
-		beforeSend: function() {
-			$('#button-cart').button('');
-		},
-		complete: function() {
-			$('#button-cart').button('reset');
-		},
-		success: function(json) {
-			$('.alert, .text-danger').remove();
-			$('.form-group').removeClass('has-error');
-                        //alert('您已将产品加入购物车');
-			if (json['error']) {
-				if (json['error']['option']) {
-					for (i in json['error']['option']) {
-						var element = $('#input-option' + i.replace('_', '-'));
-
-						if (element.parent().hasClass('input-group')) {
-							element.parent().after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
-						} else {
-							element.after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
-						}
-					}
-				}
-
-				if (json['error']['recurring']) {
-					$('select[name=\'recurring_id\']').after('<div class="text-danger">' + json['error']['recurring'] + '</div>');
-				}
-
-				// Highlight any found errors
-				$('.text-danger').parent().addClass('has-error');
-			}
-
-			if (json['success']) {
-                                
-				//$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
-                                
-				//$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
-
-				//$('html, body').animate({ scrollTop: 0 }, 'slow');
-
-				//$('#cart > ul').load('index.php?route=common/cart/info ul li');
-			}location.href='index.php?route=checkout/cart';
-		},
-        error: function(xhr, ajaxOptions, thrownError) {
-            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-        }
-	});
-});
-//--></script>   
+  
                                 
                                
 <script type="text/javascript"><!--

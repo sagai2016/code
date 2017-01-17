@@ -438,7 +438,7 @@
             <?php } ?>
             <ul class="goodsHomeTitle">
                 <li class="icon-goodsshop"></li>
-                <li class="title">醉藏</li>
+                <li class="title">八窖酒库</li>
                 <li class="icon-goodslefttag"></li>
             </ul>
             <div class="goodsCart">

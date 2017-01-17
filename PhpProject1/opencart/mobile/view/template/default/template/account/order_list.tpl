@@ -144,7 +144,7 @@
                 padding: 1.5% 2.5%;
             }
             .main .goodsCart .allorders .see p a{
-                color:#ffcc66;
+                color:sienna;
             }
             .main .goodsCart .allorders li p {
                 display: inline-block;
@@ -267,7 +267,7 @@
             <p class="bootm"></p>
             <ul class="goodsHomeTitle">
                 <li class="icon-goodsshop"></li>
-                <li class="title">醉藏</li>
+                <li class="title">八窖酒库</li>
                 <li class="icon-goodslefttag"></li>
             </ul>
             <div class="goodsCart">

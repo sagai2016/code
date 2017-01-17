@@ -94,6 +94,8 @@
                 font-size: 0;
                 width: 100%;
                 padding: 10px 0;
+                margin-bottom:10px;
+
             }
 
             .main .goodsCart .goodsHomeTitle li {
