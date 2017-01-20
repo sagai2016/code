@@ -252,8 +252,8 @@
                         <img src="image/catalog/demo/manufacturer/1b33aabbca61e72c51a131587d6f33bc.jpg">
                     </li>
                     <li class="userinfo">
-                        <p class="username"><span class="fa fa-user"></span>啊岁的卡等奖</p>
-                        <p class="usernkey"><span class="fa fa-id-card-o"></span>88888888</p>
+                        <p class="username"><span class="fa fa-user"></span></p>
+                        <p class="usernkey"><span class="fa fa-id-card-o"></span></p>
                     </li>
                 </ul>
             </div>
@@ -268,9 +268,9 @@
                     
                 </ul>
             </div>
-
+            <p class="bootm"> </p>
         </div>
-
+        
         <div class="foot">
             <ul>
                 <li class="home"><a href="index.php?" class="icon-goodshome"></a></li>

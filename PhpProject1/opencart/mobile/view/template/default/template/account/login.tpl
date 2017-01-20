@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>酔藏商城</title>
+        <title>八窖酒库｜用户登录</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
