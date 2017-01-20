@@ -298,6 +298,8 @@ $('#collapse-payment-address button[id^=\'button-payment-custom-field\']').on('c
 });
 //--></script>
 <script type="text/javascript"><!--
+
+
 $('.date').datetimepicker({
 	pickTime: false
 });

@@ -100,6 +100,7 @@ body, html {
 }
 .content .goodsImages img {
 	width: 100%;
+	padding: 10px;
 }
 .content .goodsIntroduce {
 	border: 1px solid #e6e6e6;
@@ -270,6 +271,11 @@ body, html {
 @media (min-width: 600px) {
 .content .goodsImages {
 	height: 640px;
+}
+.content .goodsImages img{
+	height: 100%;
+    width: inherit;
+    padding: 25px 0; 
 }
 }
 .list-unstyled li{

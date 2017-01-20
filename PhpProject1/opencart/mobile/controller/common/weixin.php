@@ -9,7 +9,7 @@
 class ControllerCommonWeixin extends Controller {
 
     public function index() {
-
+	if ( strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') === TRUE ) {
     	//unset($_SESSION['weixin_openid']);
 
 		require_once(DIR_SYSTEM.'library/wxpay/wxpayexception.php');
@@ -35,4 +35,5 @@ class ControllerCommonWeixin extends Controller {
 		$tools = new JsApiPay();
 		$openId = $tools->GetOpenid();
     }
+	}
 }

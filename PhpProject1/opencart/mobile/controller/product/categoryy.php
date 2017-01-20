@@ -63,7 +63,7 @@ class ControllerProductCategoryy extends Controller {
 
 
             if (isset($t['image'])) {
-                $data['all'][$i]['image'] = $this->model_tool_image->resize($t['image'],350 ,300 );
+                $data['all'][$i]['image'] = $this->model_tool_image->resize($t['image'],800 ,800 );
             } else {
                 $data['all'][$i]['image'] = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
             }

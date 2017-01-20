@@ -5,13 +5,13 @@ $_['heading_title']                  = '結賬';
 
 // Text
 $_['text_cart']                      = '購物車';
-$_['text_checkout_option']           = '第 %s 步： 結賬選項';
-$_['text_checkout_account']          = '第 %s 步： 賬戶 &amp; 賬單詳情';
-$_['text_checkout_payment_address']  = '第 %s 步： 賬單地址';
-$_['text_checkout_shipping_address'] = '第 %s 步： 配送地址';
-$_['text_checkout_shipping_method']  = '第 %s 步： 配送方式';
-$_['text_checkout_payment_method']   = '第 %s 步： 支付方式';
-$_['text_checkout_confirm']          = '第 %s 步： 確認訂單';
+$_['text_checkout_option']           = '%s 結賬選項';
+$_['text_checkout_account']          = '%s 賬戶 &amp; 賬單詳情';
+$_['text_checkout_payment_address']  = '%s 賬單地址';
+$_['text_checkout_shipping_address'] = '%s 配送地址';
+$_['text_checkout_shipping_method']  = '%s 配送方式';
+$_['text_checkout_payment_method']   = '%s 支付方式';
+$_['text_checkout_confirm']          = '%s 確認訂單';
 $_['text_modify']                    = '更新 &raquo;';
 $_['text_new_customer']              = '新會員註冊';
 $_['text_returning_customer']        = '註冊會員';

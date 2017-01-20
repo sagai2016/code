@@ -161,6 +161,22 @@
         padding: 10px;
         display: none;
     }
+
+    .button-account{
+            color: #ffffff;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+            background-color: #c82222;
+            background-image: linear-gradient(to bottom, #d12323, #bb1f1f);
+            background-repeat: repeat-x;
+            border-color: #bb1f1f #bb1f1f #7a1414;
+
+                padding: 7.5px 12px;
+    font-size: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+    vertical-align: bottom;
+    }
     /**/
     
     .main .bootm {
@@ -291,7 +307,7 @@
         </div>
         <?php } ?>
         <?php if ($shipping_required) { ?>
-        <div class="panel panel-default">
+        <div class="panel panel-default" style="display: none;">
           <div class="panel-heading">
             <h4 class="panel-title"><?php echo $text_checkout_shipping_address; ?></h4>
           </div>
@@ -299,7 +315,7 @@
             <div class="panel-body"></div>
           </div>
         </div>
-        <div class="panel panel-default">
+        <div class="panel panel-default" style="display: none;">
           <div class="panel-heading">
             <h4 class="panel-title"><?php echo $text_checkout_shipping_method; ?></h4>
           </div>
@@ -457,10 +473,14 @@ $(document).delegate('#button-login', 'click', function() {
 
 // Register
 $(document).delegate('#button-register', 'click', function() {
+
+
+    var data = $('#collapse-payment-address input[type=\'text\'], #collapse-payment-address input[type=\'date\'], #collapse-payment-address input[type=\'datetime-local\'], #collapse-payment-address input[type=\'time\'], #collapse-payment-address input[type=\'password\'], #collapse-payment-address input[type=\'hidden\'], #collapse-payment-address input[type=\'checkbox\']:checked, #collapse-payment-address input[type=\'radio\']:checked, #collapse-payment-address textarea, #collapse-payment-address select');
+
     $.ajax({
         url: 'index.php?route=checkout/register/save',
         type: 'post',
-        data: $('#collapse-payment-address input[type=\'text\'], #collapse-payment-address input[type=\'date\'], #collapse-payment-address input[type=\'datetime-local\'], #collapse-payment-address input[type=\'time\'], #collapse-payment-address input[type=\'password\'], #collapse-payment-address input[type=\'hidden\'], #collapse-payment-address input[type=\'checkbox\']:checked, #collapse-payment-address input[type=\'radio\']:checked, #collapse-payment-address textarea, #collapse-payment-address select'),
+        data: data,
         dataType: 'json',
         beforeSend: function() {
 			$('#button-register').button('loading');
@@ -499,6 +519,7 @@ $(document).delegate('#button-register', 'click', function() {
                         url: 'index.php?route=checkout/shipping_method',
                         dataType: 'html',
                         success: function(html) {
+                            location.reload();
 							// Add the shipping address
                             $.ajax({
                                 url: 'index.php?route=checkout/shipping_address',
@@ -522,6 +543,7 @@ $(document).delegate('#button-register', 'click', function() {
 							$('#collapse-shipping-method').parent().find('.panel-heading .panel-title').html('<?php echo $text_checkout_shipping_method; ?>');
 							$('#collapse-payment-method').parent().find('.panel-heading .panel-title').html('<?php echo $text_checkout_payment_method; ?>');
 							$('#collapse-checkout-confirm').parent().find('.panel-heading .panel-title').html('<?php echo $text_checkout_confirm; ?>');
+
                         },
                         error: function(xhr, ajaxOptions, thrownError) {
                             alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
@@ -532,6 +554,7 @@ $(document).delegate('#button-register', 'click', function() {
                         url: 'index.php?route=checkout/shipping_address',
                         dataType: 'html',
                         success: function(html) {
+                            location.reload();
                             $('#collapse-shipping-address .panel-body').html(html);
 
 							$('#collapse-shipping-address').parent().find('.panel-heading .panel-title').html('<a href="#collapse-shipping-address" data-toggle="collapse" data-parent="#accordion" class="accordion-toggle"><?php echo $text_checkout_shipping_address; ?> <i class="fa fa-caret-down"></i></a>');
@@ -591,10 +614,13 @@ $(document).delegate('#button-register', 'click', function() {
 
 // Payment Address
 $(document).delegate('#button-payment-address', 'click', function() {
+// var data = $('#collapse-payment-address input[type=\'text\'], #collapse-payment-address input[type=\'date\'], #collapse-payment-address input[type=\'datetime-local\'], #collapse-payment-address input[type=\'time\'], #collapse-payment-address input[type=\'password\'], #collapse-payment-address input[type=\'hidden\'], #collapse-payment-address input[type=\'checkbox\']:checked, #collapse-payment-address input[type=\'radio\']:checked, #collapse-payment-address textarea, #collapse-payment-address select');
+    data = $('form').serialize();
+    data += "&shipping_address="+$('input[name=payment_address]').val();
     $.ajax({
         url: 'index.php?route=checkout/payment_address/save',
         type: 'post',
-        data: $('#collapse-payment-address input[type=\'text\'], #collapse-payment-address input[type=\'date\'], #collapse-payment-address input[type=\'datetime-local\'], #collapse-payment-address input[type=\'time\'], #collapse-payment-address input[type=\'password\'], #collapse-payment-address input[type=\'checkbox\']:checked, #collapse-payment-address input[type=\'radio\']:checked, #collapse-payment-address input[type=\'hidden\'], #collapse-payment-address textarea, #collapse-payment-address select'),
+        data: data,
         dataType: 'json',
         beforeSend: function() {
         	$('#button-payment-address').button('loading');
@@ -626,6 +652,7 @@ $(document).delegate('#button-payment-address', 'click', function() {
 				$('.text-danger').parent().parent().addClass('has-error');
             } else {
                 <?php if ($shipping_required) { ?>
+
                 $.ajax({
                     url: 'index.php?route=checkout/shipping_address',
                     dataType: 'html',
@@ -639,6 +666,10 @@ $(document).delegate('#button-payment-address', 'click', function() {
 						$('#collapse-shipping-method').parent().find('.panel-heading .panel-title').html('<?php echo $text_checkout_shipping_method; ?>');
 						$('#collapse-payment-method').parent().find('.panel-heading .panel-title').html('<?php echo $text_checkout_payment_method; ?>');
 						$('#collapse-checkout-confirm').parent().find('.panel-heading .panel-title').html('<?php echo $text_checkout_confirm; ?>');
+
+                      
+                            shippingAddress(data)
+                        
                     },
                     error: function(xhr, ajaxOptions, thrownError) {
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
@@ -682,11 +713,14 @@ $(document).delegate('#button-payment-address', 'click', function() {
 });
 
 // Shipping Address
-$(document).delegate('#button-shipping-address', 'click', function() {
+//$(document).delegate('#button-shipping-address', 'click', function() {
+var shippingAddress = function(data){
+
     $.ajax({
         url: 'index.php?route=checkout/shipping_address/save',
         type: 'post',
-        data: $('#collapse-shipping-address input[type=\'text\'], #collapse-shipping-address input[type=\'date\'], #collapse-shipping-address input[type=\'datetime-local\'], #collapse-shipping-address input[type=\'time\'], #collapse-shipping-address input[type=\'password\'], #collapse-shipping-address input[type=\'checkbox\']:checked, #collapse-shipping-address input[type=\'radio\']:checked, #collapse-shipping-address textarea, #collapse-shipping-address select'),
+        data: data,
+        // data: $('#collapse-shipping-address input[type=\'text\'], #collapse-shipping-address input[type=\'date\'], #collapse-shipping-address input[type=\'datetime-local\'], #collapse-shipping-address input[type=\'time\'], #collapse-shipping-address input[type=\'password\'], #collapse-shipping-address input[type=\'checkbox\']:checked, #collapse-shipping-address input[type=\'radio\']:checked, #collapse-shipping-address textarea, #collapse-shipping-address select'),
         dataType: 'json',
         beforeSend: function() {
 			$('#button-shipping-address').button('loading');
@@ -742,6 +776,7 @@ $(document).delegate('#button-shipping-address', 'click', function() {
                                 alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
                             }
                         });
+                        shippingMethod();
                     },
                     error: function(xhr, ajaxOptions, thrownError) {
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
@@ -764,7 +799,7 @@ $(document).delegate('#button-shipping-address', 'click', function() {
             alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
         }
     });
-});
+}//);
 
 // Guest
 $(document).delegate('#button-guest', 'click', function() {
@@ -953,12 +988,13 @@ $(document).delegate('#button-guest-shipping', 'click', function() {
         }
     });
 });
-
-$(document).delegate('#button-shipping-method', 'click', function() {
+var shippingMethod = function(){
+//$(document).delegate('#button-shipping-method', 'click', function() {
     $.ajax({
         url: 'index.php?route=checkout/shipping_method/save',
         type: 'post',
-        data: $('#collapse-shipping-method input[type=\'radio\']:checked, #collapse-shipping-method textarea'),
+        //data: $('#collapse-shipping-method input[type=\'radio\']:checked, #collapse-shipping-method textarea'),
+        data:'shipping_method=free.free&comment',
         dataType: 'json',
         beforeSend: function() {
         	$('#button-shipping-method').button('loading');
@@ -1000,7 +1036,7 @@ $(document).delegate('#button-shipping-method', 'click', function() {
             alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
         }
     });
-});
+}//);
 
 $(document).delegate('#button-payment-method', 'click', function() {
     $.ajax({

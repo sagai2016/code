@@ -93,9 +93,10 @@ class ControllerExtensionPaymentWxPay extends Controller {
 		//①、获取用户openid
 		$tools = new JsApiPay();
 		//$openId = $tools->GetOpenid();
-		$openId = $this->session->data['weixin_openid'];
+		$openId = $_SESSION['weixin_openid']; //$this->session->data['weixin_openid'];
 		//echo "4<br>";
 		//echo $openId;
+
 		
 		//②、统一下单
 		$input = new WxPayUnifiedOrder();

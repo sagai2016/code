@@ -8,7 +8,7 @@ print $_SERVER["SERVER_ADDR"].'<br/>';
 echo '<hr>';*/
 $serverPort = '';
 $isIpFun = '';
-$isFile = 'PhpProject1/opencart/';
+$isFile = '';
 
 $host = filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_URL);
 $serverName = filter_input(INPUT_SERVER, 'SERVER_NAME', FILTER_SANITIZE_URL);
@@ -48,9 +48,9 @@ define('DIR_UPLOAD', $dir__. '/system/storage/upload/');
 
 // DB
 define('DB_DRIVER', 'mysqli');
-define('DB_HOSTNAME', '192.168.1.13');
+define('DB_HOSTNAME', '112.124.13.197');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '123');
+define('DB_PASSWORD', 'dlhchh$#!35866');
 define('DB_DATABASE', 'mycnopencart');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'mcc_');
