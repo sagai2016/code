@@ -6,6 +6,7 @@
         <title>八窖酒库</title>
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
         <meta name="format-detection" content="telephone=no" />
+        <link href="../catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen" />
         <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
         <style type="text/css">
             ul, li, h1, h2, h3, h4, h5, h6, dt, dd, dl, ol, dl, dt, dd, p {
@@ -45,9 +46,10 @@
                 line-height: 26px;
                 z-index: 999;
             }
-            .top img {
+           .top a i {
                 display: inline-block;
                 height: 100%;
+                color: #9b9b9b;
             }
             
             
@@ -193,8 +195,8 @@
     <body>
        
         <div class="main">
-                        <div class="top">
-                <a><img src="image/catalog/demo/manufacturer/22.png" alt="" /></a>
+            <div class="top">
+                <a href="index.php?"><i class="fa fa-chevron-left"></i></a>
             </div>
             <p class="bootm"> </p>
             <div class="goodsCart">
@@ -219,7 +221,7 @@
                 <li class="home"><a href="index.php?" class="icon-goodshome"></a></li>
                 <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>
                 <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
-                <li> <a href="index.php?route=account/login">个人中心</a> </li>
+                <li> <a href="index.php?route=account/login">用户中心</a> </li>
             </ul>
         </div>
         <script type="text/javascript">

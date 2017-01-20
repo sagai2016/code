@@ -279,7 +279,7 @@
             <li class="home"><a href="index.php?" class="icon-goodshome"></a></li>
             <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>
             <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
-            <li> <a href="index.php?route=account/login">个人中心</a> </li>
+            <li> <a href="index.php?route=account/login">用户中心</a> </li>
 
         </ul>
     </div>

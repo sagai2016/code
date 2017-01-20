@@ -1,20 +1,84 @@
-<?php echo $header; ?>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>八窖酒库</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<script src="view/javascript/o-script.js"type="text/javascript"></script>
+<script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+<link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
+<script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+<link href="view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="view/stylesheet/stylesheet.css" rel="stylesheet">
+<link href="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
+<script src="view/javascript/common.js" type="text/javascript"></script>
+<script src="view/javascript/jquery/datetimepicker/moment.js" type="text/javascript"></script>
+<script src="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+</head>
+<style>
+    .alert{
+        display: none;
+    }
+    .container .row #content form{
+        border: #ccc solid 1px;
+        padding: 15px;
+        margin-top:65px;
+        
+    }
+    .hh{
+        width: 100%;
+        font-size: 26px;
+        text-align: center;
+        margin-bottom: 80px;
+        background-color: #ffffff;
+        height: 60px;
+        line-height: 60px;
+        position: fixed;
+        z-index: 2;
+        margin-top: 0px;
+        max-width: 750px;
+        margin-left: -15px;
+    }
+    .sub,.back a{
+        width: 100%;
+        color: #ffffff;
+        background-color: #0080FF;
+        margin-top: 20px;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+        display: inline-block;
+        padding: 8px 12px;
+        font-size: 16px;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+    .continue,.back{
+        width: 48%;
+        color: #ffffff;
+        margin-top: 20px;
+        display: inline-block;
+        padding: 8px 12px;
+        font-size: 16px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    #kuan{
+        clear: both;
+    }
+     #kuan div:first-child{
+         float: left;
+     }
+     #kuan div:first-child{
+         float: right;
+     }
+</style>
+<body>
 <div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?>
-  </ul>
-  <div class="row"><?php echo $column_left; ?>
-    <?php if ($column_left && $column_right) { ?>
-    <?php $class = 'col-sm-6'; ?>
-    <?php } elseif ($column_left || $column_right) { ?>
-    <?php $class = 'col-sm-9'; ?>
-    <?php } else { ?>
-    <?php $class = 'col-sm-12'; ?>
-    <?php } ?>
-    <div id="content" <?php echo 'class="'.$class.'"'; ?>> <?php echo $content_top; ?>
-      <h2><?php echo $text_edit_address; ?></h2>
+     <p class="hh"><?php echo $text_edit_address; ?></p>
+  <div class="row">
+    <div id="content"> <?php echo $content_top; ?>
+       
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
           <div class="form-group required">
@@ -33,12 +97,6 @@
               <?php if ($error_shipping_telephone) { ?>
               <div class="text-danger"><?php echo $error_shipping_telephone; ?></div>
               <?php } ?>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-company"><?php echo $entry_company; ?></label>
-            <div class="col-sm-10">
-              <input type="text" name="company" value="<?php echo $company; ?>" placeholder="<?php echo $entry_company; ?>" id="input-company" class="form-control" />
             </div>
           </div>
           <div class="form-group required">
@@ -104,15 +162,6 @@
               <input type="text" name="address" value="<?php echo $address; ?>" placeholder="<?php echo $entry_address; ?>" id="input-address" class="form-control" />
               <?php if ($error_address) { ?>
               <div class="text-danger"><?php echo $error_address; ?></div>
-              <?php } ?>
-            </div>
-          </div>
-          <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
-            <div class="col-sm-10">
-              <input type="text" name="postcode" value="<?php echo $postcode; ?>" placeholder="<?php echo $entry_postcode; ?>" id="input-postcode" class="form-control" />
-              <?php if ($error_postcode) { ?>
-              <div class="text-danger"><?php echo $error_postcode; ?></div>
               <?php } ?>
             </div>
           </div>
@@ -291,16 +340,17 @@
             </div>
           </div>
         </fieldset>
-        <div class="buttons clearfix">
-          <div class="pull-left"><a href="<?php echo $back; ?>" class="btn btn-default"><?php echo $button_back; ?></a></div>
-          <div class="pull-right">
-            <input type="submit" value="<?php echo $button_continue; ?>" class="btn btn-primary" />
+          <div class="buttons clearfix" id="kuan">
+              <div class="back"><a href="<?php echo $back; ?>" class="back"><?php echo $button_back; ?></a></div>
+              <div class="continue">
+                  <input type="submit" value="<?php echo $button_continue; ?>" class="sub" />
+              </div>
           </div>
-        </div>
       </form>
-      <?php echo $content_bottom; ?></div>
-    <?php echo $column_right; ?></div>
+    </div>
+  </div>
 </div>
+
 <script type="text/javascript"><!--
 // Sort the custom fields
 $('.form-group[data-sort]').detach().each(function() {
@@ -338,7 +388,6 @@ $('button[id^=\'button-custom-field\']').on('click', function() {
 	timer = setInterval(function() {
 		if ($('#form-upload input[name=\'file\']').val() != '') {
 			clearInterval(timer);
-
 			$.ajax({
 				url: 'index.php?route=tool/upload',
 				type: 'post',
@@ -355,7 +404,6 @@ $('button[id^=\'button-custom-field\']').on('click', function() {
 				},
 				success: function(json) {
 					$(node).parent().find('.text-danger').remove();
-
 					if (json['error']) {
 						$(node).parent().find('input').after('<div class="text-danger">' + json['error'] + '</div>');
 					}
@@ -521,6 +569,5 @@ $('select[name=\'city_id\']').on('change', function() {
 
 $('select[name=\'country_id\']').trigger('change');
 //--></script>
-
-
-<?php echo $footer; ?>
+</body>
+</html>

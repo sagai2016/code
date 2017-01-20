@@ -145,7 +145,7 @@ class ControllerAccountAddress extends Controller {
 			}
 
 			$this->session->data['success'] = $this->language->get('text_delete');
-
+                        
 			// Add to activity log
 			if ($this->config->get('config_customer_activity')) {
 				$this->load->model('account/activity');
@@ -160,7 +160,6 @@ class ControllerAccountAddress extends Controller {
 
 			$this->response->redirect($this->url->link('account/address', '', true));
 		}
-
 		$this->getList();
 	}
 
@@ -207,7 +206,6 @@ class ControllerAccountAddress extends Controller {
 		$data['addresses'] = array();
 
 		$results = $this->model_account_address->getAddresses();
-
 		foreach ($results as $result) {
 			if ($result['address_format']) {
 				$format = $result['address_format'];
@@ -229,19 +227,19 @@ class ControllerAccountAddress extends Controller {
 
 			$replace = array(
 				'fullname' => $result['fullname'],
-				'company'   => $result['company'],
-				'country'   => $result['country'],
-				'zone'      => $result['zone'],
-				'city'      => $result['city'],
-				'district'      => $result['district'],
-				'address' => $result['address'],
-				'postcode' => $result['postcode'],
-				'shipping_telephone' => $result['shipping_telephone'],
+				//'company'   => $result['company'],
+				//'country'   => $result['country'],
+				'zone'      => $result['zone'].$result['city'].$result['district'].$result['address'],
+				//'city'      => $result['city'],
+				//'district'    => $result['district'],
+				//'address' =>$result['address'].'<br/>',
+				//'postcode' => $result['postcode'],
+				'shipping_telephone' =>$result['shipping_telephone'],
 			);
-
 			$data['addresses'][] = array(
 				'address_id' => $result['address_id'],
-				'address'    => str_replace(array("\r\n", "\r", "\n"), '<br />', preg_replace(array("/\s\s+/", "/\r\r+/", "/\n\n+/"), '<br />', trim(str_replace($find, $replace, $format)))),
+                                'address' =>$replace,
+				//'address'    => str_replace(array("\r\n", "\r", "\n"), '<br />', preg_replace(array("/\s\s+/", "/\r\r+/", "/\n\n+/"), '<br />', trim(str_replace($find, $replace, $format)))),
 				'update'     => $this->url->link('account/address/edit', 'address_id=' . $result['address_id'], true),
 				'delete'     => $this->url->link('account/address/delete', 'address_id=' . $result['address_id'], true)
 			);
@@ -256,7 +254,6 @@ class ControllerAccountAddress extends Controller {
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
-
 		$this->response->setOutput($this->load->view('account/address_list', $data));
 	}
 

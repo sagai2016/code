@@ -4,7 +4,6 @@ class ControllerCommonHome extends Controller {
 
     public function index() {
 
-
         $this->load->model('home/index');
         //menu
         $this->load->model('catalog/category');

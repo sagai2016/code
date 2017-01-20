@@ -3,7 +3,7 @@
 class ModelCatalogCategoryy extends Model {
 
     public function getAll($start, $limit) {
-        $table = 'p.product_id,p.image,pd.name';
+        $table = 'p.product_id,p.image,pd.name,p.price';
         $query = $this->categoryySql($table, [$start, $limit]);
         return $query->rows;
         

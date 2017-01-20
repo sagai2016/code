@@ -16,7 +16,8 @@
         <script src="view/javascript/common.js" type="text/javascript"></script>
         <script src="view/javascript/o-script.js"></script>
         <link href="view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-        <script src="view/javascript/jquery/jquery.flexslider.js"></script> <style type="text/css">
+        <script src="view/javascript/jquery/jquery.flexslider.js"></script> 
+        <style type="text/css">
             ul, li, h1, h2, h3, h4, h5, h6, dt, dd, dl, ol, dl, dt, dd, p {
                 margin: 0;
                 padding: 0;
@@ -348,7 +349,7 @@
             <div class="goodsCart">
                 <ul class="goodsHomeTitle">
                     <li class="icon-goodsshop"></li>
-                    <li class="title">八窑酒库</li>
+                    <li class="title">八窖酒库</li>
                     <li class="icon-goodslefttag"></li>
                 </ul>
                 <?php foreach ($products as $product) { ?>
@@ -376,7 +377,7 @@
                 <li class="home"><a href="index.php?" class="icon-goodshome"></a></li>
                 <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>
                 <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
-                <li> <a href="index.php?route=account/login">个人中心</a> </li>
+                <li> <a href="index.php?route=account/login">用户中心</a> </li>
 
             </ul>
         </div>

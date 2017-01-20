@@ -4,7 +4,6 @@ class ControllerHomeIndex extends Controller {
 
     public function index() {
 
-
         $this->load->model('home/index');
 
         $dt = $this->model_home_index;

@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>八窑酒库</title>
+        <title>八窖酒库</title>
         <script src="view/javascript/jquery/jquery.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
@@ -285,7 +285,7 @@
                 <li class="home"><a href="index.php?" class="icon-goodshome"></a></li>
                 <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>
                 <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
-                <li> <a href="index.php?route=account/login">个人中心</a> </li>
+                <li> <a href="index.php?route=account/login">用户中心</a> </li>
             </ul>
         </div>
         <script type="text/javascript" src="view/javascript/jquery/jquery.min.js"></script>

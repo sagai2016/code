@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>八窖酒库</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link href="../catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen" />
         <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
         <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
         <style type="text/css">
@@ -45,9 +46,10 @@
                 line-height: 26px;
                 z-index: 999;
             }
-            .top img {
+            .top a i {
                 display: inline-block;
                 height: 100%;
+                color: #9b9b9b;
             }
             .main .goodslist {
                 width: 100%;
@@ -65,29 +67,28 @@
 
             }
             .main .goodslist .list li p {
-                border: 1px solid #e5e5e5;
                 font-size: 14px;
-                /* padding: 3%;*/
-                background: #fff;
-                display: inline-block;
-                box-shadow:0 0 5px rgba(150,150,150,.1);
                 border-radius: 3px;
                 width: 100%;
+                overflow: hidden;
             }
             .main .goodslist .list li p a img {
                 width: 100%;
                 border-radius: 2px;
+            }/*
+            .main .goodslist .list li .price{
+                color: #e17513;
+                padding-bottom: 10px;
+                font-size: 16px;
             }
-            .main .goodslist .list li span {
-                display: inline-block;
-                padding: 2%;
-                width: 100%;
-                line-height: 38px;
-                height: 35px;
-                text-align: center;
-                overflow: hidden;
+            .main .goodslist .list li div{
+                border:solid 1px #ddd;
+                border-radius: 3px;
             }
-
+            .main .goodslist .list li div .price,.main .goodslist .list li div .name{
+                padding: 6px;
+                font-size: 14px;
+            }*/
             .main .goodslist .page{
                 width: 100%;
                 text-align:center;
@@ -153,7 +154,7 @@
                 text-decoration: none;
                 text-shadow: 1px 1px 1px #ddd;
             }
-              .foot ul .home .icon-goodshome{
+            .foot ul .home .icon-goodshome{
                 vertical-align: middle;
                 font-size: 18px;
                 text-shadow: 1px 1px 1px #ddd;
@@ -221,22 +222,22 @@
 
         <div class="main">
             <div class="top">
-                <a><img src="image/catalog/demo/manufacturer/22.png" alt="" /></a>
+                <a href="index.php?"><i class="fa fa-chevron-left"></i></a>
             </div>
             <p class="bootm"> </p>
             <div class="goodslist">      
                 <ul class="list">           
-
                     <?php
                     if(!empty($all)):
                     foreach($all as $allp):?>           
                     <li>
-                        <p> 
+                        <p>
                             <a href="index.php?route=common/product&product_id=<?php echo $allp['product_id'] ;?>"><img src="../image/<?php echo $allp['image'];?>"/></a>                    
-                            <!-- <span>
-                                 <?php echo $allp['name']; ?>-->
-                            </span> 
                         </p>
+                        <!--<div>
+                            <p class='name'><?php echo $allp['name']; ?></p> 
+                            <p class='price'>￥:<?php echo $allp['price']; ?></p>
+                        </div>-->
                     </li>                
                     <?php
                     endforeach;
@@ -257,7 +258,7 @@
                 <li class="home"><a href="index.php?" class="icon-goodshome"></a></li>
                 <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>
                 <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
-                <li> <a href="index.php?route=account/login">个人中心</a> </li>
+                <li> <a href="index.php?route=account/login">用户中心</a> </li>
             </ul>
         </div>
 
@@ -298,7 +299,7 @@
                                 } else {
                                     var stop = $('.goodslist').find('.message').data('stop');
                                     if (!stop) {
-                                        $(".goodslist").append('<div data-stop="true" class="message">没有更多的数据了</div>');
+                                        $(".goodslist").append('<div data-stop="true" class="message">没有更多商品了</div>');
                                     }
                                 }
                             }
