@@ -7,12 +7,14 @@
  */
 
 class ControllerCommonWeixinjssdk extends Controller {
+
     public function index() {
-        if (strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') === TRUE) {
+        if (strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') === TRUE && empty($_SESSION['signPackage'])) {
             require_once(DIR_SYSTEM . 'library/weixinjssdk/jssdk.php');
             $jssdk = new JSSDK(WXPAY_APPID, WXPAY_APPSECRET);
             $signPackage = $jssdk->GetSignPackage();
-            define("WXPJS", $signPackage);
+            $_SESSION['signPackage'] = $signPackage;
         }
     }
+
 }
