@@ -20,7 +20,7 @@
 <html> 
 <head> 
 <meta http-equiv="content-type" content="text/html; charset=utf-8"/> 
-<title>八窖酒库｜</title> 
+<title>八窖酒库</title> 
 </head> 
 <body onload="index()"> 
 <script type="text/javascript"> 

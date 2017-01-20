@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>八窖酒库</title>
+        <title>八窖酒库｜账单地址</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
         <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />

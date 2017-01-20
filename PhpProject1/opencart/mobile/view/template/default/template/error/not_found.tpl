@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>八窖酒库</title>
+        <title>八窖酒库｜购物车</title>
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
         <meta name="format-detection" content="telephone=no" />
         <link href="../catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen" />

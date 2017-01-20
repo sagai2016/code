@@ -209,7 +209,7 @@ class ControllerCommonProduct extends Controller {
 			if (isset($this->request->get['limit'])) {
 				$url .= '&limit=' . $this->request->get['limit'];
 			}
-
+                        $data['meta_title']=$product_info['meta_title'];
 			$data['breadcrumbs'][] = array(
 				'text' => $product_info['name'],
 				'href' => $this->url->link('product/product', $url . '&product_id=' . $this->request->get['product_id'])
@@ -471,7 +471,6 @@ class ControllerCommonProduct extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
-                            
 			$this->response->setOutput($this->load->view('product/product', $data));
 		} else {
 			$url = '';
@@ -547,7 +546,7 @@ class ControllerCommonProduct extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
-
+                        
 			$this->response->setOutput($this->load->view('error/not_found', $data));
 		}
 	}
