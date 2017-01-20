@@ -5,6 +5,7 @@
         <title>八窖酒库</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css"/>
+        <link href="../catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen" />
         <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
     </head>
     <style>
@@ -36,13 +37,27 @@
             height: 38px;
             padding: 6px;
             width: 100%;
-            line-height: 26px;
+            max-width: 750px;
+            line-height: 27px;
+            position: fixed;
             z-index: 999;
         }
-
-        .top img {
+        .top a i {
             display: inline-block;
             height: 100%;
+            color: #9b9b9b;
+        }
+        .top span {
+            display: inline-block;
+            float: right;
+            color: #9c9ba0;
+            font-size: 13px;
+
+        }
+        .top span a{
+            display: inline-block;
+            line-height: 14px;
+            color: #9c9ba0;
         }
 
         .wine {
@@ -99,7 +114,7 @@
             line-height: 16px;
             overflow: hidden;
             height: 34px;
-        
+
         }
         .wine ul li div p a {
             display: inline-block;
@@ -176,7 +191,7 @@
     <body>
         <div class="container">
             <div class="top">
-                <img src="image/catalog/demo/manufacturer/22.png" alt=""/>
+                <a href="index.php?"><i class="fa fa-chevron-left"></i></a>
             </div>
             <div class="wine">
                 <ul>

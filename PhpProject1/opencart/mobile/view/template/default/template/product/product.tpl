@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
+<link href="../catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen" />
 <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 <link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
 <script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
@@ -63,9 +64,10 @@ body, html {
         position: fixed;
         z-index: 999;
 }
-.top img {
+.top a i {
 	display: inline-block;
 	height: 100%;
+        color: #9b9b9b;
 }
 .top span {
 	display: inline-block;
@@ -326,7 +328,7 @@ a{
  <div class="breadcrumb" id="content"></div>
 <div class="main">
     <div class="top">
-        <a href="./"><img src="image/catalog/demo/manufacturer/22.png" alt="" /></a>
+        <a href="index.php?"><i class="fa fa-chevron-left"></i></a>
         <span class=""> 
             <a class="gzc" href="index.php?route=account/wishlist">我的收藏</a>
             <a type="button" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product_id; ?>');">收藏美酒</a>
