@@ -9,9 +9,7 @@
 class ControllerCommonWeixin extends Controller {
 
     public function index() {
-	if ( strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') === TRUE ) {
-    	//unset($_SESSION['weixin_openid']);
-
+	if ( is_numeric( strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger'))) {
 		require_once(DIR_SYSTEM.'library/wxpay/wxpayexception.php');
 		
 		define('WXPAY_APPID', trim($this->config->get('wxpay_appid')));
