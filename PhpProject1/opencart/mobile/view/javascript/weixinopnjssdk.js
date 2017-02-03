@@ -110,7 +110,6 @@ weixinopnjssdk.onMenuShareAppMessage = function () {
     var _desc = this.desc;
     var _link = this.link;
     var _imgUrl = this.imgUrl;
-
     wx.onMenuShareAppMessage({
         title: _title,
         desc: _desc,
@@ -126,7 +125,7 @@ weixinopnjssdk.onMenuShareTimeline = function () {
     var _title = this.title;
     var _link = this.link;
     var _imgUrl = this.imgUrl;
-    wx.onMenuShareAppMessage({
+    wx.onMenuShareTimeline({
         title: _title,
         link: _link,
         imgUrl: _imgUrl

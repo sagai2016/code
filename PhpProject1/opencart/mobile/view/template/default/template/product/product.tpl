@@ -405,32 +405,36 @@ a{
 </body>
 
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-<script src="javascript/weixinopnjssdk.js"></script>
+<script src="view/javascript/weixinopnjssdk.js"></script>
 <script type="text/javascript">
-        weixinopnjssdk.appId=<?php echo $_SESSION['signPackage']['appId']?>;
-        weixinopnjssdk.timestamp=<?php echo $_SESSION['signPackage']['timestamp']?>;
-        weixinopnjssdk.nonceStr=<?php echo $_SESSION['signPackage']['nonceStr']?>;
-        weixinopnjssdk.signature=<?php echo $_SESSION['signPackage']['signature']?>;
+$(function(){
+        weixinopnjssdk.appId='<?php echo $_SESSION['signPackage']['appId']?>';
+        weixinopnjssdk.timestamp='<?php echo $_SESSION['signPackage']['timestamp']?>';
+        weixinopnjssdk.nonceStr='<?php echo $_SESSION['signPackage']['nonceStr']?>';
+        weixinopnjssdk.signature='<?php echo $_SESSION['signPackage']['signature']?>';
 
         weixinopnjssdk.title=$('title').text();
-        weixinopnjssdk.desc=$('title').text();
-        weixinopnjssdk.link=<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/'.$_SERVER['REQUEST_URI'] ?>;
-        weixinopnjssdk.imgUrl=<?php echo $thumb; ?>;
-        weixinopnjssdk.QRCode=<?php echo json_encode(['http://'.$_SERVER['SERVER_NAME'].'/'.$_SERVER['REQUEST_URI'] .'image/catalog/QRcode.jpg']); ?>;
+
+        weixinopnjssdk.desc=$('.title').text();
+        weixinopnjssdk.link="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>";
+        weixinopnjssdk.imgUrl="<?php echo 'http://'.$_SERVER['HTTP_HOST'].mb_substr($thumb,2); ?>";
+        
+        weixinopnjssdk.QRCode=<?php echo json_encode(['http://'.$_SERVER['HTTP_HOST'].'/'.'image/catalog/QRcode.jpg']); ?>;
+        
+
         weixinopnjssdk.ready(function(){
 
             /*获取“分享给朋友”按钮点击状态及自定义分享内容接口*/
             weixinopnjssdk.onMenuShareAppMessage();
             /*获取“分享到朋友圈”按钮点击状态及自定义分享内容接口*/
-            weixinopnjssdk.onMenuShareTimeline();
+            
             /*图片QRcode*/
-            $("#QRcode").on('click', function () {
+            $(".gzc").on('click', function () {
                 weixinopnjssdk.previewImage();
             });
         });
+});
 </script>
-
-
 
 
 <script type="text/javascript"><!--
