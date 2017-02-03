@@ -39,7 +39,9 @@ body, html {
 * {
 	box-sizing: border-box;
 }
-
+img{
+	border-radius: 0;
+}
 .main {
 	max-width: 750px;
 	width: 100%;
@@ -103,7 +105,7 @@ body, html {
 }
 .content .goodsImages img {
 	width: 100%;
-	padding: 10px;
+	/*padding: 10px;*/
 }
 .content .goodsIntroduce {
 	border: 1px solid #e6e6e6;
@@ -403,7 +405,7 @@ a{
     <script src="view/javascript/jquery/jquery.flexslider.js"></script> 
     <script src="view/javascript/o-script.js"></script>
 </body>
-
+<?php if(!empty($_SESSION['signPackage'])):?>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script src="view/javascript/weixinopnjssdk.js"></script>
 <script type="text/javascript">
@@ -414,6 +416,7 @@ $(function(){
         weixinopnjssdk.signature='<?php echo $_SESSION['signPackage']['signature']?>';
 
         weixinopnjssdk.title=$('title').text();
+
         weixinopnjssdk.desc=$('.title').text();
         weixinopnjssdk.link="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>";
         weixinopnjssdk.imgUrl="<?php echo 'http://'.$_SERVER['HTTP_HOST'].mb_substr($thumb,2); ?>";
@@ -434,7 +437,7 @@ $(function(){
         });
 });
 </script>
-
+<?php endif;?>
 
 <script type="text/javascript"><!--
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){

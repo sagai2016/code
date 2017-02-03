@@ -21,8 +21,8 @@ class ModelCatalogCategoryy extends Model {
                 DB_PREFIX . 'product p LEFT JOIN ' .
                 DB_PREFIX . 'product_description pd on (p.product_id=pd.product_id)' .
                 ' where language_id=' . $this->config->get('config_language_id') .
-                ' order by p.product_id  limit ' . join(',', $limit);
-
+                ' order by  p.sort_order desc ,p.product_id desc  limit ' . join(',', $limit);
+           
         $query = $this->db->query($sql);
         return $query;
     }

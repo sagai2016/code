@@ -302,13 +302,44 @@
                 </ul>
             </div>'
         </div>
+        
+        <?php if(!empty($_SESSION['signPackage'])):?>
+        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+        <script src="view/javascript/weixinopnjssdk.js"></script>
+        <script type="text/javascript">
+        $(function(){
+                weixinopnjssdk.appId='<?php echo $_SESSION['signPackage']['appId']?>';
+                weixinopnjssdk.timestamp='<?php echo $_SESSION['signPackage']['timestamp']?>';
+                weixinopnjssdk.nonceStr='<?php echo $_SESSION['signPackage']['nonceStr']?>';
+                weixinopnjssdk.signature='<?php echo $_SESSION['signPackage']['signature']?>';
 
+                weixinopnjssdk.title='八窖酒库';
+                weixinopnjssdk.desc='八窖酒库';
+                weixinopnjssdk.link="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/mobile' ?>";
+                weixinopnjssdk.imgUrl="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/image/catalog/demo/manufacturer/newlogo.png'; ?>";
+
+
+                weixinopnjssdk.ready(function(){
+                    /*获取“分享给朋友”按钮点击状态及自定义分享内容接口*/
+                    weixinopnjssdk.onMenuShareAppMessage();
+                    /*获取“分享到朋友圈”按钮点击状态及自定义分享内容接口*/
+                    weixinopnjssdk.onMenuShareTimeline();
+                   
+                });
+        });
+        </script>
+
+        <?php endif;?>
         <script>
             $('.wine').on('click', 'a', function () {
                 var id = $(this).data('id');
                 location.href = 'index.php?route=common/more&num=' + id;
             });
         </script>
+
+        
+
+
         <!--
            function move(a) {
                if (a==1){

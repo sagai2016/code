@@ -220,54 +220,32 @@
         </script>
 
 
-        <?php /*
-        <script>
-        function more() {
-        urlinfo = window.location.href; //获取当前页面的url 
-        len = urlinfo.length;//获取url的长度 
-        offset = urlinfo.indexOf("&");//设置参数字符串开始的位置 
-        numinfo = urlinfo.substr(offset, len)//取出参数字符串 这里会获得类似“id=1”这样的字符串 
-        alert(numinfo);
-        nums = numinfo.split("=");//对获得的参数字符串按照“=”进行分割 
-        num = nums[1];//得到参数值 
-        alert("您要传递的参数值是" + num);
-        if (num) {
-        if (num == 1) {
-        var html = '';
-        var html = "<div class='message'>asdfdf1</div>";
-        $(".content").append(html);
-        } else if (num == 2) {
-        var html = '';
-        var html = "<div class='message'>asdfdf2</div>";
-        $(".content").append(html);
-        } else if (num == 3) {
-        var html = '';
-        var html = "<div class='message'>asdfdf3</div>";
-        $(".content").append(html);
-        } else if (num == 4) {
-        var html = '';
-        var html = "<div class='message'>asdfdf4</div>";
-        $(".content").append(html);
-        } else if (num == 5) {
-        var html = '';
-        var html = "<div class='message'>asdfdf5</div>";
-        $(".content").append(html);
-        } else if (num == 6) {
-        var html = '';
-        var html = "<div class='message'>asdfdf6</div>";
-        $(".content").append(html);
-        } else if (num == 7) {
-        var html = '';
-        var html = "<div class='message'>asdfdf7</div>";
-        $(".content").append(html);
-        } else if (num == 8) {
-        var html = '';
-        var html = "<div class='message'>asdfdf8</div>";
-        $(".content").append(html);
-        }
-        }
-        }
+        <?php if(!empty($_SESSION['signPackage'])):?>
+        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+        <script src="view/javascript/weixinopnjssdk.js"></script>
+        <script type="text/javascript">
+        $(function(){
+                weixinopnjssdk.appId='<?php echo $_SESSION['signPackage']['appId']?>';
+                weixinopnjssdk.timestamp='<?php echo $_SESSION['signPackage']['timestamp']?>';
+                weixinopnjssdk.nonceStr='<?php echo $_SESSION['signPackage']['nonceStr']?>';
+                weixinopnjssdk.signature='<?php echo $_SESSION['signPackage']['signature']?>';
+
+                weixinopnjssdk.title='八窖酒库';
+                weixinopnjssdk.desc='八窖酒库';
+                weixinopnjssdk.link="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/mobile' ?>";
+                weixinopnjssdk.imgUrl="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/image/catalog/demo/manufacturer/newlogo.png'; ?>";
+
+
+                weixinopnjssdk.ready(function(){
+                    /*获取“分享给朋友”按钮点击状态及自定义分享内容接口*/
+                    weixinopnjssdk.onMenuShareAppMessage();
+                    /*获取“分享到朋友圈”按钮点击状态及自定义分享内容接口*/
+                    weixinopnjssdk.onMenuShareTimeline();
+                   
+                });
+        });
         </script>
-        */?>
+        <?php endif;?>
+
     </body>
 </html>

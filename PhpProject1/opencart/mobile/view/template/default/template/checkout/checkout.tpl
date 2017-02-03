@@ -366,6 +366,25 @@
         </ul>
     </div>
 </body>
+
+<?php if(!empty($_SESSION['signPackage'])):?>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="view/javascript/weixinopnjssdk.js"></script>
+<script type="text/javascript">
+$(function(){
+        weixinopnjssdk.appId='<?php echo $_SESSION['signPackage']['appId']?>';
+        weixinopnjssdk.timestamp='<?php echo $_SESSION['signPackage']['timestamp']?>';
+        weixinopnjssdk.nonceStr='<?php echo $_SESSION['signPackage']['nonceStr']?>';
+        weixinopnjssdk.signature='<?php echo $_SESSION['signPackage']['signature']?>';
+
+        weixinopnjssdk.ready(function(){
+            wx.hideOptionMenu();
+        });
+});
+</script>
+<?php endif;?>
+
+
 <script type="text/javascript"><!--
 $(document).on('change', 'input[name=\'account\']', function() {
 	if ($('#collapse-payment-address').parent().find('.panel-heading .panel-title > *').is('a')) {
