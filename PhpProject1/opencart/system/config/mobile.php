@@ -31,7 +31,7 @@ $_['action_pre_action'] = array(
     'startup/maintenance',
     'startup/seo_url',
     //'startup/weixin',
-    'common/weixin',
+   // 'common/weixin',
     'common/weixinjssdk',
 );
 

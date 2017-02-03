@@ -16,6 +16,8 @@ class ControllerCheckoutLogin extends Controller {
 		$data['text_loading'] = $this->language->get('text_loading');
 
 		$data['entry_email'] = $this->language->get('entry_email');
+                $data['entry_telephone'] = $this->language->get('entry_telephone');
+                
 		$data['entry_password'] = $this->language->get('entry_password');
 
 		$data['button_continue'] = $this->language->get('button_continue');

@@ -235,7 +235,18 @@
     a{
         text-decoration: none;
     }
-   
+    #button-login{
+        width:74px;
+    }
+    #button-account{
+        line-height:normal;
+    }
+    .btn-primary{
+    margin-top:0;
+        }
+        .form-group p{
+                padding-top: 20px;
+        }
    /*collapse-checkout-confirm .panel-body .table-responsive .table tbody tr .text-left{
         background-color:red;
         max-width: 41px;
