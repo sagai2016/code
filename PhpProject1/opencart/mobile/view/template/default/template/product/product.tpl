@@ -414,7 +414,6 @@ $(function(){
         weixinopnjssdk.signature='<?php echo $_SESSION['signPackage']['signature']?>';
 
         weixinopnjssdk.title=$('title').text();
-
         weixinopnjssdk.desc=$('.title').text();
         weixinopnjssdk.link="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>";
         weixinopnjssdk.imgUrl="<?php echo 'http://'.$_SERVER['HTTP_HOST'].mb_substr($thumb,2); ?>";
@@ -427,7 +426,7 @@ $(function(){
             /*获取“分享给朋友”按钮点击状态及自定义分享内容接口*/
             weixinopnjssdk.onMenuShareAppMessage();
             /*获取“分享到朋友圈”按钮点击状态及自定义分享内容接口*/
-            
+            weixinopnjssdk.onMenuShareTimeline();
             /*图片QRcode*/
             $(".gzc").on('click', function () {
                 weixinopnjssdk.previewImage();
