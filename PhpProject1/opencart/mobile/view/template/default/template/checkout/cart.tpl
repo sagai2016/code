@@ -385,7 +385,7 @@
                     var cartcount = parseInt($(p).find('#cartcount').val());
                     count += price*cartcount;
                 })
-               $(".check").text(num.toFixed(count));
+               $(".check").append(count.toFixed(2));
         </script>
 
         <script type="text/javascript">
