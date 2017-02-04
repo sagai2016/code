@@ -298,9 +298,8 @@ class ControllerProductProduct extends Controller {
 			}
 
 			$data['images'] = array();
-                        
+                        //空值，不影响图片大小
 			$results = $this->model_catalog_product->getProductImages($this->request->get['product_id']);
-                        
 			foreach ($results as $result) {
 				$data['images'][] = array(
 					'popup' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height')),
@@ -350,7 +349,6 @@ class ControllerProductProduct extends Controller {
 						} else {
 							$price = false;
 						}
-
 						$product_option_value_data[] = array(
 							'product_option_value_id' => $option_value['product_option_value_id'],
 							'option_value_id'         => $option_value['option_value_id'],
