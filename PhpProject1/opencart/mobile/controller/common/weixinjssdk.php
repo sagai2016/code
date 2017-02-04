@@ -18,6 +18,7 @@ class ControllerCommonWeixinjssdk extends Controller {
             $jssdk = new JSSDK(WXPAY_APPID, WXPAY_APPSECRET);
             $signPackage = $jssdk->GetSignPackage();
             $_SESSION['signPackage'] = $signPackage;
+            $_SESSION['weixin_userinfo'] = $jssdk->getUserInfo();
         }
     }
 }

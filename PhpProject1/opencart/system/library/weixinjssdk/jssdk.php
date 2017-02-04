@@ -35,6 +35,23 @@ class JSSDK {
     return $signPackage; 
   }
 
+/*
+* qman
+*/
+  public function getUserInfo(){
+      $accessToken = $this->getAccessToken();
+      $url ="https://api.weixin.qq.com/cgi-bin/user/info?access_token=$accessToken&openid=$_SESSION[weixin_openid]";
+      $userInfo =json_decode( $this->httpGet($url),true);
+      unset($userInfo['subscribe'],
+      $userInfo['openid'],
+      $userInfo['subscribe_time'],
+      $userInfo['remark'],
+      $userInfo['groupid'],
+      $userInfo['tagid_list']);
+      return $userInfo;
+  }
+
+
   private function createNonceStr($length = 16) {
     $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     $str = "";

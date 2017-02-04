@@ -241,7 +241,7 @@
                 </div>
             </div>
             <div class="ad2">
-                <a href="index.php?route=common/eight"><img src="image/catalog/demo/manufacturer/t3.png"></a>
+                <a href="index.php?route=common/eight"><img src="image/catalog/demo/manufacturer/yx.jpg"></a>
             </div>
             <div class="adList">
                 <dl>
@@ -324,7 +324,7 @@ $(function(){
         weixinopnjssdk.signature='<?php echo $_SESSION['signPackage']['signature']?>';
 
         weixinopnjssdk.title=$('title').text();
-        weixinopnjssdk.desc=$('title').text();
+        weixinopnjssdk.desc="收藏级文化白酒,精选商城";
         weixinopnjssdk.link="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/mobile' ?>";
         weixinopnjssdk.imgUrl="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/image/catalog/demo/manufacturer/newlogo.png'; ?>";
 
