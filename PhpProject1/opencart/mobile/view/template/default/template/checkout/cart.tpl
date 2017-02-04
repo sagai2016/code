@@ -347,7 +347,7 @@
                         </li>
                         <li class="content"> 
                             <p><?php echo $product['name']; ?></p>
-                            <p class="price"><?php echo $product['price']; ?></p>
+                            <p class="price" id="price"><?php echo $product['price']; ?></p>
                             <p class="button">
                                 <span class="jg"> 
                                     <i id="reduce">- </i>
@@ -363,15 +363,13 @@
             </div>
             <p class="bootm"></p>
         </div>
+        
         <div class="foot">
             <ul>
                 <a class="home  icon-goodshome" href="index.php?route=common/home"></a>
                 <li class="total">
-                    <span>合计：<?php if(count($totals)>4): ?> 
-                        <?php echo '￥'.( trim($totals[4]['text'],'￥') -  (trim($totals[1]['text'],'￥') + trim($totals[3]['text'],'￥') + trim($totals[2]['text'],'￥'))); ?>
-                        <?php else:?>
-                        <?php echo $totals[1]['text']; ?>
-                        <?php endif; ?>
+                    
+                    <span class="check">
                     </span>                 
                 </li>
                 <a class="settlement" href="index.php?route=checkout/checkout">
@@ -379,6 +377,17 @@
                 </a>
             </ul>
         </div>
+
+        <script type="text/javascript">
+                var count = 0;
+                $(".goodsCartContent").each(function(i,p){ 
+                    var price = parseFloat($(p).find('.price').text().substring(1));
+                    var cartcount = parseInt($(p).find('#cartcount').val());
+                    count += price*cartcount;
+                })
+               $(".check").text(num.toFixed(count));
+        </script>
+
         <script type="text/javascript">
 
             $('.goodsCartContent').on('click', '#add', function () {
@@ -400,21 +409,21 @@
                 }
             });
         </script>
-<?php if(!empty($_SESSION['signPackage'])):?>
-<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-<script src="view/javascript/weixinopnjssdk.js"></script>
-<script type="text/javascript">
-$(function(){
-        weixinopnjssdk.appId='<?php echo $_SESSION['signPackage']['appId']?>';
-        weixinopnjssdk.timestamp='<?php echo $_SESSION['signPackage']['timestamp']?>';
-        weixinopnjssdk.nonceStr='<?php echo $_SESSION['signPackage']['nonceStr']?>';
-        weixinopnjssdk.signature='<?php echo $_SESSION['signPackage']['signature']?>';
+        <?php if(!empty($_SESSION['signPackage'])):?>
+        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+        <script src="view/javascript/weixinopnjssdk.js"></script>
+        <script type="text/javascript">
+        $(function(){
+                weixinopnjssdk.appId='<?php echo $_SESSION['signPackage']['appId']?>';
+                weixinopnjssdk.timestamp='<?php echo $_SESSION['signPackage']['timestamp']?>';
+                weixinopnjssdk.nonceStr='<?php echo $_SESSION['signPackage']['nonceStr']?>';
+                weixinopnjssdk.signature='<?php echo $_SESSION['signPackage']['signature']?>';
 
-        weixinopnjssdk.ready(function(){
-            wx.hideOptionMenu();
+                weixinopnjssdk.ready(function(){
+                    wx.hideOptionMenu();
+                });
         });
-});
-</script>
-<?php endif;?>
+        </script>
+        <?php endif;?>
     </body>
 </html>
