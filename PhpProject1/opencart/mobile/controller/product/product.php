@@ -283,14 +283,17 @@ class ControllerProductProduct extends Controller {
 			if ($product_info['image']) {
                             //展示圖片大小可以根據自己需求改變
 				$data['popup'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height'));
-			} else {
+			
+                        } else {
 				$data['popup'] = '';
 			}
 
 			if ($product_info['image']) {
                             
-				$data['thumb'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_thumb_width'), $this->config->get($this->config->get('config_theme') . '_image_thumb_height'));
-			} else {
+				$data['thumb'] = $this->model_tool_image->resize($product_info['image'], 800,800);
+			
+
+                        } else {
 				$data['thumb'] = '';
 			}
 

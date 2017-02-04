@@ -89,7 +89,7 @@ class ControllerCheckoutCart extends Controller {
 				}
 
 				if ($product['image']) {
-					$image = $this->model_tool_image->resize($product['image'], 150,150);
+					$image = $this->model_tool_image->resize($product['image'], 800,800);
 				} else {
 					$image = '';
 				}
