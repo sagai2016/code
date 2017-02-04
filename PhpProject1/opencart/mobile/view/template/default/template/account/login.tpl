@@ -120,7 +120,7 @@
             <div class="login">
                 <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
                     <div class='image'>
-                        <img src="image/catalog/demo/manufacturer/1b33aabbca61e72c51a131587d6f33bc.jpg">
+                        <img src="<?php echo $_SESSION['weixin_userinfo']['headimgurl'];?>">
                     </div>
                     <div class='name'>
                         <input onfocus="change(this)" type="text" name="email" value="<?php echo $email; ?>" placeholder='请输入手机号或邮箱' id="input-email"  />

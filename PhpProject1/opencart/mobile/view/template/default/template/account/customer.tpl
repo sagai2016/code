@@ -249,11 +249,19 @@
             <div class="header">
                 <ul>
                     <li class="face">
-                        <img src="image/catalog/demo/manufacturer/1b33aabbca61e72c51a131587d6f33bc.jpg">
+                        <img src="<?php echo $_SESSION['weixin_userinfo']['headimgurl'];?>">
                     </li>
                     <li class="userinfo">
-                        <p class="username"><span class="fa fa-user"></span></p>
-                        <p class="usernkey"><span class="fa fa-id-card-o"></span></p>
+                        <p class="username"><span class="fa fa-user"><?php echo $_SESSION['weixin_userinfo']['nickname'];?></span></p>
+                        <p class="usernkey">
+                            <span class="fa fa-id-card-o">
+                                <?php if($userInfo['telephone']) { ?>
+                                    echo $userInfo['telephone'])
+                                <?php } else { ?>
+                                    echo $userInfo['email'])
+                                <?php } ?>
+                            </span>
+                        </p>
                     </li>
                 </ul>
             </div>

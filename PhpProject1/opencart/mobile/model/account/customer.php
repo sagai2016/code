@@ -133,6 +133,12 @@ class ModelAccountCustomer extends Model {
 		return $customer_id;
 	}
 
+        public function userInfo() {
+                $query=$this->db->query('select * from '.DB_PREFIX.'customer');
+                return $query->rows;
+        }
+        
+        
 	public function editCustomer($data) {
 		$customer_id = $this->customer->getId();
 
