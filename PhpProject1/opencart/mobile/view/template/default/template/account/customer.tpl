@@ -255,11 +255,11 @@
                         <p class="username"><span class="fa fa-user"><?php echo $_SESSION['weixin_userinfo']['nickname'];?></span></p>
                         <p class="usernkey">
                             <span class="fa fa-id-card-o">
-                                <?php if($userInfo['telephone']) { ?>
-                                    echo $userInfo['telephone'])
-                                <?php } else { ?>
-                                    echo $userInfo['email'])
-                                <?php } ?>
+                                <?php if(!empyt($userInfo[0]['telephone'])):?>
+                                    <?php echo $userInfo[0]['telephone'];?>
+                                <?php  else: ?>
+                                    <?php echo $userInfo[0]['email']; ?>
+                                <?php endif?>
                             </span>
                         </p>
                     </li>
