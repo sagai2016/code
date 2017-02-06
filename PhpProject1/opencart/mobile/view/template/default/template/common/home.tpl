@@ -63,7 +63,7 @@
             }
             .main .header  img{
                 max-height: 355px;     
-                width: 97.6%;
+                width: 100%;
                 margin: auto;
                 font-size:0;
             }
