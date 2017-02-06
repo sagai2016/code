@@ -324,7 +324,7 @@ $(function(){
         weixinopnjssdk.signature='<?php echo $_SESSION['signPackage']['signature']?>';
 
         weixinopnjssdk.title=$('title').text();
-        weixinopnjssdk.desc="收藏级文化白酒,精选商城";
+        weixinopnjssdk.desc="收藏级文化白酒优选商城";
         weixinopnjssdk.link="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/mobile' ?>";
         weixinopnjssdk.imgUrl="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/image/catalog/demo/manufacturer/newlogo.png'; ?>";
 
