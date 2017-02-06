@@ -6,6 +6,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
+
+ <link rel="stylesheet" type="text/css" href="view/stylesheet/swiper.min.css" />
+
 <link href="../catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen" />
 <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 <link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
@@ -353,7 +356,22 @@ a{
     </div>
   <div class="content">
     <ul>
-      <li class="goodsImages"> <img src="<?php echo $thumb; ?>" /> </li>
+      <li class="goodsImages"> 
+          <ul class="swiper-container">
+                <li class="swiper-wrapper">
+                 <?php 
+                 foreach($images as $v):
+                 ?>
+                     
+                         <p class="swiper-slide">
+                             <img src="<?php echo $v['thumb']?>">
+                         </p>
+                    
+                 <?php endforeach?>
+                  </li>
+             </ul>
+            
+      </li>
       <li class="goodsIntroduce">
           <p> <span class="title"><?php echo $heading_title; ?></span><span class="price"><?php echo $price; ?></span></p>
 
@@ -405,10 +423,23 @@ a{
     <script src="view/javascript/jquery/jquery.flexslider.js"></script> 
     <script src="view/javascript/o-script.js"></script>
 </body>
+
+<script type="text/javascript" src="view/javascript/jquery/Swiper/swiper.jquery.min.js"></script>
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination',
+                loop: true,
+                grabCursor: true,
+                paginationClickable: true,
+                autoplay: 5000,
+                autoplayDisableOnInteraction: false
+            });
+          
+        </script>
 <?php if(!empty($_SESSION['signPackage'])):?>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script src="view/javascript/weixinopnjssdk.js"></script>
-<script type="text/javascript">
+
 $(function(){
         weixinopnjssdk.appId='<?php echo $_SESSION['signPackage']['appId']?>';
         weixinopnjssdk.timestamp='<?php echo $_SESSION['signPackage']['timestamp']?>';
