@@ -47,7 +47,6 @@ class ControllerAccountRegister extends Controller {
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
 			$customer_id = $this->model_account_customer->addCustomer($this->request->post, $weixin_login_openid, $weixin_login_unionid);
-			
 			if($weibo_login_access_token && $weibo_login_uid) {
 				$this->model_account_customer->updateCustomerWeiBoInfo($customer_id, $weibo_login_access_token, $weibo_login_uid);
 			}
@@ -58,7 +57,7 @@ class ControllerAccountRegister extends Controller {
 
 			// Clear any previous login attempts for unregistered accounts.
 			$this->model_account_customer->deleteLoginAttempts($this->request->post['email']);
-                        //这句话会把注册好的用户信息自动登录
+                                                                //这句话会把注册好的用户信息自动登录
 			//$this->customer->login($this->request->post['email'], $this->request->post['password']);
 			
 			//Unset Third party login session
@@ -77,11 +76,10 @@ class ControllerAccountRegister extends Controller {
 					'customer_id' => $customer_id,
 					'name'        => $this->request->post['fullname']
 				);
-
 				$this->model_account_activity->addActivity('register', $activity_data);
 			}
-                        
 			$this->response->redirect($this->url->link('account/success'));
+                                                    
 		}
 
 		$data['breadcrumbs'] = array();

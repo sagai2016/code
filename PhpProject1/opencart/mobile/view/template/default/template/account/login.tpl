@@ -139,9 +139,9 @@
                 <div>
                     <a href="index.php?">返回首页</a>
                     <span>|</span>
-                    <a href="<?php echo $register; ?>">用户注册</a>
+                    <a href="index.php?route=account/register">用户注册</a>
                     <span>|</span>
-                    <a href="<?php echo $forgotten; ?>">忘记密码</a>
+                    <a href="index.php?route=account/forgotten">忘记密码</a>
 
                 </div>
             </div>

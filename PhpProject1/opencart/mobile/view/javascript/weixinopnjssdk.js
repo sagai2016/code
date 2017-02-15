@@ -38,7 +38,7 @@ weixinopnjssdk.imgUrl = '';
  * 二维码图片
  * @type String
  */
-weixinopnjssdk.QRCode=[];
+weixinopnjssdk.QRCode = [];
 
 weixinopnjssdk.jsApiList = ['checkJsApi',
     'onMenuShareTimeline',
@@ -82,7 +82,7 @@ weixinopnjssdk.jsApiList = ['checkJsApi',
  * @returns {undefined}
  */
 weixinopnjssdk.config = function (bug) {
-   
+
 
     wx.config({
         debug: bug,
@@ -98,8 +98,8 @@ weixinopnjssdk.config = function (bug) {
  * @param {type} callback
  * @returns {undefined}
  */
-weixinopnjssdk.ready = function (callback,bug) {
-    var bug = bug?true:false;
+weixinopnjssdk.ready = function (callback, bug) {
+    var bug = bug ? true : false;
     this.config(bug);
     wx.ready(callback);
 };
@@ -139,31 +139,28 @@ weixinopnjssdk.onMenuShareTimeline = function () {
  * @returns {undefined}
  */
 weixinopnjssdk.previewImage = function (img) {
-    
-    if(!img){
-        var _QRCode = this.QRCode;    
+
+    if (!img) {
+        var _QRCode = this.QRCode;
     }
     wx.previewImage({
         urls: _QRCode
     });
 };
 
-weixinopnjssdk.addCard =function(card,signature,timestamp){
-
+weixinopnjssdk.addCard = function (card, signature, timestamp) {
     wx.addCard({
-          cardList: [
+        cardList: [
             {
-              cardId: card,
-              cardExt: '{"code": "", "openid": "", "timestamp": "'+timestamp+'", "signature":"'+signature+'"}'
+                cardId: card,
+                cardExt: '{"code": "", "openid": "", "timestamp": "' + timestamp + '", "signature":"' + signature + '"}'
             }
-          ],
-          success: function (res) {
-            alert('已添加卡券：' + JSON.stringify(res.cardList));
-          },
-          cancel: function (res) {
-            alert(JSON.stringify(res))
-          }
-        });
-
-
+        ],
+        success: function (res) {
+            // alert('已添加卡券：' + JSON.stringify(res.cardList));
+        },
+        cancel: function (res) {
+            //   alert(JSON.stringify(res))
+        }
+    });
 }
