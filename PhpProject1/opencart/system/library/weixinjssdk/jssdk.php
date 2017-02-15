@@ -52,6 +52,7 @@ class JSSDK {
 
     /**
      * 
+     * 卡号
      * @param int $id  折扣券代码
      * @param type $deal_detail 团购券专用，团购详情。
      * @param type $description 卡券使用说明，字数上限为1024个汉字。
@@ -83,47 +84,57 @@ class JSSDK {
         $promotion_url = 'www.baidu.com';
 
 
-        $accessToken = $this->getAccessToken();
-        $url = "https://api.weixin.qq.com/card/create?access_token={$accessToken}";
+        if (!empty($id) && empty($_SESSION[$id])) {
+            $accessToken = $this->getAccessToken();
+            $url = "https://api.weixin.qq.com/card/create?access_token={$accessToken}";
 
-        $data = [];
-        $base_info = $groupon = [];
+            $data = [];
+            $base_info = $groupon = [];
+            $data['card']['card_type'] = 'GROUPON';
 
-        $data['card']['card_type'] = 'GROUPON';
+            $base_info['logo_url'] = $logo;
+            $base_info['brand_name'] = $brand_name;
+            $base_info['code_type'] = 'CODE_TYPE_NONE';
+            $base_info['title'] = $title;     //标题
+            $base_info['sub_title'] = $sub_title;
+            $base_info['color'] = 'Color010';
+            $base_info['notice'] = $notice;
+            $base_info['description'] = $description;
+            $base_info['sku'] = ['quantity' => 1];
+            $base_info['date_info'] = ['type' => 'DATE_TYPE_FIX_TIME_RANGE', 'begin_timestamp' => strtotime(date('y-m-d')), 'end_timestamp' => strtotime(date('y-m-d')) + 157680000];
+            $base_info['center_title'] = '点击使用';
+            $base_info['center_url'] = 'http://cart.jlwhjl.com/mobile/index.php?route=common/testweb?cartid=' . $id;
+            $base_info['custom_url_name'] = $custom_url_name;
+            $base_info['custom_url'] = $custom_url;
+            $base_info['promotion_url_name'] = $promotion_url_name;
+            $base_info['promotion_url'] = $promotion_url;
+            $base_info['get_limit'] = 1;
+            $base_info['can_share'] = false;
+            $base_info['can_give_friend'] = false;
+            $base_info['bind_openid'] = false;
 
-        $base_info['logo_url'] = $logo;
-        $base_info['brand_name'] = $brand_name;
-        $base_info['code_type'] = 'CODE_TYPE_NONE';
-        $base_info['title'] = $title;     //标题
-        $base_info['sub_title'] = $sub_title;
-        $base_info['color'] = 'Color010';
-        $base_info['notice'] = $notice;
-        $base_info['description'] = $description;
-        $base_info['sku'] = ['quantity' => 1];
-        $base_info['date_info'] = ['type' => 'DATE_TYPE_FIX_TIME_RANGE', 'begin_timestamp' => strtotime(date('y-m-d')), 'end_timestamp' => strtotime(date('y-m-d')) + 157680000];
-        $base_info['center_title'] = '点击使用';
-        $base_info['center_url'] = 'http://cart.jlwhjl.com/mobile/index.php?route=common/testweb?cartid=' . $id;
+            $data['card']['groupon'] = ['deal_detail' => $deal_detail, 'base_info' => $base_info];
 
-        $base_info['custom_url_name'] = $custom_url_name;
-        $base_info['custom_url'] = $custom_url;
-        $base_info['promotion_url_name'] = $promotion_url_name;
-        $base_info['promotion_url'] = $promotion_url;
-        $base_info['get_limit'] = 1;
-        $base_info['can_share'] = false;
-        $base_info['can_give_friend'] = false;
-        $base_info['bind_openid'] = false;
-        $data['card']['groupon'] = ['deal_detail' => $deal_detail, 'base_info' => $base_info];
-
-        $post = json_encode($data, JSON_UNESCAPED_UNICODE);
-        $res = json_decode($this->httpPost($url, $post));
-        if ($res->errmsg === 'ok') {
-            $api_ticket = $this->getCardApiTicket();
-            $timestamp = strtotime(date('y-m-d'));
-            $signature = sha1($timestamp . $api_ticket . $res->card_id);
-            return [$res->card_id, $signature, $timestamp];
+            $post = json_encode($data, JSON_UNESCAPED_UNICODE);
+            $res = json_decode($this->httpPost($url, $post));
+            if ($res->errmsg === 'ok') {
+                $api_ticket = $this->getCardApiTicket();
+                $timestamp = strtotime(date('y-m-d'));
+                $signature = sha1($timestamp . $api_ticket . $res->card_id);
+                $_SESSION[$id] = [$res->card_id, $signature, $timestamp];
+                return $_SESSION[$id];
+            }
+        } else {
+            return $_SESSION[$id];
         }
     }
 
+    /**
+     * 
+     * @param type $card
+     * @param type $card_id
+     * @return type
+     */
     function getCardCheack($card, $card_id) {
         $accessToken = $this->getAccessToken();
         $url = "https://api.weixin.qq.com/card/code/decrypt?access_token={$accessToken}";
@@ -131,19 +142,25 @@ class JSSDK {
 
         $post = json_encode($data, JSON_UNESCAPED_UNICODE);
         $res = json_decode($this->httpPost($url, $post));
-        $this->getCardDel($res->code, $card_id);
+        if ($res->errmsg === 'ok') {
+            $_SESSION['encrypt_code'] = $res->code;
+            $_SESSION['card_id'] = $card_id;
+        }
     }
 
-    function getCardDel($card, $card_id) {
+    /**
+     * 
+     */
+    function getCardDel() {
+
         $accessToken = $this->getAccessToken();
         $url = "https://api.weixin.qq.com/card/code/consume?access_token={$accessToken}";
 
-        $data['code'] = $card;
-        $data['card_id'] = $card_id;
+        $data['code'] = $_SESSION['encrypt_code'];
+        $data['card_id'] = $_SESSION['card_id'];
 
         $post = json_encode($data, JSON_UNESCAPED_UNICODE);
-        $res = json_decode($this->httpPost($url, $post));
-        var_dump($res);
+        $this->httpPost($url, $post);
     }
 
     private function createNonceStr($length = 16) {
