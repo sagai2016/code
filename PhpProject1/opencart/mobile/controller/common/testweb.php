@@ -9,15 +9,12 @@
 class ControllerCommonTestweb extends Controller {
 
     public function index() {
-
-        $this->load->model('testweb/testweb');
-        //ModelTestwebTestweb
-        $Dt = $this->model_testweb_testweb;
-
-        $data['test'] = 'hi opencart';
-        $data['data'] = $Dt->hiopencart();
-        $data['datahiopencart'] = $Dt->datahiopencart();
-        $this->response->setOutput($this->load->view('common/testweb', $data));
+        $data=[];
+        if(!empty($_SESSION['signPackage']) && WXPAY_APPID){
+            $jssdk = new JSSDK(WXPAY_APPID, WXPAY_APPSECRET);
+            $data['jssdk'] = $jssdk;
+        }
+         $this->response->setOutput($this->load->view('common/testweb',$data));
     }
     
     public function add()
