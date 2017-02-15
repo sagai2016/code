@@ -133,8 +133,10 @@ class ModelAccountCustomer extends Model {
 		return $customer_id;
 	}
 
-        public function userInfo() {
-                $query=$this->db->query('select * from '.DB_PREFIX.'customer');
+        public function userInfo($userid='') {
+    			$user = empty($userid)? '1=1':'customer_id='.$userid;
+                $query=$this->db->query('select * from '.DB_PREFIX.'customer where ' .$user);
+
                 return $query->rows;
         }
         

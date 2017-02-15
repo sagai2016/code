@@ -189,6 +189,38 @@
             a{
                 text-decoration: none;
             }
+            .sub,.back a{
+                width: 100%;
+                color: #ffffff;
+                background-color: #0080FF;
+                margin-top: 20px;
+                box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+                display: inline-block;
+                padding: 8px 12px;
+                font-size: 16px;
+                text-align: center;
+                vertical-align: middle;
+                border: 1px solid transparent;
+                border-radius: 4px;
+            }
+            .continue,.back{
+                width: 48%;
+                color: #ffffff;
+                display: inline-block;
+                padding: 8px 12px;
+                font-size: 16px;
+                text-align: center;
+                vertical-align: middle;
+            }
+            #kuan{
+                clear: both;
+            }
+             #kuan div:first-child{
+                 float: left;
+             }
+             #kuan div:first-child{
+                 float: right;
+             }
             @media (max-width: 500px) {}
 
             @media (min-width: 400px) {}
@@ -227,6 +259,13 @@
                     <?php endif;?>
                 </dd>                
             </dl>
+            <div class="buttons clearfix" id="kuan">
+              <div class="back"><a href="<?php echo $back; ?>" class="back">    <?php echo $button_back; ?></a>
+              </div>
+              <div class="continue">
+                  <a href="<?php echo $add; ?>" class="sub"><?php echo $button_new_address; ?></a>
+              </div>
+            </div>
             <p class="bootm"> </p>
         </div>
 

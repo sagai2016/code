@@ -4,9 +4,10 @@ class ControllerAccountLogin extends Controller {
 
 	public function index() {
 		$this->load->model('account/customer');
-
 		// Login override for admin users
+
 		if (!empty($this->request->get['token'])) {
+			
 			$this->customer->logout();
 			$this->cart->clear();
 
@@ -39,13 +40,13 @@ class ControllerAccountLogin extends Controller {
 				$this->response->redirect($this->url->link('account/account', '', true));
 			}
 		}
-                //如果登录了就去到这里
+                //用户如果已登录
 		if ($this->customer->isLogged()) {
 			$this->response->redirect($this->url->link('account/account', '', true));
 		}
 
 		$this->load->language('account/login');
-
+		
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
@@ -72,6 +73,7 @@ class ControllerAccountLogin extends Controller {
 
 			// Wishlist
 			if (isset($this->session->data['wishlist']) && is_array($this->session->data['wishlist'])) {
+
 				$this->load->model('account/wishlist');
 
 				foreach ($this->session->data['wishlist'] as $key => $product_id) {
@@ -195,14 +197,13 @@ class ControllerAccountLogin extends Controller {
 		} else {
 			$data['password'] = '';
 		}
-
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
 		$data['content_top'] = $this->load->controller('common/content_top');
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
-
+		
 		$this->response->setOutput($this->load->view('account/login', $data));
 	}
 

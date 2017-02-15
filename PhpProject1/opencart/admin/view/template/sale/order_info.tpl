@@ -382,7 +382,6 @@ $(document).delegate('#button-ip-add', 'click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(1);
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -412,7 +411,6 @@ $(document).delegate('#button-invoice', 'click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(1);
                          alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -443,7 +441,6 @@ $(document).delegate('#button-reward-add', 'click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(1);
                          alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -505,7 +502,6 @@ $(document).delegate('#button-commission-add', 'click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(1);
                          alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -536,7 +532,6 @@ $(document).delegate('#button-commission-remove', 'click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(1);
                          alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});
@@ -569,7 +564,6 @@ $.ajax({
 		}
 	},
 	error: function(xhr, ajaxOptions, thrownError) {
-		alert(1);
                 alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 	}
 });
@@ -621,7 +615,6 @@ $('#button-history').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			alert(1);
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});

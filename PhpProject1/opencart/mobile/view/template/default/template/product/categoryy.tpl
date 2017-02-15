@@ -110,8 +110,8 @@
             }
             */
             .main .bootm {
-                height: 50px;
-                font-size: 50px;
+                height: 40px;
+                font-size: 40px;
                 display: inline-block;
             }
             .bootm {
@@ -183,21 +183,23 @@
             .foot ul li.settlement span {
                 color: #fff;
             }
-            .message{
-                font-size: 14px;
-                text-align: center;
-                border: 1px solid #ccc;
-                line-height: 35px;
-                width: 85%;
-                margin:10px auto;
-            }
-            @media (min-width: 500px) {
-                .main .goodslist .list li {
-                    width: 50%;
-                }
-            }
+            
             a{
                 text-decoration: none;
+            }
+            
+            .mess{
+                text-align: center;
+                /* line-height: 35px; */
+                border-radius: 3px;
+                margin: 10px auto;
+                font-weight: bolder;
+                max-width: 750px;
+                width: 100%;
+            }
+            .mess img{
+                display: inline-block;
+                width: 100%;
             }
         </style>
     </head>
@@ -226,9 +228,10 @@
             </div>
             <p class="bootm"> </p>
             <div class="goodslist">      
-                <ul class="list">           
+                <ul class="list">   
                     <?php
                     if(!empty($all)):
+
                     foreach($all as $allp):?>           
                     <li>
                         <p>
@@ -252,6 +255,9 @@
 
             </div>
         </div>
+        <div class="mess">
+            <img src="image/catalog/demo/manufacturer/last1.jpg?M=<?php echo time()?>">
+        </div>
         <div class="bootm"></div>
         <div class="foot">
             <ul>
@@ -265,9 +271,7 @@
 
 
         <script>
-
             var ispage = 1;
-
             $(window).scroll(function () {
                 var scrollTop = $(this).scrollTop() + 150;//可卷上去的高度
                 var scrollHeight = $(document).height();//定位整块区域的高度
@@ -299,7 +303,7 @@
                                 } else {
                                     var stop = $('.goodslist').find('.message').data('stop');
                                     if (!stop) {
-                                        $(".goodslist").append('<div data-stop="true" class="message">没有更多商品了</div>');
+                                        $(".goodslist").append('<div data-stop="true" class="message"></div>');
                                     }
                                 }
                             }

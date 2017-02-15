@@ -20,7 +20,7 @@
 </div>
 <?php } ?>
 <?php } ?>
-<p><strong><?php echo $text_comments; ?></strong></p>
+<p style="display:none"><strong><?php echo $text_comments; ?></strong></p>
 <p>
   <textarea style="display:none" name="comment" rows="8" class="form-control"><?php echo $comment; ?></textarea>
 </p>
@@ -30,7 +30,7 @@
     <?php if ($agree) { ?>
     <input type="checkbox" name="agree" value="1" checked="checked" />
     <?php } else { ?>
-    <input type="checkbox" name="agree" value="1" />
+    <input type="checkbox" name="agree" value="1" checked="checked"/>
     <?php } ?>
     &nbsp;
     <input  type="button" value="<?php echo $button_continue; ?>" id="button-payment-method" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary" />

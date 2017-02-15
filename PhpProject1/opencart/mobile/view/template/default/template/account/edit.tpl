@@ -252,6 +252,7 @@
             a:visited { 
                 text-decoration: none; 
             }
+            
         </style>
     </head>
     <body>
@@ -276,7 +277,10 @@
                             <?php } ?>
                         </div>
                     </div>
-                    <div class='email'>
+
+                    <?php ($telephone) && $style="display: none";?>
+
+                    <div style="<?php echo $style?>"  class='email'>
                         <label><?php echo $entry_email; ?><i>*</i> </label>
                         <div>
                             <input onfocus="change(this)"  type="text" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-email" />
@@ -285,7 +289,8 @@
                             <?php } ?>
                         </div>
                     </div>
-                    <!--<div class='tel'>
+                
+                    <div class='tel'>
                         <label><?php echo $entry_telephone; ?> <i>*</i></label>
                         <div>
                             <input onfocus="change(this)"  type="text" name="telephone" value="<?php echo $telephone; ?>" placeholder="<?php echo $entry_telephone; ?>" id="input-telephone" />
@@ -297,7 +302,8 @@
                             <div class="text-danger"><?php echo $error_telephone; ?></div>
                             <?php } ?>
                         </div>
-                    </div>-->
+                    </div>
+                
                     <div class="two">
                         <div class="back"><a href="<?php echo $back; ?>" ><?php echo $button_back; ?></a></div>
                         <div class="sub">

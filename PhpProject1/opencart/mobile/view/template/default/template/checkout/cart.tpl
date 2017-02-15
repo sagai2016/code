@@ -338,9 +338,11 @@
                     <li class="icon-goodslefttag"></li>
                 </ul>                                                          
                 <form action="<?php echo $action; ?>" method="post" id="form1" enctype="multipart/form-data">
+               <!--/ <?php echo $count ;?>/-->
                     <?php foreach ($products as $product) { ?>
                     <ul class="goodsCartContent">
                         <li class="images">
+                        <?php echo $product['href']; ?>
                             <a href="<?php echo $product['href']; ?>">
                                 <img src="<?php echo $product['thumb']; ?>"  />
                             </a>
@@ -379,13 +381,26 @@
         </div>
 
         <script type="text/javascript">
+                 function formatMoney ( p,places, symbol, thousand, decimal) {
+                    places = !isNaN(places = Math.abs(places)) ? places : 2;
+                    symbol = symbol !== undefined ? symbol : "￥";
+                    thousand = thousand || ",";
+                    decimal = decimal || ".";
+                    var number = p,
+                        negative = number < 0 ? "-" : "",
+                        i = parseInt(number = Math.abs(+number || 0).toFixed(places), 10) + "",
+                        j = (j = i.length) > 3 ? j % 3 : 0;
+                    return symbol + negative + (j ? i.substr(0, j) + thousand : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousand) + (places ? decimal + Math.abs(number - i).toFixed(places).slice(2) : "");
+                };
+
                 var count = 0;
                 $(".goodsCartContent").each(function(i,p){ 
-                    var price = parseFloat($(p).find('.price').text().substring(1));
+                    var price = parseFloat($(p).find('.price').text().substring(1).replace(/,/g,''));
                     var cartcount = parseInt($(p).find('#cartcount').val());
                     count += price*cartcount;
                 })
-               $(".check").append('￥'+count.toFixed(2));
+
+               $(".check").append(formatMoney(count.toFixed(2)));
         </script>
 
         <script type="text/javascript">

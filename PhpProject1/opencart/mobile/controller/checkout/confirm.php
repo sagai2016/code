@@ -79,16 +79,25 @@ class ControllerCheckoutConfirm extends Controller {
 
 			array_multisort($sort_order, SORT_ASC, $results);
 
+/*
+<!--/'extension/total/coupon'/ ！折扣 总价 计算！！！！！-->
+*/
+
+
 			foreach ($results as $result) {
 				if ($this->config->get($result['code'] . '_status')) {
 					$this->load->model('extension/total/' . $result['code']);
-
+		
 					// We have to put the totals in an array so that they pass by reference.
 					$this->{'model_extension_total_' . $result['code']}->getTotal($total_data);
+
+					
 				}
 			}
 
 			$sort_order = array();
+
+
 
 			foreach ($totals as $key => $value) {
 				$sort_order[$key] = $value['sort_order'];
@@ -415,6 +424,7 @@ class ControllerCheckoutConfirm extends Controller {
 				}
 			}
 
+			/*var_dump($data['vouchers'])*/
 			$data['totals'] = array();
 
 			foreach ($order_data['totals'] as $total) {

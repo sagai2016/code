@@ -9,6 +9,7 @@
 <link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
 <script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
 <link href="view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="../catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen" />
 <link href="view/stylesheet/stylesheet.css" rel="stylesheet">
 <link href="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
 <script src="view/javascript/common.js" type="text/javascript"></script>
@@ -19,26 +20,50 @@
     .alert{
         display: none;
     }
+    .row{
+      margin-top: 0;
+    }
+    .container{
+      max-width: 750px;
+    }
     .container .row #content form{
         border: #ccc solid 1px;
         padding: 15px;
-        margin-top:65px;
-        
+        margin-top:18px;
+        border-radius: 5px
+    }
+    #content{
+      padding: 2%;
     }
     .hh{
-        width: 100%;
-        font-size: 26px;
-        text-align: center;
-        margin-bottom: 80px;
-        background-color: #ffffff;
-        height: 60px;
-        line-height: 60px;
-        position: fixed;
-        z-index: 2;
-        margin-top: 0px;
-        max-width: 750px;
-        margin-left: -15px;
+      width: 100%;
+      max-width: 750px;
+      font-size: 22px;
+      text-align: left;
+      margin-bottom: 80px;
+      background-color: #262424;
+      height: 38px;
+      line-height: 38px;
+      position: fixed;
+      z-index: 2;
+      margin-top: 0px;
+      margin-left: -15px;
+      color: #ffffff;
     }
+    .hh a i{
+      margin-top: 11px;
+      margin-left: 6px;
+      color:#9c9ba0;
+    }
+    .header{
+      text-align: center;
+      width: 100%;
+      height: 26px;
+      line-height: 26px;
+      font-size: 20px;
+      margin-bottom: 13px;  
+    }
+    
     .sub,.back a{
         width: 100%;
         color: #ffffff;
@@ -72,14 +97,17 @@
      #kuan div:first-child{
          float: right;
      }
+ 
+
 </style>
 <body>
 <div class="container">
-     <p class="hh"><?php echo $text_edit_address; ?></p>
+  <p class="hh"><a href="index.php?route=account/address"><i class="fa fa-chevron-left"></i></a></p>   
   <div class="row">
     <div id="content"> <?php echo $content_top; ?>
-       
+    
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
+        <p class="header">编辑地址</p>
         <fieldset>
           <div class="form-group required">
             <label class="col-sm-2 control-label" for="input-fullname"><?php echo $entry_fullname; ?></label>
@@ -346,7 +374,9 @@
                   <input type="submit" value="<?php echo $button_continue; ?>" class="sub" />
               </div>
           </div>
+           
       </form>
+     
     </div>
   </div>
 </div>

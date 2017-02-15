@@ -118,8 +118,10 @@
             <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_qq_login_warning; ?></div>
             <?php } ?>
             <div class="login">
+            
                 <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
                     <div class='image'>
+                    
                         <img src="<?php echo $_SESSION['weixin_userinfo']['headimgurl'];?>">
                     </div>
                     <div class='name'>

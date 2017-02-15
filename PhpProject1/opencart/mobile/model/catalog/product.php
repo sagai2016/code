@@ -202,7 +202,6 @@ class ModelCatalogProduct extends Model {
 		foreach ($query->rows as $result) {
 			$product_data[$result['product_id']] = $this->getProduct($result['product_id']);
 		}
-
 		return $product_data;
                  
 	}

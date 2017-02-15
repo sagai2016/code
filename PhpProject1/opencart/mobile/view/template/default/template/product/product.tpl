@@ -6,9 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
-
- <link rel="stylesheet" type="text/css" href="view/stylesheet/swiper.min.css" />
-
+<link rel="stylesheet" type="text/css" href="view/stylesheet/swiper.min.css" />
 <link href="../catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen" />
 <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 <link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
@@ -16,12 +14,10 @@
 <link href="view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="view/stylesheet/stylesheet.css" rel="stylesheet">
 <script src="view/javascript/jquery/datetimepicker/moment.js" type="text/javascript"></script>
-<script src="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js"type="text/javascript"></script>
+<script src="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
 <link href="view/javascript/jquery/magnific/magnific-popup.css" type="text/css" rel="stylesheet" media="screen" />
 <link href="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
 <script src="view/javascript/jquery/magnific/jquery.magnific-popup.min.js" type="text/javascript"></script>
-<link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
-<link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
 <script src="view/javascript/common.js" type="text/javascript"></script>
 <script src="view/javascript/o-script.js"></script>
 <script src="view/javascript/jquery/jquery.flexslider.js"></script> 
@@ -191,7 +187,6 @@ img{
 }
 .goodsinfo {
 	display: inline-block;
-        padding: 5%;
 	background: #fff;
 	width: 100%;
 }
@@ -233,11 +228,14 @@ img{
 	font-size: 0;
 }
 .foot ul .home .icon-goodscart {
-        margin-top: 3px;
-	font-size: 25px;
-	color: #686868;
-        text-shadow: 1px 1px 1px #ddd;
-        margin-top: 5px;
+    font-size: 25px;
+    color: #686868;
+    text-shadow: 1px 1px 1px #ddd;
+    margin-top: 6px;
+    width: 60%;
+    text-align: center;
+    margin-left: -14px;
+    height: 33px;
 }
 .foot ul .home a{
 	display: inline-block;
@@ -248,6 +246,19 @@ img{
         color: #686868;
         text-shadow: 1px 1px 1px #ddd;
 }
+.foot ul .home span{
+    position: absolute;
+    top: 3px;
+    left: 40px;
+    font-size: 8px;
+    border-radius: 100%;
+    background: #f00;
+    width: 18px;
+    height: 18px;
+    line-height: 17px;
+    color: #fff;
+    text-align: center;
+    }
 .foot ul .addToCart {
 	background: #ff8856;
 }
@@ -326,21 +337,34 @@ img{
     border-radius: 0px;
 }
 a{
-        text-decoration: none;
-    }
-    .QRCode{
-        text-align: right;
-        max-width: 750px;
-        margin: auto;
-        position: absolute;
-        right: -590px;
-        display: none;
-        padding: 50%;
+    text-decoration: none;
+}
+.QRCode{
+    text-align: right;
+    max-width: 750px;
+    margin: auto;
+    position: absolute;
+    right: -590px;
+    display: none;
+    padding: 50%;
 
 }
 .QRCode img{
     width: 100%;
     height: 100%;
+}
+.mess{
+    text-align: center;
+    /* line-height: 35px; */
+    border-radius: 3px;
+    margin: 10px auto;
+    font-weight: bolder;
+    max-width: 750px;
+    width: 100%;
+}
+.mess img{
+    display: inline-block;
+    width: 100%;
 }
 </style>
 </head>
@@ -350,7 +374,7 @@ a{
     <div class="top">
         <a href="index.php?"><i class="fa fa-chevron-left"></i></a>
         <span class=""> 
-            <a class="gzc">分享美酒</a>
+            <a class="gzc">关注八窖</a>
             <a type="button" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product_id; ?>');">收藏美酒</a>
         </span>
     </div>
@@ -362,7 +386,6 @@ a{
                  <?php 
                  foreach($images as $v):
                  ?>
-                     
                          <p class="swiper-slide">
                              <img src="<?php echo $v['thumb']?>">
                          </p>
@@ -393,31 +416,29 @@ a{
   </div>
   
   <div class="option"> 
-        
             <span class="icon icon-goodsshop"></span>
-            <span><a href="./">八窑酒库</a></span> 
+            <span><a href="./">八窖酒库</a></span> 
             <span class="goodhome" ><a href="index.php?route=product/categoryy">进入店铺<i class="icon-goodslefttag"></i></a></span>
-        
   </div>
  
-  
-   
-  
-  
-  
   <div class="goodsinfo">
   	<?php echo $description; ?>
-   
   </div>
   <p class="bootm"> </p>
 </div>
 <div class="menu"> </div>
 <div class="foot">
   <ul>
-    
-    <li class="home"><a href="index.php?route=checkout/cart" class="icon-goodscart"></a></li>  
-    <li class="addToCart" id="button-cart"><span>加入购物车</span></li>
-    <li class="buyNow"> <a href="index.php?route=checkout/checkout">立即购买</a> </li>
+    <li class="home">
+    	<a class="icon-goodscart" href="index.php?route=checkout/cart">
+    		<span>
+				<?php echo $bcount>100?'99+':$bcount;?>
+			</span>
+		</a>
+			
+	</li>  
+    <li class="addToCart" id="button-cart"><span >加入购物车</span></li>
+    <li class="buyNow"> <a href="index.php?route=checkout/cart">去结算</a> </li>
   </ul>
 </div>
     <script src="view/javascript/jquery/jquery.flexslider.js"></script> 
@@ -434,12 +455,11 @@ a{
                 autoplay: 5000,
                 autoplayDisableOnInteraction: false
             });
-          
         </script>
 <?php if(!empty($_SESSION['signPackage'])):?>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script src="view/javascript/weixinopnjssdk.js"></script>
-
+<script type="text/javascript">
 $(function(){
         weixinopnjssdk.appId='<?php echo $_SESSION['signPackage']['appId']?>';
         weixinopnjssdk.timestamp='<?php echo $_SESSION['signPackage']['timestamp']?>';
@@ -450,9 +470,9 @@ $(function(){
 
         weixinopnjssdk.desc=$('.title').text();
         weixinopnjssdk.link="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>";
-        weixinopnjssdk.imgUrl="<?php echo 'http://'.$_SERVER['HTTP_HOST'].mb_substr($thumb,2); ?>";
+        weixinopnjssdk.imgUrl="<?php echo 'http://'.$_SERVER['HTTP_HOST'].mb_substr($images[0]['thumb'],2); ?>";
         
-        weixinopnjssdk.QRCode=<?php echo json_encode(['http://'.$_SERVER['HTTP_HOST'].'/'.'image/catalog/QRcode.jpg']); ?>;
+        weixinopnjssdk.QRCode=<?php echo json_encode(['http://'.$_SERVER['HTTP_HOST'].'/'.'image/catalog/code.jpg']); ?>;
         
 
         weixinopnjssdk.ready(function(){
@@ -465,6 +485,7 @@ $(function(){
             $(".gzc").on('click', function () {
                 weixinopnjssdk.previewImage();
             });
+            
         });
 });
 </script>
@@ -508,6 +529,7 @@ $('#button-cart').on('click', function() {
 			$('#button-cart').button('reset');
 		},
 		success: function(json) {
+
 			$('.alert, .text-danger').remove();
 			$('.form-group').removeClass('has-error');
                         //alert('您已将产品加入购物车');
@@ -533,9 +555,10 @@ $('#button-cart').on('click', function() {
 			}
 
 			if (json['success']) {
-                                
+				console.log(json['fcount']);
 				$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
-                                
+                $(".home span").text("");  
+                $(".home span").text(json['fcount']>=100?99:json['fcount']);              
 				$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
 
 				$('html, body').animate({ scrollTop: 0 }, 'slow');

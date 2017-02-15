@@ -62,13 +62,13 @@
                 margin: auto;
             }
 
-            .top * {
+            .main .top * {
                 color: #787878;
                 font-size: 15.5px;
                 font-weight: 300;
             }
 
-            .top {
+            .main .top {
                 width: 100%;
                 display: flex;
                 position: fixed;
@@ -76,24 +76,24 @@
                 z-index: 2;
             }
 
-            .top .link {
+            .main .top .link {
                 display: inline-flex;
                 justify-content: space-between;
                 width: 100%;
                 background: rgba(255, 255, 255, .98);
             }
 
-            .top .link li {
+            .main .top .link li {
                 width: 100%;
                 text-align: center;
                 line-height: 38px;
                 border-bottom: 1px solid #e6e6e6;
             }
-            .top .link li a{
+            .main .top .link li a{
                 font-size:14px;
                 text-shadow: 1px 1px 1px #ddd;
             }
-            .top .link .linkmain {
+            .main .top .link .linkmain {
                 border-bottom: 1px solid #ff2e00;
                 color: #ff2e00;
             }
@@ -335,8 +335,8 @@
             /**/
 
             .main .bootm {
-                height: 50px;
-                font-size: 50px;
+                height: 40px;
+                font-size: 40px;
                 display: inline-block;
             }
 
@@ -407,7 +407,7 @@
             a{
                 text-decoration: none;
             }
-
+            
             @media (max-width: 500px) {}
 
             @media (min-width: 400px) {}
@@ -417,14 +417,15 @@
         </style>
     </head>
     <body>  
+        
+
+        <div class="main">
         <div class="top">
             <ul class="link">
                 <li><a href="index.php?route=account/wishlist">收藏列表</a></li>
                 <li class="linkmain"><a href="index.php?route=account/order">全部订单</a></li>
             </ul>
         </div>
-
-        <div class="main">
             <p class="bootm"></p>
             <?php if ($success) { ?>
             <div class="alert alert-success"><i class="fa fa-check-circle"></i> <?php echo $success; ?>

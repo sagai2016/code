@@ -233,6 +233,7 @@
             a{
                 text-decoration: none;
             }
+            
             @media (max-width: 500px) {}
 
             @media (min-width: 400px) {}
@@ -251,12 +252,20 @@
             <div class="header">
                 <ul>
                     <li class="face">
-                        <img src="<?php echo $_SESSION['weixin_userinfo']['headimgurl'];?>">
+                        <img src="
+                    <?php echo $_SESSION['weixin_userinfo']['headimgurl'];?>">
                     </li>
                     <li class="userinfo">
-                        <p class="username"><span class="fa fa-user"><?php echo $_SESSION['weixin_userinfo']['nickname'];?></span></p>
+                        <p class="username"><span class="fa fa-user">
+                        <?php if(!empty($_SESSION['weixin_userinfo'])):?>
+                        <?php echo $_SESSION['weixin_userinfo']['nickname'];?>
+                        <?php  else: ?>
+                        <?php echo "";?>
+                        <?php endif?>
+                        </span></p>
                         <p class="usernkey">
                             <span class="fa fa-id-card-o">
+                            
                                 <?php if(!empty($userInfo[0]['telephone'])):?>
                                     <?php echo $userInfo[0]['telephone'];?>
                                 <?php  else: ?>
@@ -275,13 +284,13 @@
                     <li> <a href="index.php?route=account/address">我的地址<span class="fa fa-arrow-circle-right"></span></a></li>
                     <li> <a href="index.php?route=account/wishlist">美酒收藏<span class="fa fa-arrow-circle-right"></span></a></li>
                     <li> <a href="index.php?route=account/order">购物记录<span class="fa fa-arrow-circle-right"></span></a></li>
-                    
                 </ul>
             </div>
             <p class="bootm"> </p>
         </div>
         
         <div class="foot">
+
             <ul>
                 <li class="home"><a href="index.php?" class="icon-goodshome"></a></li>
                 <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>

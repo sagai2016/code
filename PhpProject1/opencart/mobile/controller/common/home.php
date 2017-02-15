@@ -1,5 +1,4 @@
 <?php
-
 class ControllerCommonHome extends Controller {
 
     public function index() {

@@ -89,10 +89,10 @@
               </div>
                     <!--youxiang-->
 
-              <div class="form-group required">
-                <label class="col-sm-2 control-label" for="input-email"><?php echo $entry_email; ?></label>
+              <div class="form-group ">
+                <label class="col-sm-2 control-label" ><?php echo $entry_email; ?></label>
                 <div class="col-sm-10">
-                  <input type="text" name="email" value="<?php echo $email; ?>" id="input-email" class="form-control" />
+                  <input type="text" name="email" value="<?php echo $email; ?>"  class="form-control" />
                 </div>
               </div>
                     <!--dianhua-->
@@ -346,10 +346,10 @@
                         <input type="text" name="to_name" value="" id="input-to-name" class="form-control" />
                       </div>
                     </div>
-                    <div class="form-group required">
-                      <label class="col-sm-2 control-label" for="input-to-email"><?php echo $entry_to_email; ?></label>
+                    <div class="form-group ">
+                      <label class="col-sm-2 control-label" ><?php echo $entry_to_email; ?></label>
                       <div class="col-sm-10">
-                        <input type="text" name="to_email" value="" id="input-to-email" class="form-control" />
+                        <input type="text" name="to_email" value=""  class="form-control" />
                       </div>
                     </div>
                     <div class="form-group required">
@@ -358,10 +358,10 @@
                         <input type="text" name="from_name" value="" id="input-from-name" class="form-control" />
                       </div>
                     </div>
-                    <div class="form-group required">
-                      <label class="col-sm-2 control-label" for="input-from-email"><?php echo $entry_from_email; ?></label>
+                    <div class="form-group ">
+                      <label class="col-sm-2 control-label" ><?php echo $entry_from_email; ?></label>
                       <div class="col-sm-10">
-                        <input type="text" name="from_email" value="" id="input-from-email" class="form-control" />
+                        <input type="text" name="from_email" value=""  class="form-control" />
                       </div>
                     </div>
                     <div class="form-group required">
@@ -1457,7 +1457,7 @@ $('#button-customer').on('click', function() {
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {
-			
+			                   
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		}
 	});

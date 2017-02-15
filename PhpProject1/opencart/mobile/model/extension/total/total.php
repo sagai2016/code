@@ -9,5 +9,7 @@ class ModelExtensionTotalTotal extends Model {
 			'value'      => max(0, $total['total']),
 			'sort_order' => $this->config->get('total_sort_order')
 		);
+		
+		
 	}
 }

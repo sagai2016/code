@@ -74,6 +74,15 @@ class ControllerCheckoutCart extends Controller {
 			$data['products'] = array();
 
 			$products = $this->cart->getProducts();
+			$count='';
+			$data['count']=count($products);
+
+			
+
+
+
+
+
 
 			foreach ($products as $product) {
 				$product_total = 0;
@@ -148,6 +157,9 @@ class ControllerCheckoutCart extends Controller {
 					}
 				}
 
+				$url = $this->url->link('product/product', 'product_id=' . $product['product_id']);
+				$url = str_replace('.com//', '.com/', $url);
+
 				$data['products'][] = array(
 					'cart_id'   => $product['cart_id'],
 					'thumb'     => $image,
@@ -160,7 +172,7 @@ class ControllerCheckoutCart extends Controller {
 					'reward'    => ($product['reward'] ? sprintf($this->language->get('text_points'), $product['reward']) : ''),
 					'price'     => $price,
 					'total'     => $total,
-					'href'      => $this->url->link('product/product', 'product_id=' . $product['product_id'])
+					'href'      => $url
 				);
 			}
 
@@ -294,6 +306,12 @@ class ControllerCheckoutCart extends Controller {
 		$this->load->model('catalog/product');
 
 		$product_info = $this->model_catalog_product->getProduct($product_id);
+
+
+		//$count='';
+		//$json['count']=count($product_info['product_id']);
+
+
 		if ($product_info) {
 			if (isset($this->request->post['quantity']) && ((int)$this->request->post['quantity'] >= $product_info['minimum'])) {
 				$quantity = (int)$this->request->post['quantity'];
@@ -309,7 +327,10 @@ class ControllerCheckoutCart extends Controller {
 
 			$product_options = $this->model_catalog_product->getProductOptions($this->request->post['product_id']);
 
+			
+
 			foreach ($product_options as $product_option) {
+
 				if ($product_option['required'] && empty($option[$product_option['product_option_id']])) {
 					$json['error']['option'][$product_option['product_option_id']] = sprintf($this->language->get('error_required'), $product_option['name']);
 				}
@@ -337,7 +358,6 @@ class ControllerCheckoutCart extends Controller {
 
 			if (!$json) {
 				$this->cart->add($this->request->post['product_id'], $quantity, $option, $recurring_id);
-
 				$json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/cart'));
 
 				// Unset all shipping and payment methods
@@ -365,7 +385,7 @@ class ControllerCheckoutCart extends Controller {
 					$sort_order = array();
 
 					$results = $this->model_extension_extension->getExtensions('total');
-
+					//printf("<!--/%s/-->",var_export($results,true));
 					foreach ($results as $key => $value) {
 						$sort_order[$key] = $this->config->get($value['code'] . '_sort_order');
 					}
@@ -395,6 +415,16 @@ class ControllerCheckoutCart extends Controller {
 				$json['redirect'] = str_replace('&amp;', '&', $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']));
 			}
 		}
+
+				
+
+		$products = $this->cart->getProducts();
+		$fcount='';
+		$json['fcount']=count($products);
+
+
+
+
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));

@@ -96,7 +96,9 @@ class ModelExtensionTotalCoupon extends Model {
 	}
 
 	public function getTotal($total) {
+
 		if (isset($this->session->data['coupon'])) {
+			
 			$this->load->language('extension/total/coupon');
 
 			$coupon_info = $this->getCoupon($this->session->data['coupon']);
@@ -176,6 +178,7 @@ class ModelExtensionTotalCoupon extends Model {
 						'value'      => -$discount_total,
 						'sort_order' => $this->config->get('coupon_sort_order')
 					);
+
 
 					$total['total'] -= $discount_total;
 				}

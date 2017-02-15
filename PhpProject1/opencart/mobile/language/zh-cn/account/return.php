@@ -20,7 +20,7 @@ $_['text_date_added']    = '添加日期:';
 $_['text_comment']       = '退换备注';
 $_['text_history']       = '退换记录';
 $_['text_empty']         = '您还没有退换记录。';
-$_['text_agree']         = '已阅读并同意 <a href="%s" class="agree"><b>%s</b></a>';
+$_['text_agree']         = '已阅读并同意 <a href="%s" target="_blank"  class="agree"><b>%s</b></a>';
 
 // Column
 $_['column_return_id']   = '退换号';

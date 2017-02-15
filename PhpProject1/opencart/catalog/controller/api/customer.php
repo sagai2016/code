@@ -42,13 +42,13 @@ class ControllerApiCustomer extends Controller {
 				$json['error']['fullname'] = $this->language->get('error_fullname');
 			}
 
-			if ((utf8_strlen($this->request->post['email']) > 96) || (!filter_var($this->request->post['email'], FILTER_VALIDATE_EMAIL))) {
-				$json['error']['email'] = $this->language->get('error_email');
-			}
+			// if ((utf8_strlen($this->request->post['email']) > 96) || (!filter_var($this->request->post['email'], FILTER_VALIDATE_EMAIL))) {
+			// 	$json['error']['email'] = $this->language->get('error_email');
+			// }
 
-			if ((utf8_strlen($this->request->post['telephone']) < 1) || (utf8_strlen($this->request->post['telephone']) > 32)) {
-				$json['error']['telephone'] = $this->language->get('error_telephone');
-			}
+			// if ((utf8_strlen($this->request->post['telephone']) < 1) || (utf8_strlen($this->request->post['telephone']) > 32)) {
+			// 	$json['error']['telephone'] = $this->language->get('error_telephone');
+			// }
 
 			// Customer Group
 			if (is_array($this->config->get('config_customer_group_display')) && in_array($this->request->post['customer_group_id'], $this->config->get('config_customer_group_display'))) {

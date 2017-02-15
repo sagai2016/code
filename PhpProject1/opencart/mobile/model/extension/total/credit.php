@@ -15,7 +15,7 @@ class ModelExtensionTotalCredit extends Model {
 					'value'      => -$credit,
 					'sort_order' => $this->config->get('credit_sort_order')
 				);
-
+				
 				$total['total'] -= $credit;
 			}
 		}

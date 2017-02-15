@@ -106,6 +106,7 @@
             .main .adList {
                 width: 100%;
                 background: #eee;
+                padding-bottom: 1px;
             }
 
             .main .adList img {
@@ -119,6 +120,7 @@
                 width: 100%;
                 margin: auto;
                 border: #e9e9e9 1px solid;
+                margin-bottom: 2px;
             }
 
             .main .adList dd {
@@ -223,13 +225,31 @@
             a{
                 text-decoration: none;
             }
+            .mess{
+                text-align: center;
+                /* line-height: 35px; */
+                border-radius: 3px;
+                margin: 10px auto;
+                font-weight: bolder;
+                max-width: 750px;
+                width: 100%;
+            }
+            .mess img{
+                display: inline-block;
+                width: 100%;
+            }
+            .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #c12414;
+}
+
         </style>
     </head>
 
     <body>
         <div class="main">
             <div class="header">
-                <img src="image/catalog/demo/manufacturer/logo.png"/>
+                <img src="image/catalog/demo/manufacturer/bajiaojiuku.png?M=<?php echo time()?>"/>
             </div>
             <div class="banner">
                 <div class="swiper-container">
@@ -241,12 +261,12 @@
                 </div>
             </div>
             <div class="ad2">
-                <a href="index.php?route=common/eight"><img src="image/catalog/demo/manufacturer/yx.jpg"></a>
+                <a href="/banner/banner20172"><img src="image/catalog/demo/manufacturer/yx.jpg?M=<?php echo time()?>"></a>
             </div>
             <div class="adList">
                 <dl>
                     <dt>
-                        <img src="image/catalog/demo/manufacturer/t4.png">
+                        <img src="image/catalog/demo/manufacturer/t4.png?M=<?php echo time()?>">
                     </dt>
                     <dd class="swiper-container2">
                         <!--<ul class="swiper-wrapper">
@@ -285,6 +305,11 @@
                 <?php endforeach?>
             </ul>
         </div>-->
+        <div class="mess">
+        
+            <img src="image/catalog/demo/manufacturer/last1.jpg?M=<?php echo time()?>">
+        </div>
+
         <div class="bootm"></div>
         <div class="foot">
             <ul>

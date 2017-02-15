@@ -21,7 +21,7 @@ $_['entry_city']           = '所在城市';
 $_['entry_district']       = '所在区县';
 $_['entry_country']        = '国家';
 $_['entry_zone']           = '州/省/地区';
-$_['entry_default']        = '默认地址';
+$_['entry_default']        = '是否设为默认地址';
 $_['entry_shipping_telephone'] 	     = '收件人电话';
 
 // Error

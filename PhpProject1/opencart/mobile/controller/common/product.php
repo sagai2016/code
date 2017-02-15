@@ -1,9 +1,8 @@
 <?php
-
 class ControllerCommonProduct extends Controller {
 	public function index() {
 		$this->load->language('product/product');
-                
+        
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
@@ -108,7 +107,6 @@ class ControllerCommonProduct extends Controller {
 			if (isset($this->request->get['search'])) {
 				$url .= '&search=' . $this->request->get['search'];
 			}
-                        //var_dump($url);exit;
 			if (isset($this->request->get['tag'])) {
 				$url .= '&tag=' . $this->request->get['tag'];
 			}
@@ -475,6 +473,11 @@ class ControllerCommonProduct extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
+
+			$products = $this->cart->getProducts();
+			$bcount='';
+			$data['bcount']=count($products);
+
 			$this->response->setOutput($this->load->view('product/product', $data));
 		} else {
 			$url = '';

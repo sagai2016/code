@@ -15,7 +15,7 @@ $_['text_cheque']               = 'Cheque';
 $_['text_paypal']               = 'PayPal';
 $_['text_alipay']               = 'Alipay';
 $_['text_bank']                 = 'Bank Transfer';
-$_['text_agree']                = 'I have read and agree to the <a href="%s" class="agree"><b>%s</b></a>';
+$_['text_agree']                = 'I have read and agree to the <a href="%s"  target="_blank" class="agree"><b>%s</b></a>';
 
 // Entry
 $_['entry_fullname']            = 'Full Name';

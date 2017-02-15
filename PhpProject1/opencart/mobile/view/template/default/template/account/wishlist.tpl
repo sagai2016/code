@@ -43,14 +43,15 @@
                 margin: auto;
             }
 
-            .top * {
+            .main .top * {
                 color: #787878;
                 font-size: 15.5px;
                 font-weight: 300;
             }
 
-            .top {
+            .main .top {
                 width: 100%;
+                max-width: 750px;
                 display: flex;
                 position: fixed;
                 top: 0;
@@ -58,24 +59,24 @@
 
             }
 
-            .top .link {
+            .main .top .link {
                 display: inline-flex;
                 justify-content: space-between;
                 width: 100%;
                 background: rgba(255,255,255,.98);
             }
 
-            .top .link li {
+            .main .top .link li {
                 width: 100%;
                 text-align: center;
                 line-height: 38px;
                 border-bottom: 1px solid #e6e6e6;
             }
-            .top .link li a{
+            .main .top .link li a{
                 font-size: 14px;
                 text-shadow: 1px 1px 1px #ddd;
             }
-            .top .link .linkmain {
+            .main .top .link .linkmain {
                 border-bottom: 1px solid #ff2e00;
                 color: #ff2e00;
             }
@@ -232,7 +233,7 @@
                 font-size: 50px;
                 display: inline-block;
             }
-.foot {
+            .foot {
                 width: 100%;
                 display: flex;
                 position: fixed;
@@ -322,29 +323,31 @@
             a{
                 text-decoration: none;
             }
+            
         </style>
     </head>
     <body>
-        <div class="top">
-            <ul class="link">
-                <li class="linkmain"><a href="index.php?route=account/wishlist">收藏列表</a></li>
-                <li><a href="index.php?route=account/order">全部订单</a></li>
-            </ul>
-            <!--<ul class="link">
-                    <?php
-                    foreach($categories as $categorie):
-                    $cc='';
-                    if(!empty($_GET['path'] ) && $_GET['path'] ==  $categorie['category_id']){
-                        $cc = 'class="linkmain"';
-                    }
-                    ?>
-                    <li <?php echo $cc;?>>
-                        <a href="<?php echo  $categorie['href']?>">
-                            <?php echo $categorie['name']?></a> </li>
-                    <?php endforeach?>
-                </ul>-->
-        </div>
+        
         <div class="main">
+            <div class="top">
+                <ul class="link">
+                    <li class="linkmain"><a href="index.php?route=account/wishlist">收藏列表</a></li>
+                    <li><a href="index.php?route=account/order">全部订单</a></li>
+                </ul>
+                <!--<ul class="link">
+                        <?php
+                        foreach($categories as $categorie):
+                        $cc='';
+                        if(!empty($_GET['path'] ) && $_GET['path'] ==  $categorie['category_id']){
+                            $cc = 'class="linkmain"';
+                        }
+                        ?>
+                        <li <?php echo $cc;?>>
+                            <a href="<?php echo  $categorie['href']?>">
+                                <?php echo $categorie['name']?></a> </li>
+                        <?php endforeach?>
+                    </ul>-->
+            </div>
             <p class="bootm"></p>
             <div class="goodsCart">
                 <ul class="goodsHomeTitle">

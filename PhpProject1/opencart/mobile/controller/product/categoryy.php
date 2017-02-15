@@ -55,12 +55,14 @@ class ControllerProductCategoryy extends Controller {
         $pageCount = ( $this->pages - 1) * $this->maxSum; //显示产品的起始数量，最少显示0条，依次每页增加15条
 
         $Rs = $this->all->getAll($pageCount, $this->maxSum);
+        //printf("<!--/%s/-->",var_dump($Rs,true));
         $i = 0;
         foreach ($Rs as $t) {
             $data['all'][$i]['product_id'] = $t['product_id'];
             $data['all'][$i]['name'] = $t['name'];
             $data['all'][$i]['image'] = $t['image'];
-
+            $data['all'][$i]['quantity'] = $t['quantity'];
+            $data['all'][$i]['price'] = $t['price'];
 
             if (isset($t['image'])) {
                 $data['all'][$i]['image'] = $this->model_tool_image->resize($t['image'],800 ,800 );

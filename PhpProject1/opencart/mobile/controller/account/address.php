@@ -110,7 +110,6 @@ class ControllerAccountAddress extends Controller {
 
 			$this->response->redirect($this->url->link('account/address', '', true));
 		}
-
 		$this->getForm();
 	}
 
@@ -164,6 +163,7 @@ class ControllerAccountAddress extends Controller {
 	}
 
 	protected function getList() {
+
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
 			'href' => $this->url->link('common/home')
@@ -488,8 +488,6 @@ class ControllerAccountAddress extends Controller {
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
-
-
 		$this->response->setOutput($this->load->view('account/address_form', $data));
 	}
 

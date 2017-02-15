@@ -81,9 +81,11 @@ weixinopnjssdk.jsApiList = ['checkJsApi',
  * 微信js jdk 配置
  * @returns {undefined}
  */
-weixinopnjssdk.config = function () {
+weixinopnjssdk.config = function (bug) {
+   
+
     wx.config({
-        debug: false,
+        debug: bug,
         appId: this.appId,
         timestamp: this.timestamp,
         nonceStr: this.nonceStr,
@@ -96,8 +98,9 @@ weixinopnjssdk.config = function () {
  * @param {type} callback
  * @returns {undefined}
  */
-weixinopnjssdk.ready = function (callback) {
-    this.config();
+weixinopnjssdk.ready = function (callback,bug) {
+    var bug = bug?true:false;
+    this.config(bug);
     wx.ready(callback);
 };
 
@@ -135,11 +138,32 @@ weixinopnjssdk.onMenuShareTimeline = function () {
  * 图片QRcode
  * @returns {undefined}
  */
-weixinopnjssdk.previewImage = function () {
-    var _QRCode = this.QRCode;
+weixinopnjssdk.previewImage = function (img) {
+    
+    if(!img){
+        var _QRCode = this.QRCode;    
+    }
     wx.previewImage({
         urls: _QRCode
     });
 };
 
+weixinopnjssdk.addCard =function(card,signature,timestamp){
 
+    wx.addCard({
+          cardList: [
+            {
+              cardId: card,
+              cardExt: '{"code": "", "openid": "", "timestamp": "'+timestamp+'", "signature":"'+signature+'"}'
+            }
+          ],
+          success: function (res) {
+            alert('已添加卡券：' + JSON.stringify(res.cardList));
+          },
+          cancel: function (res) {
+            alert(JSON.stringify(res))
+          }
+        });
+
+
+}

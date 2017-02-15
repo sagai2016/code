@@ -11,7 +11,7 @@ $_['text_your_details']    = '您的个人资料';
 $_['text_your_address']    = '您的详细地址';
 $_['text_newsletter']      = '新闻订阅';
 $_['text_your_password']   = '账户密码';
-$_['text_agree']           = '我已经阅读并同意 <a href="%s" class="agree"><b>%s</b></a>条款';
+$_['text_agree']           = '我已经阅读并同意 <a href="%s" target="_blank" class="agree"><b>%s</b></a>条款';
 $_['text_get_sms_code']    = '点击获取手机短信验证码';
 
 // Entry
