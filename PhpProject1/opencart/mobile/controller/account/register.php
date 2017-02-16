@@ -45,7 +45,32 @@ class ControllerAccountRegister extends Controller {
 
 		$this->load->model('account/customer');
 
+
+
+		// $id = 1122;
+  //       $deal_detail = '芭蕉卡券';
+  //       $description = '芭蕉卡券的描述';
+  //       $logo = 'http://'.$_SERVER['HTTP_HOST'].'/'.'image/catalog/code.jpg';
+  //       $brand_name = '芭蕉';
+  //       $title = '芭蕉的卡券名';
+  //       $sub_title = '芭蕉的券名';
+  //       $notice = '芭蕉卡券使用说明';
+  //       $custom_url_name = '进入芭蕉地';
+  //       $custom_url = '127.0.0.1';
+  //       $promotion_url_name = '卖芭蕉了';
+  //       $promotion_url = 'www.baidu.com';
+
+
+		// $data['cardInfo']='';
+  //       $cardInfo = new JSSDK(WXPAY_APPID, WXPAY_APPSECRET);
+  //       $data['cardInfo'] = $cardInfo;
+
+
+
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+
+
+
 			$customer_id = $this->model_account_customer->addCustomer($this->request->post, $weixin_login_openid, $weixin_login_unionid);
 			if($weibo_login_access_token && $weibo_login_uid) {
 				$this->model_account_customer->updateCustomerWeiBoInfo($customer_id, $weibo_login_access_token, $weibo_login_uid);
@@ -78,6 +103,10 @@ class ControllerAccountRegister extends Controller {
 				);
 				$this->model_account_activity->addActivity('register', $activity_data);
 			}
+
+
+			
+
 			$this->response->redirect($this->url->link('account/success'));
                                                     
 		}

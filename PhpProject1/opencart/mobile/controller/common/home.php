@@ -25,6 +25,8 @@ class ControllerCommonHome extends Controller {
                 );
             }
         }
+        
+       
         $this->response->setOutput($this->load->view('common/home', $data));
     }
 }

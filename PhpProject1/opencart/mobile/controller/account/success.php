@@ -1,53 +1,26 @@
 <?php
 class ControllerAccountSuccess extends Controller {
 	public function index() {
-		$this->load->language('account/success');
 
-		$this->document->setTitle($this->language->get('heading_title'));
+		$data=[];
+		// $card_info = new JSSDK(WXPAY_APPID, WXPAY_APPSECRET);
 
-		$data['breadcrumbs'] = array();
+		// $id = 666666;
+		// $deal_detail = '芭蕉卡券';
+		// $description = '芭蕉卡券的描述';
+		// $logo = 'http://'.$_SERVER['HTTP_HOST'].'/'.'image/catalog/code.jpg';
+		// $brand_name = '芭蕉';
+		// $title = '芭蕉的卡券名';
+		// $sub_title = '芭蕉的券名';
+		// $notice = '芭蕉卡券使用说明';
+		// $custom_url_name = '进入芭蕉地';
+		// $custom_url = 'http://www.google.com';
+		// $promotion_url_name = '卖芭蕉了';
+		// $promotion_url = 'http://www.baidu.com';
 
-		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/home')
-		);
+		// $cardinfo =  $card_info->getCardInfo($id,$deal_detail,$description,$logo,$brand_name,$title,$sub_title,$notice,$custom_url_name,$custom_url,$promotion_url_name,$promotion_url);
 
-		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_account'),
-			'href' => $this->url->link('account/account', '', true)
-		);
-
-		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_success'),
-			'href' => $this->url->link('account/success')
-		);
-
-		$data['heading_title'] = $this->language->get('heading_title');
-
-		$this->load->model('account/customer_group');
-
-		$customer_group_info = $this->model_account_customer_group->getCustomerGroup($this->config->get('config_customer_group_id'));
-
-		if ($customer_group_info && !$customer_group_info['approval']) {
-			$data['text_message'] = sprintf($this->language->get('text_message'), $this->url->link('information/contact'));
-		} else {
-			$data['text_message'] = sprintf($this->language->get('text_approval'), $this->config->get('config_name'), $this->url->link('information/contact'));
-		}
-
-		$data['button_continue'] = $this->language->get('button_continue');
-
-		if ($this->cart->hasProducts()) {
-			$data['continue'] = $this->url->link('checkout/cart');
-		} else {
-			$data['continue'] = $this->url->link('account/account', '', true);
-		}
-
-		$data['column_left'] = $this->load->controller('common/column_left');
-		$data['column_right'] = $this->load->controller('common/column_right');
-		$data['content_top'] = $this->load->controller('common/content_top');
-		$data['content_bottom'] = $this->load->controller('common/content_bottom');
-		$data['footer'] = $this->load->controller('common/footer');
-		$data['header'] = $this->load->controller('common/header');
+		// $data['cardinfo'] = $cardinfo;
 
 		$this->response->setOutput($this->load->view('common/success_register', $data));
 	}

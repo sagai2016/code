@@ -1,4 +1,4 @@
-
+<?php exit();?>
 <?php echo $header; ?>
 <div class="container">
   <div class="row"><?php echo $column_left; ?>

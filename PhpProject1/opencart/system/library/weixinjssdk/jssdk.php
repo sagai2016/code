@@ -67,24 +67,13 @@ class JSSDK {
      * @param type $promotion_url 营销入口跳转外链的地址链接。
      * 
      */
-    //$id = 0, $deal_detail = '', $description = '', $logo = '', $brand_name = '', $title = '', $sub_title = '', $notice = '', $custom_url_name = '', $custom_url = '', $promotion_url_name = '', $promotion_url = ''
-    function getCardInfo() {
-
-        $id = 1111;
-        $deal_detail = '芭蕉卡券';
-        $description = '芭蕉卡券的描述';
-        $logo = 'http://'.$_SERVER['HTTP_HOST'].'/'.'image/catalog/code.jpg';
-        $brand_name = '芭蕉';
-        $title = '芭蕉的卡券名';
-        $sub_title = '芭蕉的券名';
-        $notice = '芭蕉卡券使用说明';
-        $custom_url_name = '进入芭蕉地';
-        $custom_url = '127.0.0.1';
-        $promotion_url_name = '卖芭蕉了。。。';
-        $promotion_url = 'www.baidu.com';
+    
+    function getCardInfo($id = 0, $deal_detail = '', $description = '', $logo = '', $brand_name = '', $title = '', $sub_title = '', $notice = '', $custom_url_name = '', $custom_url = '', $promotion_url_name = '', $promotion_url = '') {
 
 
-        if (!empty($id) && empty($_SESSION[$id])) {
+
+        if (!empty($id) && empty($_SESSION['card'.$id])) {
+
             $accessToken = $this->getAccessToken();
             $url = "https://api.weixin.qq.com/card/create?access_token={$accessToken}";
 
@@ -103,7 +92,7 @@ class JSSDK {
             $base_info['sku'] = ['quantity' => 1];
             $base_info['date_info'] = ['type' => 'DATE_TYPE_FIX_TIME_RANGE', 'begin_timestamp' => strtotime(date('y-m-d')), 'end_timestamp' => strtotime(date('y-m-d')) + 157680000];
             $base_info['center_title'] = '点击使用';
-            $base_info['center_url'] = 'http://cart.jlwhjl.com/mobile/index.php?route=common/testweb?cartid=' . $id;
+            $base_info['center_url'] = 'http://cart.jlwhjl.com/mobile/index.php?route=common/testweb&cartid=' . $id;
             $base_info['custom_url_name'] = $custom_url_name;
             $base_info['custom_url'] = $custom_url;
             $base_info['promotion_url_name'] = $promotion_url_name;
@@ -116,16 +105,21 @@ class JSSDK {
             $data['card']['groupon'] = ['deal_detail' => $deal_detail, 'base_info' => $base_info];
 
             $post = json_encode($data, JSON_UNESCAPED_UNICODE);
+
             $res = json_decode($this->httpPost($url, $post));
+
             if ($res->errmsg === 'ok') {
                 $api_ticket = $this->getCardApiTicket();
                 $timestamp = strtotime(date('y-m-d'));
                 $signature = sha1($timestamp . $api_ticket . $res->card_id);
-                $_SESSION[$id] = [$res->card_id, $signature, $timestamp];
-                return $_SESSION[$id];
+                $_SESSION['card'.$id] = [$res->card_id, $signature, $timestamp];
+
+
+
+                return $_SESSION['card'.$id];
             }
         } else {
-            return $_SESSION[$id];
+            return @$_SESSION['card'.$id];
         }
     }
 

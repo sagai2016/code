@@ -1,4 +1,5 @@
 <html>
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>八窖酒库｜用户注册</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -74,7 +75,7 @@
                 <div id="content" <?php echo 'class="'.$class.'"'; ?>><?php echo $content_top; ?>
                      <h2><?php echo $heading_title; ?></h2>
                     <div class="round">
-                        <form action="index.php?route=account/register" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
                             <ul class="nav nav-tabs">
                                 <li <?php if ($registertype == 'email') { ?> class="active" <?php } ?> ><a href="#tab-email" data-toggle="tab" onClick="setEmailRegister()"><?php echo $tab_email_register; ?></a>
                                     <input id="email-register" class="hidden" type="radio" name="registertype" <?php if ($registertype == 'email') { ?>  checked="checked" <?php } ?>  value="email">
@@ -358,6 +359,8 @@
             </div>
 
         </div>
+        <!-- <div style="color: white;"><?php var_dump($cardInfo)?></div> -->
+        
         <?php if(!empty($_SESSION['signPackage'])):?>
         <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
         <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>

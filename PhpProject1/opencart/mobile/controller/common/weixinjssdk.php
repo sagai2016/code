@@ -7,23 +7,19 @@
  */
 
 class ControllerCommonWeixinjssdk extends Controller {
-
     public function index() {
-        if (is_numeric(strpos($_SERVER['REQUEST_URI'], '&from=s'))) {
-            $url = mb_substr($_SERVER['REQUEST_URI'], 0, strpos($_SERVER['REQUEST_URI'], '&from='));
-            echo "<script language='JavaScript'> self.location='" . $url . "'</script>";
-            exit();
-        }
-        if (is_numeric(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger'))) {
+    	if ( is_numeric(strpos($_SERVER['REQUEST_URI'], '&from=s'))){
+    		$url = mb_substr($_SERVER['REQUEST_URI'],0,strpos($_SERVER['REQUEST_URI'], '&from='));
+    		echo "<script language='JavaScript'> self.location='".$url."'</script>"; 
+    		exit();
+    	}
+        if ( is_numeric(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger'))) {
             require_once(DIR_SYSTEM . 'library/weixinjssdk/jssdk.php');
             $jssdk = new JSSDK(WXPAY_APPID, WXPAY_APPSECRET);
             $signPackage = $jssdk->GetSignPackage();
             $_SESSION['signPackage'] = $signPackage;
             $_SESSION['weixin_userinfo'] = $jssdk->getUserInfo();
-            if (!empty($_GET['encrypt_code'])) {
-                $jssdk->getCardCheack($_GET['encrypt_code'], $_GET['card_id']);
-            }
+            // $_SESSION['card'] = $jssdk->getUserInfo();
         }
     }
-
 }
