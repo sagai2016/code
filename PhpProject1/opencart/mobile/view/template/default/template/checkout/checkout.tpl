@@ -183,9 +183,11 @@
     /**/
     
     .main .bootm {
-        height: 50px;
-        font-size: 50px;
-        display: inline-block;
+          height: 80px;
+    font-size: 50px;
+    display: inline-block;
+    margin-bottom: 100px;
+        
     }
     
    .foot {
@@ -287,7 +289,72 @@
         color: #fff
 
     }
+/*confirm.php样式*/
 
+#collapse-checkout-confirm   .panel-body {
+    padding: 7px;
+}
+.confirm{
+}
+
+.confirm div{
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-bottom: 0px;
+}
+.confirm p{
+    padding: 10px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-bottom: 0;
+        
+}
+.confirm ul{
+        display: inline-block;
+        width: 100%;
+        /* font-size: 0px; */
+        
+        border-bottom: 0;
+}
+
+.confirm ul.total{
+     border: 1px solid #ddd;
+     border-bottom: 0;
+}
+    
+.confirm ul li{
+                width: 100%;
+                display: inline-block;
+                padding: 10px;
+                border-bottom: 1px solid #ccc;
+}
+.confirm ul li span{
+        line-height: 20px;
+}
+.confirm ul li.price{
+    padding: 0 !important;
+    
+}
+.confirm ul li.price span{
+    padding: 10px;
+    /* width: 33.3%; */
+    display: block;
+    border: 1px solid #ccc;
+    margin: 1%;
+    font-size: 13.3px;
+    line-height: 20px;
+}
+.confirm ul li.price strong{
+display: inline-block;
+    font-weight: normal;
+    color: #454545;
+}
+
+.confirm ul li.price strong:after{
+    content: ":";
+    display: inline-block;
+    padding: 0 5px;
+}
    /*collapse-checkout-confirm .panel-body .table-responsive .table tbody tr .text-left{
         background-color:red;
         max-width: 41px;
@@ -395,7 +462,7 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
-      <p class="bootm"></p>      
+       <p class="bootm"></p>
     </div>
        <div class="foot">
         <ul>
