@@ -25,8 +25,17 @@ class ControllerCommonHome extends Controller {
                 );
             }
         }
+    $this->coupon();        
         
-       
         $this->response->setOutput($this->load->view('common/home', $data));
+    }
+
+    private function coupon(){
+        if(!empty($this->request->get['cartid'])){
+            $this->session->data['coupon']=$this->request->get['cartid'];
+            $cardInfo = new JSSDK(WXPAY_APPID, WXPAY_APPSECRET);
+            
+             $res=$cardInfo->getCardCheack($_GET['encrypt_code'],$_GET['card_id']);
+        }
     }
 }

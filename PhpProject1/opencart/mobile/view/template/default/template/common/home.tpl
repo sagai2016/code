@@ -5,6 +5,13 @@
         <title>八窖酒库</title>
         <script src="view/javascript/jquery/jquery.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=8">
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Cache-control" content="no-cache">
+        <meta http-equiv="Cache" content="no-cache">
+
         <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
         <link rel="stylesheet" type="text/css" href="view/stylesheet/swiper.min.css" />
         <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
@@ -260,15 +267,32 @@
                     <span class="swiper-pagination"></span>
                 </div>
             </div>
-            <div class="ad2">
-                <a href="/banner/banner20172"><img src="image/catalog/demo/manufacturer/yx.jpg?M=<?php echo time()?>"></a>
-            </div>
+           
+            <div class="adList">
+                <dl>
+                <dt>
+                     <img src="image/catalog/demo/manufacturer/t4-1.jpg?M=<?php echo time()?>">
+                </dt>
+                <dd class="swiper-container2">
+
+                     <!--<div class="ad2">
+                        <a href="/banner/banner20172-1/index.html?M=<?php echo time()?>"><img src="/banner/banner20172-1/banner20172-1.png?M=<?php echo time()?>"></a>
+                    </div>-->
+                    <div class="ad2">
+                        <a href="/banner/banner20172"><img src="image/catalog/demo/manufacturer/yx.jpg?M=<?php echo time()?>"></a>
+                    </div>
+
+                    </dd>
+                </dl>
+            </div>  
+
             <div class="adList">
                 <dl>
                     <dt>
                         <img src="image/catalog/demo/manufacturer/t4.png?M=<?php echo time()?>">
                     </dt>
                     <dd class="swiper-container2">
+                    
                         <!--<ul class="swiper-wrapper">
                             <?php 
                             foreach($product as $v):

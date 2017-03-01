@@ -1,6 +1,5 @@
 <?php
-
-class sms {
+class test {
 
     public $url = '';
     public $content = '';
@@ -8,7 +7,13 @@ class sms {
     public $ch;
     public $headers;
 
+    public function __construct() {
+        $this->ch = curl_init();
+        
+    }
+
     public function start() {
+        
 
         $this->{$this->way}();
         $this->headers && $this->headers();
@@ -19,18 +24,18 @@ class sms {
         $error = curl_error($this->ch);                                       //错误信息
         curl_close($this->ch);
 
-        $this->ch = '';
-
         if (empty($res)) {
             return FALSE;
         }
 
         return $res;
+
     }
 
     private function headers() {
         curl_setopt($this->ch, CURLOPT_HTTPHEADER, $this->headers);
     }
+
 
     private function post() {
         curl_setopt($this->ch, CURLOPT_POST, TRUE);
@@ -41,22 +46,23 @@ class sms {
     private function get() {
 
         curl_setopt($this->ch, CURLOPT_URL, $this->url);
+        
     }
 
     public function cout() {
-        $this->ch = curl_init();
+
         return $this->start();
+        
     }
 
 }
 
-//$sms=new sms();
-//$sms->url='http://114.215.196.145/sendSmsApi';
-//$sms->way='post';
-////'username'=>'(用户名)','password'=>'(密码)','mobile'=>'(手机号码,多个号码以逗号隔开)','content'=>'(内容，不要超过70个字)','xh'=>'(小号)','dstime'=>'(定时发送，时间格式 date('YmdHis'))'
-//$sms->content=[];
-//$sms->headers = ['Content-Type: application/x-www-form-urlencoded; charset=utf-8;'];
-//
-//var_dump($sms->cout());
+$test=new test();
 
+$test->url='http://114.215.196.145/sendSmsApi';
+$test->way='post';
+$test->content=['username'=>'yishang','password'=>'PBM3WOcH','mobile'=>'18618305030','content'=>'【八窖酒库】你好你的验证码为 123456789','xh'=>'','dstime'=>''];
+$test->headers = ['Content-Type: application/x-www-form-urlencoded; charset=utf-8;'];
+
+var_dump($test->cout());
 

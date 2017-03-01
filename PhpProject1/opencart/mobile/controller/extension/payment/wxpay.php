@@ -267,6 +267,9 @@ class ControllerExtensionPaymentWxPay extends Controller {
 						}
 					}
 					
+					//核销卡券
+					$cardInfo = new JSSDK(WXPAY_APPID, WXPAY_APPSECRET);
+					$cardInfo->getCardDel();
 					//清除sesssion，避免客户返回不到成功页面而无法清除原有的购物车等信息
 					$this->cart->clear();
 					unset($this->session->data['shipping_method']);

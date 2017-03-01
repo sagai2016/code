@@ -59,7 +59,7 @@
             }
             .main .content .padd li input{
                 width: 100%;
-                 padding: 3% 5%;
+                padding: 3% 5%;
                 border-radius: 5px;
                 border: 1px #ccc solid;
                 outline:none;  
@@ -187,7 +187,7 @@
                     dataType: 'json',
                     success: function (info) {
                         if (!info) {
-                            $('.warning').text('* 请输入正确的验证码 ！' );
+                            $('.warning').text('* 请输入正确的验证码 ！');
                         } else {
                             location.href = '<?php echo $url[1]?>';
                         }

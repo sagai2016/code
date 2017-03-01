@@ -14,17 +14,17 @@
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script src="view/javascript/weixinopnjssdk.js?id=<?php echo time();?>"></script>
 <script type="text/javascript">
-// $(function(){
-        // weixinopnjssdk.appId='<?php echo $_SESSION['signPackage']['appId']?>';
-        // weixinopnjssdk.timestamp='<?php echo $_SESSION['signPackage']['timestamp']?>';
-        // weixinopnjssdk.nonceStr='<?php echo $_SESSION['signPackage']['nonceStr']?>';
-        // weixinopnjssdk.signature='<?php echo $_SESSION['signPackage']['signature']?>';
-        // weixinopnjssdk.ready(function(){
-	       //  	weixinopnjssdk.addCard("<?php echo $cardinfo[0]?>","<?php echo $cardinfo[1]?>","<?php echo $cardinfo[2]?>",function(){
-	    location.href='index.php?route=account/login';
-	   //      	});
-    //     });
-    // });
+$(function(){
+        weixinopnjssdk.appId='<?php echo $_SESSION['signPackage']['appId']?>';
+        weixinopnjssdk.timestamp='<?php echo $_SESSION['signPackage']['timestamp']?>';
+        weixinopnjssdk.nonceStr='<?php echo $_SESSION['signPackage']['nonceStr']?>';
+        weixinopnjssdk.signature='<?php echo $_SESSION['signPackage']['signature']?>';
+        weixinopnjssdk.ready(function(){
+                weixinopnjssdk.addCard("<?php echo $info[0]?>","<?php echo $info[1]?>","<?php echo $info[2]?>",function(){
+                        location.href='index.php?route=account/login';
+                });
+        });
+    });
 </script>
 
 

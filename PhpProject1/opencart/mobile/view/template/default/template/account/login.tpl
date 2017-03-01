@@ -97,7 +97,6 @@
             a:visited { 
                 text-decoration: none; 
             } 
-
         </style>
     </head>
     <body>
@@ -172,4 +171,3 @@
         <?php endif;?>
     </body>
 </html>
-

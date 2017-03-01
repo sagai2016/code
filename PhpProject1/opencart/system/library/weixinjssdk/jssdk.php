@@ -67,12 +67,10 @@ class JSSDK {
      * @param type $promotion_url 营销入口跳转外链的地址链接。
      * 
      */
-    
     function getCardInfo($id = 0, $deal_detail = '', $description = '', $logo = '', $brand_name = '', $title = '', $sub_title = '', $notice = '', $custom_url_name = '', $custom_url = '', $promotion_url_name = '', $promotion_url = '') {
 
 
-
-        if (!empty($id) && empty($_SESSION['card'.$id])) {
+        if (!empty($id) && empty($_SESSION['card' . $id])) {
 
             $accessToken = $this->getAccessToken();
             $url = "https://api.weixin.qq.com/card/create?access_token={$accessToken}";
@@ -85,7 +83,7 @@ class JSSDK {
             $base_info['brand_name'] = $brand_name;
             $base_info['code_type'] = 'CODE_TYPE_NONE';
             $base_info['title'] = $title;     //标题
-            $base_info['sub_title'] = $sub_title;
+            $sub_title && $base_info['sub_title'] = $sub_title;
             $base_info['color'] = 'Color010';
             $base_info['notice'] = $notice;
             $base_info['description'] = $description;
@@ -93,10 +91,12 @@ class JSSDK {
             $base_info['date_info'] = ['type' => 'DATE_TYPE_FIX_TIME_RANGE', 'begin_timestamp' => strtotime(date('y-m-d')), 'end_timestamp' => strtotime(date('y-m-d')) + 157680000];
             $base_info['center_title'] = '点击使用';
             $base_info['center_url'] = 'http://cart.jlwhjl.com/mobile/index.php?route=common/testweb&cartid=' . $id;
-            $base_info['custom_url_name'] = $custom_url_name;
-            $base_info['custom_url'] = $custom_url;
-            $base_info['promotion_url_name'] = $promotion_url_name;
-            $base_info['promotion_url'] = $promotion_url;
+
+            $custom_url_name && $base_info['custom_url_name'] = $custom_url_name;
+            $custom_url && $base_info['custom_url'] = $custom_url;
+            $promotion_url_name && $base_info['promotion_url_name'] = $promotion_url_name;
+            $promotion_url && $base_info['promotion_url'] = $promotion_url;
+
             $base_info['get_limit'] = 1;
             $base_info['can_share'] = false;
             $base_info['can_give_friend'] = false;
@@ -112,14 +112,14 @@ class JSSDK {
                 $api_ticket = $this->getCardApiTicket();
                 $timestamp = strtotime(date('y-m-d'));
                 $signature = sha1($timestamp . $api_ticket . $res->card_id);
-                $_SESSION['card'.$id] = [$res->card_id, $signature, $timestamp];
+                $_SESSION['card' . $id] = [$res->card_id, $signature, $timestamp];
 
 
 
-                return $_SESSION['card'.$id];
+                return $_SESSION['card' . $id];
             }
         } else {
-            return @$_SESSION['card'.$id];
+            return @$_SESSION['card' . $id];
         }
     }
 
@@ -130,16 +130,17 @@ class JSSDK {
      * @return type
      */
     function getCardCheack($card, $card_id) {
+
         $accessToken = $this->getAccessToken();
         $url = "https://api.weixin.qq.com/card/code/decrypt?access_token={$accessToken}";
         $data['encrypt_code'] = $card;
-
         $post = json_encode($data, JSON_UNESCAPED_UNICODE);
         $res = json_decode($this->httpPost($url, $post));
         if ($res->errmsg === 'ok') {
             $_SESSION['encrypt_code'] = $res->code;
             $_SESSION['card_id'] = $card_id;
         }
+        return $res;
     }
 
     /**

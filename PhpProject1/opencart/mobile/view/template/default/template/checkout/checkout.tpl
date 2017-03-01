@@ -290,7 +290,9 @@
 
     }
 /*confirm.php样式*/
-
+.main .row #content .panel-group{
+	margin-bottom: 40px;
+}
 #collapse-checkout-confirm   .panel-body {
     padding: 7px;
 }
@@ -471,7 +473,7 @@ display: inline-block;
             <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
             <li> <a href="index.php?route=account/login">个人中心</a> </li>
         </ul>
-    </div>
+    	</div>
 
     <div class="info">
        <header>服务协议</header>

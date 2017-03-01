@@ -23,7 +23,6 @@
                 display: block;
                 margin: auto;
             }
-
             .header .top {
                 position: fixed;
                 background: #262424;
@@ -33,7 +32,6 @@
                 line-height: 26px;
                 z-index: 999;
             }
-
             .header  .top a{
                 color: #9c9ba0;
                 padding: 0 5px;
@@ -46,7 +44,6 @@
                 margin: auto;
                 max-width: 750px;
                 width:100%;
-
                 text-align: center;
             }
             .main .content p{

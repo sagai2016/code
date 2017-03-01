@@ -19,7 +19,7 @@ class ControllerCommonWeixinjssdk extends Controller {
             $signPackage = $jssdk->GetSignPackage();
             $_SESSION['signPackage'] = $signPackage;
             $_SESSION['weixin_userinfo'] = $jssdk->getUserInfo();
-            // $_SESSION['card'] = $jssdk->getUserInfo();
+           // $_SESSION['card'] = $jssdk->getUserInfo();
         }
     }
 }

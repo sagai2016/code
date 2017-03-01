@@ -60,7 +60,6 @@
                 float: right;
                 color: #9c9ba0;
                 font-size: 13px;
-
             }
             .top span a{
                 display: inline-block;
@@ -72,7 +71,6 @@
                 border-right: 1px solid #fff;
                 padding: 0 5px;
             }
-
             .main .bootm {
                 height: 50px;
                 font-size: 50px;
@@ -87,7 +85,6 @@
             .main .header{
                 width: 100%;
                 padding: 2%;
-
                 font-size: 0;
             }
             .main .header ul{
@@ -104,7 +101,6 @@
                 border-radius: 10px;
                 vertical-align: middle;
                 padding: 6%;
-
             }
             .main .header  .userinfo{
                 display: inline-block;
@@ -115,7 +111,6 @@
             .main .header  .userinfo p{
                 font-size: 14px;
                 width:100%;
-
                 letter-spacing: 1.5px;
             }
             .main .header  .userinfo p span{
@@ -123,16 +118,12 @@
                 padding: 0 7px;
                 color: #c9c9c9;
             }
-
             .main .header  .userinfo p.username{
                 line-height: 18px;
             }
-
             .main .header  .userinfo p.usernkey{
                 line-height: 30px;
             }
-
-
             .main .usertoollist{
                 width:100%;
                 padding:2%;
@@ -142,15 +133,12 @@
                 width:100%;
                 font-szie:0;
             }
-
             .main .usertoollist ul li{
                 padding: 10px;
                 background: #fff;
                 border: 1px #e5e5e5 solid;
                 margin-bottom: 10px;
             }
-
-
             .main .usertoollist a{
                 display: inline-block;
                 line-height: 30px;
@@ -172,11 +160,9 @@
                 position: fixed;
                 bottom: 0;
             }
-
             .foot * {
                 color: #787878;
             }
-
             .foot ul {
                 background: #fff;
                 margin: auto;
@@ -186,7 +172,6 @@
                 width: 100%;
                 border: 1px solid #ccc;
             }
-
             .foot ul li {
                 width: 100%;
                 text-align: center;
@@ -210,23 +195,19 @@
                 width: 150px;
                 font-size: 20px;
             }
-
             .foot ul li.total {
                 width: 200%;
                 text-align: right;
             }
-
             .foot ul li.total span {
                 display: inline-block;
                 padding: 0 10px;
                 color: #f36815;eight: 30px;
             }
-
             .foot ul li.settlement {
                 background: #ff4444;
                 color: #fff;
             }
-
             .foot ul li.settlement span {
                 color: #fff;
             }
@@ -235,7 +216,6 @@
             }
             
             @media (max-width: 500px) {}
-
             @media (min-width: 400px) {}
         </style>
     </head>

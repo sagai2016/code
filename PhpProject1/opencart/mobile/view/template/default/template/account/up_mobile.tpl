@@ -5,18 +5,15 @@
         <meta charset="UTF-8">
         <title>Document</title>
         <style>
-
             span {
                 display: inline-block;
             }
-
             input{
                 display: inline-block;
             }
             .showtime{
                 display: none;
             }
-
         </style>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -56,7 +53,6 @@
         $(function () {
             $('.Telz').bind('click', function () {
                 t = 0;
-
                 $.ajax({
                     type: 'POST',
                     url: "index.php?route=account/mobile/sms",
@@ -72,13 +68,10 @@
                             $('#input-telephone').after('<span>' + info.errmsg + '</span>');
                         }
                     }});
-
             });
-
             $("#input-telephone").on('click', function () {
                 $(this).next('span').empty();
             });
-
             $('#gotoreg').on('click', function () {
                 $.ajax({
                     type: 'POST',
@@ -91,7 +84,6 @@
                     }
                 });
             });
-
         });
     </script>
 </html>
