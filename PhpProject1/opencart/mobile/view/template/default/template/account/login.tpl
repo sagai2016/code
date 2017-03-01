@@ -118,10 +118,10 @@
             <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_qq_login_warning; ?></div>
             <?php } ?>
             <div class="login">
-            
+
                 <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
                     <div class='image'>
-                    
+
                         <img src="<?php echo $_SESSION['weixin_userinfo']['headimgurl'];?>">
                     </div>
                     <div class='name'>
@@ -139,18 +139,18 @@
                 <div>
                     <a href="index.php?">返回首页</a>
                     <span>|</span>
-                    <a href="<?php echo $register; ?>">用户注册</a>
+                    <a href="index.php?route=account/mobile">用户注册</a>
                     <span>|</span>
-                    <a href="<?php echo $forgotten; ?>">忘记密码</a>
+                    <a href="index.php?route=account/mobile&u=2">忘记密码</a>
 
                 </div>
             </div>
         </div>
         <script>
             function change(a) {
-                $(a).css("border-color", "#0080ff").blur(function () {
-                    $(a).css("border-color", "");
-                })
+            $(a).css("border-color", "#0080ff").blur(function () {
+            $(a).css("border-color", "");
+            })
             }
         </script>
 
@@ -159,15 +159,14 @@
         <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
         <script src="view/javascript/weixinopnjssdk.js"></script>
         <script type="text/javascript">
-        $(function(){
-                weixinopnjssdk.appId='<?php echo $_SESSION['signPackage']['appId']?>';
-                weixinopnjssdk.timestamp='<?php echo $_SESSION['signPackage']['timestamp']?>';
-                weixinopnjssdk.nonceStr='<?php echo $_SESSION['signPackage']['nonceStr']?>';
-                weixinopnjssdk.signature='<?php echo $_SESSION['signPackage']['signature']?>';
-                
-                weixinopnjssdk.ready(function(){
-                wx.hideOptionMenu();
-                });
+            $(function(){
+            weixinopnjssdk.appId = '<?php echo $_SESSION['signPackage']['appId']?>';
+            weixinopnjssdk.timestamp = '<?php echo $_SESSION['signPackage']['timestamp']?>';
+            weixinopnjssdk.nonceStr = '<?php echo $_SESSION['signPackage']['nonceStr']?>';
+            weixinopnjssdk.signature = '<?php echo $_SESSION['signPackage']['signature']?>';
+            weixinopnjssdk.ready(function(){
+            wx.hideOptionMenu();
+            });
             });
         </script>
         <?php endif;?>

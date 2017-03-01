@@ -3,6 +3,7 @@ class ControllerAccountLogin extends Controller {
 	private $error = array();
 
 	public function index() {
+            
 		$this->load->model('account/customer');
 		// Login override for admin users
 
@@ -203,8 +204,10 @@ class ControllerAccountLogin extends Controller {
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
-		
-		$this->response->setOutput($this->load->view('account/login', $data));
+
+
+                                            
+        $this->response->setOutput($this->load->view('account/login', $data));
 	}
 
 	protected function validate() {

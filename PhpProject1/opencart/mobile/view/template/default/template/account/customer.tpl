@@ -280,7 +280,7 @@
             <div class="usertoollist">
                 <ul>
                     <li> <a href="index.php?route=account/edit">个人资料<span class="fa fa-arrow-circle-right"></span></a></li>
-                    <li> <a href="index.php?route=account/password">密码管理<span class="fa fa-arrow-circle-right"></span></a></li>
+                    <li> <a href="index.php?route=account/mobile&u=1">密码管理<span class="fa fa-arrow-circle-right"></span></a></li>
                     <li> <a href="index.php?route=account/address">我的地址<span class="fa fa-arrow-circle-right"></span></a></li>
                     <li> <a href="index.php?route=account/wishlist">美酒收藏<span class="fa fa-arrow-circle-right"></span></a></li>
                     <li> <a href="index.php?route=account/order">购物记录<span class="fa fa-arrow-circle-right"></span></a></li>

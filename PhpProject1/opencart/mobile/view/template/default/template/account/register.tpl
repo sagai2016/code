@@ -64,6 +64,10 @@
         a:visited { 
             text-decoration: none; 
         } 
+        .col-sm-10{
+            float: next;
+                text-align: -webkit-center;
+        }
     </style>
     <body>
         <div class="container">
@@ -76,32 +80,12 @@
                      <h2><?php echo $heading_title; ?></h2>
                     <div class="round">
                         <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
-                            <ul class="nav nav-tabs">
-                                <li <?php if ($registertype == 'email') { ?> class="active" <?php } ?> ><a href="#tab-email" data-toggle="tab" onClick="setEmailRegister()"><?php echo $tab_email_register; ?></a>
-                                    <input id="email-register" class="hidden" type="radio" name="registertype" <?php if ($registertype == 'email') { ?>  checked="checked" <?php } ?>  value="email">
-                                </li>
-                                <li <?php if ($registertype == 'mobile') { ?> class="active" <?php } ?> ><a href="#tab-mobile" data-toggle="tab" onClick="setMobileRegister()"><?php echo $tab_mobile_register; ?></a>
-                                    <input id="mobile-register" class="hidden" type="radio" name="registertype" <?php if ($registertype == 'mobile') { ?>  checked="checked" <?php } ?> value="mobile">
-                                </li>
-                            </ul>
+                          
                             <div class="tab-content">
-                                <div class="tab-pane <?php if ($registertype == 'email') { ?> active <?php } ?> " id="tab-email">
-
+                                <div class="active" id="tab-mobile">
                                     <div class="form-group required">
                                         <div class="col-sm-10">
-                                            <input type="email" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-email" class="form-control" />
-                                            <?php if ($error_email) { ?>
-                                            <div class="text-danger"><?php echo $error_email; ?></div>
-                                            <?php } ?>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="tab-pane <?php if ($registertype == 'mobile') { ?> active <?php } ?> " id="tab-mobile">
-                                    <div class="form-group required">
-                                        <div class="col-sm-10">
-                                            <input type="text" name="telephone" value="<?php echo $telephone; ?>" placeholder="<?php echo $entry_telephone; ?>" id="input-telephone" class="form-control" />
+                                            <input type="text" name="telephone" readonly="readonly" value="<?php echo $_SESSION['mobile'];?>" id="input-telephone" class="form-control" />
 
                                             <?php if($sms_gateway) { ?>
                                             <br />
@@ -131,6 +115,10 @@
                                     <?php } ?>
 
                                 </div>
+                                
+                             
+
+                                
 
                                 <div class="form-group required"  <?php echo 'style="display:'.(count($customer_groups) > 1 ? 'block' : 'none').'"'; ?>;>
                                      <label class="col-sm-2 control-label"><?php echo $entry_customer_group; ?></label>
@@ -324,7 +312,6 @@
                                     </div>
                                 </div>
 
-                                <?php echo $captcha; ?>
 
 
                             </div>
