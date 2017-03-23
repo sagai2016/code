@@ -7,16 +7,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
         <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-        <script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
-        <link href="view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+        <link href="../catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen" />
         <link href="view/stylesheet/stylesheet.css" rel="stylesheet">
-        <script src="view/javascript/jquery/datetimepicker/moment.js" type="text/javascript"></script>
-        <script src="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js"type="text/javascript"></script>
-        <script src="view/javascript/jquery/magnific/jquery.magnific-popup.min.js" type="text/javascript"></script>
-        <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
-        <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
-        <script src="view/javascript/jquery/jquery.flexslider.js" type="text/javascript"></script>
-        <script src="view/javascript/o-script.js" type="text/javascript"></script>
         <script src="view/javascript/common.js" type="text/javascript"></script>
         <style>
             ul, li, h1, h2, h3, h4, h5, h6, dt, dd, dl, ol, dl, dt, dd, p {
@@ -28,7 +21,7 @@
             body, html {
                 margin: 0;
                 padding: 0;
-                background: #f8f8f8;
+                background: #f5f5f5;;
             }
             * {
                 box-sizing: border-box;
@@ -39,25 +32,57 @@
                 display: block;
                 margin: auto;
             }
-            .top *{
-                color: #787878;
-                font-size: 15.5px;
-                font-weight: 300;
-            }
+
             .top {
+
+            }
+            .main .zhutu{
+                padding: 2%;
+            }
+            .main .zhutu img{
                 width: 100%;
-                display: flex;
-                position: fixed;
-                top:0;
-
-
+                height: 100%;
+                border: #ccc solid 1px;
+                border-radius: 5px;
             }
             .top .link {
                 display: inline-flex;
                 justify-content: space-between;
                 width: 100%;
-                background: rgba(255,255,255,.98); 
+                position: fixed;
+                background: #262424;
+                z-index: 2;
             }
+            .top .link #none,.top .link #show{
+               color: #fff;
+               width: 10%;
+            }
+            .top .link #none{
+                display:none;
+            }
+            .top .allCategory {
+                background-color: #fff;
+                width: 40%;
+                z-index: 3;
+                position: fixed;
+                margin-top: 38px;
+                left: -370px;
+                height: 100%;
+                opacity: .95;
+                color: #fff;
+                border: 1px #e0e0e0 solid;
+                box-shadow: rgba(59, 60, 62, 0.29) 11px -4px 20px 1px;
+            }
+            .top .allCategory li{
+                padding: 4% 5%;
+                border-bottom:  1px #e0e0e0 solid;
+                margin: 3%;
+            }
+            .top .allCategory li i{
+                color:#6e6e6e;
+                margin-right: 17px;
+            }
+                
             .top .link li {
                 width: 100%;
                 text-align: center;
@@ -66,14 +91,15 @@
             }
             .top .link li a{
                 font-size: 12px;
-                text-shadow: 1px 1px 1px #ddd;
+                color:#fff;
             }
-            .top .link .linkmain {
-                border-bottom: 1px solid #ff2e00;
+            .top .link .linkmain{
+                color:#fff;
+                    margin-left: -5%;
             }
-            .top .link .linkmain a{
-                color:#ff2e00;
-            }
+             .top .allCategory .linkmain a{
+                 color:red;
+             }
             .main .limit{
                 margin-top: 70px;
             }
@@ -90,34 +116,55 @@
                 width: 100%;
                 font-size: 0;
             }
+            .main .goodslist .list{
+                padding: 2%;
+            }
             .main .goodslist .list li {
                 display: inline-block;
-                width: 50%;
+                width: 100%;
                 padding: 1.5%;
                 vertical-align: top;
-
+                border: #ccc solid 1px;
+                padding: 2%;
+                border-radius: 5px;
+                background: #fff;
+                margin: 5px auto;
             }
-            .main .goodslist .list li p {
-                border: 1px solid #e5e5e5;
+            .main .goodslist .list li div{
                 font-size: 14px;
                 padding: 3%;
                 background: #fff;
                 display: inline-block;
-                box-shadow:0 0 5px rgba(150,150,150,.1);
-                border-radius: 3px;
+                width: 50%;
+                vertical-align: top;
+
             }
-            .main .goodslist .list li p a img {
+            .main .goodslist .list li div a img {
                 width: 100%;
-                border-radius: 2px;
+                border-radius: 5px;
+                border: solid #ccc 1px;
+
             }
-            .main .goodslist .list li span {
+            .main .goodslist .list li p {
                 display: inline-block;
                 padding: 2%;
                 width: 100%;
-                line-height: 38px;
-                height: 35px;
-                text-align: center;
-                overflow: hidden;
+                line-height: 19px;
+                height: 38px;
+                word-wrap: break-word;
+                letter-spacing: 0.5px;
+                overflow:hidden; 
+                text-overflow:ellipsis;
+                color: #555555;
+                font-size: 12px;
+                /*white-space:nowrap; overflow:hidden; text-overflow:ellipsis;*/
+            }
+            .main .goodslist .list li .price{
+                font-weight: bolder;
+                color:#dc512c;
+                height: 24px;
+                font-size: 14px;
+                margin-top: 48%;
             }
             /*
             .main .goodslist .list li span+a {
@@ -133,8 +180,8 @@
             }
             */
 
-            .main .bootm {
-                height: 50px;
+            .bootm {
+                height: 34px;
                 font-size: 50px;
                 display: inline-block;
             }
@@ -167,17 +214,16 @@
                 border-width: 0 1px 0 0;
                 border-style: solid;
                 border-color: #ccc;
-                font-size: 12px;
             }
             .foot ul li a{
                 letter-spacing:1.5px;
-                font-size: 12px;
+                font-size: 14px;
                 text-shadow: 1px 1px 1px #ddd;
             }
             .foot ul .home {
-                letter-spacing:1.5px;
                 width: 150px;
                 text-shadow: 1px 1px 1px #ddd;
+                font-size: 20px;
             }
             .foot ul .home .icon-goodshome{
                 vertical-align: middle;
@@ -186,35 +232,43 @@
             }
             .foot ul li a{
                 letter-spacing:1.5px;
-                font-size: 12px;
+                font-size: 14px;
                 text-decoration: none;
                 text-shadow: 1px 1px 1px #ddd;
             }
             .message{
                 font-size: 14px;
                 text-align: center;
-                border: 1px solid #ccc;
-                line-height: 35px;
-                width: 85%;
-                margin:10px auto;
-                margin-bottom: 100px;
-            }
-            @media (min-width: 500px) {
-                .main .goodslist .list li {
-                    width: 33.3%;
-                }
+                margin: 0 0px 10px 0;
             }
             a{
                 text-decoration: none;
+                color:#666; 
             }
-
+            a:visited { 
+                color:#666; 
+                text-decoration: none; 
+            } 
         </style>
-
     </head>
-
     <body>
+        <script src="view/javascript/jquery/move.min.js" type="text/javascript"></script>
         <div class="top">
             <ul class="link">
+                <li class="zero fa fa-indent fa-lg" id="show"></li>
+                <li class="zero fa fa-dedent fa-lg" id="none"></li>
+                <!--<?php
+                foreach($three as $v):
+                $cc='';
+                if(!empty($_GET['path'] ) && $_GET['path'] ==  $v['category_id']){
+                $cc = 'class="linkmain"';
+                }
+                ?>
+                <li  <?php echo $cc;?>> <a href="<?php echo  $v['href']?>"><?php echo $v['name']?></a> </li>
+                <?php endforeach?>-->
+                <li class="linkmain"><?php echo $heading_title; ?></li>
+            </ul>
+            <ul class="allCategory">
                 <?php
                 foreach($categories as $categorie):
                 $cc='';
@@ -222,32 +276,34 @@
                 $cc = 'class="linkmain"';
                 }
                 ?>
-                <li  <?php echo $cc;?>> <a href="<?php echo  $categorie['href']?>"><?php echo $categorie['name']?></a> </li>
+                <li  <?php echo $cc;?>><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="<?php echo  $categorie['href']?>"><?php echo $categorie['name']?></a> </li>
+
                 <?php endforeach?>
             </ul>
         </div>
-
         <div class="main">
 
-
-
-            <p class="bootm"> </p>
-
+            <p class="bootm"></p>
+            
+            <p class="zhutu"><img src="<?php echo $thumb; ?>"></p>
             <div class="goodslist">
-
-
+                <?php var_dump($products);?>
                 <ul class="list">
                     <?php foreach ($products as $product) { ?>
                     <li>
-                        <p> 
+                        <div> 
                             <a href="<?php echo $product['href']; ?>">
                                 <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>"/>
                             </a>
-                            <span>
+                        </div>
+                        <div>
+                            <p>
                                 <?php echo $product['name']; ?>
-                            </span> 
-
-                        </p>
+                            </p> 
+                            <p class="price">
+                                <?php echo $product['price']; ?>
+                            </p> 
+                        </div>
                     </li>
                     <?php } ?>
                 </ul>     
@@ -271,67 +327,85 @@
                     <div class="pagination"><?php echo $pagination; ?></div>-->
             </div>    
         </div>
-
         <p class="bootm"> </p>
-    </div>
-    <div class="foot">
-        <ul>
-            <li class="home"><a href="index.php?" class="icon-goodshome"></a></li>
-            <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>
-            <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
-            <li> <a href="index.php?route=account/login">用户中心</a> </li>
+        <div class="foot">
+            <ul>
+                <li class="home"><a href="index.php?" class="icon-goodshome"></a></li>
+                <li> <a href="index.php?route=product/categoryy">全部商品</a> </li>
+                <li> <a href="index.php?route=checkout/cart">购物车</a> </li>
+                <li> <a href="index.php?route=account/login">用户中心</a> </li>
 
-        </ul>
-    </div>
+            </ul>
+        </div>
 
-    <script>
-        var path = '<?php echo $_GET['path']?>';
-                var ispage = 1;
-        $(window).scroll(function () {
-            var scrollTop = $(this).scrollTop() + 150; //可卷上去的高度
-            var scrollHeight = $(document).height(); //定位整块区域的高度
-            var windowHeight = $(this).height(); //整个滚动条可滚动的高度
+        <script>
+            var path = '<?php echo $_GET['path']?>';
+                    var ispage = 1;
+            $(window).scroll(function () {
+                var scrollTop = $(this).scrollTop() + 150; //可卷上去的高度
+                var scrollHeight = $(document).height(); //定位整块区域的高度
+                var windowHeight = $(this).height(); //整个滚动条可滚动的高度
 
-            var z1 = scrollHeight - windowHeight;
-            if (z1 < scrollTop) {
-                var stop = $('.goodslist').find('.message').data('stop');
-                if (!stop) {
-                    ++ispage;
-                    $.ajax({
-                        url: 'index.php?route=product/category/back',
-                        type: 'get',
-                        dataType: 'json',
-                        data: 'page=' + ispage + '&path=' + path,
-                        success: function (a) { //成功 
-                            var html = '';
-                            if (a !== 'stop') {
-                                for (var i = 0; i < a.length; i++) {
+                var z1 = scrollHeight - windowHeight;
+                if (z1 < scrollTop) {
+                    var stop = $('.goodslist').find('.message').data('stop');
+                    if (!stop) {
+                        ++ispage;
+                        $.ajax({
+                            url: 'index.php?route=product/category/back',
+                            type: 'get',
+                            dataType: 'json',
+                            data: 'page=' + ispage + '&path=' + path,
+                            success: function (a) { //成功 
+                                var html = '';
+                                if (a !== 'stop') {
+                                    for (var i = 0; i < a.length; i++) {
 
-                                    html += '<li>' +
-                                            '<p>' +
-                                            '<a href=index.php?route=common/product&product_id=' + a[i]['product_id'] + '><img src=' + a[i]['thumb'] + '></a><span>' +
-                                            a[i]['name'] + '</span>' +
-                                            '</p>' +
-                                            '</li>';
+                                        html += '<li>' +
+                                                '<p>' +
+                                                '<a href=index.php?route=common/product&product_id=' + a[i]['product_id'] + '><img src=' + a[i]['thumb'] + '></a><span>' +
+                                                a[i]['name'] + '</span>' +
+                                                '</p>' +
+                                                '</li>';
 
-                                }
-                                $(".list").append(html);
-                            } else {
-                                var stop = $('.goodslist').find('.message').data('stop');
-                                if (!stop) {
-                                    $(".goodslist").append('<div data-stop="true" class="message">没有更多的数据了</div>');
+                                    }
+                                    $(".list").append(html);
+                                } else {
+                                    var stop = $('.goodslist').find('.message').data('stop');
+                                    if (!stop) {
+                                        $(".goodslist").append('<div data-stop="true" class="message">没有更多的数据了</div>');
+                                    }
                                 }
                             }
-                        }
-                    });
+                        });
+                    }
                 }
+            });
+        </script>
+    </body>
+    <script>
+        var j = 1;
+        console.log(j)
+        $('.zero').click(function () {
+            if (j > 0) {
+                $('#show').hide();
+                $('#none').show();
+                move('.allCategory')
+                        .ease('cubic-bezier(0.67, 0.1, 0.04, 1.29)')
+                        .x(368)
+                        .end();
+                j = 0;
+            } else {
+                 $('#show').show();
+                $('#none').hide();
+                move('.allCategory')
+                        .ease('cubic-bezier(0.39, 1.14, 0.74, 0.63)')
+                        .x(-370)
+                        .end();
+                j = 1;
             }
-        });
-
-
+            console.log(j)
+        })
 
     </script>
-
-
-</body>
 </html>

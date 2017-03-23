@@ -279,7 +279,7 @@
                         <a href="/banner/banner20172-1/index.html?M=<?php echo time()?>"><img src="/banner/banner20172-1/banner20172-1.png?M=<?php echo time()?>"></a>
                     </div>-->
                     <div class="ad2">
-                        <a href="/banner/banner20172"><img src="image/catalog/demo/manufacturer/yx.jpg?M=<?php echo time()?>"></a>
+                        <a href="index.php?route=product/category&path=62"><img src="image/catalog/demo/manufacturer/yx.jpg?M=<?php echo time()?>"></a>
                     </div>
 
                     </dd>
@@ -317,6 +317,16 @@
                 </div>
                 <?php endforeach?>
 
+            </div>
+            <div class="adList">
+                <dl>
+                    <dt>
+                     <img src="image/catalog/demo/manufacturer/t4-1.jpg?M=<?php echo time()?>">
+                    </dt>
+                    <dd class="swiper-container2">
+                        <a href="index.php?route=product/category&path=64"><img src="image/catalog/demo/manufacturer/maotai.jpg?M=<?php echo time()?>"></a>
+                    </dd>
+                </dl>
             </div>
         </div>
         <!--<div class="foot">

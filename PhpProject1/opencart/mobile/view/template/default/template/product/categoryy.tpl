@@ -17,11 +17,11 @@
             body, html {
                 margin: 0;
                 padding: 0;
-                background: #f8f8f8;
+                background: #f5f5f5;;
             }
             * {
                 color: #676767;
-                font-size: 14px;
+                font-size: 12px;
                 box-sizing: border-box;
             }
             .main {
@@ -30,7 +30,7 @@
                 display: block;
                 margin: auto;
             }
-            .top, .content, .option {
+            /*.top, .content, .option {
                 color: #2c2c2c;
                 background: #fff;
             }
@@ -50,11 +50,64 @@
                 display: inline-block;
                 height: 100%;
                 color: #9b9b9b;
-            }
+            }*/
             .main .goodslist {
                 width: 100%;
                 font-size: 0;
             }
+          
+            .top .link {
+                display: inline-flex;
+                justify-content: space-between;
+                width: 100%;
+                position: fixed;
+                background: #262424;
+                z-index: 2;
+            }
+             .top .link #none,.top .link #show{
+               color: #fff;
+               width: 10%;
+            }
+            .top .link #none{
+                display:none;
+            }
+            .top .allCategory {
+                background-color: #fff;
+                width: 40%;
+                z-index: 3;
+                position: fixed;
+                margin-top: 38px;
+                left: -370px;
+                height: 100%;
+                opacity: .95;
+                color: #fff;
+                border: 1px #e0e0e0 solid;
+                box-shadow: rgba(59, 60, 62, 0.29) 11px -4px 20px 1px;
+            }
+            .top .allCategory li{
+                padding: 4% 5%;
+                border-bottom:  1px #e0e0e0 solid;
+                margin: 3%;
+            }
+            .top .allCategory li i{
+                color:#6e6e6e;
+                margin-right: 17px;
+            }
+            .top .link li {
+                width: 100%;
+                text-align: center;
+                line-height: 38px;
+                font-size: 14px;
+            }
+            .top .link li a {
+                font-size: 12px;
+                color:#fff;
+            }
+             .top .link .linkmain ,.top .allCategory .linkmain a{
+                color:red;
+                margin-left: -5%;
+            }
+        
             .main .goodslist .list {
                 width: 100%;
                 font-size: 0;
@@ -62,7 +115,7 @@
             .main .goodslist .list li {
                 display: inline-block;
                 width: 100%;
-                padding: 1.5%;
+                padding: 2%;
                 vertical-align: top;
 
             }
@@ -124,8 +177,8 @@
                 display: flex;
                 position: fixed;
                 bottom: 0;
+                z-index: 999;
             }
-
             .foot * {
                 color: #787878;
             }
@@ -159,35 +212,15 @@
                 font-size: 18px;
                 text-shadow: 1px 1px 1px #ddd;
             }
-            .foot ul li.home {
+            .foot ul .home {
                 width: 150px;
                 font-size: 20px;
+                text-shadow: 1px 1px 1px #ddd;
             }
-
-            .foot ul li.total {
-                width: 200%;
-                text-align: right;
-            }
-
-            .foot ul li.total span {
-                display: inline-block;
-                padding: 0 10px;
-                color: #f36815;
-            }
-
-            .foot ul li.settlement {
-                background: #ff4444;
-                color: #fff;
-            }
-
-            .foot ul li.settlement span {
-                color: #fff;
-            }
-            
             a{
                 text-decoration: none;
             }
-            
+
             .mess{
                 text-align: center;
                 /* line-height: 35px; */
@@ -205,9 +238,14 @@
     </head>
 
     <body>
-        <!--
+        <script src="view/javascript/jquery/move.min.js" type="text/javascript"></script>
         <div class="top">
             <ul class="link">
+                <li class="zero fa fa-indent fa-lg" id="show"></li>
+                <li class="zero fa fa-dedent fa-lg" id="none"></li>
+                <li></li>
+            </ul>
+            <ul class="allCategory">
                 <?php
                 foreach($categories as $categorie):
                 $cc='';
@@ -217,15 +255,15 @@
                 ?>
                 <li <?php echo $cc;?>>
                     <a href="<?php echo  $categorie['href']?>">
+                        <i class="fa fa-angle-double-right" aria-hidden="true"></i>
                         <?php echo $categorie['name']?></a> </li>
-                <?php endforeach?>
+                     <?php endforeach?>
             </ul>
-        </div>-->
-
+        </div>
         <div class="main">
-            <div class="top">
+            <!--<div class="top">
                 <a href="index.php?"><i class="fa fa-chevron-left"></i></a>
-            </div>
+            </div>-->
             <p class="bootm"> </p>
             <div class="goodslist">      
                 <ul class="list">   
@@ -246,9 +284,6 @@
                     endforeach;
                     endif;?>
                 </ul>          
-
-
-
                 <!--<div class="page">
                     <div class="pagination"><?php echo $pagination; ?></div>
                 </div>-->
@@ -268,80 +303,96 @@
             </ul>
         </div>
 
-
-
         <script>
             var ispage = 1;
             $(window).scroll(function () {
-                var scrollTop = $(this).scrollTop() + 150;//可卷上去的高度
-                var scrollHeight = $(document).height();//定位整块区域的高度
-                var windowHeight = $(this).height();//整个滚动条可滚动的高度
+            var scrollTop = $(this).scrollTop() + 150; //可卷上去的高度
+            var scrollHeight = $(document).height(); //定位整块区域的高度
+            var windowHeight = $(this).height(); //整个滚动条可滚动的高度
 
-                var z1 = scrollHeight - windowHeight;
-                if (z1 < scrollTop) {
+            var z1 = scrollHeight - windowHeight;
+            if (z1 < scrollTop) {
+            var stop = $('.goodslist').find('.message').data('stop');
+            if (!stop) {
+            ++ispage;
+            $.ajax({
+            url: 'index.php?route=product/categoryy/back',
+                    type: 'get',
+                    dataType: 'json',
+                    data: 'page=' + ispage,
+                    success: function (a) { //成功 
+                    var html = '';
+                    if (a !== 'stop') {
+                    for (var h in a.all) {
+
+                    html += '<li>' +
+                            '<p>' +
+                            '<a href=index.php?route=common/product&product_id=' + a.all[h].product_id + '><img src=' + a.all[h].image + '></a>' +
+                            '</p>' +
+                            '</li>'
+
+                    }
+                    $(".list").append(html);
+                    } else {
                     var stop = $('.goodslist').find('.message').data('stop');
                     if (!stop) {
-                        ++ispage;
-                        $.ajax({
-                            url: 'index.php?route=product/categoryy/back',
-                            type: 'get',
-                            dataType: 'json',
-                            data: 'page=' + ispage,
-                            success: function (a) { //成功 
-                                var html = '';
-                                if (a !== 'stop') {
-                                    for (var h in a.all) {
-
-                                        html += '<li>' +
-                                                '<p>' +
-                                                '<a href=index.php?route=common/product&product_id=' + a.all[h].product_id + '><img src=' + a.all[h].image + '></a>' +
-                                                '</p>' +
-                                                '</li>'
-
-                                    }
-                                    $(".list").append(html);
-                                } else {
-                                    var stop = $('.goodslist').find('.message').data('stop');
-                                    if (!stop) {
-                                        $(".goodslist").append('<div data-stop="true" class="message"></div>');
-                                    }
-                                }
-                            }
-                        });
+                    $(".goodslist").append('<div data-stop="true" class="message"></div>');
                     }
-                }
+                    }
+                    }
             });
-
-
-
+            }
+            }
+            });
         </script>
 
 
         <?php if(!empty($_SESSION['signPackage'])):?>
-<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-<script src="view/javascript/weixinopnjssdk.js"></script>
-<script type="text/javascript">
-$(function(){
-        weixinopnjssdk.appId='<?php echo $_SESSION['signPackage']['appId']?>';
-        weixinopnjssdk.timestamp='<?php echo $_SESSION['signPackage']['timestamp']?>';
-        weixinopnjssdk.nonceStr='<?php echo $_SESSION['signPackage']['nonceStr']?>';
-        weixinopnjssdk.signature='<?php echo $_SESSION['signPackage']['signature']?>';
-
-        weixinopnjssdk.title='八窖酒库';
-        weixinopnjssdk.desc='收藏级文化白酒优选商城';
-        weixinopnjssdk.link="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/mobile' ?>";
-        weixinopnjssdk.imgUrl="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/image/catalog/demo/manufacturer/newlogo.png'; ?>";
-
-        weixinopnjssdk.ready(function(){
+        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+        <script src="view/javascript/weixinopnjssdk.js"></script>
+        <script type="text/javascript">
+            $(function(){
+            weixinopnjssdk.appId = '<?php echo $_SESSION['signPackage']['appId']?>';
+            weixinopnjssdk.timestamp = '<?php echo $_SESSION['signPackage']['timestamp']?>';
+            weixinopnjssdk.nonceStr = '<?php echo $_SESSION['signPackage']['nonceStr']?>';
+            weixinopnjssdk.signature = '<?php echo $_SESSION['signPackage']['signature']?>';
+            weixinopnjssdk.title = '八窖酒库';
+            weixinopnjssdk.desc = '收藏级文化白酒优选商城';
+            weixinopnjssdk.link = "<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/mobile' ?>";
+            weixinopnjssdk.imgUrl = "<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/image/catalog/demo/manufacturer/newlogo.png'; ?>";
+            weixinopnjssdk.ready(function(){
             /*获取“分享给朋友”按钮点击状态及自定义分享内容接口*/
             weixinopnjssdk.onMenuShareAppMessage();
             /*获取“分享到朋友圈”按钮点击状态及自定义分享内容接口*/
             weixinopnjssdk.onMenuShareTimeline();
-           
-        });
-});
-</script>
-<?php endif;?>
+            });
+            });
+        </script>
+        <?php endif;?>
     </body>
+     <script>
+        var j = 1;
+        console.log(j)
+        $('.zero').click(function () {
+            if (j > 0) {
+                $('#show').hide();
+                $('#none').show();
+                move('.allCategory')
+                        .ease('cubic-bezier(0.67, 0.1, 0.04, 1.29)')
+                        .x(368)
+                        .end();
+                j = 0;
+            } else {
+                 $('#show').show();
+                $('#none').hide();
+                move('.allCategory')
+                        .ease('cubic-bezier(0.39, 1.14, 0.74, 0.63)')
+                        .x(-370)
+                        .end();
+                j = 1;
+            }
+            console.log(j)
+        })
 
+    </script>
 </html>
