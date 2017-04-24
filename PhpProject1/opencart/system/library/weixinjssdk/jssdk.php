@@ -1,7 +1,6 @@
 <?php
 
 class JSSDK {
-
     private $appId;
     private $appSecret;
 
@@ -22,7 +21,10 @@ class JSSDK {
         $nonceStr = $this->createNonceStr();
 
         // 这里参数的顺序要按照 key 值 ASCII 码升序排序
-        $string = "jsapi_ticket=$jsapiTicket&noncestr=$nonceStr&timestamp=$timestamp&url=$url";
+        $string = 'jsapi_ticket='.$jsapiTicket;
+        $string .= '&noncestr='.$nonceStr;
+        $string .= '&timestamp='.$timestamp;
+        $string .= '&url='.$url;
 
         $signature = sha1($string);
 
@@ -34,6 +36,9 @@ class JSSDK {
             "signature" => $signature,
             "rawString" => $string
         );
+
+
+
         return $signPackage;
     }
 
@@ -44,8 +49,11 @@ class JSSDK {
 
     public function getUserInfo() {
         $accessToken = $this->getAccessToken();
+        
+
         $url = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=$accessToken&openid=$_SESSION[weixin_openid]";
         $userInfo = json_decode($this->httpGet($url), true);
+        $userInfo['userid'] = $userInfo['openid'];
         unset($userInfo['subscribe'], $userInfo['openid'], $userInfo['subscribe_time'], $userInfo['remark'], $userInfo['groupid'], $userInfo['tagid_list']);
         return $userInfo;
     }
@@ -67,8 +75,9 @@ class JSSDK {
      * @param type $promotion_url 营销入口跳转外链的地址链接。
      * 
      */
-    function getCardInfo($id = 0, $deal_detail = '', $description = '', $logo = '', $brand_name = '', $title = '', $sub_title = '', $notice = '', $custom_url_name = '', $custom_url = '', $promotion_url_name = '', $promotion_url = '') {
 
+
+    function getCardInfo($id = 0, $deal_detail = '', $description = '', $logo = '', $brand_name = '', $title = '', $sub_title = '', $notice = '', $custom_url_name = '', $custom_url = '', $promotion_url_name = '', $promotion_url = '',$date_info='2022-12-12') {
 
         if (!empty($id) && empty($_SESSION['card' . $id])) {
 
@@ -88,9 +97,9 @@ class JSSDK {
             $base_info['notice'] = $notice;
             $base_info['description'] = $description;
             $base_info['sku'] = ['quantity' => 1];
-            $base_info['date_info'] = ['type' => 'DATE_TYPE_FIX_TIME_RANGE', 'begin_timestamp' => strtotime(date('y-m-d')), 'end_timestamp' => strtotime(date('y-m-d')) + 157680000];
+            $base_info['date_info'] = ['type' => 'DATE_TYPE_FIX_TIME_RANGE', 'begin_timestamp' => strtotime(date('y-m-d')), 'end_timestamp' => strtotime($date_info)];
             $base_info['center_title'] = '点击使用';
-            $base_info['center_url'] = 'http://cart.jlwhjl.com/mobile/index.php?route=common/testweb&cartid=' . $id;
+            $base_info['center_url'] = 'http://cart.jlwhjl.com/mobile/index.php?route=common/home&cartid=' . $id;
 
             $custom_url_name && $base_info['custom_url_name'] = $custom_url_name;
             $custom_url && $base_info['custom_url'] = $custom_url;
@@ -105,23 +114,23 @@ class JSSDK {
             $data['card']['groupon'] = ['deal_detail' => $deal_detail, 'base_info' => $base_info];
 
             $post = json_encode($data, JSON_UNESCAPED_UNICODE);
-
             $res = json_decode($this->httpPost($url, $post));
-
+            
             if ($res->errmsg === 'ok') {
                 $api_ticket = $this->getCardApiTicket();
                 $timestamp = strtotime(date('y-m-d'));
                 $signature = sha1($timestamp . $api_ticket . $res->card_id);
                 $_SESSION['card' . $id] = [$res->card_id, $signature, $timestamp];
-
-
-
+            
                 return $_SESSION['card' . $id];
             }
         } else {
             return @$_SESSION['card' . $id];
         }
-    }
+
+}
+
+      
 
     /**
      * 
@@ -133,9 +142,11 @@ class JSSDK {
 
         $accessToken = $this->getAccessToken();
         $url = "https://api.weixin.qq.com/card/code/decrypt?access_token={$accessToken}";
+
         $data['encrypt_code'] = $card;
         $post = json_encode($data, JSON_UNESCAPED_UNICODE);
         $res = json_decode($this->httpPost($url, $post));
+
         if ($res->errmsg === 'ok') {
             $_SESSION['encrypt_code'] = $res->code;
             $_SESSION['card_id'] = $card_id;
@@ -155,7 +166,7 @@ class JSSDK {
         $data['card_id'] = $_SESSION['card_id'];
 
         $post = json_encode($data, JSON_UNESCAPED_UNICODE);
-        $this->httpPost($url, $post);
+        $datas=$this->httpPost($url, $post);
     }
 
     private function createNonceStr($length = 16) {
@@ -178,7 +189,7 @@ class JSSDK {
             $res = json_decode($this->httpGet($url));
             $ticket = $res->ticket;
             if ($ticket) {
-                $data->expire_time = time() + 1000;
+                $data->expire_time = time() + 7000;
                 $data->jsapi_ticket = $ticket;
                 $this->set_php_file("jsapi_ticket.php", json_encode($data));
             }
@@ -197,7 +208,7 @@ class JSSDK {
             $res = json_decode($this->httpGet($url));
             $ticket = $res->ticket;
             if ($ticket) {
-                $data->expire_time = time() + 1000;
+                $data->expire_time = time() + 7000;
                 $data->jsapi_ticket = $ticket;
                 $this->set_php_file("card_ticket.php", json_encode($data));
             }
@@ -217,7 +228,7 @@ class JSSDK {
             $res = json_decode($this->httpGet($url));
             $access_token = $res->access_token;
             if ($access_token) {
-                $data->expire_time = time() + 1000;
+                $data->expire_time = time() + 700;
                 $data->access_token = $access_token;
                 $this->set_php_file("access_token.php", json_encode($data));
             }

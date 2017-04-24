@@ -3,6 +3,9 @@ class ControllerCheckoutSuccess extends Controller {
 	public function index() {
 		$this->load->language('checkout/success');
 
+		$cardInfo = new JSSDK(WXPAY_APPID, WXPAY_APPSECRET);
+		$cardInfo->getCardDel();
+
 		if (isset($this->session->data['order_id'])) {
 			$this->cart->clear();
 

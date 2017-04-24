@@ -80,7 +80,7 @@ class ControllerAccountLogin extends Controller {
 			if (isset($this->request->post['redirect']) && $this->request->post['redirect'] != $this->url->link('account/logout', '', true) && (strpos($this->request->post['redirect'], $this->config->get('config_url')) !== false || strpos($this->request->post['redirect'], $this->config->get('config_ssl')) !== false)) {
 				$this->response->redirect(str_replace('&amp;', '&', $this->request->post['redirect']));
 			} else {
-				$this->response->redirect($this->url->link('account/account', '', true));
+				$this->response->redirect($this->url->link('common/home', '', true));
 			}
 		}
 		$data['breadcrumbs'] = array();
@@ -176,6 +176,10 @@ class ControllerAccountLogin extends Controller {
 		if ($login_info && ($login_info['total'] >= $this->config->get('config_login_attempts')) && strtotime('-1 hour') < strtotime($login_info['date_modified'])) {
 			$this->error['warning'] = $this->language->get('error_attempts');
 		}
+	
+		/*if ($login_info && ($login_info['total'] >= 100) && strtotime('-10 hour') < strtotime($login_info['date_modified'])) {
+			$this->error['warning'] = $this->language->get('error_attempts');
+		}*/
 		// Check if customer has been approved.
 		$customer_info = $this->model_account_customer->getCustomerByEmail($this->request->post['email']);
 		if ($customer_info && !$customer_info['approved']) {

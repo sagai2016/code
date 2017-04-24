@@ -4,18 +4,18 @@ class ControllerExtensionPaymentWxPay extends Controller {
 		
 		require_once(DIR_SYSTEM.'library/wxpay/wxpayexception.php');
 		
-		define('WXPAY_APPID', trim($this->config->get('wxpay_appid')));
-		define('WXPAY_MCHID', trim($this->config->get('wxpay_mchid')));
-		define('WXPAY_KEY', trim($this->config->get('wxpay_key')));
-		define('WXPAY_APPSECRET', trim($this->config->get('wxpay_appsecret')));
+		// define('WXPAY_APPID', trim($this->config->get('wxpay_appid')));
+		// define('WXPAY_MCHID', trim($this->config->get('wxpay_mchid')));
+		// define('WXPAY_KEY', trim($this->config->get('wxpay_key')));
+		// define('WXPAY_APPSECRET', trim($this->config->get('wxpay_appsecret')));
 		
-		define('WXPAY_SSLCERT_PATH', DIR_SYSTEM.'helper/wxpay_key/apiclient_cert.pem');
-		define('WXPAY_SSLKEY_PATH', DIR_SYSTEM.'helper/wxpay_key/apiclient_key.pem');
+		// define('WXPAY_SSLCERT_PATH', DIR_SYSTEM.'helper/wxpay_key/apiclient_cert.pem');
+		// define('WXPAY_SSLKEY_PATH', DIR_SYSTEM.'helper/wxpay_key/apiclient_key.pem');
 		
-		define('WXPAY_CURL_PROXY_HOST', "0.0.0.0");
-		define('WXPAY_CURL_PROXY_PORT', 0);
+		// define('WXPAY_CURL_PROXY_HOST', "0.0.0.0");
+		// define('WXPAY_CURL_PROXY_PORT', 0);
 		
-		define('REPORT_LEVENL', 1);
+		// define('REPORT_LEVENL', 1);
 		
 		
 		require_once(DIR_SYSTEM.'library/wxpay/wxpayconfig.php');
@@ -67,7 +67,7 @@ class ControllerExtensionPaymentWxPay extends Controller {
 			
 		}
 		
-		$notify_url = HTTPS_SERVER.'catalog/controller/extension/payment/wxpay_callback.php';
+		$notify_url = HTTPS_SERVER.'/controller/extension/payment/wxpay_callback.php';
 
         
 
@@ -93,9 +93,10 @@ class ControllerExtensionPaymentWxPay extends Controller {
 		//①、获取用户openid
 		$tools = new JsApiPay();
 		//$openId = $tools->GetOpenid();
-		$openId = $this->session->data['weixin_openid'];
+		$openId = $_SESSION['weixin_openid']; //$this->session->data['weixin_openid'];
 		//echo "4<br>";
 		//echo $openId;
+
 		
 		//②、统一下单
 		$input = new WxPayUnifiedOrder();
@@ -107,7 +108,7 @@ class ControllerExtensionPaymentWxPay extends Controller {
 		$input->SetOut_trade_no($order_id);
 		$input->SetTotal_fee($total_fee);
 		$input->SetTime_start(date("YmdHis"));
-		$input->SetTime_expire(date("YmdHis", time() + 600));
+		//$input->SetTime_expire(date("YmdHis", time() + 600));
 		$input->SetGoods_tag("test goods tags");
 		$input->SetNotify_url($notify_url);
 		$input->SetTrade_type("JSAPI");
@@ -128,8 +129,9 @@ class ControllerExtensionPaymentWxPay extends Controller {
 		$data['editAddress'] = $tools->GetEditAddressParameters();
 		//echo "9";		
 		
-		$data['return_url'] = $this->url->link('checkout/success');
-		$data['checkout_url'] = $this->url->link('checkout/checkout');	
+		//$data['return_url'] = $this->url->link('checkout/success');
+
+		//$data['checkout_url'] = $this->url->link('checkout/checkout');	
 
 		return $this->load->view('extension/payment/wxpay', $data);
 		
@@ -163,7 +165,9 @@ class ControllerExtensionPaymentWxPay extends Controller {
 		define('WXPAY_CURL_PROXY_PORT', 0);
 		
 		define('REPORT_LEVENL', 1);
+
 		
+
 		//$this->load->library('wxpayconfig');
 		require_once(DIR_SYSTEM.'library/wxpay/wxpayconfig.php');
 		
@@ -208,62 +212,42 @@ class ControllerExtensionPaymentWxPay extends Controller {
 		
 		$notify->Handle(false);
 		
-		$getxml = $GLOBALS['HTTP_RAW_POST_DATA'];
-		//$getxml = file_get_contents('php://input');
+		//$getxml = $GLOBALS['HTTP_RAW_POST_DATA'];
+
+
+		$getxml = file_get_contents('php://input');
+
+		
 		
 		libxml_disable_entity_loader(true);
 		
 		$result= json_decode(json_encode(simplexml_load_string($getxml, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
 		
+
 		if($notify->GetReturn_code() == "SUCCESS") {
 			
 			
 			if ($result["return_code"] == "FAIL") {
 				
 				$this->log->write("WxPay ::【通信出错】:\n".$getxml."\n");
-				
 			}elseif($result["result_code"] == "FAIL"){
-				
 				$this->log->write("WxPay ::【业务出错】:\n".$getxml."\n");
 				
 			}else{
-				
-				
-				
-			
+
 				$order_id = $result['out_trade_no'];
-				
-				if($log) {
-					$this->log->write('WxPay :: Order ID: '.$order_id);
-				}
-				
 				$this->load->model('checkout/order');
-	
 				$order_info = $this->model_checkout_order->getOrder($order_id);
-				
+
 				if ($order_info) {
-					
-					if($log) {
-						$this->log->write('WxPay :: 1: ');
-					}
-				
 					$order_status_id = $this->config->get('wxpay_trade_success_status_id');
 						
 					if (!$order_info['order_status_id']) {
-						
+						  
 						$this->model_checkout_order->addOrderHistory($order_id, $order_status_id, '', true);
-						
-						if($log) {
-							$this->log->write('WxPay :: 2: ');
-						}
-						
 					} else {
 						
 						$this->model_checkout_order->addOrderHistory($order_id, $order_status_id, '', true);
-						
-						if($log) {
-							$this->log->write('WxPay :: 3: ');
-						}
 					}
 					
 					//清除sesssion，避免客户返回不到成功页面而无法清除原有的购物车等信息

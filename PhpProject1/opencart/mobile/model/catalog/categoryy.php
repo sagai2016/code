@@ -4,7 +4,7 @@ class ModelCatalogCategoryy extends Model {
 
     public function getAll($start, $limit) {
         $table = 'p.product_id,p.image,pd.name,p.price,p.quantity';
-        $query = $this->categoryySql($table, [$start, $limit]);
+        $query = $this->categoryy($table, [$start, $limit]);
 
         return $query->rows;
         
@@ -21,10 +21,23 @@ class ModelCatalogCategoryy extends Model {
                 ' from ' .
                 DB_PREFIX . 'product p LEFT JOIN ' .
                 DB_PREFIX . 'product_description pd on (p.product_id=pd.product_id)' .
-                ' where p.quantity>0 and language_id=' . $this->config->get('config_language_id') .
+                ' where p.quantity>0 and p.product_id<151 and language_id=' . $this->config->get('config_language_id') .
                 ' order by  p.sort_order desc ,p.product_id desc  limit ' . join(',', $limit);
            
         $query = $this->db->query($sql);
+        return $query;
+    }
+
+    //后期改动中要有分类    这个sql语句只取八窖珍藏的数据category_id=63
+    private function categoryy($table, $limit = []) {
+        $sql = 'select ' . $table .
+                ' from ' .
+                DB_PREFIX . 'product p LEFT JOIN ' .
+                DB_PREFIX . 'product_description pd on (p.product_id=pd.product_id) LEFT JOIN ' .
+                DB_PREFIX . 'product_to_category p2c on (pd.product_id=p2c.product_id)' .
+                ' where p.quantity>0 and p2c.category_id=63 and language_id=' . $this->config->get('config_language_id') .
+                ' order by  p.sort_order desc ,p.product_id desc  limit ' . join(',', $limit);
+    $query = $this->db->query($sql);
         return $query;
     }
 

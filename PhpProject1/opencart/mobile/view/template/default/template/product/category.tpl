@@ -2,15 +2,14 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>八窖酒库</title>
+        <title>八窖酒库 | <?php echo $heading_title; ?></title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
-        <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-
+        <link rel="stylesheet" type="text/css" href="../webfile/css/stylesheet/goodsStyle.css" />
+        <script src="../webfile/js/jquery-2.1.1.min.js" type="text/javascript"></script>
         <link href="../catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen" />
-        <link href="view/stylesheet/stylesheet.css" rel="stylesheet">
-        <script src="view/javascript/common.js" type="text/javascript"></script>
+        <!--<script src="../webfile/js/common.js" type="text/javascript"></script>-->
+        <script src="../webfile/js/jquery.min.js"></script>
         <style>
             ul, li, h1, h2, h3, h4, h5, h6, dt, dd, dl, ol, dl, dt, dd, p {
                 margin: 0;
@@ -21,10 +20,15 @@
             body, html {
                 margin: 0;
                 padding: 0;
-                background: #f5f5f5;;
+                background: #f8f8f8;
+
+            }
+            body{
+                line-height: none;
             }
             * {
                 box-sizing: border-box;
+                font-size: 12px;
             }
             .main {
                 max-width: 750px;
@@ -37,13 +41,11 @@
 
             }
             .main .zhutu{
-                padding: 2%;
+                background-color: #fff;
             }
             .main .zhutu img{
                 width: 100%;
                 height: 100%;
-                border: #ccc solid 1px;
-                border-radius: 5px;
             }
             .top .link {
                 display: inline-flex;
@@ -54,8 +56,14 @@
                 z-index: 2;
             }
             .top .link #none,.top .link #show{
-               color: #fff;
-               width: 10%;
+                color: #fff;
+                width: 46%;
+                text-align: left;
+                padding-left: 2%;
+                font-size: 14px;
+            }
+            .top .link #none:before,.top .link #show:before{
+                margin-right: 10px;
             }
             .top .link #none{
                 display:none;
@@ -82,24 +90,30 @@
                 color:#6e6e6e;
                 margin-right: 17px;
             }
-                
+
             .top .link li {
                 width: 100%;
                 text-align: center;
                 line-height: 38px;
-                border-bottom: 1px solid #e6e6e6;  
+                /*border-bottom: 1px solid #e6e6e6;  */
+            }
+            .top .link li strong{
+                font-size: 14px;
+                letter-spacing: 1px;
             }
             .top .link li a{
                 font-size: 12px;
                 color:#fff;
             }
             .top .link .linkmain{
-                color:#fff;
-                    margin-left: -5%;
+                color: #fff;
+                width: 58%;
+                text-align: left;
+                font-size: 14px;
             }
-             .top .allCategory .linkmain a{
-                 color:red;
-             }
+            .top .allCategory .linkmain a{
+                color:red;
+            }
             .main .limit{
                 margin-top: 70px;
             }
@@ -119,33 +133,47 @@
             .main .goodslist .list{
                 padding: 2%;
             }
-            .main .goodslist .list li {
+            .main .goodslist .list a {
                 display: inline-block;
                 width: 100%;
-                padding: 1.5%;
                 vertical-align: top;
-                border: #ccc solid 1px;
-                padding: 2%;
-                border-radius: 5px;
+                padding: 1%;
                 background: #fff;
                 margin: 5px auto;
+                position:relative;
             }
-            .main .goodslist .list li div{
+            .main .goodslist .list a .order{
+                position: absolute;
+                right: 5px;
+                bottom: 5px;
+                height: 23px;
+                line-height: 25px;
+                width: 35px;
+                border-radius: 3px;
+                margin: 0;
+                padding: 0px;
+                font-size: 12px;
+                background-color: #ffab73;
+                color: #fff;
+                padding-left: 5px;
+            }
+            .main .goodslist .list a img{
                 font-size: 14px;
-                padding: 3%;
                 background: #fff;
                 display: inline-block;
-                width: 50%;
+                width: 158px;
+                height: 158px;
                 vertical-align: top;
+                border: solid #F8F8F8 0.5px;
 
             }
-            .main .goodslist .list li div a img {
-                width: 100%;
-                border-radius: 5px;
-                border: solid #ccc 1px;
+            .main .goodslist .list div{
+                width: 47%;
+                display: inline-block;
+                padding-left: 3%;
 
             }
-            .main .goodslist .list li p {
+            .main .goodslist .list div p {
                 display: inline-block;
                 padding: 2%;
                 width: 100%;
@@ -153,19 +181,19 @@
                 height: 38px;
                 word-wrap: break-word;
                 letter-spacing: 0.5px;
-                overflow:hidden; 
-                text-overflow:ellipsis;
+                overflow: hidden;
+                text-overflow: ellipsis;
                 color: #555555;
-                font-size: 12px;
+                font-size: 14px;
                 /*white-space:nowrap; overflow:hidden; text-overflow:ellipsis;*/
             }
-            .main .goodslist .list li .price{
+            .main .goodslist .list div .price{
                 font-weight: bolder;
-                color:#dc512c;
-                height: 24px;
-                font-size: 14px;
-                margin-top: 48%;
+                color: #dc512c;
+                font-size: 16px;
+                padding-top: 7%;
             }
+
             /*
             .main .goodslist .list li span+a {
                     float: right;
@@ -252,11 +280,11 @@
         </style>
     </head>
     <body>
-        <script src="view/javascript/jquery/move.min.js" type="text/javascript"></script>
+        <script src="../webfile/js/move.min.js" type="text/javascript"></script>
         <div class="top">
             <ul class="link">
-                <li class="zero fa fa-indent fa-lg" id="show"></li>
-                <li class="zero fa fa-dedent fa-lg" id="none"></li>
+                <li class="zero fa fa-indent fa-lg" id="show">商品列表</li>
+                <li class="zero fa fa-dedent fa-lg" id="none">商品列表</li>
                 <!--<?php
                 foreach($three as $v):
                 $cc='';
@@ -276,7 +304,17 @@
                 $cc = 'class="linkmain"';
                 }
                 ?>
-                <li  <?php echo $cc;?>><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="<?php echo  $categorie['href']?>"><?php echo $categorie['name']?></a> </li>
+                <li <?php echo $cc;?>>
+                    <?php 
+                    $urls_fun=$categorie['name']=='八窖珍藏'?'index.php?route=product/categoryy':$categorie['href'];
+
+                    $urls_fun = str_replace("//m","/m",$urls_fun);
+
+                    ?>
+
+                    <a href="<?php echo  $urls_fun?>">
+                        <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                        <?php echo $categorie['name']?></a> </li>
 
                 <?php endforeach?>
             </ul>
@@ -284,29 +322,26 @@
         <div class="main">
 
             <p class="bootm"></p>
-            
+
             <p class="zhutu"><img src="<?php echo $thumb; ?>"></p>
-            <div class="goodslist">
-                <?php var_dump($products);?>
-                <ul class="list">
+            <ul class="goodslist">
+                <li class="list">
                     <?php foreach ($products as $product) { ?>
-                    <li>
-                        <div> 
-                            <a href="<?php echo $product['href']; ?>">
-                                <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>"/>
-                            </a>
-                        </div>
+                    <a  href="<?php echo $product['href']; ?>">
+                        <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>"/>
                         <div>
                             <p>
                                 <?php echo $product['name']; ?>
                             </p> 
                             <p class="price">
                                 <?php echo $product['price']; ?>
-                            </p> 
+                            </p>
+                            <p class="order"><span>订购</span></p>
                         </div>
-                    </li>
+                    </a>
+
                     <?php } ?>
-                </ul>     
+                </li>     
 
                 <!--<div class="limit">
                     <div class="col-md-3 col-xs-6" id="select">
@@ -325,7 +360,7 @@
                       </div>
                     </div>
                     <div class="pagination"><?php echo $pagination; ?></div>-->
-            </div>    
+            </ul>    
         </div>
         <p class="bootm"> </p>
         <div class="foot">
@@ -340,72 +375,99 @@
 
         <script>
             var path = '<?php echo $_GET['path']?>';
-                    var ispage = 1;
+            var ispage = 1;
             $(window).scroll(function () {
-                var scrollTop = $(this).scrollTop() + 150; //可卷上去的高度
-                var scrollHeight = $(document).height(); //定位整块区域的高度
-                var windowHeight = $(this).height(); //整个滚动条可滚动的高度
+            var scrollTop = $(this).scrollTop() + 150; //可卷上去的高度
+            var scrollHeight = $(document).height(); //定位整块区域的高度
+            var windowHeight = $(this).height(); //整个滚动条可滚动的高度
 
-                var z1 = scrollHeight - windowHeight;
-                if (z1 < scrollTop) {
+            var z1 = scrollHeight - windowHeight;
+            if (z1 < scrollTop) {
+            var stop = $('.goodslist').find('.message').data('stop');
+            if (!stop) {
+            ++ispage;
+            $.ajax({
+            url: 'index.php?route=product/category/back',
+                    type: 'get',
+                    dataType: 'json',
+                    data: 'page=' + ispage + '&path=' + path,
+                    success: function (a) { //成功 
+                    var html = '';
+                    if (a !== 'stop') {
+                    for (var i = 0; i < a.length; i++) {
+
+                    html += '<li>' +
+                            '<p>' +
+                            '<a href=index.php?route=common/product&product_id=' + a[i]['product_id'] + '><img src=' + a[i]['thumb'] + '></a><span>' +
+                            a[i]['name'] + '</span>' +
+                            '</p>' +
+                            '</li>';
+                    }
+                    $(".list").append(html);
+                    } else {
                     var stop = $('.goodslist').find('.message').data('stop');
                     if (!stop) {
-                        ++ispage;
-                        $.ajax({
-                            url: 'index.php?route=product/category/back',
-                            type: 'get',
-                            dataType: 'json',
-                            data: 'page=' + ispage + '&path=' + path,
-                            success: function (a) { //成功 
-                                var html = '';
-                                if (a !== 'stop') {
-                                    for (var i = 0; i < a.length; i++) {
-
-                                        html += '<li>' +
-                                                '<p>' +
-                                                '<a href=index.php?route=common/product&product_id=' + a[i]['product_id'] + '><img src=' + a[i]['thumb'] + '></a><span>' +
-                                                a[i]['name'] + '</span>' +
-                                                '</p>' +
-                                                '</li>';
-
-                                    }
-                                    $(".list").append(html);
-                                } else {
-                                    var stop = $('.goodslist').find('.message').data('stop');
-                                    if (!stop) {
-                                        $(".goodslist").append('<div data-stop="true" class="message">没有更多的数据了</div>');
-                                    }
-                                }
-                            }
-                        });
+                    $(".goodslist").append('<div data-stop="true" class="message">没有更多的数据了</div>');
                     }
-                }
+                    }
+                    }
+            });
+            }
+            }
             });
         </script>
+
+        <?php if(!empty($_SESSION['signPackage'])):?>
+        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+        <script src="../webfile/js/weixinopnjssdk.js"></script>
+        <script type="text/javascript">
+            $(function(){
+            weixinopnjssdk.appId = '<?php echo $_SESSION['signPackage']['appId']?>';
+            weixinopnjssdk.timestamp = '<?php echo $_SESSION['signPackage']['timestamp']?>';
+            weixinopnjssdk.nonceStr = '<?php echo $_SESSION['signPackage']['nonceStr']?>';
+            weixinopnjssdk.signature = '<?php echo $_SESSION['signPackage']['signature']?>';
+            //weixinopnjssdk.title = '八窖酒库|<?php echo $heading_title; ?>';
+            //weixinopnjssdk.desc = '收藏级文化白酒优选商城';
+            weixinopnjssdk.title='转发积酒票，千元名酒百元得！'+"\r\n"+'看你好友多不多！';
+            weixinopnjssdk.desc="即日起向好友推荐八窖酒库，可获得“八窖酒票”奖励。";
+            weixinopnjssdk.link = "<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/mobile/index.php?'.'&num='.$num?>";
+            weixinopnjssdk.imgUrl = "<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/image/catalog/demo/manufacturer/newlogo.png'; ?>";
+            weixinopnjssdk.ready(function(){
+            /*获取“分享给朋友”按钮点击状态及自定义分享内容接口*/
+            weixinopnjssdk.onMenuShareAppMessage();
+            /*获取“分享到朋友圈”按钮点击状态及自定义分享内容接口*/
+            weixinopnjssdk.onMenuShareTimeline();
+            });
+            });
+        </script>
+        <?php endif;?>
+
+
     </body>
     <script>
         var j = 1;
         console.log(j)
-        $('.zero').click(function () {
-            if (j > 0) {
-                $('#show').hide();
-                $('#none').show();
-                move('.allCategory')
-                        .ease('cubic-bezier(0.67, 0.1, 0.04, 1.29)')
-                        .x(368)
-                        .end();
-                j = 0;
-            } else {
-                 $('#show').show();
-                $('#none').hide();
-                move('.allCategory')
-                        .ease('cubic-bezier(0.39, 1.14, 0.74, 0.63)')
-                        .x(-370)
-                        .end();
-                j = 1;
-            }
-            console.log(j)
+                $('.zero').click(function () {
+        if (j > 0) {
+        $('#show').hide();
+        $('#none').show();
+        move('.allCategory')
+                .ease('cubic-bezier(0.67, 0.1, 0.04, 1.29)')
+                .x(368)
+                .end();
+        j = 0;
+        } else {
+        $('#show').show();
+        $('#none').hide();
+        move('.allCategory')
+                .ease('cubic-bezier(0.39, 1.14, 0.74, 0.63)')
+                .x( - 370)
+                .end();
+        j = 1;
+        }
+        console.log(j)
         })
 
     </script>
 </html>
+

@@ -21,7 +21,17 @@ class ControllerProductCategoryy extends Controller {
 
         $data['categories'] = $categories;
 
+        $data['num'] = '';
+        if (!empty($this->session->data['customer_id'])) {
+        $data['num'] = md5($this->session->data['customer_id']);
+        }
+
+
+
         $this->response->setOutput($this->load->view('product/categoryy', $data));
+
+
+        require_once('controller/account/cash.php');
     }
 
     public function back() {
@@ -55,7 +65,9 @@ class ControllerProductCategoryy extends Controller {
         $pageCount = ( $this->pages - 1) * $this->maxSum; //显示产品的起始数量，最少显示0条，依次每页增加15条
 
         $Rs = $this->all->getAll($pageCount, $this->maxSum);
-        //printf("<!--/%s/-->",var_dump($Rs,true));
+        
+	//printf("<!--/%s/-->",var_dump($Rs,true));
+	
         $i = 0;
         foreach ($Rs as $t) {
             $data['all'][$i]['product_id'] = $t['product_id'];
@@ -65,13 +77,15 @@ class ControllerProductCategoryy extends Controller {
             $data['all'][$i]['price'] = $t['price'];
 
             if (isset($t['image'])) {
-                $data['all'][$i]['image'] = $this->model_tool_image->resize($t['image'],800 ,800 );
-            } else {
+                $data['all'][$i]['image'] = $this->model_tool_image->resize($t['image'],800 ,800);
+	    	
+	    } else {
                 $data['all'][$i]['image'] = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
             }
             ++$i;
         }
-        return $data;
+	
+	return $data;
     }
 
 }

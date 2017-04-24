@@ -3,7 +3,7 @@
     <fieldset id="account">
       <legend><?php echo $text_your_details; ?></legend>
       <ul class="nav nav-tabs">
-        <li class="active" ><a href="#tab-email" data-toggle="tab" onClick="setEmailRegister()"><?php echo $tab_email_register; ?></a>
+        <li class="active"  style="display:none"><a href="#tab-email" data-toggle="tab" onClick="setEmailRegister()"><?php echo $tab_email_register; ?></a>
         <input id="email-register" class="hidden" type="radio" name="registertype" checked="checked"  value="email">
         </li>
 		<li><a href="#tab-mobile" data-toggle="tab" onClick="setMobileRegister()"><?php echo $tab_mobile_register; ?></a>

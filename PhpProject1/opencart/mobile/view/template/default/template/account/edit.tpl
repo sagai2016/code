@@ -7,13 +7,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link href="../catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen" />
-        <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
-        <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-        <script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
-        <script src="view/javascript/jquery/datetimepicker/moment.js" type="text/javascript"></script>
-        <script src="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js"type="text/javascript"></script>
-        <script src="view/javascript/jquery/magnific/jquery.magnific-popup.min.js" type="text/javascript"></script>
-        <script src="view/javascript/common.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="../webfile/css/stylesheet/goodsStyle.css" />
+        <script src="../webfile/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+        <script src="../webfile/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../webfile/js/moment.js" type="text/javascript"></script>
+        <script src="../webfile/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+        <script src="../webfile/js/jquery.magnific-popup.min.js" type="text/javascript"></script>
+        <script src="../webfile/js/common.js" type="text/javascript"></script>
         <style>
             ul,
             li,
@@ -281,7 +281,7 @@
 
                     <?php ($telephone) && $style="display: none";?>
 
-                    <div style="<?php echo $style?>"  class='email'>
+                    <div style="<?php echo $style;?>"  class='email'>
                         <label><?php echo $entry_email; ?><i>*</i> </label>
                         <div>
                             <input onfocus="change(this)"  type="text" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-email" />
@@ -330,9 +330,9 @@
             }
         </script>
         <?php if(!empty($_SESSION['signPackage'])):?>
-        <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+        <script src="../webfile/js/jquery-2.1.1.min.js" type="text/javascript"></script>
         <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-        <script src="view/javascript/weixinopnjssdk.js"></script>
+        <script src="../webfile/js/weixinopnjssdk.js"></script>
         <script type="text/javascript">
         $(function(){
                 weixinopnjssdk.appId='<?php echo $_SESSION['signPackage']['appId']?>';
@@ -471,6 +471,25 @@ $('#mobile_code').on('click', function () {
 
 //--></script> 
 <?php } ?>
+
+
+    <?php if(!empty($_SESSION['signPackage'])):?>
+        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+        <script src="../webfile/js/weixinopnjssdk.js"></script>
+        <script type="text/javascript">
+            window.onload =function(){
+            weixinopnjssdk.appId = '<?php echo $_SESSION['signPackage']['appId']?>';
+            weixinopnjssdk.timestamp = '<?php echo $_SESSION['signPackage']['timestamp']?>';
+            weixinopnjssdk.nonceStr = '<?php echo $_SESSION['signPackage']['nonceStr']?>';
+            weixinopnjssdk.signature = '<?php echo $_SESSION['signPackage']['signature']?>';
+            weixinopnjssdk.ready(function(){
+            wx.hideOptionMenu();
+            });
+            }
+        </script>
+        <?php endif;?>
+
+
     </body>
 </html>
 

@@ -6,9 +6,10 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="format-detection" content="email=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
         <link href="../catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen" />
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
-        <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
+        <link rel="stylesheet" type="text/css" href="../webfile/css/stylesheet/goodsStyle.css" />
         <style type="text/css">
             ul, li, h1, h2, h3, h4, h5, h6, dt, dd, dl, ol, dl, dt, dd, p {
                 margin: 0;
@@ -264,6 +265,8 @@
                     <li> <a href="index.php?route=account/address">我的地址<span class="fa fa-arrow-circle-right"></span></a></li>
                     <li> <a href="index.php?route=account/wishlist">美酒收藏<span class="fa fa-arrow-circle-right"></span></a></li>
                     <li> <a href="index.php?route=account/order">购物记录<span class="fa fa-arrow-circle-right"></span></a></li>
+                    <li> <a href="index.php?route=account/jiuquan">我的酒票<span class="fa fa-arrow-circle-right"></span></a></li>
+                    <a style="opacity: 0; margin-top: 20px;" href="index.php?route=account/cashcard">购物记录</a>
                 </ul>
             </div>
             <p class="bootm"> </p>
@@ -278,22 +281,23 @@
                 <li> <a href="index.php?route=account/login">用户中心</a> </li>
             </ul>
         </div>
-        <?php if(!empty($_SESSION['signPackage'])):?>
-        <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+         <?php if(!empty($_SESSION['signPackage'])):?>
         <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-        <script src="view/javascript/weixinopnjssdk.js"></script>
+        <script src="../webfile/js/weixinopnjssdk.js"></script>
         <script type="text/javascript">
-        $(function(){
-                weixinopnjssdk.appId='<?php echo $_SESSION['signPackage']['appId']?>';
-                weixinopnjssdk.timestamp='<?php echo $_SESSION['signPackage']['timestamp']?>';
-                weixinopnjssdk.nonceStr='<?php echo $_SESSION['signPackage']['nonceStr']?>';
-                weixinopnjssdk.signature='<?php echo $_SESSION['signPackage']['signature']?>';
-                
-                weixinopnjssdk.ready(function(){
-                wx.hideOptionMenu();
-                });
+            window.onload =function(){
+            weixinopnjssdk.appId = '<?php echo $_SESSION['signPackage']['appId']?>';
+            weixinopnjssdk.timestamp = '<?php echo $_SESSION['signPackage']['timestamp']?>';
+            weixinopnjssdk.nonceStr = '<?php echo $_SESSION['signPackage']['nonceStr']?>';
+            weixinopnjssdk.signature = '<?php echo $_SESSION['signPackage']['signature']?>';
+            weixinopnjssdk.ready(function(){
+            wx.hideOptionMenu();
             });
+            }
         </script>
         <?php endif;?>
     </body>
 </html>
+
+
+

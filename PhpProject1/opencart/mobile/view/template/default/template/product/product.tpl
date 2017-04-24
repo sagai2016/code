@@ -5,154 +5,155 @@
 <title>八窖酒库｜<?php echo $meta_title;?></title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
-<link rel="stylesheet" type="text/css" href="view/stylesheet/swiper.min.css" />
+<link rel="stylesheet" type="text/css" href="../webfile/css/stylesheet/goodsStyle.css" />
+<link rel="stylesheet" type="text/css" href="../webfile/css/stylesheet/swiper.min.css" />
 <link href="../catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen" />
-<script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-<link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
-<script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
-<link href="view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-<link href="view/stylesheet/stylesheet.css" rel="stylesheet">
-<script src="view/javascript/jquery/datetimepicker/moment.js" type="text/javascript"></script>
-<script src="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-<link href="view/javascript/jquery/magnific/magnific-popup.css" type="text/css" rel="stylesheet" media="screen" />
-<link href="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
-<script src="view/javascript/jquery/magnific/jquery.magnific-popup.min.js" type="text/javascript"></script>
-<script src="view/javascript/common.js" type="text/javascript"></script>
-<script src="view/javascript/o-script.js"></script>
-<script src="view/javascript/jquery/jquery.flexslider.js"></script> 
+<script src="../webfile/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+<link href="../webfile/css/stylesheet/bootstrap.min.css" rel="stylesheet" media="screen" />
+<script src="../webfile/js/bootstrap.min.js" type="text/javascript"></script>
+<link href="../webfile/css/stylesheet/stylesheet.css" rel="stylesheet">
+<script src="../webfile/js/moment.js" type="text/javascript"></script>
+<script src="../webfile/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+<link href="../webfile/css/stylesheet/magnific-popup.css" type="text/css" rel="stylesheet" media="screen" />
+<link href="../webfile/css/stylesheet/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
+<script src="../webfile/js/jquery.magnific-popup.min.js" type="text/javascript"></script>
+<script src="../webfile/js/common.js" type="text/javascript"></script>
+<script src="../webfile/js/o-script.js"></script>
+<script src="../webfile/js/jquery.flexslider.js"></script> 
+<script type="text/javascript" src="../webfile/js/swiper.jquery.min.js"></script>
+<script src="../webfile/js/jquery.flexslider.js"></script> 
 <style type="text/css">
     
 ul, li, h1, h2, h3, h4, h5, h6, dt, dd, dl, ol, dl, dt, dd, p {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	border: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border: 0;
 }
 body, html {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	background: #f8f8f8;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: #f8f8f8;
 }
 * {
-	box-sizing: border-box;
+        box-sizing: border-box;
 }
 img{
-	border-radius: 0;
+        border-radius: 0;
 }
 .main {
-	max-width: 750px;
-	width: 100%;
-	height: 100%;
-	display: block;
-	margin: auto;
+        max-width: 750px;
+        width: 100%;
+        height: 100%;
+        display: block;
+        margin: auto;
 }
 .top, .content, .option {
-	color: #2c2c2c;
-	background: #fff;
+        color: #2c2c2c;
+        background: #fff;
 }
 .top, .content, .option a{
   color: #9b9b9b;
 }
 .top {
-	position: fixed;
-	background: #262424;
-	height: 38px;
-	padding: 6px;
-	width: 100%;
+        position: fixed;
+        background: #262424;
+        height: 38px;
+        padding: 6px;
+        width: 100%;
         max-width: 750px;
         line-height: 27px;
         position: fixed;
         z-index: 999;
 }
 .top a i {
-	display: inline-block;
-	height: 100%;
+        display: inline-block;
+        height: 100%;
         color: #9b9b9b;
 }
 .top span {
-	display: inline-block;
-	float: right;
-	color: #9c9ba0;
+        display: inline-block;
+        float: right;
+        color: #9c9ba0;
         font-size: 13px;
             
 }
 .top span a{
-	display: inline-block;
-	line-height: 14px;
+        display: inline-block;
+        line-height: 14px;
         color: #9c9ba0;
 }
 .top span .gzc {
-	color: #9c9ba0;
-	border-right: 1px solid #fff;
-	padding: 0 5px;
+        color: #9c9ba0;
+        border-right: 1px solid #fff;
+        padding: 0 5px;
 }
 .content {
-	width: 100%;
-	display: inline-block;
+        width: 100%;
+        display: inline-block;
 }
 .content ul .content ul li {
-	width: 100%;
+        width: 100%;
 }
 .content .goodsImages {
-	height: 300px;
-	text-align: center;
-	overflow: hidden;
-	height: 30%;
+        height: 300px;
+        text-align: center;
+        overflow: hidden;
+        height: 30%;
         margin-top: 38px;
 }
 .content .goodsImages img {
-	width: 100%;
-	/*padding: 10px;*/
+        width: 100%;
+        /*padding: 10px;*/
 }
 .content .goodsIntroduce {
-	border: 1px solid #e6e6e6;
-	height: 20%;
-	display: inline-block;
-	width: 100%;
+        border: 1px solid #e6e6e6;
+        height: 20%;
+        display: inline-block;
+        width: 100%;
 }
 .content .goodsIntroduce p {
-	width: 100%;
+        width: 100%;
 }
 .content .goodsIntroduce .title, .content .goodsIntroduce .price, .content .goodsIntroduce .freight {
-	font-weight: bolder;
-	line-height: 20px;
-	display: inline-block;
-	width: 100%;
-	padding: 1.5% 5%;
+        font-weight: bolder;
+        line-height: 20px;
+        display: inline-block;
+        width: 100%;
+        padding: 1.5% 5%;
 }
 .content .goodsIntroduce .title {
-	padding-top: 10px;
+        padding-top: 10px;
         font-size: 16px
 }
 .content .goodsIntroduce .price {
-	color: #e17513;
-	padding-bottom: 10px;
+        color: #e17513;
+        padding-bottom: 10px;
         font-size: 16px
 }
 .content .goodsIntroduce .freight {
-	border-top: 1px solid #e6e6e6;
-	color: #9b9b9b;
-	font-weight: normal;
-	padding-top : 8px;
-	padding-bottom: 8px;
-	font-size: 14px;
+        border-top: 1px solid #e6e6e6;
+        color: #9b9b9b;
+        font-weight: normal;
+        padding-top : 8px;
+        padding-bottom: 8px;
+        font-size: 14px;
 }
 .option {
-	margin: 12px 0;
-	line-height: 38px;
-	padding: 1% 3% .5% 5%;
-	border: 1PX solid #e6e6e6;
+        margin: 12px 0;
+        line-height: 38px;
+        padding: 1% 3% .5% 5%;
+        border: 1PX solid #e6e6e6;
 }
 .option p,.option a {
-	display: inline-block;
+        display: inline-block;
         font-size: 16px;
 }
 .option span 
 {
-	display: inline-block;
-	color: #323232;
+        display: inline-block;
+        color: #323232;
         font-size: 12px;
         
 }
@@ -161,15 +162,15 @@ img{
         font-size: 14px;
 }
 .option .icon {
-	width: 20px;
-	vertical-align: middle;
-	font-size: 27px;
-	color: #9d9d9d;
-	margin-right: 11px;
+        width: 20px;
+        vertical-align: middle;
+        font-size: 27px;
+        color: #9d9d9d;
+        margin-right: 11px;
 }
 .option .goodhome {
-	float: right;
-	color: #9b9b9b;
+        float: right;
+        color: #9b9b9b;
 }
 .option .goodhome *{
     color:#ff4344;
@@ -179,53 +180,54 @@ img{
     
 }
 .option i {
-	display: block;
-	float: right;
-	color: #909090;
-	line-height: 37px;
-	font-size: 20px;
+        display: block;
+        float: right;
+        color: #909090;
+        line-height: 37px;
+        font-size: 20px;
 }
 .goodsinfo {
-	display: inline-block;
-	background: #fff;
-	width: 100%;
+        display: inline-block;
+        background: #fff;
+        width: 100%;
 }
 .goodsinfo p{  
     font-size: 13px;
 }
 .goodsinfo img{
-	width: 100% !important;
+        width: 100% !important;
 }
 .foot {
-	width: 100%;
-	display: flex;
-	position: fixed;
-	bottom: 0;
+        width: 100%;
+        display: flex;
+        position: fixed;
+        bottom: 0;
+            z-index: 999;
 }
 
 .foot ul {
-	background: #fff;
-	margin: auto;
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-	border-top: 1px solid #bebebe;
+        background: #fff;
+        margin: auto;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        border-top: 1px solid #bebebe;
 }
 .foot ul li {
-	width: 100%;
-	text-align: center;
-	line-height: 38px;
-	border-width: 0 1px 0 0;
-	border-style: solid;
-	border-color: #ccc;
+        width: 100%;
+        text-align: center;
+        line-height: 38px;
+        border-width: 0 1px 0 0;
+        border-style: solid;
+        border-color: #ccc;
 
 }
 .foot ul .home {
-	width: 250px;
-	line-height: normal;
-	color: #686868;
-	font-size: 0;
+        width: 250px;
+        line-height: normal;
+        color: #686868;
+        font-size: 0;
 }
 .foot ul .home .icon-goodscart {
     font-size: 25px;
@@ -238,11 +240,11 @@ img{
     height: 33px;
 }
 .foot ul .home a{
-	display: inline-block;
-	width: 100%;
-	font-size: 14px;
-	line-height: normal;
-	padding: 0;
+        display: inline-block;
+        width: 100%;
+        font-size: 14px;
+        line-height: normal;
+        padding: 0;
         color: #686868;
         text-shadow: 1px 1px 1px #ddd;
 }
@@ -260,7 +262,7 @@ img{
     text-align: center;
     }
 .foot ul .addToCart {
-	background: #ff8856;
+        background: #ff8856;
 }
 .foot ul .addToCart span{
         font-size: 14px;
@@ -269,7 +271,7 @@ img{
 }
 
 .foot ul .buyNow {
-	background: #ff4344;
+        background: #ff4344;
 }
 .foot ul .buyNow a{
     font-size: 14px;
@@ -278,27 +280,27 @@ img{
 }
 @media (min-width: 500px) {
 .content .goodsImages {
-	height: 770px;
+        height: 770px;
 }
 }
 .main .bootm {
-	height: 38px;
-	font-size: 50px;
-	display: inline-block;
+        height: 38px;
+        font-size: 50px;
+        display: inline-block;
 }
 	
 @media (min-width: 600px) {
 .content .goodsImages {
-	height: 640px;
+        height: 640px;
 }
 .content .goodsImages img{
-	height: 100%;
+        height: 100%;
     width: inherit;
     padding: 25px 0; 
 }
 }
 .list-unstyled li{
-	color: #e17513;
+        color: #e17513;
         font-size: 20px;
         padding: 1.5% 5%;
         padding-bottom: 10px;
@@ -441,11 +443,10 @@ a{
     <li class="buyNow"> <a href="index.php?route=checkout/cart">去结算</a> </li>
   </ul>
 </div>
-    <script src="view/javascript/jquery/jquery.flexslider.js"></script> 
-    <script src="view/javascript/o-script.js"></script>
+    
 </body>
 
-<script type="text/javascript" src="view/javascript/jquery/Swiper/swiper.jquery.min.js"></script>
+
         <script>
             var swiper = new Swiper('.swiper-container', {
                 pagination: '.swiper-pagination',
@@ -458,7 +459,7 @@ a{
         </script>
 <?php if(!empty($_SESSION['signPackage'])):?>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-<script src="view/javascript/weixinopnjssdk.js"></script>
+<script src="../webfile/js/weixinopnjssdk.js"></script>
 <script type="text/javascript">
 $(function(){
         weixinopnjssdk.appId='<?php echo $_SESSION['signPackage']['appId']?>';
@@ -466,10 +467,10 @@ $(function(){
         weixinopnjssdk.nonceStr='<?php echo $_SESSION['signPackage']['nonceStr']?>';
         weixinopnjssdk.signature='<?php echo $_SESSION['signPackage']['signature']?>';
 
-        weixinopnjssdk.title=$('title').text();
+        //weixinopnjssdk.title=$('title').text();
 
         weixinopnjssdk.desc=$('.title').text();
-        weixinopnjssdk.link="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>";
+        weixinopnjssdk.link="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'&num='.$num?>";
         weixinopnjssdk.imgUrl="<?php echo 'http://'.$_SERVER['HTTP_HOST'].mb_substr($images[0]['thumb'],2); ?>";
         
         weixinopnjssdk.QRCode=<?php echo json_encode(['http://'.$_SERVER['HTTP_HOST'].'/'.'image/catalog/code.jpg']); ?>;

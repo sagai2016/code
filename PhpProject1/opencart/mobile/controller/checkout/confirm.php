@@ -72,7 +72,6 @@ class ControllerCheckoutConfirm extends Controller {
 			$sort_order = array();
 
 			$results = $this->model_extension_extension->getExtensions('total');
-
 			foreach ($results as $key => $value) {
 				$sort_order[$key] = $this->config->get($value['code'] . '_sort_order');
 			}
@@ -83,6 +82,7 @@ class ControllerCheckoutConfirm extends Controller {
 <!--/'extension/total/coupon'/ ！折扣 总价 计算！！！！！-->
 */
 
+		
 
 			foreach ($results as $result) {
 				if ($this->config->get($result['code'] . '_status')) {
@@ -90,7 +90,7 @@ class ControllerCheckoutConfirm extends Controller {
 		
 					// We have to put the totals in an array so that they pass by reference.
 					$this->{'model_extension_total_' . $result['code']}->getTotal($total_data);
-
+						
 					
 				}
 			}
@@ -98,16 +98,28 @@ class ControllerCheckoutConfirm extends Controller {
 			$sort_order = array();
 
 
-
 			foreach ($totals as $key => $value) {
 				$sort_order[$key] = $value['sort_order'];
 			}
 
 			array_multisort($sort_order, SORT_ASC, $totals);
-
 			$order_data['totals'] = $totals;
+			
+
+			/******************************新增积分活动*********************************/
+	$this->load->model('catalog/product');
+	$data['allMoney']=$this->model_catalog_product->otherUsers($this->session->data['customer_id']);
+	//var_dump($data['allMoney']);
+	$data['allmoney']=$data['allMoney'][0]['money'];  
+	//var_dump($data['allmoney']);
+	//  //可使用酒券总额
+	/***************************************************************/
+
+
+
 
 			$this->load->language('checkout/checkout');
+
 
 			$order_data['invoice_prefix'] = $this->config->get('config_invoice_prefix');
 			$order_data['store_id'] = $this->config->get('config_store_id');
@@ -122,6 +134,7 @@ class ControllerCheckoutConfirm extends Controller {
 					$order_data['store_url'] = HTTP_SERVER;
 				}
 			}
+
 
 			if ($this->customer->isLogged()) {
 				$this->load->model('account/customer');
@@ -166,7 +179,6 @@ class ControllerCheckoutConfirm extends Controller {
 			} else {
 				$order_data['payment_method'] = '';
 			}
-
 			if (isset($this->session->data['payment_method']['code'])) {
 				$order_data['payment_code'] = $this->session->data['payment_method']['code'];
 			} else {
@@ -201,6 +213,7 @@ class ControllerCheckoutConfirm extends Controller {
 				} else {
 					$order_data['shipping_code'] = '';
 				}
+
 			} else {
 				$order_data['shipping_fullname'] = '';
 				$order_data['shipping_company'] = '';
@@ -252,6 +265,7 @@ class ControllerCheckoutConfirm extends Controller {
 					'reward'     => $product['reward']
 				);
 			}
+
 
 			// Gift Voucher
 			$order_data['vouchers'] = array();
@@ -427,18 +441,22 @@ class ControllerCheckoutConfirm extends Controller {
 			/*var_dump($data['vouchers'])*/
 			$data['totals'] = array();
 
+			//var_dump($this->request->post);
 			foreach ($order_data['totals'] as $total) {
 				$data['totals'][] = array(
 					'title' => $total['title'],
 					'text'  => $this->currency->format($total['value'], $this->session->data['currency'])
 				);
 			}
-
+			//var_dump($data['totals']);
 			$data['payment'] = $this->load->controller('extension/payment/' . $this->session->data['payment_method']['code']);
                         
                         } else {
 			$data['redirect'] = $redirect;
 		}
+		//var_dump($data);
+
+
 
 		$this->response->setOutput($this->load->view('checkout/confirm', $data));
 	}

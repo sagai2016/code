@@ -1,17 +1,16 @@
 <html>
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>八窖酒库｜用户注册</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-    <link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
-    <script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
-    <link href="view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="view/stylesheet/stylesheet.css" rel="stylesheet">
-    <link href="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
-    <script src="view/javascript/common.js" type="text/javascript"></script>
-    <script src="view/javascript/jquery/datetimepicker/moment.js" type="text/javascript"></script>
-    <script src="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="../webfile/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <link href="../webfile/css/stylesheet/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <script src="../webfile/js/bootstrap.min.js" type="text/javascript"></script>
+    <link href="../webfile/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../webfile/css/stylesheet/stylesheet.css" rel="stylesheet">
+    <link href="../webfile/css/stylesheet/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
+    <script src="../webfile/js/common.js" type="text/javascript"></script>
+    <script src="../webfile/js/moment.js" type="text/javascript"></script>
+    <script src="../webfile/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
     <style>
         .container {
             text-align: center;
@@ -64,10 +63,6 @@
         a:visited { 
             text-decoration: none; 
         } 
-        .col-sm-10{
-            float: next;
-                text-align: -webkit-center;
-        }
     </style>
     <body>
         <div class="container">
@@ -79,13 +74,43 @@
                 <div id="content" <?php echo 'class="'.$class.'"'; ?>><?php echo $content_top; ?>
                      <h2><?php echo $heading_title; ?></h2>
                     <div class="round">
-                        <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
-                          
+                        <form action="index.php?route=account/register" method="post" enctype="multipart/form-data" class="form-horizontal">
+                            <ul class="nav nav-tabs">
+                                <li style="display:none"> <?php 
+$registertype="mobile";
+                                if ($registertype == 'email') { ?> class="active" <?php } ?> >
+
+                                <a href="#tab-email" data-toggle="tab" onClick="setEmailRegister()"><?php echo $tab_email_register; ?>
+                                    
+                                </a>
+                                    <input id="email-register" class="hidden" type="radio" name="registertype" <?php if ($registertype == 'email') { ?>  checked="checked" <?php } ?>  value="email">
+
+                                </li>
+
+                                <li <?php if ($registertype == 'mobile') { ?> class="active" <?php } ?> ><a href="#tab-mobile" data-toggle="tab" onClick="setMobileRegister()"><?php echo $tab_mobile_register; ?></a>
+                                    <input id="mobile-register" class="hidden" type="radio" name="registertype" <?php if ($registertype == 'mobile') { ?>  checked="checked" <?php } ?> value="mobile">
+                                </li>
+                            </ul>
                             <div class="tab-content">
-                                <div class="active" id="tab-mobile">
+                                <div class="tab-pane <?php if ($registertype == 'email') { ?> active <?php } ?> " id="tab-email">
+
                                     <div class="form-group required">
                                         <div class="col-sm-10">
-                                            <input type="text" name="telephone" readonly="readonly" value="<?php echo $_SESSION['mobile'];?>" id="input-telephone" class="form-control" />
+                                            <input type="email" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-email" class="form-control" />
+                                            <?php if ($error_email) { ?>
+                                            <div class="text-danger"><?php echo $error_email; ?></div>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="tab-pane <?php if ($registertype == 'mobile') { ?> active <?php } ?> " id="tab-mobile">
+                                    <div class="form-group required">
+                                        <div class="col-sm-10">
+                                            <input type="text" name="telephone" readonly="readonly"  value="<?php echo $_SESSION['mobile']; ?>" placeholder="<?php echo $entry_telephone; ?>" id="input-telephone" 
+                                            value="<?php echo $telephone; ?>"
+                                            class="form-control" />
 
                                             <?php if($sms_gateway) { ?>
                                             <br />
@@ -101,6 +126,7 @@
 
 
                                     <?php if($sms_gateway) { ?>
+
                                     <div class="form-group required">
                                         <label class="col-sm-2 control-label" for="input-sms"><?php echo $entry_sms_code; ?></label>
                                         <div class="col-sm-10">
@@ -114,10 +140,6 @@
                                     <?php } ?>
 
                                 </div>
-                                
-                             
-
-                                
 
                                 <div class="form-group required"  <?php echo 'style="display:'.(count($customer_groups) > 1 ? 'block' : 'none').'"'; ?>;>
                                      <label class="col-sm-2 control-label"><?php echo $entry_customer_group; ?></label>
@@ -311,6 +333,7 @@
                                     </div>
                                 </div>
 
+                                <?php echo $captcha; ?>
 
 
                             </div>
@@ -345,12 +368,9 @@
             </div>
 
         </div>
-        <!-- <div style="color: white;"><?php var_dump($cardInfo)?></div> -->
-        
         <?php if(!empty($_SESSION['signPackage'])):?>
-        <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
         <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-        <script src="view/javascript/weixinopnjssdk.js"></script>
+        <script src="../webfile/js/weixinopnjssdk.js"></script>
         <script type="text/javascript">
         $(function(){
                 weixinopnjssdk.appId='<?php echo $_SESSION['signPackage']['appId']?>';
@@ -365,12 +385,15 @@
         </script>
         <?php endif;?>
         <script type="text/javascript"><!--
+
             function setEmailRegister() {
                 $('input:radio[name=registertype][value=email]').click();
             }
+
             function setMobileRegister() {
                 $('input:radio[name=registertype][value=mobile]').click();
             }
+
             //--></script>
 
         <script type="text/javascript"><!--
@@ -379,30 +402,38 @@
                 if ($(this).attr('data-sort') >= 0 && $(this).attr('data-sort') <= $('#account .form-group').length) {
                     $('#account .form-group').eq($(this).attr('data-sort')).before(this);
                 }
+
                 if ($(this).attr('data-sort') > $('#account .form-group').length) {
                     $('#account .form-group:last').after(this);
                 }
+
                 if ($(this).attr('data-sort') == $('#account .form-group').length) {
                     $('#account .form-group:last').after(this);
                 }
+
                 if ($(this).attr('data-sort') < -$('#account .form-group').length) {
                     $('#account .form-group:first').before(this);
                 }
             });
+
             $('#address .form-group[data-sort]').detach().each(function () {
                 if ($(this).attr('data-sort') >= 0 && $(this).attr('data-sort') <= $('#address .form-group').length) {
                     $('#address .form-group').eq($(this).attr('data-sort')).before(this);
                 }
+
                 if ($(this).attr('data-sort') > $('#address .form-group').length) {
                     $('#address .form-group:last').after(this);
                 }
+
                 if ($(this).attr('data-sort') == $('#address .form-group').length) {
                     $('#address .form-group:last').after(this);
                 }
+
                 if ($(this).attr('data-sort') < -$('#address .form-group').length) {
                     $('#address .form-group:first').before(this);
                 }
             });
+
             $('input[name=\'customer_group_id\']').on('change', function () {
                 $.ajax({
                     url: 'index.php?route=account/register/customfield&customer_group_id=' + this.value,
@@ -410,33 +441,45 @@
                     success: function (json) {
                         $('.custom-field').hide();
                         $('.custom-field').removeClass('required');
+
                         for (i = 0; i < json.length; i++) {
                             custom_field = json[i];
+
                             $('#custom-field' + custom_field['custom_field_id']).show();
+
                             if (custom_field['required']) {
                                 $('#custom-field' + custom_field['custom_field_id']).addClass('required');
                             }
                         }
+
+
                     },
                     error: function (xhr, ajaxOptions, thrownError) {
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
                     }
                 });
             });
+
             $('input[name=\'customer_group_id\']:checked').trigger('change');
             //--></script>
         <script type="text/javascript"><!--
         $('button[id^=\'button-custom-field\']').on('click', function () {
                 var node = this;
+
                 $('#form-upload').remove();
+
                 $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+
                 $('#form-upload input[name=\'file\']').trigger('click');
+
                 if (typeof timer != 'undefined') {
                     clearInterval(timer);
                 }
+
                 timer = setInterval(function () {
                     if ($('#form-upload input[name=\'file\']').val() != '') {
                         clearInterval(timer);
+
                         $.ajax({
                             url: 'index.php?route=tool/upload',
                             type: 'post',
@@ -453,11 +496,14 @@
                             },
                             success: function (json) {
                                 $(node).parent().find('.text-danger').remove();
+
                                 if (json['error']) {
                                     $(node).parent().find('input').after('<div class="text-danger">' + json['error'] + '</div>');
                                 }
+
                                 if (json['success']) {
                                     alert(json['success']);
+
                                     $(node).parent().find('input').val(json['code']);
                                 }
                             },
@@ -473,9 +519,11 @@
         $('.date').datetimepicker({
                 pickTime: false
             });
+
             $('.time').datetimepicker({
                 pickDate: false
             });
+
             $('.datetime').datetimepicker({
                 pickDate: true,
                 pickTime: true
@@ -493,6 +541,7 @@
                     beforeSend: function () {
                         $('.alert-success, .alert-danger').remove();
                         $('#mobile_code').attr('disabled', true);
+
                     },
                     complete: function () {
                         //$('#mobile_code').attr('disabled', false);
@@ -506,6 +555,7 @@
 
                         if (data['success']) {
                             $('#mobile_code').after('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + data['success'] + '</div>');
+
                             setTimeout(function () {
                                 $('#mobile_code').attr('disabled', false);
                             }, 60000);

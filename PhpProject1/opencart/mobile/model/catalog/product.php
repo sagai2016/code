@@ -537,4 +537,67 @@ class ModelCatalogProduct extends Model {
 			return 0;
 		}
 	}
+
+
+
+	//修改添加
+    public function money($userid, $dataPut, $money) {
+	// 为了防止 恶意刷金 事件发生 数据使用 锁
+	//http://blog.csdn.net/tanga842428/article/details/52748531
+	//$this->db->query(sprintf("lock tables  `%scustomer_forwarding`  write;", DB_PREFIX));
+	$this->db->query(sprintf("replace  into `%scustomer_forwarding`  (`customer_id`,`money`,`other_users`) values ('%s','%s','%s');", DB_PREFIX, $userid, $money, $dataPut));
+	//$this->db->query('unlock tables;');
+    }
+
+    public function otherUsers($userid) {
+	//$this->db->query(sprintf("lock tables  `%scustomer_forwarding`   read local ;", DB_PREFIX));
+	$query = $this->db->query('select * from ' . DB_PREFIX . 'customer_forwarding where md5(customer_id)="' . $userid . '"');
+	//$this->db->query('unlock tables;');
+	return $query->rows;
+    }
+
+
+ 	public function allMoney($customer_id) {
+	 $query = $this->db->query('select * from ' . DB_PREFIX . 'customer_forwarding c2f where c2f.customer_id='.$customer_id);
+	 return $query->rows;
+     }
+
+     
+     public function reduceMoney($reduceMoney,$customer_id) {
+     
+	 $query = $this->db->query('UPDATE ' . DB_PREFIX . 'customer_forwarding set money='.$reduceMoney.' where customer_id='.$customer_id);
+     }
+
+
+     
+  public function cashCard($mtcard) {
+	
+	$this->db->query(sprintf("lock tables  `%smt`   read local ;", DB_PREFIX));
+	$query = $this->db->query('select * from ' . DB_PREFIX . 'mt where mtcard="' . $mtcard.'"');
+	$this->db->query('unlock tables;');
+	return $query->rows;
+    }
+    //取出数据
+    public function UserCashCardCount($goodsName,$customer_id) {
+	
+	$this->db->query(sprintf("lock tables  `%smt_to_customer`   read local ;", DB_PREFIX));
+	$query = $this->db->query('select  count(customer_id) as  count from ' . DB_PREFIX . 'mt_to_customer where  substr(card_id,1,'.strlen($goodsName).') ="'.$goodsName.'" and  customer_id=' . $customer_id);
+	$this->db->query('unlock tables;');
+	return $query->rows;
+    }
+    //更新茅台券被抢购数量信息
+    public function updatecashCard($mtcard, $num_all, $num_send, $time_send) {
+	$this->db->query(sprintf("lock tables  `%smt`   write ;", DB_PREFIX));
+	$query = $this->db->query(sprintf('replace into %smt (`num_all`,`num_send`,`time`,`mtcard`) values("%s","%s","%s","%s")', DB_PREFIX, $num_all, $num_send, $time_send, $mtcard));
+	$this->db->query('unlock tables;');
+	
+    }
+    //插入领卡人及领取的卡片信息
+    public function addUserCashCard($card_id, $customer_id, $time) {
+	$this->db->query(sprintf("lock tables  `%smt_to_customer`   write ;", DB_PREFIX));
+	$query = $this->db->query(sprintf("INSERT INTO  %smt_to_customer (card_id, customer_id,time_receive) values ('%s','%s','%s')", DB_PREFIX, $card_id, $customer_id, $time));
+	$this->db->query('unlock tables;');
+	
+    }
+
 }

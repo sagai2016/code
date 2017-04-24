@@ -206,7 +206,6 @@ class ControllerCommonFileManager extends Controller {
 
 	public function upload() {
 		$this->load->language('common/filemanager');
-
 		$json = array();
 
 		// Check user has permission
@@ -217,10 +216,10 @@ class ControllerCommonFileManager extends Controller {
 		// Make sure we have the correct directory
 		if (isset($this->request->get['directory'])) {
 			$directory = rtrim(DIR_IMAGE . 'catalog/' . $this->request->get['directory'], '/');
+            
 		} else {
 			$directory = DIR_IMAGE . 'catalog';
 		}
-
 		// Check its a directory
 		if (!is_dir($directory) || substr(str_replace('\\', '/', realpath($directory)), 0, strlen(DIR_IMAGE . 'catalog')) != DIR_IMAGE . 'catalog') {
 			$json['error'] = $this->language->get('error_directory');

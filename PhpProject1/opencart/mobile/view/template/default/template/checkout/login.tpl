@@ -17,7 +17,7 @@
     <p style="display: none"> <?php echo $text_i_am_returning_customer; ?></p>
     <div class="form-group">
       <label class="control-label" for="input-email" style="display: none"><?php echo $entry_email; ?></label>
-      <input type="text" name="email" value="" placeholder="<?php echo $entry_email.' / '.$entry_telephone; ?>" id="input-email" class="form-control" />
+      <input type="text" name="email" value="" placeholder="<?php echo $entry_telephone; ?>" id="input-email" class="form-control" />
     </div>
     <div class="form-group">
       <label class="control-label" for="input-password" style="display: none"><?php echo $entry_password; ?></label>

@@ -9,6 +9,9 @@ class ControllerAccountCustomer extends Controller {
             $this->response->setOutput($this->load->view('account/customer', $data));
             return true;
         }
+
+        
+        
         $this->response->redirect($this->url->link('common/home', '', true));
         return FALSE;
     }

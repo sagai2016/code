@@ -5,13 +5,13 @@
         <title>八窖酒库｜账单地址</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
-        <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
-        <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-        <script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="../webfile/css/stylesheet/goodsStyle.css" />
+        <script src="../webfile/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+        <script src="../webfile/js/bootstrap.min.js" type="text/javascript"></script>
         <link href="../catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen" />
-        <link href="view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-        <script src="view/javascript/common.js" type="text/javascript"></script>
-        <link href="view/stylesheet/stylesheet.css" rel="stylesheet">
+        <link href="../webfile/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <script src="../webfile/js/common.js" type="text/javascript"></script>
+        <link href="../webfile/css/stylesheet/stylesheet.css" rel="stylesheet">
         <style type="text/css">
             ul, li, h1, h2, h3, h4, h5, h6, dt, dd, dl, ol, dl, dt, dd, p {
                 margin: 0;
@@ -278,9 +278,8 @@
             </ul>
         </div>
         <?php if(!empty($_SESSION['signPackage'])):?>
-        <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
         <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-        <script src="view/javascript/weixinopnjssdk.js"></script>
+        <script src="../webfile/js/weixinopnjssdk.js"></script>
         <script type="text/javascript">
         $(function(){
                 weixinopnjssdk.appId='<?php echo $_SESSION['signPackage']['appId']?>';

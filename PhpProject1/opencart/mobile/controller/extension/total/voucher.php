@@ -17,7 +17,6 @@ class ControllerExtensionTotalVoucher extends Controller {
 			} else {
 				$data['voucher'] = '';
 			}
-
 			return $this->load->view('extension/total/voucher', $data);
 		}
 	}
@@ -73,7 +72,6 @@ class ControllerExtensionTotalVoucher extends Controller {
 					$data = array();
 
 					$data['title'] = sprintf($language->get('text_subject'), $voucher['from_name']);
-
 					$data['text_greeting'] = sprintf($language->get('text_greeting'), $this->currency->format($voucher['amount'], $order_info['currency_code'], $order_info['currency_value']));
 					$data['text_from'] = sprintf($language->get('text_from'), $voucher['from_name']);
 					$data['text_message'] = $language->get('text_message');

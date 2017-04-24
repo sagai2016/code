@@ -8,18 +8,27 @@
 
 class ControllerCommonWeixinjssdk extends Controller {
     public function index() {
-    	if ( is_numeric(strpos($_SERVER['REQUEST_URI'], '&from=s'))){
-    		$url = mb_substr($_SERVER['REQUEST_URI'],0,strpos($_SERVER['REQUEST_URI'], '&from='));
-    		echo "<script language='JavaScript'> self.location='".$url."'</script>"; 
-    		exit();
-    	}
+        require_once(DIR_SYSTEM . 'library/weixinjssdk/jssdk.php');
+
+
+        if ( is_numeric(strpos($_SERVER['REQUEST_URI'], '&from=s'))){
+            $url = mb_substr($_SERVER['REQUEST_URI'],0,strpos($_SERVER['REQUEST_URI'], '&from='));
+            echo "<script language='JavaScript'> self.location='".$url."'</script>"; 
+            exit();
+        }
         if ( is_numeric(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger'))) {
-            require_once(DIR_SYSTEM . 'library/weixinjssdk/jssdk.php');
             $jssdk = new JSSDK(WXPAY_APPID, WXPAY_APPSECRET);
             $signPackage = $jssdk->GetSignPackage();
             $_SESSION['signPackage'] = $signPackage;
-            $_SESSION['weixin_userinfo'] = $jssdk->getUserInfo();
-           // $_SESSION['card'] = $jssdk->getUserInfo();
         }
+    }
+
+    public function ajax(){
+        if(!empty($_SESSION['signPackage'])){
+            echo json_encode($_SESSION['signPackage']);
+            return true;
+        }
+        $signPackage = $jssdk->GetSignPackage();
+        echo json_encode($signPackage);
     }
 }

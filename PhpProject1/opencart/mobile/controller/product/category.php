@@ -71,6 +71,13 @@ class ControllerProductCategory extends Controller {
         //分类信息
 
         $category_info = $this->model_catalog_category->getCategory($category_id);
+
+if ($category_info['image']) {
+
+		$data['thumb'] = $this->model_tool_image->resize($category_info['image'], 640,300);
+	    } else {
+		$data['thumb'] = '';
+	    }
         if (!empty($category_info)) {
             $this->document->setTitle($category_info['meta_title']);
             $this->document->setDescription($category_info['meta_description']);
@@ -132,7 +139,6 @@ class ControllerProductCategory extends Controller {
             $categories = $this->model_catalog_category->getCategories(0);
             foreach ($categories as $category) {
 
-                if ($category['top']) {
                     // Level 1
                     $data['categories'][] = array(
                         'name' => $category['name'],
@@ -140,7 +146,6 @@ class ControllerProductCategory extends Controller {
                         'category_id' => $category['category_id'],
                         'href' => $this->url->link('product/category', 'path=' . $category['category_id'])
                     );
-                }
             }
 
 
@@ -158,7 +163,7 @@ class ControllerProductCategory extends Controller {
             if (!empty($results)) {
                 foreach ($results as $result) {
                     if ($result['image']) {
-                        $image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
+                        $image = $this->model_tool_image->resize($result['image'], 800,800);
                     } else {
                         $image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
                     }

@@ -20,6 +20,7 @@
     </div>
     
     <p>总价</p>
+
     <ul class="total">
         <li class="price">
             <?php foreach ($totals as $total) { ?>
@@ -27,10 +28,20 @@
             <?php } ?>
         </li>
     </ul>
+   
+
+
+
 </div>
 <?php echo $payment; ?>
 <?php } else { ?>
 <script type="text/javascript"><!--
 location = '<?php echo $redirect; ?>';
 //--></script>
+
+<script type="text/javascript">
+//$totals[2]['title']
+    
+</script>>
+
 <?php } ?>

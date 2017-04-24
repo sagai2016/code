@@ -67,7 +67,11 @@ class ControllerAccountRegister extends Controller {
                 );
                 $this->model_account_activity->addActivity('register', $activity_data);
             }
-            $this->response->redirect($this->url->link('account/success'));
+            $pushCord=$this->checkcode();
+            $this->response->redirect($this->url->link('account/success&pushCord='.$pushCord));
+
+            //旧方法
+            //$this->response->redirect($this->url->link('account/success'));
         }
         $data['breadcrumbs'] = array();
         $data['breadcrumbs'][] = array(
@@ -256,6 +260,17 @@ class ControllerAccountRegister extends Controller {
         $data['footer'] = $this->load->controller('common/footer');
         $data['header'] = $this->load->controller('common/header');
         $this->response->setOutput($this->load->view('account/register', $data));
+    }
+
+    private function checkcode(){
+
+            // 可以确认领卡人的身份
+            $pushCord=mt_rand(100000,999999);
+            $this->session->data['pushCord']=$pushCord;
+            //  设置一个可领卡的时间
+            $this->session->data['pushCordTime']=time()+3600;
+            //$this->response->redirect($this->url->link('account/success'));
+            return $pushCord;
     }
 
     private function validate() {

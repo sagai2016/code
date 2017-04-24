@@ -3,10 +3,10 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Document</title>
+        <title>八窖酒库｜用户登录</title>
         <link href="../catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+        <script src="../webfile/js/jquery-2.1.1.min.js" type="text/javascript"></script>
         <style>
             body, html {
                 margin: 0;
@@ -65,7 +65,7 @@
                 outline:none;  
             }
             .main .content .padd li input#input-yzm{
-                width: 65%;
+                width: 60%;
             }
             .main .content .padd li button{
                 width: 95%;
@@ -101,7 +101,9 @@
                 height: 40px;
                 line-height: 40px;
             }
-
+            .showtime{
+                text-align: center;   
+            }
         </style>
 
     </head>
@@ -153,25 +155,29 @@
         };
         $(function () {
             $('.Telz').bind('click', function () {
+                //if($('#input-telephone').val()!=''){
+                
                 $('.showtime').next('span').empty();
                 t = 0;
-
+                $(this).text('请稍等!');
                 $.ajax({
                     type: 'POST',
                     url: '<?php echo $url[0];?>',
                     data: 'telephone=' + $('#input-telephone').val(),
                     dataType: 'json',
                     success: function (info) {
-
                         if (info.err !== true) {
+
                             $('.Telz').hide();
                             $('.showtime').css('opacity', '1');
                             setTimeouts();
                         } else
                         {
+                            $('.Telz').text('获取验证码');
                             $('.warning').text('* ' + info.errmsg);
                         }
                     }});
+                //}
 
             });
 
@@ -197,4 +203,21 @@
 
         });
     </script>
+
+        <?php if(!empty($_SESSION['signPackage'])):?>
+        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+        <script src="../webfile/js/weixinopnjssdk.js"></script>
+        <script type="text/javascript">
+            window.onload =function(){
+            weixinopnjssdk.appId = '<?php echo $_SESSION['signPackage']['appId']?>';
+            weixinopnjssdk.timestamp = '<?php echo $_SESSION['signPackage']['timestamp']?>';
+            weixinopnjssdk.nonceStr = '<?php echo $_SESSION['signPackage']['nonceStr']?>';
+            weixinopnjssdk.signature = '<?php echo $_SESSION['signPackage']['signature']?>';
+            weixinopnjssdk.ready(function(){
+            wx.hideOptionMenu();
+            });
+            }
+        </script>
+        <?php endif;?>
+
 </html>

@@ -5,17 +5,17 @@
 <title>八窖酒库｜结算</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-<link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
-<script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
-<link href="view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-<link href="view/stylesheet/stylesheet.css" rel="stylesheet">
-<script src="view/javascript/jquery/jquery.flexslider.js"></script> 
-<script src="view/javascript/o-script.js"></script>
-<script src="view/javascript/jquery/datetimepicker/moment.js" type="text/javascript"></script>
-<script src="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js"type="text/javascript"></script>
-<link href="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
-<link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
+<script src="../webfile/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+<link href="../webfile/css/stylesheet/bootstrap.min.css" rel="stylesheet" media="screen" />
+<script src="../webfile/js/bootstrap.min.js" type="text/javascript"></script>
+<link href="../webfile/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="../webfile/css/stylesheet/stylesheet.css" rel="stylesheet">
+<script src="../webfile/js/jquery.flexslider.js"></script> 
+<script src="../webfile/js/o-script.js"></script>
+<script src="../webfile/js/moment.js" type="text/javascript"></script>
+<script src="../webfile/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+<link href="../webfile/css/stylesheet/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
+<link rel="stylesheet" type="text/css" href="../webfile/css/stylesheet/goodsStyle.css" />
 </header>
 <style>
     ul,
@@ -293,7 +293,7 @@
 .main .row #content .panel-group{
 	margin-bottom: 40px;
 }
-#collapse-checkout-confirm   .panel-body {
+#collapse-checkout-confirm .panel-body{
     padding: 7px;
 }
 .confirm{
@@ -357,6 +357,13 @@ display: inline-block;
     display: inline-block;
     padding: 0 5px;
 }
+.confirm .reduce{
+    text-align: right;
+    color: #fff;
+    background-color: #fff;
+    border: none;  
+}
+
    /*collapse-checkout-confirm .panel-body .table-responsive .table tbody tr .text-left{
         background-color:red;
         max-width: 41px;
@@ -564,7 +571,7 @@ display: inline-block;
 
 <?php if(!empty($_SESSION['signPackage'])):?>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-<script src="view/javascript/weixinopnjssdk.js"></script>
+<script src="../webfile/js/weixinopnjssdk.js"></script>
 <script type="text/javascript">
 $(function(){
         weixinopnjssdk.appId='<?php echo $_SESSION['signPackage']['appId']?>';
@@ -1321,6 +1328,7 @@ $(document).delegate('#button-payment-method', 'click', function() {
         }
     });
 });
-//--></script>                                                                                                                                                                                                                                                                                                                                                                                   
+//--></script>                                                                                                                                                                                                                                  
+                                                                                                                                        
 </html>
 

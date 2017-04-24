@@ -48,7 +48,7 @@ $dir__ = str_replace ('\\','/',str_replace('admin', '', __DIR__));
 // DIR
 define('DIR_APPLICATION', $dir__.'admin/');
 define('DIR_SYSTEM', $dir__.'system/');
-define('DIR_IMAGE', $dir__.'image/');
+define('DIR_IMAGE', realpath($dir__.'image/').'/');
 define('DIR_LANGUAGE', $dir__.'admin/language/');
 define('DIR_TEMPLATE', $dir__.'admin/view/template/');
 define('DIR_CONFIG', $dir__.'system/config/');
@@ -61,9 +61,9 @@ define('DIR_CATALOG', $dir__.'catalog/');
 
 // DB
 define('DB_DRIVER', 'mysqli');
-define('DB_HOSTNAME', '112.124.13.197');
+define('DB_HOSTNAME', '192.168.1.106');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'dlhchh$#!35866');
+define('DB_PASSWORD', '123');
 define('DB_DATABASE', 'mycnopencart');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'mcc_');

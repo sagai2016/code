@@ -5,9 +5,9 @@
         <title>八窖酒库｜用户登录</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-        <link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
-        <script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../webfile/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+        <link href="../webfile/css/stylesheet/bootstrap.min.css" rel="stylesheet" media="screen" />
+        <script src="../webfile/js/bootstrap.min.js" type="text/javascript"></script>
         <style>
             .foot div a{
                 text-decoration: none;
@@ -156,9 +156,9 @@
 
         <?php if(!empty($_SESSION['signPackage'])):?>
         <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-        <script src="view/javascript/weixinopnjssdk.js"></script>
+        <script src="../webfile/js/weixinopnjssdk.js"></script>
         <script type="text/javascript">
-            $(function(){
+            window.onload =function(){
             weixinopnjssdk.appId = '<?php echo $_SESSION['signPackage']['appId']?>';
             weixinopnjssdk.timestamp = '<?php echo $_SESSION['signPackage']['timestamp']?>';
             weixinopnjssdk.nonceStr = '<?php echo $_SESSION['signPackage']['nonceStr']?>';
@@ -166,7 +166,7 @@
             weixinopnjssdk.ready(function(){
             wx.hideOptionMenu();
             });
-            });
+            }
         </script>
         <?php endif;?>
     </body>

@@ -33,6 +33,7 @@ $_['action_pre_action'] = array(
 	//'startup/weixin',
 	'common/weixin',
 	'common/weixinjssdk',
+	'account/cash',
 );
 
 

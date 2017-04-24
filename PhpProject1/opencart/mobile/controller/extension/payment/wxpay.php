@@ -108,7 +108,7 @@ class ControllerExtensionPaymentWxPay extends Controller {
 		$input->SetOut_trade_no($order_id);
 		$input->SetTotal_fee($total_fee);
 		$input->SetTime_start(date("YmdHis"));
-		$input->SetTime_expire(date("YmdHis", time() + 600));
+		//$input->SetTime_expire(date("YmdHis", time() + 600));
 		$input->SetGoods_tag("test goods tags");
 		$input->SetNotify_url($notify_url);
 		$input->SetTrade_type("JSAPI");
@@ -138,7 +138,10 @@ class ControllerExtensionPaymentWxPay extends Controller {
 	
 	
 	public function callback() {
-		
+
+		exit();
+
+
 		$log = $this->config->get('wxpay_log');
 		
 		if($log) {
@@ -241,7 +244,7 @@ class ControllerExtensionPaymentWxPay extends Controller {
 				$this->load->model('checkout/order');
 	
 				$order_info = $this->model_checkout_order->getOrder($order_id);
-				
+
 				if ($order_info) {
 					
 					if($log) {

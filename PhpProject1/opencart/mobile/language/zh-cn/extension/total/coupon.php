@@ -3,7 +3,7 @@
 $_['heading_title'] = '使用折扣券';
 
 // Text
-$_['text_coupon']   = '折扣券 (%s)';
+$_['text_coupon']   = '减免';
 $_['text_success']  = '成功: 已应用折扣券!';
 
 // Entry

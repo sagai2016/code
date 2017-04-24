@@ -5,19 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <title>八窖酒库｜退换商品</title>
         <link rel="stylesheet" type="text/css" href="view/stylesheet/goodsStyle.css" />
-        <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-        <link href="view/javascript/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
-        <script src="view/javascript/bootstrap/bootstrap.min.js" type="text/javascript"></script>
-        <link href="view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-        <link href="view/stylesheet/stylesheet.css" rel="stylesheet">
-        <script src="view/javascript/jquery/datetimepicker/moment.js" type="text/javascript"></script>
-        <script src="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js"type="text/javascript"></script>
-        <link href="view/javascript/jquery/magnific/magnific-popup.css" type="text/css" rel="stylesheet" media="screen" />
-        <link href="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
-        <script src="view/javascript/jquery/magnific/jquery.magnific-popup.min.js" type="text/javascript"></script>
-        <script src="view/javascript/common.js" type="text/javascript"></script>
-        <script src="view/javascript/o-script.js"></script>
-        <script src="view/javascript/jquery/jquery.flexslider.js"></script>
+        <script src="../webfile/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+        <link href="../webfile/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+        <script src="../webfile/js/bootstrap.min.js" type="text/javascript"></script>
+        <link href="../webfile/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="../webfile/css/stylesheet.css" rel="stylesheet">
+        <script src="../webfile/js/moment.js" type="text/javascript"></script>
+        <script src="../webfile/js/bootstrap-datetimepicker.min.js"type="text/javascript"></script>
+        <link href="../webfile/css/magnific-popup.css" type="text/css" rel="stylesheet" media="screen" />
+        <link href="../webfile/css/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
+        <script src="../webfile/js/jquery.magnific-popup.min.js" type="text/javascript"></script>
+        <script src="../webfile/js/common.js" type="text/javascript"></script>
+        <script src="../webfile/js/o-script.js"></script>
+        <script src="../webfile/js/jquery.flexslider.js"></script>
     </header>
     <style>
         ul,
@@ -427,9 +427,8 @@
         });
         //--></script>
     <?php if(!empty($_SESSION['signPackage'])):?>
-        <script src="view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
         <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-        <script src="view/javascript/weixinopnjssdk.js"></script>
+        <script src="../webfile/js/weixinopnjssdk.js"></script>
         <script type="text/javascript">
         $(function(){
                 weixinopnjssdk.appId='<?php echo $_SESSION['signPackage']['appId']?>';

@@ -137,6 +137,14 @@ class ModelAccountCustomer extends Model {
 	return $query->rows;
     }
 
+
+    public function userInfoMD5($userid=''){
+		$user = empty($userid) ? '1=1' : 'md5(customer_id)="' . $userid.'"';
+		$query = $this->db->query('select * from ' . DB_PREFIX . 'customer where ' . $user);
+
+		return $query->rows;
+    }
+
     public function editCustomer($data) {
 	$customer_id = $this->customer->getId();
 

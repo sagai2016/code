@@ -37,12 +37,18 @@ class ControllerAccountMobile extends Controller {
         $verificationCode = '';
         $phoneMesg = '';
         $isUser = $this->isuser($verificationCode, $this->session->data['customer_id']);
-        if ($isUser === true) {
-            echo json_encode(['errmsg' => $this->menu[0], 'err' => TRUE]);
-            return FALSE;
+
+        if (!is_bool($isUser)) {
+            return is_bool($isUser);
         }
-        $this->pushSms($_SESSION['mobile'], $verificationCode, $phoneMesg);
-        echo $phoneMesg;
+
+        if (!empty($isUser)) {
+            $this->pushSms($_SESSION['mobile'], $verificationCode, $phoneMesg);
+            echo $phoneMesg;
+            return TRUE;
+        }
+        echo json_encode(['errmsg' => $this->menu[0], 'err' => TRUE]);
+        return FALSE;
     }
 
     /**
@@ -56,7 +62,7 @@ class ControllerAccountMobile extends Controller {
         if (!is_bool($isUser)) {
             return is_bool($isUser);
         }
-
+       
         if ($isUser === true) {
             echo json_encode(['errmsg' => $this->menu[1], 'err' => TRUE]);
             return $isUser;
@@ -73,11 +79,9 @@ class ControllerAccountMobile extends Controller {
         $verificationCode = '';
         $phoneMesg = '';
         $isUser = $this->isuser($verificationCode);
-
         if (!is_bool($isUser)) {
             return is_bool($isUser);
         }
-
         if ($isUser === FALSE) {
             echo json_encode(['errmsg' => $this->menu[0], 'err' => TRUE]);
             return $isUser;
@@ -102,17 +106,11 @@ class ControllerAccountMobile extends Controller {
      */
     private function isuser(&$verificationCode, $userID = 0) {
         $phoneMesg = '';
-
         $this->load->model('account/customer');
-
         $_SESSION['rand'] = empty($_SESSION['rand']) ? mt_rand(1000, 9999) : $_SESSION['rand'];
-
         $verificationCode = $_SESSION['rand'];
-
         $_SESSION['mobile'] = $this->request->post['telephone'];
-
         if (!empty($_SESSION['mobile'])) {
-
             if (!$this->isMobile($_SESSION['mobile'], $phoneMesg)) {
                 echo json_encode(['errmsg' => $phoneMesg, 'err' => TRUE]);
                 return NULL;
